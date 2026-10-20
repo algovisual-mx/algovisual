@@ -1,0 +1,184 @@
+/* ==========================================================================
+   About page
+   ========================================================================== */
+
+.about-hero {
+  padding-top: clamp(40px, 7vw, 80px);
+  padding-bottom: clamp(50px, 8vw, 90px);
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .about-hero-grid { grid-template-columns: 1fr; }
+  .about-portrait { order: -1; max-width: 280px; margin-inline: auto; }
+}
+
+.about-title {
+  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  margin-top: 14px;
+}
+
+.about-title .accent { color: var(--accent); }
+
+.about-lede {
+  margin-top: 22px;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  max-width: 52ch;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.about-tag {
+  padding: 0.5em 1em;
+  font-size: 0.78rem;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  color: var(--fg-muted);
+}
+
+.about-portrait {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 4 / 5;
+}
+
+.about-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Stat strip ----------------------------------------------------------*/
+.stat-strip {
+  padding-block: clamp(36px, 6vw, 56px);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 720px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--accent);
+}
+
+.stat-label {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+}
+
+/* ---- Timeline --------------------------------------------------------------*/
+.about-section {
+  padding-block: clamp(60px, 9vw, 110px);
+}
+
+.timeline {
+  border-top: 1px solid var(--border);
+  margin-top: clamp(24px, 4vw, 40px);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 24px;
+  align-items: baseline;
+  padding-block: 28px;
+  border-bottom: 1px solid var(--border);
+  transition: padding-inline var(--dur-med) var(--ease), background-color var(--dur-med) var(--ease);
+}
+
+.timeline-item:hover {
+  background: var(--bg-elev);
+  padding-inline: 16px;
+  border-radius: var(--radius-sm);
+}
+
+@media (max-width: 680px) {
+  .timeline-item { grid-template-columns: 1fr; gap: 6px; }
+}
+
+.timeline-date {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.timeline-role {
+  font-size: 1.05rem;
+  color: var(--fg);
+}
+
+.timeline-org {
+  color: var(--fg-muted);
+  font-size: 0.92rem;
+}
+
+.timeline-tag {
+  font-size: 0.72rem;
+  color: var(--fg-faint);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Skills grid -------------------------------------------------------*/
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(16px, 2.4vw, 24px);
+  margin-top: clamp(24px, 4vw, 40px);
+}
+
+@media (max-width: 780px) {
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
+
+.skill-card {
+  padding: 26px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-elev);
+  transition: transform var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease);
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.skill-card h3 {
+  font-size: 0.95rem;
+  color: var(--fg);
+  text-transform: none;
+}
+
+.skill-card p {
+  margin-top: 10px;
+  font-size: 0.88rem;
+}

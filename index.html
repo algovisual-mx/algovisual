@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algovisual — Sal, Graphic &amp; Web Designer</title>
+<meta name="description" content="Portfolio of Sal — graphic designer, web designer, art director, UI &amp; UX designer. Selected work in product design, branding, and art direction.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
+<script src="js/page-wipe.js"></script>
+</head>
+<body data-page="work">
+
+<div class="nav-wrap">
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-left">
+      <a class="nav-logo" href="index.html" aria-label="Algovisual — home">
+        <img src="assets/logo.png" alt="Algovisual" width="256" height="256">
+      </a>
+      <a class="nav-link" data-nav="work" href="index.html">Work</a>
+      <a class="nav-link" data-nav="about" href="about.html">About</a>
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle color theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <a class="btn btn-primary nav-cta" href="mailto:salvador.galvizouri@gmail.com">Let&rsquo;s Talk</a>
+  </nav>
+</div>
+
+<main>
+  <section class="hero">
+    <!-- Dot-grid background (kept for later — swap the comment below to bring it back) -->
+    <!-- <div class="hero-waves" data-dot-grid aria-hidden="true"></div> -->
+    <div class="hero-waves" data-cursor-trail aria-hidden="true"></div>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="hero-type-line hero-type-static">Hello, I&rsquo;m Sal, a</span>
+        <span class="hero-type-line hero-type-dynamic"><span data-text-type></span><span class="hero-type-suffix">designer</span></span>
+      </h1>
+      <div class="hero-actions">
+        <div class="hero-social">
+          <a class="icon-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3.5a1.96 1.96 0 1 0 0 3.92 1.96 1.96 0 0 0 0-3.92ZM20.44 20h-3.37v-5.9c0-1.41-.03-3.22-1.96-3.22-1.97 0-2.27 1.53-2.27 3.12V20H9.47V8.5h3.24v1.57h.05c.45-.85 1.55-1.75 3.2-1.75 3.42 0 4.05 2.25 4.05 5.18V20Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a class="icon-link" href="mailto:salvador.galvizouri@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3.5 5.5h17a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.7"/>
+              <path d="M3 6.5l9 6.5 9-6.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+        <div class="hero-scroll-cue" aria-hidden="true">
+          <span>Scroll</span>
+          <span class="line"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" data-project-sections>
+    <!-- Project galleries are rendered here by js/home.js using js/projects-data.js -->
+  </div>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2 class="cta-title">Got a project in mind? <span class="accent">Let&rsquo;s make it real.</span></h2>
+      <p class="cta-sub">Currently open to new freelance and full-time opportunities in product, brand, and web design.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="mailto:salvador.galvizouri@gmail.com">Say Hello</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <h2 class="footer-heading">Let&rsquo;s build something worth looking at.</h2>
+      <div class="footer-links">
+        <a class="icon-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3.5a1.96 1.96 0 1 0 0 3.92 1.96 1.96 0 0 0 0-3.92ZM20.44 20h-3.37v-5.9c0-1.41-.03-3.22-1.96-3.22-1.97 0-2.27 1.53-2.27 3.12V20H9.47V8.5h3.24v1.57h.05c.45-.85 1.55-1.75 3.2-1.75 3.42 0 4.05 2.25 4.05 5.18V20Z" fill="currentColor"/>
+          </svg>
+        </a>
+        <a class="icon-link" href="mailto:salvador.galvizouri@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3.5 5.5h17a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M3 6.5l9 6.5 9-6.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> Algovisual. All rights reserved.</span>
+      <a href="mailto:salvador.galvizouri@gmail.com">salvador.galvizouri@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<!-- InertiaPlugin was only used by the dot-grid background below; re-enable
+     it alongside the dot-grid script tag if that background comes back. -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/InertiaPlugin.min.js"></script> -->
+<script src="js/main.js"></script>
+<script src="js/cursor.js"></script>
+<!-- <script src="js/dot-grid.js"></script> -->
+<script src="js/cursor-trail.js"></script>
+<script src="js/text-type.js"></script>
+<script src="js/accordion-gallery.js"></script>
+<script src="js/projects-data.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

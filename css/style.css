@@ -1,0 +1,522 @@
+/* ==========================================================================
+   Algovisual — global styles: reset, tokens, typography, nav, footer, buttons
+   ========================================================================== */
+
+/* ---- Reset ------------------------------------------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body, h1, h2, h3, h4, p, figure, blockquote, ul, ol, dl { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img, svg, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+input, textarea { font: inherit; color: inherit; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---- Design tokens ------------------------------------------------------ */
+:root {
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --accent: #475DD7;
+  --accent-rgb: 71, 93, 215;
+  --accent-soft: rgba(71, 93, 215, 0.14);
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+
+  --container: 1240px;
+  --gutter: clamp(20px, 5vw, 64px);
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.2s;
+  --dur-med: 0.45s;
+  --dur-slow: 0.8s;
+
+  /* Dark theme (default) */
+  --bg: #000000;
+  --bg-elev: #0c0c0e;
+  --bg-elev-2: #141417;
+  --fg: #ffffff;
+  --fg-muted: rgba(255, 255, 255, 0.62);
+  --fg-faint: rgba(255, 255, 255, 0.38);
+  --border: rgba(255, 255, 255, 0.12);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --wave-line: rgba(255, 255, 255, 0.5);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  --hero-canvas-opacity: 1;
+  --logo-filter: invert(1);
+}
+
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-elev: #f4f4f7;
+  --bg-elev-2: #ececf1;
+  --fg: #0a0a0c;
+  --fg-muted: rgba(10, 10, 12, 0.64);
+  --fg-faint: rgba(10, 10, 12, 0.42);
+  --border: rgba(10, 10, 12, 0.1);
+  --border-strong: rgba(10, 10, 12, 0.18);
+  --wave-line: rgba(10, 10, 12, 0.4);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  --hero-canvas-opacity: 0.65;
+  --logo-filter: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #ffffff;
+    --bg-elev: #f4f4f7;
+    --bg-elev-2: #ececf1;
+    --fg: #0a0a0c;
+    --fg-muted: rgba(10, 10, 12, 0.64);
+    --fg-faint: rgba(10, 10, 12, 0.42);
+    --border: rgba(10, 10, 12, 0.1);
+    --border-strong: rgba(10, 10, 12, 0.18);
+    --wave-line: rgba(10, 10, 12, 0.4);
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    --hero-canvas-opacity: 0.65;
+    --logo-filter: none;
+  }
+}
+
+/* ---- Base ---------------------------------------------------------------*/
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--dur-med) var(--ease), color var(--dur-med) var(--ease);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+p { color: var(--fg-muted); }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+section { position: relative; }
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---- Buttons -------------------------------------------------------------*/
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  padding: 0.95em 1.8em;
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: transform var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--border-strong);
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ---- Nav ------------------------------------------------------------------*/
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background: transparent;
+  transition: background-color var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease);
+}
+
+.nav-wrap.is-scrolled {
+  background: var(--bg);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 18px var(--gutter);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 1.5vw, 24px);
+}
+
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.nav-logo img {
+  display: block;
+  height: 50px;
+  width: auto;
+  filter: var(--logo-filter);
+  transition: filter var(--dur-med) var(--ease);
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.55em 1em;
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  letter-spacing: 0.01em;
+  color: var(--fg-muted);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
+}
+.nav-link:hover { color: var(--fg); background: var(--bg-elev-2); }
+.nav-link.is-active { color: var(--accent); font-weight: 700; }
+
+.nav-cta {
+  padding: 0.6em 1.15em;
+  flex-shrink: 0;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--fg-muted);
+  transition: color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
+  flex-shrink: 0;
+}
+.theme-toggle:hover { color: var(--fg); background: var(--bg-elev-2); }
+.theme-toggle svg { width: 20px; height: 20px; }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+
+@media (max-width: 560px) {
+  .nav { padding: 14px var(--gutter); gap: 8px; }
+  .nav-left { gap: 4px; }
+  .nav-link { padding: 0.55em 0.7em; font-size: 0.72rem; letter-spacing: 0.06em; }
+  .nav-cta { padding: 0.55em 0.85em; font-size: 0.72rem; }
+}
+
+/* ---- Page offset (fixed nav) ---------------------------------------------*/
+main { display: block; }
+
+/* ---- Custom cursor --------------------------------------------------------
+   A purple rounded-arrow cursor that tracks the pointer (desktop /
+   fine-pointer only, see js/cursor.js). The wrapper is a zero-size anchor
+   positioned via left/top from JS; the arrow and the "view" circle are two
+   independently-transformed children cross-faded between via the
+   .is-view class, each with its own hotspot alignment. */
+.has-custom-cursor,
+.has-custom-cursor a,
+.has-custom-cursor button {
+  cursor: none;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+}
+
+.cursor-dot.is-active { opacity: 1; }
+
+.cursor-dot__arrow {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 30px;
+  height: 30px;
+  max-width: none;
+  /* var(--fg) rather than literal black — a pure-black cursor would vanish
+     against the dark theme's black background. */
+  color: var(--fg);
+  transform-origin: 0 0;
+  transition: opacity 0.2s ease, transform 0.25s var(--ease);
+}
+.cursor-dot.is-view .cursor-dot__arrow {
+  opacity: 0;
+  transform: scale(0.4);
+}
+
+.cursor-dot__circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* var(--fg) so the circle always contrasts the page — pure black would
+     vanish against the dark theme's black background. */
+  background: var(--fg);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.3);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease, background-color 0.25s ease;
+}
+.cursor-dot.is-view .cursor-dot__circle {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.cursor-dot__label {
+  opacity: 0;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--bg);
+  transition: opacity 0.2s ease, color var(--dur-med) var(--ease);
+}
+.cursor-dot.is-view .cursor-dot__label { opacity: 1; }
+
+/* ---- Footer ---------------------------------------------------------------*/
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding-block: clamp(48px, 8vw, 88px) 32px;
+  margin-top: clamp(80px, 10vw, 140px);
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: clamp(32px, 6vw, 64px);
+}
+
+.footer-heading {
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  max-width: 14ch;
+}
+
+.footer-links {
+  display: flex;
+  gap: 14px;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  color: var(--fg);
+  transition: transform var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.icon-link svg { width: 24px; height: 24px; }
+.icon-link:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--fg-faint);
+}
+
+.footer-bottom a:hover { color: var(--accent); }
+
+/* ---- TextType cursor fallback (used only if GSAP fails to load) ----------*/
+@keyframes textTypeCssBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+.text-type__cursor--css-blink {
+  animation: textTypeCssBlink 1s step-end infinite;
+}
+
+/* ---- Reveal-on-scroll utility ---------------------------------------------*/
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Page wipe transition ---------------------------------------------------
+   Five rows slide in from both sides and meet in the middle, covering the
+   page while the next one loads, then retract. The project title is repeated
+   inside every half so it reads as one continuous line across the rows.
+   Driven by js/page-wipe.js (adds .is-covering / .is-covered / .is-opening). */
+.page-wipe {
+  --wipe-bg: var(--accent);
+  --wipe-color: #fff;
+  --wipe-accent: #fff;
+  --wipe-duration: 620ms;
+
+  position: fixed;
+  inset: 0;
+  z-index: 900; /* under the custom cursor (1000) */
+  display: grid;
+  grid-template-rows: repeat(5, 20dvh);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.page-wipe__row { position: relative; height: 20dvh; overflow: hidden; }
+
+.page-wipe__half {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  overflow: hidden;
+  background: var(--wipe-bg);
+  transition: width var(--wipe-duration) cubic-bezier(.76, 0, .24, 1);
+  transition-delay: var(--delay);
+}
+.page-wipe__half--start { left: 0; }
+.page-wipe__half--end { right: 0; }
+
+.page-wipe__title {
+  position: absolute;
+  top: calc(var(--row) * -20dvh);
+  width: 100vw;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+}
+.page-wipe__half--start .page-wipe__title { left: 0; }
+.page-wipe__half--end .page-wipe__title { right: 0; }
+
+.page-wipe__title span {
+  width: 100vw;
+  padding-inline: 4vw;
+  color: var(--wipe-color);
+  /* System stack on purpose: a web font would load late on the new page and
+     make the title swap/jump while the screen is covered. */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: clamp(40px, 8vw, 140px);
+  font-weight: 700;
+  line-height: .9;
+  letter-spacing: -.05em;
+  text-align: center;
+}
+
+.page-wipe__row:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  width: 7px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--wipe-accent);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.3);
+  transition: opacity 160ms ease 280ms, transform 280ms ease 280ms;
+}
+
+.page-wipe.is-covering,
+.page-wipe.is-covered,
+.page-wipe.is-opening { visibility: visible; }
+
+.page-wipe.is-covering .page-wipe__half,
+.page-wipe.is-covered .page-wipe__half { width: 50%; }
+
+.page-wipe.is-covering .page-wipe__row:nth-child(3)::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.page-wipe.is-covered .page-wipe__half { transition: none; }
+
+.page-wipe.is-opening .page-wipe__half {
+  width: 0;
+  transition-delay: calc(100ms - var(--delay));
+}
+
+@media (max-width: 700px) {
+  .page-wipe__title span { padding-inline: 20px; font-size: clamp(36px, 13vw, 72px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-wipe { display: none; }
+}

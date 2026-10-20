@@ -1,0 +1,563 @@
+/* ==========================================================================
+   Home / Work page
+   ========================================================================== */
+
+/* ---- Hero ------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.hero-waves {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-waves canvas {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: var(--hero-canvas-opacity, 1);
+  transition: opacity var(--dur-med) var(--ease);
+}
+
+/* "Worm cursor" trail hero background (js/cursor-trail.js) — currently the
+   active one; the dot-grid it replaced is still wired up, just commented
+   out, in case it's wanted back. */
+.cursor-trail-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.cursor-trail-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.cursor-trail-svg line {
+  stroke-width: 10px;
+  stroke-linecap: round;
+  shape-rendering: optimizeSpeed;
+}
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(60% 55% at 50% 42%, transparent 0%, var(--bg) 92%),
+    linear-gradient(180deg, transparent 0%, var(--bg) 96%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-inline: var(--gutter);
+  max-width: var(--container);
+  margin-inline: auto;
+  width: 100%;
+}
+
+@keyframes heroSlideIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title {
+  font-size: clamp(2.1rem, 7.2vw, 5.2rem);
+  max-width: 18ch;
+  animation: heroSlideIn 0.9s var(--ease) both;
+}
+
+.hero-type-line {
+  display: block;
+}
+
+.hero-type-static {
+  display: block;
+}
+
+.hero-type-dynamic {
+  display: inline-block;
+}
+
+.hero-type-dynamic [data-text-type] {
+  color: var(--accent);
+}
+
+.hero-type-suffix {
+  color: var(--fg);
+}
+
+.text-type__cursor {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 400;
+}
+.text-type__cursor--hidden { display: none; }
+
+/* Content is empty (between words): stay visible, but collapse our own
+   box-width to zero (so the static text after us lands exactly where it
+   would if we weren't here at all) and nudge the glyph itself left with
+   a position offset, which — unlike margin — doesn't affect layout, so
+   it can't disturb that alignment. */
+.text-type__cursor--offset {
+  width: 0;
+  overflow: visible;
+  position: relative;
+  left: -0.25em;
+  transition: left var(--dur-fast) var(--ease);
+}
+
+.hero-sub {
+  margin-top: 22px;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  max-width: 46ch;
+  color: var(--fg-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.hero-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  animation: heroSlideIn 0.7s var(--ease) 0.15s both;
+}
+
+.hero-scroll-cue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--fg-faint);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-scroll-cue .line {
+  width: 1px;
+  height: 34px;
+  background: linear-gradient(180deg, var(--accent), transparent);
+  animation: scrollcue 1.8s var(--ease) infinite;
+}
+
+@keyframes scrollcue {
+  0% { transform: scaleY(0); transform-origin: top; opacity: 0; }
+  40% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  60% { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+/* ---- Section headers ----------------------------------------------------*/
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-bottom: clamp(28px, 5vw, 48px);
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4.2vw, 2.8rem);
+  margin-top: 10px;
+}
+
+.section-subtitle {
+  color: var(--fg-muted);
+  max-width: 40ch;
+}
+
+.work-section {
+  padding-block: clamp(60px, 9vw, 110px);
+  scroll-margin-top: 90px;
+}
+
+.work-section:first-of-type {
+  padding-top: clamp(40px, 7vw, 80px);
+}
+
+/* ---- Project grid ---------------------------------------------------------*/
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(16px, 2.4vw, 28px);
+}
+
+@media (max-width: 640px) {
+  .project-grid { grid-template-columns: 1fr; }
+}
+
+.project-card {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  transition: transform var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease), box-shadow var(--dur-med) var(--ease);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow);
+}
+
+.project-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.project-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.project-card:hover .project-card-media img {
+  transform: scale(1.06);
+}
+
+.project-card-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55) 100%);
+  opacity: 0;
+  transition: opacity var(--dur-med) var(--ease);
+}
+.project-card:hover .project-card-media::after { opacity: 1; }
+
+.project-card-arrow {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transform: translate(-6px, 6px) rotate(-40deg);
+  transition: opacity var(--dur-med) var(--ease), transform var(--dur-med) var(--ease);
+}
+.project-card-arrow svg { width: 16px; height: 16px; }
+.project-card:hover .project-card-arrow {
+  opacity: 1;
+  transform: translate(0,0) rotate(0deg);
+}
+
+.project-card-body {
+  padding: 18px 20px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.project-card-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--fg);
+  line-height: 1.35;
+}
+
+.project-card-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.project-card-cat {
+  font-size: 0.72rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.project-card-year {
+  font-size: 0.72rem;
+  color: var(--fg-faint);
+}
+
+/* ---- CTA band -----------------------------------------------------------*/
+.cta-band {
+  padding-block: clamp(70px, 12vw, 140px);
+  text-align: center;
+}
+
+.cta-title {
+  font-size: clamp(2.2rem, 7vw, 4.6rem);
+  max-width: 20ch;
+  margin-inline: auto;
+}
+
+.cta-title .accent { color: var(--accent); }
+
+.cta-sub {
+  margin: 20px auto 0;
+  max-width: 42ch;
+}
+
+.cta-actions {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ---- Accordion gallery (js/accordion-gallery.js) ---------------------------
+   Port of the React Bits AccordionGallery. Replaces the project card grid on
+   the home page; the card grid styles above are kept in case it comes back. */
+.accordion-gallery {
+  --ag-accent: #ffffff;
+  --ag-overlay: #060010;
+  --ag-text: #ffffff;
+  --ag-gap: 10px;
+  --ag-radius: 16px;
+  --ag-media-size: 320px;
+
+  display: flex;
+  flex-direction: row;
+  gap: var(--ag-gap);
+  width: 100%;
+  max-width: 100%;
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+}
+
+.accordion-gallery--vertical { flex-direction: column; }
+
+.ag-panel {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: var(--ag-radius);
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  outline: none;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  background: #0a0713;
+  box-shadow: 0 10px 30px -18px rgba(0, 0, 0, 0.8);
+  will-change: flex-grow, transform;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ag-panel:focus-visible {
+  box-shadow: 0 0 0 2px var(--ag-accent), 0 10px 30px -18px rgba(0, 0, 0, 0.8);
+}
+
+.ag-panel__frame {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.ag-panel__media {
+  --ag-gray: 1;
+  --ag-dim: 0.35;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--ag-media-size);
+  height: 100%;
+  filter: grayscale(var(--ag-gray));
+  will-change: transform, filter;
+}
+
+.accordion-gallery--vertical .ag-panel__media {
+  width: 100%;
+  height: var(--ag-media-size);
+}
+
+.ag-panel__media img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.ag-panel__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 45%, color-mix(in srgb, var(--ag-overlay) 78%, transparent) 100%),
+    color-mix(in srgb, var(--ag-overlay) calc(var(--ag-dim, 0.35) * 100%), transparent);
+}
+
+.ag-panel__label {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.ag-panel__bar {
+  flex: 0 0 auto;
+  width: 3px;
+  height: 26px;
+  border-radius: 3px;
+  background: var(--ag-accent);
+  opacity: 0;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--ag-accent) 60%, transparent);
+}
+
+.ag-panel__text {
+  color: var(--ag-text);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: clamp(1rem, 1.4vw, 1.4rem);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 520px) {
+  .accordion-gallery {
+    flex-direction: column;
+    perspective: none;
+    height: auto !important;
+  }
+  .ag-panel {
+    min-height: 84px;
+    transform: none !important;
+  }
+  .ag-panel--active { min-height: 240px; }
+  .accordion-gallery .ag-panel__media {
+    width: 100%;
+    height: var(--ag-media-size);
+  }
+}
+
+/* ---- Work list: alternating image / text rows (no cards) --------------------
+   Row 1 has the image on the right, row 2 on the left, and so on. The image
+   floats gently up and down in a loop. */
+.work-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(64px, 10vw, 140px);
+}
+
+.work-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(32px, 6vw, 96px);
+}
+
+.work-row--flip .work-row__text { order: 2; }
+.work-row--flip .work-row__media { order: 1; }
+
+.work-row__title {
+  font-size: clamp(1.8rem, 3.6vw, 3rem);
+}
+
+.work-row__desc {
+  margin-top: 16px;
+  max-width: 44ch;
+}
+
+.work-row__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.work-row__tags li {
+  padding: 0.35em 0.95em;
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+}
+
+.work-row__cta {
+  margin-top: 32px;
+}
+.work-row__cta svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.work-row__media {
+  display: flex;
+  justify-content: center;
+}
+
+.work-row__img {
+  width: min(100%, 440px);
+  height: auto;
+  animation: work-float 5.5s ease-in-out infinite;
+}
+.work-row:nth-child(even) .work-row__img {
+  animation-duration: 6.5s;
+  animation-delay: -2.4s;
+}
+.work-row:nth-child(3n) .work-row__img { animation-delay: -1.2s; }
+
+@keyframes work-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@media (max-width: 820px) {
+  .work-row { grid-template-columns: 1fr; }
+  /* Single column: image always on top, whichever side it sits on desktop. */
+  .work-row .work-row__text { order: 1; }
+  .work-row .work-row__media { order: 0; }
+  .work-row__img { width: min(100%, 340px); }
+}
