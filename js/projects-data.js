@@ -635,7 +635,7 @@ const PROJECTS = [
 ];
 
 const PROJECT_SECTIONS = [
-  { id: "product", title: "Selected Work", subtitle: "Product, UI & UX design" }
+  { id: "product", title: "Some of my Work...", subtitle: "Product, UI & UX design" }
   // Hidden for now — uncomment (and add the comma above) to bring it back:
   // { id: "brand", title: "Brand & Art Direction", subtitle: "Identity, print & motion" }
 ];
