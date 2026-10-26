@@ -79,9 +79,9 @@
 
     window.TechText(el, {
       text: "UX Designer",
-      fontWeight: 600,
+      fontWeight: 700,
       fontSize: 200,
-      letterSpacing: -0.045,
+      letterSpacing: -0.03,
       rest: el.getAttribute("data-rest") || "fill",
       reveal: "letter",
       intro: "design",

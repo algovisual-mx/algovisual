@@ -13,6 +13,7 @@
 
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/hero-lab.css">
 <script src="js/page-wipe.js"></script>
 </head>
 <body data-page="work">
@@ -25,7 +26,6 @@
       </a>
       <a class="nav-link" data-nav="work" href="index.html">Work</a>
       <a class="nav-link" data-nav="about" href="about.html">About</a>
-      <a class="nav-link" data-nav="lab" href="hero-lab.html">Hero lab</a><!-- TEMP: remove when the hero test is done -->
       <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle color theme">
         <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -41,9 +41,32 @@
 </div>
 
 <main>
+  <!-- Hero (alternative: designed-live wordmark). The previous hero — dot/trail
+       background + typed "Hello, I'm Sal, a … designer" — is kept below, commented
+       out, in case it's wanted back (it also needs css/home.css + js/home.js, untouched). -->
+  <section class="lab-hero" data-lab-hero>
+    <h1 class="lab-title">
+      <span class="lab-line lab-line--a">Hi, my name is Sal and I&rsquo;m a</span>
+      <span class="lab-word" data-lab-word data-rest="fill"></span>
+      <span class="lab-line lab-line--b">I question, explore &amp; i design</span>
+    </h1>
+
+    <ul class="lab-meta">
+      <li>+5 years of experience</li>
+      <li>Vibe coding enthusiast</li>
+      <li>Multi-disciplinary</li>
+    </ul>
+
+    <a class="hero-scroll-cue lab-scroll" href="#product" aria-label="Scroll to work">
+      <span>Scroll</span>
+      <span class="line"></span>
+    </a>
+  </section>
+
+  <!-- PREVIOUS HERO
   <section class="hero">
-    <!-- Dot-grid background (kept for later — swap the comment below to bring it back) -->
-    <!-- <div class="hero-waves" data-dot-grid aria-hidden="true"></div> -->
+     Dot-grid background (kept for later — swap the comment below to bring it back) 
+     <div class="hero-waves" data-dot-grid aria-hidden="true"></div> 
     <div class="hero-waves" data-cursor-trail aria-hidden="true"></div>
     <div class="hero-scrim" aria-hidden="true"></div>
     <div class="hero-content">
@@ -72,6 +95,7 @@
       </div>
     </div>
   </section>
+  -->
 
   <div class="container" data-project-sections>
     <!-- Project galleries are rendered here by js/home.js using js/projects-data.js -->
@@ -125,5 +149,7 @@
 <script src="js/accordion-gallery.js"></script>
 <script src="js/projects-data.js"></script>
 <script src="js/home.js"></script>
+<script src="js/tech-text.js"></script>
+<script src="js/hero-lab.js"></script>
 </body>
 </html>
