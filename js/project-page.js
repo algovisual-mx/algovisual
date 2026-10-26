@@ -46,8 +46,11 @@
     return items.map(function (t) { return "<" + tag + ">" + t + "</" + tag + ">"; }).join("");
   }
 
-  function sectionHead(num, heading) {
-    return '<header class="cs-head"><span class="cs-num">' + num + '</span><h2 class="cs-heading">' + heading + "</h2></header>";
+  function sectionHead(num, label, heading) {
+    return (
+      '<header class="cs-head"><span class="cs-num">' + num + "</span>" +
+      '<div><span class="cs-eyebrow">' + label + '</span><h2 class="cs-heading">' + heading + "</h2></div></header>"
+    );
   }
 
   function figure(src, caption, label, extraClass) {
@@ -67,6 +70,7 @@
     return (
       '<div class="container">' +
       '<a class="project-back" href="index.html#' + project.section + '" data-wipe="">' + BACK_ARROW_SVG + " Back to Work</a>" +
+      '<span class="cs-eyebrow">Summary</span>' +
       '<p class="project-kicker">' + project.title + " &middot; " + project.category + " &middot; " + project.year + "</p>" +
       '<h1 class="project-title">' + cs.outcome + "</h1>" +
       '<dl class="cs-summary">' +
@@ -84,7 +88,7 @@
     var p = cs.problem;
     var r = cs.role;
     return (
-      sectionHead("01", p.heading) +
+      sectionHead("01", "Problem &amp; role", p.heading) +
       '<div class="cs-body">' +
       '<div class="cs-copy">' + list(p.text, "p") + "</div>" +
       (p.stat
@@ -108,7 +112,7 @@
   function buildFindings(cs) {
     var f = cs.findings;
     return (
-      sectionHead("02", f.heading) +
+      sectionHead("02", "Findings", f.heading) +
       '<div class="cs-body">' +
       '<ol class="cs-findings">' +
       f.items.map(function (it) {
@@ -125,7 +129,7 @@
   function buildDecisions(cs) {
     var d = cs.decisions;
     return (
-      sectionHead("03", d.heading) +
+      sectionHead("03", "Key decisions", d.heading) +
       '<div class="cs-body">' +
       d.items.map(function (it, i) {
         function option(o, key) {
@@ -152,7 +156,7 @@
   function buildSolution(cs) {
     var s = cs.solution;
     return (
-      sectionHead("04", s.heading) +
+      sectionHead("04", "Solution", s.heading) +
       '<div class="cs-body">' +
       s.items.map(function (it) {
         var two = it.images.length > 1;
@@ -172,7 +176,7 @@
   function buildResults(cs) {
     var r = cs.results;
     return (
-      sectionHead("05", r.heading) +
+      sectionHead("05", "Results", r.heading) +
       '<div class="cs-body">' +
       '<ul class="cs-results">' +
       r.items.map(function (it) {
@@ -187,7 +191,7 @@
   function buildLearnings(cs) {
     var l = cs.learnings;
     return (
-      sectionHead("06", l.heading) +
+      sectionHead("06", "Learnings", l.heading) +
       '<div class="cs-body"><ul class="cs-learnings">' + list(l.items, "li") + "</ul></div>"
     );
   }
