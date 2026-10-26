@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Algovisual — Hero lab</title>
+<meta name="description" content="Test page for an alternative home hero: a 3D head that follows the pointer and a wordmark designed live, Figma-style.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/hero-lab.css">
+</head>
+<body data-page="lab">
+
+<div class="nav-wrap">
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-left">
+      <a class="nav-logo" href="index.html" aria-label="Algovisual — home">
+        <img src="assets/logo.png" alt="Algovisual" width="256" height="256">
+      </a>
+      <a class="nav-link" data-nav="work" href="index.html">Work</a>
+      <a class="nav-link" data-nav="about" href="about.html">About</a>
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle color theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M12 2.5v2.4M12 19.1v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <a class="btn btn-primary nav-cta" href="mailto:salvador.galvizouri@gmail.com">Let&rsquo;s Talk</a>
+  </nav>
+</div>
+
+<main>
+  <!-- Alternative home hero (test page — the current hero in index.html is untouched). -->
+  <section class="lab-hero" data-lab-hero>
+    <div class="lab-head" data-lab-head>
+      <div class="lab-head__model">
+        <img class="lab-head__layer" src="assets/images/sal-head.png" alt="" aria-hidden="true" style="--z:-44px;--o:.16">
+        <img class="lab-head__layer" src="assets/images/sal-head.png" alt="" aria-hidden="true" style="--z:-22px;--o:.3">
+        <img class="lab-head__layer lab-head__layer--front" src="assets/images/sal-head.png" alt="Wireframe portrait of Sal" width="325" height="325">
+      </div>
+    </div>
+
+    <h1 class="lab-title">
+      <span class="lab-line lab-line--a">Hi, my name is Sal and I&rsquo;m a</span>
+      <span class="lab-word" data-lab-word data-rest="fill"></span>
+      <span class="lab-line lab-line--b">I question, explore &amp; i design</span>
+    </h1>
+
+    <ul class="lab-meta">
+      <li>+5 years of experience</li>
+      <li>Vibe coding enthusiast</li>
+      <li>Multi-disciplinary</li>
+    </ul>
+  </section>
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/cursor.js"></script>
+<script src="js/tech-text.js"></script>
+<script src="js/hero-lab.js"></script>
+</body>
+</html>
