@@ -25,103 +25,172 @@ function galleryImg(slug, n) {
 
 const PROJECTS = [
   {
-    slug: "nova-fintech",
-    title: "Nova Finance App",
+    slug: "visicart",
+    title: "Visicart",
     category: "UI/UX Design",
     section: "product",
-    year: "2025",
-    client: "Nova Financial",
+    year: "[TBD]",
+    client: "[TBD]",
     role: "Lead Product Designer",
-    tools: ["Figma", "Protopie", "Design Tokens"],
-    excerpt: "A mobile-first banking experience built to make personal finance feel calm instead of chaotic.",
-    showcase: "assets/images/showcase-sample.png", // placeholder — swap per project
-    cover: "assets/images/nova-fintech-cover.svg",
-    gallery: [
-      "assets/images/nova-fintech-01.svg",
-      "assets/images/nova-fintech-02.svg",
-      "assets/images/nova-fintech-03.svg"
-    ],
+    tools: ["Figma"],
+    excerpt: "An AI tool that writes SEO descriptions for every collection in a Shopify store in one click, with roles and approvals so nothing goes live unchecked.",
+    showcase: "assets/images/visicart-showcase.png",
+    cover: "assets/images/visicart-cover.png",
+    gallery: [],
     caseStudy: {
-      outcome: "Cut “where did my money go” support tickets by 38% with a calmer banking app",
+      outcome: "Letting AI write store copy at scale without losing control of it",
       summary: {
-        problem: "Customers could see a balance but not why it changed, so they called support.",
-        role: "Lead product designer: research, interaction design, design system.",
-        team: "1 PM, 4 engineers, 1 researcher",
-        duration: "5 months",
-        result: { value: "-38%", label: "balance-related support tickets in the first quarter" }
+        problem: "Every Shopify collection needs its own SEO description; writing them by hand did not scale, and AI text could not go live unreviewed.",
+        role: "Lead product designer: account structure, permission model, and the generate-and-approve flow.",
+        team: "[TBD]",
+        duration: "[TBD]",
+        result: {
+          value: "1 click",
+          label: "to draft SEO descriptions for any number of collections"
+        }
       },
       problem: {
-        heading: "People saw a balance but not what changed it",
+        heading: "Collection pages stayed thin because writing for each one did not scale",
         text: [
-          "Pending charges, fees and transfers lived on separate screens, so the number on the home screen never matched what people remembered spending.",
-          "Every mismatch turned into a support call."
-        ],
-        stat: { value: "1 in 4", label: "support tickets asked where a balance change came from" }
+          "Collection pages are where a store groups its products, and each one needs its own search-friendly description. A store with dozens of collections means dozens of texts, written one at a time.",
+          "AI could draft them in seconds, which raised a new problem: once the tool opened to the public, several people across several stores could push text to a live storefront with no one checking it."
+        ]
       },
       role: {
-        text: "I led design end to end and worked daily with the PM and engineers. The researcher and I ran the sessions together.",
+        text: "I was the lead designer from the first internal version to the public launch. I designed the account structure, the permission model and the generate-and-approve flow, and worked with [TBD] on the build.",
         constraints: [
-          { label: "Time", text: "5 months, tied to a banking-partner launch date." },
-          { label: "Tech", text: "React Native. The bank’s legacy API limited how fresh balances could be." },
-          { label: "Budget", text: "No dedicated motion engineer; animations had to ship with stock libraries." }
+          {
+            label: "Scope",
+            text: "Built for internal use first, it had to become a multi-store public product without a rebuild."
+          },
+          {
+            label: "Risk",
+            text: "Text publishes to a live storefront, so a bad description is a public mistake, not a draft."
+          },
+          {
+            label: "Tech",
+            text: "Everything had to fit Shopify's collection structure and publish through its API."
+          }
         ]
       },
       findings: {
-        heading: "Users distrusted the total because pending charges were hidden",
-        items: [
-          { headline: "6 of 8 people recalculated their balance by hand", text: "They subtracted pending charges themselves before trusting the number." },
-          { headline: "They scan for what changed, not for the number", text: "Participants looked for movement since yesterday before reading the balance." }
-        ],
-        quote: { text: "I just want to know if I can spend this money today.", who: "Participant 5, usability session" }
-      },
-      decisions: {
-        heading: "Available-to-spend leads, and changes animate in place",
+        heading: "The real risk was not writing speed; it was who could publish",
         items: [
           {
-            title: "Lead with available-to-spend, not the account total",
-            a: { label: "Account total first", note: "Matches the ledger, but hides pending charges.", image: galleryImg("nova-fintech", 1) },
-            b: { label: "Available to spend first", note: "Subtracts pending charges up front.", image: galleryImg("nova-fintech", 2) },
-            chosen: "b",
-            why: "7 of 8 testers read the number correctly, against 3 of 8 with the ledger total."
+            headline: "Owners do not run one store; they run several",
+            text: "Brands and agencies managed multiple stores with different teams, so a one-store account would have broken on the first day of the public launch."
           },
           {
-            title: "Animate balance changes in place instead of refreshing",
-            a: { label: "Full-screen refresh", note: "Simple to build; the change is easy to miss.", image: galleryImg("nova-fintech", 3) },
-            b: { label: "In-place count with delta", note: "The number moves and shows what changed.", image: galleryImg("nova-fintech", 2) },
+            headline: "Writing and publishing are different jobs",
+            text: "Slack and similar tools separate the workspace owner, the people who create, and the people who decide; content teams already worked that way."
+          },
+          {
+            headline: "Every store has its own voice",
+            text: "Generic AI copy sounded the same across stores, so tone had to be set once per store instead of typed into every request."
+          }
+        ]
+      },
+      decisions: {
+        heading: "Organizations own the stores, editors draft, admins publish",
+        items: [
+          {
+            title: "Organizations that contain stores, not one account per store",
+            why: "I borrowed Slack's workspace model so one owner can run every store and grant access per person; the cost was a longer first-time setup.",
             chosen: "b",
-            why: "Testers noticed the change within a second and could explain it."
+            a: {
+              label: "One account per store",
+              note: "Quick to set up, but owners juggle logins and cannot share teammates across stores.",
+              image: "assets/images/visicart-01.png"
+            },
+            b: {
+              label: "Organization, then stores, then people",
+              note: "One login, many stores, access set per person.",
+              image: "assets/images/visicart-02.png"
+            }
+          },
+          {
+            title: "Nothing AI-written goes live without an admin",
+            why: "Approval adds a step between generating and publishing, but it makes a person accountable for every text on a live store.",
+            chosen: "b",
+            a: {
+              label: "Anyone can publish",
+              note: "Fastest path, but no one owns what goes live.",
+              image: "assets/images/visicart-03.png"
+            },
+            b: {
+              label: "Editors generate, admins approve",
+              note: "Speed for drafting, control for publishing.",
+              image: "assets/images/visicart-04.png"
+            }
+          },
+          {
+            title: "Generate in bulk, review one by one",
+            why: "Bulk generation removed the bottleneck; reviewing each result kept the quality check real instead of a single \"approve all\".",
+            chosen: "b",
+            a: {
+              label: "One collection at a time",
+              note: "Full control, but too slow for large catalogs.",
+              image: "assets/images/visicart-05.png"
+            },
+            b: {
+              label: "Bulk generate, individual review",
+              note: "One click for the drafts, a quick check for each.",
+              image: "assets/images/visicart-06.png"
+            }
           }
         ]
       },
       solution: {
-        heading: "One calm screen: what you can spend and what just moved",
+        heading: "From an empty collection to approved copy in three steps",
         items: [
           {
-            caption: "Decision 1: available-to-spend now leads the home screen.",
+            caption: "Decision 3: pick the collections, choose the tone, and draft them all in one click.",
             images: [
-              { src: galleryImg("nova-fintech", 1), label: "Before" },
-              { src: galleryImg("nova-fintech", 2), label: "After" }
+              {
+                src: "assets/images/visicart-06.png"
+              }
             ]
           },
           {
-            caption: "Decision 2: every balance change has a clear before and after.",
-            images: [{ src: galleryImg("nova-fintech", 3) }]
+            caption: "Decision 2: admins approve each draft before it reaches the store.",
+            images: [
+              {
+                src: "assets/images/visicart-04.png"
+              }
+            ]
+          },
+          {
+            caption: "Decision 1: one organization holds every store, with access set per person.",
+            images: [
+              {
+                src: "assets/images/visicart-02.png"
+              }
+            ]
           }
         ]
       },
       results: {
-        heading: "Fewer calls, and the number is finally trusted",
+        heading: "An internal tool became a public product without a rebuild",
         items: [
-          { value: "-38%", label: "balance-related support tickets" },
-          { value: "40k", label: "users in the first quarter" },
-          { value: "7/8", label: "testers read the available balance correctly" }
+          {
+            value: "1 click",
+            label: "to draft SEO copy for any number of collections"
+          },
+          {
+            value: "[TBD]",
+            label: "stores using Visicart"
+          },
+          {
+            value: "[TBD]",
+            label: "[TBD]"
+          }
         ]
       },
       learnings: {
-        heading: "Bring engineering into motion specs earlier",
+        heading: "Design the permission model before the screens",
         items: [
-          "I would write animation specs with engineering from week one; two interactions needed rework.",
-          "I would test with real pending-charge data sooner. Mock data hid the original problem."
+          "I would define roles with engineering in the first week, since every screen depended on who could see and do what.",
+          "I would test the approval queue with a real multi-store team before the public launch, not after."
         ]
       }
     }
