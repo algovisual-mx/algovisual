@@ -8,9 +8,38 @@
     '<path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
     "</svg>";
 
-  // "zigzag" (alternating image/text rows), "accordion" (js/accordion-gallery.js)
-  // or "grid" (the original card grid).
-  var WORK_LAYOUT = "zigzag";
+  // "cards" (two-column cards, whole card is the link), "zigzag" (alternating
+  // image/text rows), "accordion" (js/accordion-gallery.js) or "grid" (the
+  // original image-only card grid).
+  var WORK_LAYOUT = "cards";
+
+  function renderCards(items) {
+    var grid = document.createElement("div");
+    grid.className = "work-cards";
+
+    items.forEach(function (p) {
+      var tags = [p.category].concat((p.tools || []).slice(0, 2));
+
+      var card = document.createElement("a");
+      card.className = "work-card reveal";
+      card.href = "project.html?slug=" + encodeURIComponent(p.slug);
+      card.setAttribute("data-wipe", p.title);
+      card.innerHTML =
+        '<div class="work-card__media">' +
+        '<img class="work-card__img" src="' + (p.showcase || p.cover) + '" alt="" loading="lazy">' +
+        "</div>" +
+        '<div class="work-card__body">' +
+        '<h3 class="work-card__title">' + p.title + "</h3>" +
+        '<p class="work-card__desc">' + p.excerpt + "</p>" +
+        '<ul class="work-card__tags">' +
+        tags.map(function (t) { return "<li>" + t + "</li>"; }).join("") +
+        "</ul>" +
+        "</div>";
+      grid.appendChild(card);
+    });
+
+    return grid;
+  }
 
   function renderZigzag(items) {
     var list = document.createElement("div");
@@ -57,6 +86,12 @@
       head.className = "section-head reveal";
       head.innerHTML = '<div><h2 class="section-title">' + section.title + "</h2></div>";
       sectionEl.appendChild(head);
+
+      if (WORK_LAYOUT === "cards") {
+        sectionEl.appendChild(renderCards(items));
+        root.appendChild(sectionEl);
+        return;
+      }
 
       if (WORK_LAYOUT === "zigzag") {
         sectionEl.appendChild(renderZigzag(items));

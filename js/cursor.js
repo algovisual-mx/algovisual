@@ -51,7 +51,7 @@
     document.addEventListener(
       "mouseover",
       function (e) {
-        var card = e.target.closest(".project-card, .ag-panel, .work-row__media");
+        var card = e.target.closest(".project-card, .ag-panel, .work-row__media, .work-card");
         dot.classList.toggle("is-view", !!card);
       },
       { passive: true }
@@ -60,9 +60,9 @@
     document.addEventListener(
       "mouseout",
       function (e) {
-        var card = e.target.closest(".project-card, .ag-panel, .work-row__media");
+        var card = e.target.closest(".project-card, .ag-panel, .work-row__media, .work-card");
         if (!card) return;
-        var toCard = e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(".project-card, .ag-panel, .work-row__media");
+        var toCard = e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(".project-card, .ag-panel, .work-row__media, .work-card");
         if (toCard === card) return;
         dot.classList.remove("is-view");
       },
