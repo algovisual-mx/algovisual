@@ -34,7 +34,7 @@ const PROJECTS = [
     role: "Lead Product Designer",
     tools: ["Figma"],
     excerpt: "An AI tool that writes SEO descriptions for every collection in a Shopify store in one click, with roles and approvals so nothing goes live unchecked.",
-    showcase: "assets/images/visicart_case_cover.png",
+    showcase: "assets/images/visicart_case_cover.png?v=2",
     cover: "assets/images/visicart-cover.png",
     gallery: [],
     caseStudy: {
