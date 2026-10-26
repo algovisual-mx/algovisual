@@ -319,9 +319,8 @@ main { display: block; }
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  /* var(--fg) so the circle always contrasts the page — pure black would
-     vanish against the dark theme's black background. */
-  background: var(--fg);
+  /* Same purple as the buttons. */
+  background: var(--accent);
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.3);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease, background-color 0.25s ease;
@@ -336,8 +335,8 @@ main { display: block; }
   font-family: var(--font-heading);
   font-size: 0.85rem;
   letter-spacing: 0.02em;
-  color: var(--bg);
-  transition: opacity 0.2s ease, color var(--dur-med) var(--ease);
+  color: #fff;
+  transition: opacity 0.2s ease;
 }
 .cursor-dot.is-view .cursor-dot__label { opacity: 1; }
 

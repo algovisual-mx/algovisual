@@ -612,12 +612,17 @@
   animation-delay: -2.4s;
 }
 
+/* White text panel in both themes, so its text is fixed dark. */
 .work-card__body {
   display: flex;
   flex-direction: column;
   flex: 1;
   padding: clamp(20px, 2.6vw, 30px);
+  background: #fff;
+  color: #0a0a0c;
 }
+.work-card__body .work-card__title { color: #0a0a0c; }
+.work-card__body .work-card__desc { color: rgba(10, 10, 12, 0.64); }
 
 .work-card__title {
   font-size: clamp(1.3rem, 2.2vw, 1.75rem);
@@ -640,8 +645,8 @@
 .work-card__tags li {
   padding: 0.3em 0.85em;
   font-size: 0.8rem;
-  color: var(--fg-muted);
-  border: 1px solid var(--border-strong);
+  color: rgba(10, 10, 12, 0.64);
+  border: 1px solid rgba(10, 10, 12, 0.18);
   border-radius: var(--radius-pill);
 }
 
