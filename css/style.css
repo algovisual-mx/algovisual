@@ -327,6 +327,9 @@ main { display: block; }
   pointer-events: none;
   z-index: 1000;
   opacity: 0;
+  /* Moved with transform (set from js/cursor.js), not left/top, so following
+     the pointer doesn't trigger layout. */
+  will-change: transform;
 }
 
 .cursor-dot.is-active { opacity: 1; }

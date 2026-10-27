@@ -32,8 +32,7 @@
     var pendingX = 0, pendingY = 0;
 
     function render() {
-      dot.style.left = pendingX + "px";
-      dot.style.top = pendingY + "px";
+      dot.style.transform = "translate3d(" + pendingX + "px," + pendingY + "px,0)";
       rafId = null;
     }
 

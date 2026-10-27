@@ -142,7 +142,22 @@
     var lens = { x: 0, y: 0 };
     var frame = { x1: 0, y1: 0, x2: 0, y2: 0, alpha: 0, index: -1 };
 
+    /* getComputedStyle forces a style recalculation, so read it once and
+       only again when the theme, fonts or size change — not every frame. */
+    var styleCache = null;
+    var calm = false;
+    var lastDraw = 0;
+
+    function styles() {
+      if (!styleCache) {
+        var cs = getComputedStyle(container);
+        styleCache = { color: cs.color || "#000000", family: cs.fontFamily || "sans-serif" };
+      }
+      return styleCache;
+    }
+
     function refreshFonts() {
+      styleCache = null;
       layoutKey = "";
       wake();
     }
@@ -153,7 +168,7 @@
     }
 
     function family() {
-      return s.fontFamily || getComputedStyle(container).fontFamily || "sans-serif";
+      return s.fontFamily || styles().family;
     }
 
     function fontFor(size) {
@@ -161,7 +176,7 @@
     }
 
     function palette() {
-      var current = getComputedStyle(container).color || "#000000";
+      var current = styles().color;
       function pick(value) {
         return !value || INHERIT.test(String(value).trim()) ? current : value;
       }
@@ -699,6 +714,12 @@
 
     function tick(now) {
       raf = 0;
+      /* Nothing but the slow idle sweep is moving: 30fps is plenty. */
+      if (calm && now - lastDraw < 30) {
+        raf = requestAnimationFrame(tick);
+        return;
+      }
+      lastDraw = now;
       var dt = Math.min(0.05, Math.max(0.001, (now - last) / 1000));
       last = now;
       var colors = palette();
@@ -897,6 +918,7 @@
         (guideAlpha > 0.005 && guideAlpha < 0.995) ||
         Math.abs(presence - (wantsArea ? 1 : 0)) > 0.002 ||
         (frame.alpha > 0.01 && frame.alpha < 0.99);
+      calm = sweeping && !pointer.inside && dragging < 0 && !moving && kicks.length === 0;
       if ((active || settling) && visible && alive) raf = requestAnimationFrame(tick);
     }
 
@@ -910,6 +932,7 @@
       width = Math.max(1, container.clientWidth);
       height = Math.max(1, container.clientHeight);
       dpr = Math.min(window.devicePixelRatio || 1, 2);
+      styleCache = null;
       canvas.width = Math.round(width * dpr);
       canvas.height = Math.round(height * dpr);
       layoutKey = "";
@@ -982,7 +1005,10 @@
       wake();
     });
     intersectionObserver.observe(container);
-    var themeObserver = new MutationObserver(wake);
+    var themeObserver = new MutationObserver(function () {
+      styleCache = null;
+      wake();
+    });
     [document.documentElement, document.body].forEach(function (node) {
       if (node) themeObserver.observe(node, { attributes: true, attributeFilter: ["class", "style", "data-theme"] });
     });
@@ -994,6 +1020,7 @@
       update: function (next) {
         Object.assign(s, next);
         if (next && next.text != null) container.setAttribute("aria-label", s.text);
+        styleCache = null;
         layoutKey = "";
         wake();
       },
