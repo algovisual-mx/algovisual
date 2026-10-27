@@ -210,14 +210,48 @@ input:focus-visible {
 .nav-logo {
   display: inline-flex;
   align-items: center;
+  gap: 12px;
   flex-shrink: 0;
 }
-.nav-logo img {
-  display: block;
-  height: 50px;
-  width: auto;
-  filter: var(--logo-filter);
-  transition: filter var(--dur-med) var(--ease);
+
+/* Circle avatar — holds initials for now, an <img> later. */
+.nav-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  border: 1px solid var(--border-strong);
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.nav-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-id {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.nav-id__name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+.nav-id__role {
+  font-size: 0.82rem;
+  color: var(--fg-muted);
 }
 
 .nav-link {
@@ -259,6 +293,8 @@ input:focus-visible {
 @media (max-width: 560px) {
   .nav { padding: 14px var(--gutter); gap: 8px; }
   .nav-left { gap: 4px; }
+  .nav-id { display: none; }
+  .nav-avatar { width: 38px; height: 38px; font-size: 0.8rem; }
   .nav-link { padding: 0.55em 0.7em; font-size: 0.72rem; letter-spacing: 0.06em; }
   .nav-cta { padding: 0.55em 0.85em; font-size: 0.72rem; }
 }
