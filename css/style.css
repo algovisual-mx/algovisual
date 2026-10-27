@@ -222,6 +222,7 @@ input:focus-visible {
 .nav-logo:hover {
   background: var(--bg-elev-2);
 }
+.nav-logo:hover .nav-id__role { color: var(--fg-muted); }
 
 /* Circle avatar — solid accent for now, an <img> inside it later. */
 .nav-avatar {
@@ -254,6 +255,7 @@ input:focus-visible {
 .nav-id__role {
   font-size: 0.85rem;
   color: var(--fg-faint);
+  transition: color var(--dur-fast) var(--ease);
 }
 
 .nav-link {
