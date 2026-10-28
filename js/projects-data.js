@@ -35,6 +35,7 @@ const PROJECTS = [
     tools: ["Figma"],
     excerpt: "An AI tool that writes SEO descriptions for every collection in a Shopify store in one click, with roles and approvals so nothing goes live unchecked.",
     showcase: "assets/images/visicart_case_cover.png?v=2",
+    previewVideo: "assets/videos/Thumb_visi.mp4", // looping muted preview shown in the home card instead of the image
     cover: "assets/images/visicart-cover.png",
     gallery: [],
     caseStudy: {

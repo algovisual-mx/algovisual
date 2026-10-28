@@ -612,6 +612,16 @@
   animation-delay: -2.4s;
 }
 
+/* Looping video preview: fills the whole media frame, no float. */
+.work-card__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
 /* White text panel in both themes, so its text is fixed dark. */
 .work-card__body {
   display: flex;

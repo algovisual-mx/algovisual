@@ -26,7 +26,9 @@
       card.setAttribute("data-wipe", p.title);
       card.innerHTML =
         '<div class="work-card__media">' +
-        '<img class="work-card__img" src="' + (p.showcase || p.cover) + '" alt="" loading="lazy">' +
+        (p.previewVideo
+          ? '<video class="work-card__video" src="' + p.previewVideo + '#t=0.001" muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>'
+          : '<img class="work-card__img" src="' + (p.showcase || p.cover) + '" alt="" loading="lazy">') +
         "</div>" +
         '<div class="work-card__body">' +
         '<h3 class="work-card__title">' + p.title + "</h3>" +
@@ -145,6 +147,28 @@
     });
 
     if (window.revealScan) window.revealScan();
+    initPreviewVideos();
+  }
+
+  /* Card preview videos loop silently while on screen and rest on their first
+     frame otherwise (and always, with reduced motion). */
+  function initPreviewVideos() {
+    var videos = document.querySelectorAll(".work-card__video");
+    if (!videos.length) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !("IntersectionObserver" in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var v = entry.target;
+        if (entry.isIntersecting) {
+          var played = v.play();
+          if (played && played.catch) played.catch(function () {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.25 });
+    videos.forEach(function (v) { io.observe(v); });
   }
 
   /* Dot-grid hero background — disabled in favor of the cursor-trail
