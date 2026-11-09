@@ -35,7 +35,7 @@ const PROJECTS = [
     tools: [
       "Figma"
     ],
-    excerpt: "A one-click AI tool for Shopify collection descriptions that had to grow up and work for whole teams.",
+    excerpt: "An AI tool that writes SEO descriptions for Shopify collections in one click, and then had to grow up to work for whole teams.",
     showcase: "assets/images/visicart_case_cover.png?v=2",
     previewVideo: "assets/videos/Thumb_visi.mp4?v=2", // looping muted preview shown in the home card instead of the image
     cover: "assets/images/visicart-cover.png",
@@ -53,7 +53,7 @@ const PROJECTS = [
         }
       },
       problem: {
-        heading: "The one-click tool had to work for a whole team",
+        heading: "A tool built for one click had to work for a whole team",
         text: [
           "Visicart started simple: one click and every collection in a Shopify store got its SEO description. Then we decided it had to work for teams, and that's where the problem started.",
           "A team needs an owner, people with different roles, and sometimes several stores or organizations at once. The hard part wasn't the dashboard layout. It was deciding who gets access to what, and how far that access goes in each store."
@@ -64,7 +64,7 @@ const PROJECTS = [
         constraints: [
           {
             label: "Starting point",
-            text: "It began as a single-user tool, so the team structure had to fit on top without breaking the one-click flow."
+            text: "It began as a tool for one person, so the team structure had to fit on top without slowing down the one click that made it useful."
           },
           {
             label: "Scope",
