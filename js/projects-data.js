@@ -32,128 +32,126 @@ const PROJECTS = [
     year: "[TBD]",
     client: "[TBD]",
     role: "Lead Product Designer",
-    tools: ["Figma"],
-    excerpt: "An AI tool that writes SEO descriptions for every collection in a Shopify store in one click, with roles and approvals so nothing goes live unchecked.",
+    tools: [
+      "Figma"
+    ],
+    excerpt: "A one-click AI tool for Shopify collection descriptions that had to grow up and work for whole teams.",
     showcase: "assets/images/visicart_case_cover.png?v=2",
     previewVideo: "assets/videos/Thumb_visi.mp4?v=2", // looping muted preview shown in the home card instead of the image
     cover: "assets/images/visicart-cover.png",
     gallery: [],
     caseStudy: {
-      outcome: "Letting AI write store copy at scale without losing control of it",
+      outcome: "One click was easy. Then the whole team wanted in.",
       summary: {
-        problem: "Every Shopify collection needs its own SEO description; writing them by hand did not scale, and AI text could not go live unreviewed.",
-        role: "Lead product designer: account structure, permission model, and the generate-and-approve flow.",
-        team: "[TBD]",
+        problem: "Visicart worked great for one person. Teams needed owners, roles and several stores, and nobody could easily tell who had access to what.",
+        role: "Lead product designer: the product, the user flows and how access works.",
+        team: "Stakeholder + [TBD] developers",
         duration: "[TBD]",
         result: {
           value: "1 click",
-          label: "to draft SEO descriptions for any number of collections"
+          label: "still all it takes to generate descriptions, now for a whole team"
         }
       },
       problem: {
-        heading: "Collection pages stayed thin because writing for each one did not scale",
+        heading: "The one-click tool had to work for a whole team",
         text: [
-          "Collection pages are where a store groups its products, and each one needs its own search-friendly description. A store with dozens of collections means dozens of texts, written one at a time.",
-          "AI could draft them in seconds, which raised a new problem: once the tool opened to the public, several people across several stores could push text to a live storefront with no one checking it."
+          "Visicart started simple: one click and every collection in a Shopify store got its SEO description. Then we decided it had to work for teams, and that's where the problem started.",
+          "A team needs an owner, people with different roles, and sometimes several stores or organizations at once. The hard part wasn't the dashboard layout. It was deciding who gets access to what, and how far that access goes in each store."
         ]
       },
       role: {
-        text: "I was the lead designer from the first internal version to the public launch. I designed the account structure, the permission model and the generate-and-approve flow, and worked with [TBD] on the build.",
+        text: "I was the lead designer. I designed the product, the user flows and how the tool works, working directly with the developers and the stakeholder.",
         constraints: [
           {
+            label: "Starting point",
+            text: "It began as a single-user tool, so the team structure had to fit on top without breaking the one-click flow."
+          },
+          {
             label: "Scope",
-            text: "Built for internal use first, it had to become a multi-store public product without a rebuild."
-          },
-          {
-            label: "Risk",
-            text: "Text publishes to a live storefront, so a bad description is a public mistake, not a draft."
-          },
-          {
-            label: "Tech",
-            text: "Everything had to fit Shopify's collection structure and publish through its API."
+            text: "Built from scratch, with the product still taking shape while we designed it."
           }
         ]
       },
       findings: {
-        heading: "The real risk was not writing speed; it was who could publish",
+        heading: "The real problem wasn't giving access. It was seeing it.",
         items: [
           {
-            headline: "Owners do not run one store; they run several",
-            text: "Brands and agencies managed multiple stores with different teams, so a one-store account would have broken on the first day of the public launch."
+            headline: "Access was spread across too many places",
+            text: "When I mapped the flows, checking who could do what meant opening each store one by one."
           },
           {
-            headline: "Writing and publishing are different jobs",
-            text: "Slack and similar tools separate the workspace owner, the people who create, and the people who decide; content teams already worked that way."
+            headline: "Owners think in people, not in settings",
+            text: "An owner asks 'what can Ana do?', not 'what are this store's permissions?'. The structure had to answer that question directly."
           },
           {
-            headline: "Every store has its own voice",
-            text: "Generic AI copy sounded the same across stores, so tone had to be set once per store instead of typed into every request."
+            headline: "More roles meant less clarity",
+            text: "In similar tools, the ones with many custom roles were the hardest to read at a glance. A few clear roles worked better."
           }
         ]
       },
       decisions: {
-        heading: "Organizations own the stores, editors draft, admins publish",
+        heading: "One clear structure, and access you can read at a glance",
         items: [
           {
-            title: "Organizations that contain stores, not one account per store",
-            why: "I borrowed Slack's workspace model so one owner can run every store and grant access per person; the cost was a longer first-time setup.",
+            title: "Organizations contain stores, stores contain people",
+            why: "After reviewing how similar tools organize teams, three levels let one owner run several stores and organizations without mixing them up. The cost was one more setup step for new owners.",
             chosen: "b",
             a: {
-              label: "One account per store",
-              note: "Quick to set up, but owners juggle logins and cannot share teammates across stores.",
+              label: "Each store on its own",
+              note: "Simple, but an owner with five stores manages five separate teams.",
               image: "assets/images/visicart-01.png"
             },
             b: {
               label: "Organization, then stores, then people",
-              note: "One login, many stores, access set per person.",
+              note: "One owner, one place, every store.",
               image: "assets/images/visicart-02.png"
             }
           },
           {
-            title: "Nothing AI-written goes live without an admin",
-            why: "Approval adds a step between generating and publishing, but it makes a person accountable for every text on a live store.",
+            title: "Show access by person, not buried in each store",
+            why: "The owner sees everything one person can do in a single view, instead of opening every store to find out.",
             chosen: "b",
             a: {
-              label: "Anyone can publish",
-              note: "Fastest path, but no one owns what goes live.",
+              label: "Permissions inside each store's settings",
+              note: "Complete, but you have to open every store to get the full picture.",
               image: "assets/images/visicart-03.png"
             },
             b: {
-              label: "Editors generate, admins approve",
-              note: "Speed for drafting, control for publishing.",
+              label: "One view per person",
+              note: "Who they are, which stores, and their role in each.",
               image: "assets/images/visicart-04.png"
             }
           },
           {
-            title: "Generate in bulk, review one by one",
-            why: "Bulk generation removed the bottleneck; reviewing each result kept the quality check real instead of a single \"approve all\".",
+            title: "The current store is always on screen",
+            why: "With several stores and organizations, the worst mistake is generating or approving in the wrong one.",
             chosen: "b",
             a: {
-              label: "One collection at a time",
-              note: "Full control, but too slow for large catalogs.",
+              label: "Switch from a settings menu",
+              note: "Clean, but easy to lose track of where you are.",
               image: "assets/images/visicart-05.png"
             },
             b: {
-              label: "Bulk generate, individual review",
-              note: "One click for the drafts, a quick check for each.",
+              label: "Switcher always in the navigation",
+              note: "You always know which store you're working in.",
               image: "assets/images/visicart-06.png"
             }
           }
         ]
       },
       solution: {
-        heading: "From an empty collection to approved copy in three steps",
+        heading: "Same one click, now with a team behind it",
         items: [
           {
-            caption: "Decision 3: pick the collections, choose the tone, and draft them all in one click.",
+            caption: "Decision 1: an owner sets up the organization, adds stores and invites people with a role.",
             images: [
               {
-                src: "assets/images/visicart-06.png"
+                src: "assets/images/visicart-02.png"
               }
             ]
           },
           {
-            caption: "Decision 2: admins approve each draft before it reaches the store.",
+            caption: "Decision 2: one view shows everyone with access and their role in each store.",
             images: [
               {
                 src: "assets/images/visicart-04.png"
@@ -161,37 +159,38 @@ const PROJECTS = [
             ]
           },
           {
-            caption: "Decision 1: one organization holds every store, with access set per person.",
+            caption: "Decision 3: the store and organization switcher stays in the navigation, so you always know where you are.",
             images: [
               {
-                src: "assets/images/visicart-02.png"
+                src: "assets/images/visicart-06.png"
               }
             ]
           }
         ]
       },
       results: {
-        heading: "An internal tool became a public product without a rebuild",
+        heading: "Still in progress, but the structure already holds",
         items: [
           {
             value: "1 click",
-            label: "to draft SEO copy for any number of collections"
+            label: "still all it takes to generate descriptions"
           },
           {
-            value: "[TBD]",
-            label: "stores using Visicart"
+            value: "3 levels",
+            label: "organization, store and person, managed by one owner"
           },
           {
-            value: "[TBD]",
-            label: "[TBD]"
+            value: "1 view",
+            label: "to see who has access to what"
           }
-        ]
+        ],
+        note: "The project is still in development. I'll add launch results here."
       },
       learnings: {
-        heading: "Design the permission model before the screens",
+        heading: "Decide who sees what before designing any screen",
         items: [
-          "I would define roles with engineering in the first week, since every screen depended on who could see and do what.",
-          "I would test the approval queue with a real multi-store team before the public launch, not after."
+          "I'd map access with the stakeholder before the first screen, because that structure shaped every page after it.",
+          "I'd test the access view with a real team as early as possible; that's where confusion shows up first."
         ]
       }
     }
