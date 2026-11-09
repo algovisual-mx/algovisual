@@ -38,7 +38,7 @@ const PROJECTS = [
     excerpt: "An AI tool that writes SEO descriptions for Shopify collections in one click, and then had to grow up to work for whole teams.",
     showcase: "assets/images/visicart_case_cover.png?v=2",
     previewVideo: "assets/videos/Thumb_visi.mp4?v=2", // looping muted preview shown in the home card instead of the image
-    cover: "assets/images/visicart-cover.png",
+    cover: "assets/images/visicart-cover.jpg?v=1",
     gallery: [],
     caseStudy: {
       outcome: "One click was easy. Then the whole team wanted in.",
