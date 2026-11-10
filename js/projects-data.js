@@ -156,7 +156,7 @@ const PROJECTS = [
             caption: "Decision 2: one view shows everyone with access and their role in each store.",
             images: [
               {
-                src: "assets/images/visicart-solution2.jpg"
+                src: "assets/images/visicart-solution2.jpg?v=2"
               }
             ]
           },
@@ -164,7 +164,7 @@ const PROJECTS = [
             caption: "Decision 3: the store and organization switcher stays in the navigation, so you always know where you are.",
             images: [
               {
-                src: ""
+                src: "assets/images/visicart-solution3.jpg"
               }
             ]
           }
