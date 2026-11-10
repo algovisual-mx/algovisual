@@ -114,12 +114,12 @@ const PROJECTS = [
             a: {
               label: "Permissions inside each store's settings",
               note: "Complete, but you have to open every store to get the full picture.",
-              image: "assets/images/visicart-03.png"
+              image: "assets/images/visicart-option3.jpg"
             },
             b: {
               label: "One view per person",
               note: "Who they are, which stores, and their role in each.",
-              image: "assets/images/visicart-04.png"
+              image: "assets/images/visicart-option4.jpg"
             }
           },
           {
@@ -129,12 +129,12 @@ const PROJECTS = [
             a: {
               label: "Switch from a settings menu",
               note: "Clean, but easy to lose track of where you are.",
-              image: "assets/images/visicart-05.png"
+              image: "assets/images/visicart-option5.jpg"
             },
             b: {
               label: "Switcher always in the navigation",
               note: "You always know which store you're working in.",
-              image: "assets/images/visicart-06.png"
+              image: "assets/images/visicart-option6.jpg"
             }
           }
         ]
@@ -154,7 +154,7 @@ const PROJECTS = [
             caption: "Decision 2: one view shows everyone with access and their role in each store.",
             images: [
               {
-                src: "assets/images/visicart-04.png"
+                src: "assets/images/visicart-option4.jpg"
               }
             ]
           },
@@ -162,7 +162,7 @@ const PROJECTS = [
             caption: "Decision 3: the store and organization switcher stays in the navigation, so you always know where you are.",
             images: [
               {
-                src: "assets/images/visicart-06.png"
+                src: "assets/images/visicart-option6.jpg"
               }
             ]
           }
