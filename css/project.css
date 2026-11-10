@@ -231,7 +231,7 @@
 }
 .cs-decision h3 span {
   display: block;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
   letter-spacing: 0.04em;
   color: var(--accent);
   margin-bottom: 6px;
@@ -417,7 +417,7 @@
 /* Small purple section marker above each heading */
 .cs-eyebrow {
   display: block;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--accent);
