@@ -70,7 +70,6 @@
     return (
       '<div class="container">' +
       '<a class="project-back" href="index.html#' + project.section + '" data-wipe="">' + BACK_ARROW_SVG + " Back to Work</a>" +
-      '<span class="cs-eyebrow">Summary</span>' +
       '<p class="project-kicker">' + project.title + " &middot; " + project.category + " &middot; " + project.year + "</p>" +
       '<h1 class="project-title">' + cs.outcome + "</h1>" +
       '<dl class="cs-summary">' +
@@ -103,7 +102,6 @@
         return "<div><dt>" + c.label + "</dt><dd>" + c.text + "</dd></div>";
       }).join("") +
       "</dl>" +
-      '<p class="cs-meta">' + project.role + " &middot; " + project.client + " &middot; " + project.tools.join(", ") + "</p>" +
       "</div>" +
       "</div>"
     );
