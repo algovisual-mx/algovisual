@@ -99,12 +99,14 @@ const PROJECTS = [
             a: {
               label: "Each store on its own",
               note: "Simple, but an owner with five stores manages five separate teams.",
-              image: "assets/images/visicart-option1.jpg"
+              image: "assets/images/visicart-option1.jpg",
+              fit: "contain"
             },
             b: {
               label: "Organization, then stores, then people",
               note: "One owner, one place, every store.",
-              image: "assets/images/visicart-option2.jpg"
+              image: "assets/images/visicart-option2.jpg",
+              fit: "contain"
             }
           },
           {

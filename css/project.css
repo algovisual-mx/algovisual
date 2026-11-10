@@ -398,9 +398,10 @@
 .cs-compare .cs-figure__media img,
 .cs-solution .cs-figure__media img,
 .cs-body > .cs-figure .cs-figure__media img { height: 100%; object-fit: cover; }
-/* Decision options are diagrams on white: show them whole, never cropped */
-.cs-compare .cs-figure__media { background: #fff; }
-.cs-compare .cs-figure__media img { object-fit: contain; }
+/* Images fill their frame (cover). Diagrams that must not be cropped opt out
+   with fit: "contain" in the project data. */
+.cs-option.is-contain .cs-figure__media { background: #fff; }
+.cs-option.is-contain .cs-figure__media img { object-fit: contain; }
 
 /* Role & constraints, shown under the problem */
 .cs-subsection {

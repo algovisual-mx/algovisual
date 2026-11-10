@@ -135,7 +135,7 @@
             o.image,
             "<strong>" + o.label + ".</strong> " + o.note,
             chosen ? "Chosen" : "Discarded",
-            "cs-option" + (chosen ? " is-chosen" : "")
+            "cs-option" + (chosen ? " is-chosen" : "") + (o.fit === "contain" ? " is-contain" : "")
           );
         }
         return (
