@@ -58,7 +58,7 @@
       '<figure class="cs-figure' + (extraClass ? " " + extraClass : "") + '">' +
       '<div class="cs-figure__media">' +
       (label ? '<span class="cs-figure__tag">' + label + "</span>" : "") +
-      '<img src="' + src + '" alt="' + (caption || label || "") + '" loading="lazy">' +
+      (src ? '<img src="' + src + '" alt="' + (caption || label || "") + '" loading="lazy">' : "") +
       "</div>" +
       (caption ? "<figcaption>" + caption + "</figcaption>" : "") +
       "</figure>"
