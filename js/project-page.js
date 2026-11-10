@@ -226,11 +226,17 @@
           ? '<section class="project-hero cs-section" id="' + s.id + '">' + s.html + "</section>"
           : '<section class="cs-section" id="' + s.id + '"><div class="container cs-inner">' + s.html + "</div></section>";
       }).join("") +
-      '<section class="project-next">' +
+      '<section class="project-next" aria-label="Next case">' +
       '<div class="container">' +
-      '<div class="project-next-label">Next Project</div>' +
-      '<a class="project-next-link" href="project.html?slug=' + next.slug + '" data-wipe="' + next.title + '">' +
-      "<span>" + next.title + "</span>" + ARROW_SVG +
+      '<a class="next-card" href="project.html?slug=' + next.slug + '" data-wipe="' + next.title + '">' +
+      '<div class="next-card__media"><img src="' + next.showcase + '" alt="" loading="lazy"></div>' +
+      '<div class="next-card__body">' +
+      '<span class="next-card__label">Next case</span>' +
+      '<h2 class="next-card__title">' + next.title + "</h2>" +
+      '<p class="next-card__meta">' + next.category + " &middot; " + next.year + "</p>" +
+      '<p class="next-card__excerpt">' + next.excerpt + "</p>" +
+      '<span class="next-card__cta">View case<span class="next-card__arrow">' + ARROW_SVG + "</span></span>" +
+      "</div>" +
       "</a>" +
       "</div>" +
       "</section>";
