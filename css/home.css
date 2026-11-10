@@ -317,29 +317,6 @@
 }
 
 /* ---- CTA band -----------------------------------------------------------*/
-.cta-band {
-  padding-block: clamp(70px, 12vw, 140px);
-  text-align: center;
-}
-
-.cta-title {
-  font-size: clamp(2.2rem, 7vw, 4.6rem);
-  max-width: 20ch;
-  margin-inline: auto;
-}
-
-.cta-title .accent { color: var(--accent); }
-
-.cta-sub {
-  margin: 20px auto 0;
-  max-width: 42ch;
-}
-
-.cta-actions {
-  margin-top: 36px;
-  display: flex;
-  justify-content: center;
-}
 
 /* ---- Accordion gallery (js/accordion-gallery.js) ---------------------------
    Port of the React Bits AccordionGallery. Replaces the project card grid on

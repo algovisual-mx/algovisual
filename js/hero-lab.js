@@ -86,7 +86,7 @@
       reveal: "letter",
       intro: "design",
       introDelay: 1.1,
-      introDuration: 5,
+      introDuration: 4.4,
       ghostName: "Sal",
       specks: 15
     });

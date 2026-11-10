@@ -4,7 +4,7 @@
    dashed vector outline inside a selection frame (specks, size label, drag
    to move, click to kick). Extras on top of the original:
    - intro "design": a ghost Figma-style cursor drags out a text frame,
-     types the word into it and scales it with a corner handle.
+     types the word into it at its final size.
    - rest "outline": letters rest as hollow outlines instead of solid fill.
    - fires "techtext:introend" on the container when the intro is done.
 
@@ -551,10 +551,10 @@
     }
 
     /* ---- "design" intro: a ghost cursor builds the word like in Figma ------
-       1  cursor travels in, 2 drags out a text frame, 3 types the word into it
-       (undersized), 4 drags the corner handle until it fits, 5 lets go and
-       leaves while the frame fades. Returns where everything is at `p`. */
-    var DESIGN_SCALE = 0.86;
+       1  cursor travels in, 2 drags out a text frame to the final size, 3 types
+       the word into it at that size, 4 lets go and leaves while the frame
+       fades. Returns where everything is at `p`. */
+    var DESIGN_SCALE = 1;
     var DESIGN_PAD = 14;
 
     function designState(view, p) {
@@ -578,21 +578,13 @@
         d.y = lerp(ay, sy, v);
         d.frame = { x1: ax, y1: ay, x2: d.x, y2: d.y, alpha: 1 };
         d.pressed = true;
-      } else if (p < 0.72) {
+      } else if (p < 0.8) {
         d.x = sx + Math.sin(p * 18) * 1.5;
         d.y = sy + Math.cos(p * 14) * 1.5;
         d.frame = { x1: ax, y1: ay, x2: sx, y2: sy, alpha: 1 };
         d.handles = true;
-      } else if (p < 0.88) {
-        var w = easeInOut((p - 0.72) / 0.16);
-        d.scale = lerp(DESIGN_SCALE, 1, w);
-        d.x = ax + (bx - ax) * d.scale;
-        d.y = ay + (by - ay) * d.scale;
-        d.frame = { x1: ax, y1: ay, x2: d.x, y2: d.y, alpha: 1 };
-        d.handles = true;
-        d.pressed = true;
       } else {
-        var o = easeInOut((p - 0.88) / 0.12);
+        var o = easeInOut((p - 0.8) / 0.2);
         d.scale = 1;
         d.x = bx + 90 * o;
         d.y = by - 130 * o;
@@ -798,13 +790,13 @@
       });
 
       /* Typing: "type" runs across the whole intro, "design" types inside its
-         0.36–0.70 window. */
+         0.36–0.78 window. */
       var typing = -1;
       var cursorAt = -1;
       var design = introducing && introKind === "design" ? designState(view, progress) : null;
       if (introducing && (introKind === "type" || design)) {
         var from = design ? 0.36 : 0;
-        var span = design ? 0.34 : 0.86;
+        var span = design ? 0.42 : 0.86;
         var local = (progress - from) / span;
         var step = 1 / glyphs.length;
         cursorAt = local < 0 ? -1 : Math.min(glyphs.length - 1, Math.floor(local / step));
@@ -879,8 +871,8 @@
       });
       if (guideAlpha > 0.005) drawLines(view, accent, guideAlpha * 0.6);
 
-      /* The design intro draws the word at DESIGN_SCALE → 1 around the
-         frame's top-left corner. */
+      /* The word is drawn at DESIGN_SCALE around the frame's top-left corner
+         (1 = final size, so nothing is scaled). */
       if (design && design.scale < 1) {
         var m = design.scale;
         ctx.setTransform(m, 0, 0, m, design.ax * dpr * (1 - m), design.ay * dpr * (1 - m));
@@ -904,7 +896,7 @@
 
       if (design) {
         drawDesignFrame(design, accent);
-        if (progress >= 0.34 && progress < 0.72) {
+        if (progress >= 0.34 && progress < 0.8) {
           var steady = typing >= 0 || Math.floor(pulse * 2.2) % 2 === 0;
           if (steady) drawCaret(view, design, cursorAt >= 0 ? glyphs[cursorAt] : null, accent, 1);
         }

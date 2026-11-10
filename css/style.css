@@ -531,30 +531,37 @@ main { display: block; }
 }
 .cursor-dot.is-view .cursor-dot__label { opacity: 1; }
 
-/* ---- Footer ---------------------------------------------------------------*/
-.site-footer {
-  border-top: 1px solid var(--border);
-  padding-block: clamp(48px, 8vw, 88px) 32px;
-  margin-top: clamp(80px, 10vw, 140px);
+/* ---- Contact band (before the footer) ------------------------------------*/
+.cta-band {
+  padding-block: clamp(70px, 12vw, 140px);
+  text-align: center;
 }
 
-.footer-top {
+.cta-title {
+  font-size: clamp(2.2rem, 7vw, 4.6rem);
+  max-width: 20ch;
+  margin-inline: auto;
+}
+
+.cta-title .accent { color: var(--accent); }
+
+.cta-sub {
+  margin: 20px auto 0;
+  max-width: 42ch;
+}
+
+.cta-actions {
+  margin-top: 36px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 32px;
-  margin-bottom: clamp(32px, 6vw, 64px);
-}
-
-.footer-heading {
-  font-size: clamp(2rem, 6vw, 3.6rem);
-  max-width: 14ch;
-}
-
-.footer-links {
-  display: flex;
+  justify-content: center;
   gap: 14px;
+}
+
+/* ---- Footer ---------------------------------------------------------------*/
+.site-footer {
+  padding-block: 0 32px;
+  margin-top: clamp(64px, 9vw, 120px);
 }
 
 .icon-link {
