@@ -92,7 +92,7 @@
 /* Summary (first screen) */
 .cs-summary {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: clamp(28px, 5vw, 48px);
   padding-top: 24px;
@@ -110,17 +110,7 @@
   color: var(--fg);
   line-height: 1.5;
 }
-.cs-summary__result strong {
-  display: block;
-  font-size: clamp(1.4rem, 2.4vw, 1.8rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--accent);
-  margin-bottom: 6px;
-}
-
-@media (max-width: 980px) { .cs-summary { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .cs-summary { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .cs-summary { grid-template-columns: 1fr; } }
 
 .cs-figure.cs-hero { margin-top: clamp(56px, 8vw, 96px); }
 

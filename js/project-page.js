@@ -76,7 +76,6 @@
       '<div><dt>Problem</dt><dd>' + s.problem + "</dd></div>" +
       '<div><dt>My role</dt><dd>' + s.role + "</dd></div>" +
       '<div><dt>Team &amp; timeline</dt><dd>' + s.team + " &middot; " + s.duration + "</dd></div>" +
-      '<div class="cs-summary__result"><dt>Result</dt><dd><strong>' + s.result.value + "</strong> " + s.result.label + "</dd></div>" +
       "</dl>" +
       figure(project.cover, project.title + " — final design", "", "cs-hero").replace(' loading="lazy"', "") +
       "</div>"
