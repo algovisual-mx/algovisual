@@ -90,7 +90,7 @@
 }
 .cs-summary dt,
 .cs-constraints dt {
-  font-size: 0.68rem;
+  font-size: 0.9rem;
   letter-spacing: 0.04em;
   color: var(--fg-faint);
   margin-bottom: 8px;
