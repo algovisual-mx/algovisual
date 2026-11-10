@@ -145,7 +145,7 @@ const PROJECTS = [
         heading: "Same one click, now with a team behind it",
         items: [
           {
-            caption: "Decision 1: an owner sets up the organization, adds stores and invites people with a role.",
+            caption: "1. An owner sets up the organization, adds stores and invites people with a role.",
             images: [
               {
                 src: "assets/images/visicart-solution1.jpg?v=2"
@@ -153,7 +153,7 @@ const PROJECTS = [
             ]
           },
           {
-            caption: "Decision 2: one view shows everyone with access and their role in each store.",
+            caption: "2. One view shows everyone with access and their role in each store.",
             images: [
               {
                 src: "assets/images/visicart-solution2.jpg?v=2"
@@ -161,7 +161,7 @@ const PROJECTS = [
             ]
           },
           {
-            caption: "Decision 3: the store and organization switcher stays in the navigation, so you always know where you are.",
+            caption: "3. The store and organization switcher stays in the navigation, so you always know where you are.",
             images: [
               {
                 src: "assets/images/visicart-solution3.jpg"
@@ -270,14 +270,14 @@ const PROJECTS = [
         heading: "A dashboard where only what needs action is loud",
         items: [
           {
-            caption: "Decision 1: exceptions lead; charts support them.",
+            caption: "1. Exceptions lead; charts support them.",
             images: [
               { src: galleryImg("shift-dashboard", 1), label: "Before" },
               { src: galleryImg("shift-dashboard", 2), label: "After" }
             ]
           },
           {
-            caption: "Decision 2: neutral by default, color only for exceptions.",
+            caption: "2. Neutral by default, color only for exceptions.",
             images: [{ src: galleryImg("shift-dashboard", 3) }]
           }
         ]
@@ -371,14 +371,14 @@ const PROJECTS = [
         heading: "A site that moves like the reel, and loads like a document",
         items: [
           {
-            caption: "Decision 1: stills animate on scroll instead of autoplaying video.",
+            caption: "1. Stills animate on scroll instead of autoplaying video.",
             images: [
               { src: galleryImg("pulse-studio", 1), label: "Before" },
               { src: galleryImg("pulse-studio", 2), label: "After" }
             ]
           },
           {
-            caption: "Decision 2: hand-coded cursor states and transitions.",
+            caption: "2. Hand-coded cursor states and transitions.",
             images: [{ src: galleryImg("pulse-studio", 3) }]
           }
         ]
@@ -472,14 +472,14 @@ const PROJECTS = [
         heading: "A system where each bag tells you where it is from",
         items: [
           {
-            caption: "Decision 1: origin maps replace bean illustrations across all six lines.",
+            caption: "1. Origin maps replace bean illustrations across all six lines.",
             images: [
               { src: galleryImg("terra-branding", 1), label: "Before" },
               { src: galleryImg("terra-branding", 2), label: "After" }
             ]
           },
           {
-            caption: "Decision 2: the custom wordmark across packaging and signage.",
+            caption: "2. The custom wordmark across packaging and signage.",
             images: [{ src: galleryImg("terra-branding", 3) }]
           }
         ]
@@ -573,14 +573,14 @@ const PROJECTS = [
         heading: "One structure, many layouts",
         items: [
           {
-            caption: "Decision 1: the twelve-column grid across text, image and data pages.",
+            caption: "1. The twelve-column grid across text, image and data pages.",
             images: [
               { src: galleryImg("kite-editorial", 1), label: "Before" },
               { src: galleryImg("kite-editorial", 2), label: "After" }
             ]
           },
           {
-            caption: "Decision 2: two typefaces documented in a living style guide.",
+            caption: "2. Two typefaces documented in a living style guide.",
             images: [{ src: galleryImg("kite-editorial", 3) }]
           }
         ]
@@ -674,14 +674,14 @@ const PROJECTS = [
         heading: "A reel that builds, breaks and resolves",
         items: [
           {
-            caption: "Decision 1: three tempo chapters instead of one constant pace.",
+            caption: "1. Three tempo chapters instead of one constant pace.",
             images: [
               { src: galleryImg("aether-motion", 1), label: "Before" },
               { src: galleryImg("aether-motion", 2), label: "After" }
             ]
           },
           {
-            caption: "Decision 2: a restricted palette of light, grain and one warm accent.",
+            caption: "2. A restricted palette of light, grain and one warm accent.",
             images: [{ src: galleryImg("aether-motion", 3) }]
           }
         ]

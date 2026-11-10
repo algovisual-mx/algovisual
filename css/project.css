@@ -254,12 +254,12 @@
 .cs-why strong { color: var(--fg); font-weight: 600; }
 
 /* Solution */
-.cs-solution + .cs-solution { margin-top: clamp(8px, 2vw, 20px); }
+.cs-solution + .cs-solution { margin-top: clamp(32px, 5vw, 56px); }
 .cs-solution__images { display: grid; gap: clamp(14px, 2.4vw, 28px); }
 .cs-solution__images.is-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 680px) { .cs-solution__images.is-pair { grid-template-columns: 1fr; } }
 .cs-solution__caption {
-  margin-top: 14px;
+  margin: 0 0 18px;
   font-size: 1rem;
   color: var(--fg-muted);
   max-width: 62ch;

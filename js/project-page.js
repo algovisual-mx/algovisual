@@ -159,10 +159,10 @@
         var two = it.images.length > 1;
         return (
           '<div class="cs-solution">' +
+          '<p class="cs-solution__caption">' + it.caption + "</p>" +
           '<div class="cs-solution__images' + (two ? " is-pair" : "") + '">' +
           it.images.map(function (im) { return figure(im.src, "", im.label || "", "cs-shot"); }).join("") +
           "</div>" +
-          '<p class="cs-solution__caption">' + it.caption + "</p>" +
           "</div>"
         );
       }).join("") +
