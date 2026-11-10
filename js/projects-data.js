@@ -156,7 +156,7 @@ const PROJECTS = [
             caption: "Decision 2: one view shows everyone with access and their role in each store.",
             images: [
               {
-                src: ""
+                src: "assets/images/visicart-solution2.jpg"
               }
             ]
           },
