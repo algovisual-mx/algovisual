@@ -51,10 +51,14 @@
     });
   });
 
-  /* ---- Mobile menu ----------------------------------------------------------
-     Below 700px the nav collapses to logo + hamburger. The button opens a
-     full-screen panel with the same links, the CTA and the theme switch, and
-     a large close button. Built from the existing nav so every page gets it. */
+  /* ---- Mobile menu (staggered) -------------------------------------------
+     Below 700px the nav collapses to logo + a "Menu +" toggle. Opening it plays
+     the React Bits StaggeredMenu transition, rebuilt without dependencies
+     (CSS transitions + the Web Animations API): two colour layers and the
+     panel slide in one after another, the links rise out of their masks with a
+     slight rotation, the numbers and the contact block fade in, the toggle's
+     label rolls Menu -> Close and its plus turns into a cross. Built from the
+     existing nav so every page gets it. */
   document.addEventListener("DOMContentLoaded", function () {
     var nav = document.querySelector(".nav");
     if (!nav) return;
@@ -65,114 +69,212 @@
     var cta = nav.querySelector(".nav-cta");
     var themeBtn = nav.querySelector("[data-theme-toggle]");
     var mq = window.matchMedia("(max-width: 700px)");
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var QUART_OUT = "cubic-bezier(0.165, 0.84, 0.44, 1)";
+    var CUBIC_INOUT = "cubic-bezier(0.645, 0.045, 0.355, 1)";
+    var CLOSE_MS = 340;
 
-    var ICON_BURGER =
-      '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
-    var ICON_CLOSE =
-      '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>';
+    function toggleInner() {
+      return (
+        '<span class="sm-toggle-textWrap" aria-hidden="true"><span class="sm-toggle-textInner"><span class="sm-toggle-line">Menu</span></span></span>' +
+        '<span class="sm-icon" aria-hidden="true"><span class="sm-icon-line"></span><span class="sm-icon-line sm-icon-line-v"></span></span>'
+      );
+    }
 
+    /* Toggle that lives in the nav bar (opens the menu). */
     var burger = document.createElement("button");
     burger.type = "button";
-    burger.className = "nav-burger";
+    burger.className = "nav-burger sm-toggle";
     burger.setAttribute("aria-label", "Open menu");
     burger.setAttribute("aria-expanded", "false");
     burger.setAttribute("aria-controls", "mobile-menu");
-    burger.innerHTML = ICON_BURGER;
+    burger.innerHTML = toggleInner();
     nav.appendChild(burger);
 
+    /* Overlay */
     var menu = document.createElement("div");
-    menu.className = "mobile-menu";
+    menu.className = "sm";
     menu.id = "mobile-menu";
     menu.setAttribute("role", "dialog");
     menu.setAttribute("aria-modal", "true");
     menu.setAttribute("aria-label", "Menu");
     menu.setAttribute("aria-hidden", "true");
 
-    var top = document.createElement("div");
-    top.className = "mobile-menu__top";
+    var layers = document.createElement("div");
+    layers.className = "sm-prelayers";
+    layers.setAttribute("aria-hidden", "true");
+    layers.innerHTML = '<div class="sm-prelayer"></div><div class="sm-prelayer"></div>';
+    menu.appendChild(layers);
+
+    var header = document.createElement("header");
+    header.className = "sm-header";
     if (logo) {
       var brand = logo.cloneNode(true);
-      brand.classList.add("mobile-menu__brand");
-      top.appendChild(brand);
+      brand.classList.add("sm-brand");
+      header.appendChild(brand);
     }
-    var close = document.createElement("button");
-    close.type = "button";
-    close.className = "mobile-menu__close";
-    close.setAttribute("aria-label", "Close menu");
-    close.innerHTML = ICON_CLOSE;
-    top.appendChild(close);
-    menu.appendChild(top);
+    var toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "sm-toggle sm-toggle--overlay";
+    toggle.setAttribute("aria-label", "Close menu");
+    toggle.innerHTML = toggleInner();
+    header.appendChild(toggle);
+    menu.appendChild(header);
 
-    var list = document.createElement("nav");
-    list.className = "mobile-menu__links";
-    list.setAttribute("aria-label", "Mobile");
-    links.forEach(function (l) {
+    var panel = document.createElement("aside");
+    panel.className = "sm-panel";
+    var inner = document.createElement("div");
+    inner.className = "sm-panel-inner";
+
+    var ul = document.createElement("ul");
+    ul.className = "sm-panel-list";
+    ul.setAttribute("role", "list");
+    links.forEach(function (l, i) {
+      var li = document.createElement("li");
+      li.className = "sm-panel-itemWrap";
       var a = document.createElement("a");
-      a.className = "mobile-menu__link" + (l.getAttribute("data-nav") === page ? " is-active" : "");
+      a.className = "sm-panel-item" + (l.getAttribute("data-nav") === page ? " is-active" : "");
       a.href = l.getAttribute("href");
-      a.textContent = l.textContent;
-      list.appendChild(a);
+      a.style.setProperty("--i", i);
+      a.setAttribute("data-index", i + 1);
+      var label = document.createElement("span");
+      label.className = "sm-panel-itemLabel";
+      label.textContent = l.textContent;
+      a.appendChild(label);
+      li.appendChild(a);
+      ul.appendChild(li);
     });
-    menu.appendChild(list);
+    inner.appendChild(ul);
 
-    var foot = document.createElement("div");
-    foot.className = "mobile-menu__foot";
+    var socials = document.createElement("div");
+    socials.className = "sm-socials";
+    var sTitle = document.createElement("h3");
+    sTitle.className = "sm-socials-title";
+    sTitle.textContent = "Contact";
+    socials.appendChild(sTitle);
+    var sList = document.createElement("ul");
+    sList.className = "sm-socials-list";
+    sList.setAttribute("role", "list");
+    var sIndex = 0;
+    function addSocial(el) {
+      var li = document.createElement("li");
+      li.className = "sm-socials-item";
+      el.style.setProperty("--j", sIndex++);
+      li.appendChild(el);
+      sList.appendChild(li);
+    }
     if (cta) {
       var c = document.createElement("a");
-      c.className = "btn btn-primary mobile-menu__cta";
+      c.className = "sm-socials-link";
       c.href = cta.getAttribute("href");
-      c.innerHTML = cta.innerHTML;
-      foot.appendChild(c);
+      c.textContent = cta.textContent;
+      addSocial(c);
     }
     var themeRow = null;
     if (themeBtn) {
       themeRow = document.createElement("button");
       themeRow.type = "button";
-      themeRow.className = "mobile-menu__theme";
+      themeRow.className = "sm-socials-link";
       themeRow.setAttribute("data-theme-toggle", "");
-      themeRow.innerHTML = themeBtn.innerHTML + '<span class="mobile-menu__theme-label"></span>';
-      foot.appendChild(themeRow);
+      addSocial(themeRow);
     }
-    menu.appendChild(foot);
+    socials.appendChild(sList);
+    inner.appendChild(socials);
+    panel.appendChild(inner);
+    menu.appendChild(panel);
     document.body.appendChild(menu);
 
     function syncThemeLabel() {
-      if (!themeRow) return;
-      themeRow.querySelector(".mobile-menu__theme-label").textContent =
-        currentTheme() === "dark" ? "Switch to light mode" : "Switch to dark mode";
+      if (themeRow) themeRow.textContent = currentTheme() === "dark" ? "Light mode" : "Dark mode";
     }
     syncThemeLabel();
     document.addEventListener("algovisual:themechange", syncThemeLabel);
+
+    /* Toggle animations: label roll + plus -> cross */
+    var textInner = toggle.querySelector(".sm-toggle-textInner");
+    var icon = toggle.querySelector(".sm-icon");
+    var textAnim = null;
+    var iconAnim = null;
+
+    function rollLabel(opening) {
+      var current = opening ? "Menu" : "Close";
+      var target = opening ? "Close" : "Menu";
+      var seq = [current];
+      var last = current;
+      for (var i = 0; i < 3; i++) {
+        last = last === "Menu" ? "Close" : "Menu";
+        seq.push(last);
+      }
+      if (last !== target) seq.push(target);
+      seq.push(target);
+      textInner.innerHTML = seq.map(function (l) { return '<span class="sm-toggle-line">' + l + "</span>"; }).join("");
+      var n = seq.length;
+      var shift = ((n - 1) / n) * 100;
+      if (textAnim) textAnim.cancel();
+      if (reduce) { textInner.style.transform = "translateY(-" + shift + "%)"; return; }
+      textAnim = textInner.animate(
+        [{ transform: "translateY(0)" }, { transform: "translateY(-" + shift + "%)" }],
+        { duration: (0.5 + n * 0.07) * 1000, easing: QUART_OUT, fill: "forwards" }
+      );
+    }
+
+    function spinIcon(opening) {
+      if (iconAnim) iconAnim.cancel();
+      if (reduce) { icon.style.transform = opening ? "rotate(225deg)" : "rotate(0deg)"; return; }
+      iconAnim = icon.animate(
+        [{ transform: opening ? "rotate(0deg)" : "rotate(225deg)" }, { transform: opening ? "rotate(225deg)" : "rotate(0deg)" }],
+        { duration: opening ? 800 : 350, easing: opening ? QUART_OUT : CUBIC_INOUT, fill: "forwards" }
+      );
+    }
 
     function focusables() {
       return [].slice.call(menu.querySelectorAll("a[href], button"));
     }
 
+    var isOpen = false;
+    var closeTimer = 0;
+
     function open() {
+      if (isOpen) return;
+      isOpen = true;
+      clearTimeout(closeTimer);
       syncThemeLabel();
+      menu.classList.remove("is-closing");
       menu.classList.add("is-open");
       menu.setAttribute("aria-hidden", "false");
       burger.setAttribute("aria-expanded", "true");
       root.classList.add("menu-open");
-      close.focus();
+      rollLabel(true);
+      spinIcon(true);
+      toggle.focus({ preventScroll: true });
     }
 
-    function shut(restoreFocus) {
-      if (!menu.classList.contains("is-open")) return;
+    function finishClose(restoreFocus) {
+      menu.classList.remove("is-closing");
+      root.classList.remove("menu-open");
+      if (restoreFocus) burger.focus({ preventScroll: true });
+    }
+
+    function shut(restoreFocus, instant) {
+      if (!isOpen) return;
+      isOpen = false;
       menu.classList.remove("is-open");
       menu.setAttribute("aria-hidden", "true");
       burger.setAttribute("aria-expanded", "false");
-      root.classList.remove("menu-open");
-      if (restoreFocus) burger.focus();
+      rollLabel(false);
+      spinIcon(false);
+      if (instant || reduce) { finishClose(restoreFocus); return; }
+      menu.classList.add("is-closing");
+      closeTimer = setTimeout(function () { finishClose(restoreFocus); }, CLOSE_MS);
     }
 
     burger.addEventListener("click", open);
-    close.addEventListener("click", function () { shut(true); });
+    toggle.addEventListener("click", function () { shut(true); });
     menu.addEventListener("click", function (e) {
       if (e.target.closest("a")) shut(false);
     });
     document.addEventListener("keydown", function (e) {
-      if (!menu.classList.contains("is-open")) return;
+      if (!isOpen) return;
       if (e.key === "Escape") { shut(true); return; }
       if (e.key !== "Tab") return;
       var f = focusables();
@@ -180,7 +282,7 @@
       if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     });
-    var onChange = function () { if (!mq.matches) shut(false); };
+    var onChange = function () { if (!mq.matches) shut(false, true); };
     if (mq.addEventListener) mq.addEventListener("change", onChange);
     else if (mq.addListener) mq.addListener(onChange);
   });
