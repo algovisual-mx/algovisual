@@ -47,13 +47,23 @@
 .cs-head {
   display: grid;
   grid-template-columns: 56px minmax(0, 1fr);
-  gap: 0 16px;
+  gap: 0 24px;
+  align-items: start;
   max-width: 62rem;
 }
 .cs-num {
-  font-size: 0.72rem;
-  color: var(--accent);
-  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 .cs-heading {
   font-size: clamp(1.5rem, 3.2vw, 2.4rem);
@@ -64,7 +74,7 @@
 
 .cs-body {
   margin-top: clamp(24px, 4vw, 40px);
-  padding-left: 72px;
+  padding-left: 80px;
   display: flex;
   flex-direction: column;
   gap: clamp(24px, 4vw, 40px);
@@ -398,6 +408,9 @@
 .cs-compare .cs-figure__media img,
 .cs-solution .cs-figure__media img,
 .cs-body > .cs-figure .cs-figure__media img { height: 100%; object-fit: cover; }
+/* Decision options are diagrams on white: show them whole, never cropped */
+.cs-compare .cs-figure__media { background: #fff; }
+.cs-compare .cs-figure__media img { object-fit: contain; }
 
 /* Role & constraints, shown under the problem */
 .cs-subsection {
