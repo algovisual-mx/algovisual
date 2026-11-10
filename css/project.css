@@ -2,6 +2,9 @@
    Project detail page
    ========================================================================== */
 
+/* Body text on case pages: ~18px */
+:root { --cs-body: 1.125rem; }
+
 .project-hero {
   padding-top: clamp(36px, 6vw, 64px);
   padding-bottom: clamp(40px, 6vw, 64px);
@@ -81,7 +84,7 @@
 }
 
 .cs-copy p {
-  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-size: var(--cs-body);
   color: var(--fg-muted);
   max-width: 62ch;
 }
@@ -102,11 +105,11 @@
 .cs-constraints dt {
   font-size: 0.9rem;
   letter-spacing: 0.04em;
-  color: var(--fg-faint);
+  color: var(--accent);
   margin-bottom: 8px;
 }
 .cs-summary dd {
-  font-size: 0.95rem;
+  font-size: var(--cs-body);
   color: var(--fg);
   line-height: 1.5;
 }
@@ -158,7 +161,7 @@
   color: var(--accent);
 }
 .cs-stat span,
-.cs-results span { font-size: 0.95rem; color: var(--fg-muted); max-width: 30ch; }
+.cs-results span { font-size: var(--cs-body); color: var(--fg-muted); max-width: 30ch; }
 
 .cs-results {
   list-style: none;
@@ -176,7 +179,7 @@
   padding-top: 24px;
   border-top: 1px solid var(--border);
 }
-.cs-constraints dd { font-size: 0.95rem; color: var(--fg); line-height: 1.5; }
+.cs-constraints dd { font-size: var(--cs-body); color: var(--fg); line-height: 1.5; }
 @media (max-width: 780px) { .cs-constraints { grid-template-columns: 1fr; } }
 
 /* Findings */
@@ -189,11 +192,11 @@
 }
 .cs-findings li { max-width: 62ch; }
 .cs-findings h3 {
-  font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+  font-size: clamp(1.3rem, 2vw, 1.55rem);
   line-height: 1.3;
   letter-spacing: -0.015em;
 }
-.cs-findings p { margin-top: 6px; color: var(--fg-muted); font-size: 1rem; }
+.cs-findings p { margin-top: 6px; color: var(--fg-muted); font-size: var(--cs-body); }
 
 .cs-quote {
   margin: 0;
@@ -224,7 +227,7 @@
   border-top: 1px solid var(--border);
 }
 .cs-decision h3 {
-  font-size: clamp(1.1rem, 1.9vw, 1.4rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
   line-height: 1.3;
   letter-spacing: -0.015em;
   max-width: 40ch;
@@ -250,7 +253,7 @@
 .cs-option.is-chosen .cs-figure__tag { background: var(--accent); border-color: var(--accent); color: #fff; }
 .cs-option:not(.is-chosen) .cs-figure__media img { opacity: 0.7; }
 
-.cs-why { margin-top: 12px; font-size: 1rem; color: var(--fg-muted); max-width: 62ch; }
+.cs-why { margin-top: 12px; font-size: var(--cs-body); color: var(--fg-muted); max-width: 62ch; }
 .cs-why strong { color: var(--fg); font-weight: 600; }
 
 /* Solution */
@@ -260,7 +263,7 @@
 @media (max-width: 680px) { .cs-solution__images.is-pair { grid-template-columns: 1fr; } }
 .cs-solution__caption {
   margin: 0 0 18px;
-  font-size: 1rem;
+  font-size: var(--cs-body);
   color: var(--fg-muted);
   max-width: 62ch;
 }
@@ -277,7 +280,7 @@
   position: relative;
   padding-left: 22px;
   color: var(--fg-muted);
-  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-size: var(--cs-body);
 }
 .cs-learnings li::before {
   content: "";
@@ -472,7 +475,7 @@
   border-top: 1px solid var(--border);
 }
 .cs-subhead {
-  font-size: clamp(1.1rem, 1.9vw, 1.4rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
   line-height: 1.3;
   letter-spacing: -0.015em;
   color: var(--fg);
