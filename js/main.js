@@ -70,15 +70,10 @@
     var themeBtn = nav.querySelector("[data-theme-toggle]");
     var mq = window.matchMedia("(max-width: 700px)");
     var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var QUART_OUT = "cubic-bezier(0.165, 0.84, 0.44, 1)";
-    var CUBIC_INOUT = "cubic-bezier(0.645, 0.045, 0.355, 1)";
     var CLOSE_MS = 340;
 
     function toggleInner() {
-      return (
-        '<span class="sm-toggle-textWrap" aria-hidden="true"><span class="sm-toggle-textInner"><span class="sm-toggle-line">Menu</span></span></span>' +
-        '<span class="sm-icon" aria-hidden="true"><span class="sm-icon-line"></span><span class="sm-icon-line sm-icon-line-v"></span></span>'
-      );
+      return '<span class="sm-burger" aria-hidden="true"><span></span><span></span><span></span></span>';
     }
 
     /* Toggle that lives in the nav bar (opens the menu). */
@@ -146,86 +141,45 @@
     });
     inner.appendChild(ul);
 
-    var socials = document.createElement("div");
-    socials.className = "sm-socials";
-    var sTitle = document.createElement("h3");
-    sTitle.className = "sm-socials-title";
-    sTitle.textContent = "Contact";
-    socials.appendChild(sTitle);
-    var sList = document.createElement("ul");
-    sList.className = "sm-socials-list";
-    sList.setAttribute("role", "list");
-    var sIndex = 0;
-    function addSocial(el) {
-      var li = document.createElement("li");
-      li.className = "sm-socials-item";
-      el.style.setProperty("--j", sIndex++);
-      li.appendChild(el);
-      sList.appendChild(li);
+    /* Dark / light mode: its own row under the links */
+    var themeLabel = null;
+    if (themeBtn) {
+      var tli = document.createElement("li");
+      tli.className = "sm-panel-itemWrap sm-panel-itemWrap--theme";
+      var tb = document.createElement("button");
+      tb.type = "button";
+      tb.className = "sm-theme";
+      tb.setAttribute("data-theme-toggle", "");
+      tb.style.setProperty("--i", links.length);
+      var tl = document.createElement("span");
+      tl.className = "sm-panel-itemLabel";
+      tl.innerHTML = themeBtn.innerHTML + '<span class="sm-theme-label"></span>';
+      themeLabel = tl.querySelector(".sm-theme-label");
+      tb.appendChild(tl);
+      tli.appendChild(tb);
+      ul.appendChild(tli);
     }
+
+    /* Let's Talk: full-width button at the bottom */
+    var foot = document.createElement("div");
+    foot.className = "sm-foot";
     if (cta) {
       var c = document.createElement("a");
-      c.className = "sm-socials-link";
+      c.className = "btn btn-primary sm-cta";
       c.href = cta.getAttribute("href");
       c.textContent = cta.textContent;
-      addSocial(c);
+      foot.appendChild(c);
     }
-    var themeRow = null;
-    if (themeBtn) {
-      themeRow = document.createElement("button");
-      themeRow.type = "button";
-      themeRow.className = "sm-socials-link";
-      themeRow.setAttribute("data-theme-toggle", "");
-      addSocial(themeRow);
-    }
-    socials.appendChild(sList);
-    inner.appendChild(socials);
+    inner.appendChild(foot);
     panel.appendChild(inner);
     menu.appendChild(panel);
     document.body.appendChild(menu);
 
     function syncThemeLabel() {
-      if (themeRow) themeRow.textContent = currentTheme() === "dark" ? "Light mode" : "Dark mode";
+      if (themeLabel) themeLabel.textContent = currentTheme() === "dark" ? "Light mode" : "Dark mode";
     }
     syncThemeLabel();
     document.addEventListener("algovisual:themechange", syncThemeLabel);
-
-    /* Toggle animations: label roll + plus -> cross */
-    var textInner = toggle.querySelector(".sm-toggle-textInner");
-    var icon = toggle.querySelector(".sm-icon");
-    var textAnim = null;
-    var iconAnim = null;
-
-    function rollLabel(opening) {
-      var current = opening ? "Menu" : "Close";
-      var target = opening ? "Close" : "Menu";
-      var seq = [current];
-      var last = current;
-      for (var i = 0; i < 3; i++) {
-        last = last === "Menu" ? "Close" : "Menu";
-        seq.push(last);
-      }
-      if (last !== target) seq.push(target);
-      seq.push(target);
-      textInner.innerHTML = seq.map(function (l) { return '<span class="sm-toggle-line">' + l + "</span>"; }).join("");
-      var n = seq.length;
-      var shift = ((n - 1) / n) * 100;
-      if (textAnim) textAnim.cancel();
-      if (reduce) { textInner.style.transform = "translateY(-" + shift + "%)"; return; }
-      textAnim = textInner.animate(
-        [{ transform: "translateY(0)" }, { transform: "translateY(-" + shift + "%)" }],
-        { duration: (0.5 + n * 0.07) * 1000, easing: QUART_OUT, fill: "forwards" }
-      );
-    }
-
-    function spinIcon(opening) {
-      if (iconAnim) iconAnim.cancel();
-      if (reduce) { icon.style.transform = opening ? "rotate(225deg)" : "rotate(0deg)"; return; }
-      iconAnim = icon.animate(
-        [{ transform: opening ? "rotate(0deg)" : "rotate(225deg)" }, { transform: opening ? "rotate(225deg)" : "rotate(0deg)" }],
-        { duration: opening ? 800 : 350, easing: opening ? QUART_OUT : CUBIC_INOUT, fill: "forwards" }
-      );
-    }
 
     function focusables() {
       return [].slice.call(menu.querySelectorAll("a[href], button"));
@@ -244,8 +198,7 @@
       menu.setAttribute("aria-hidden", "false");
       burger.setAttribute("aria-expanded", "true");
       root.classList.add("menu-open");
-      rollLabel(true);
-      spinIcon(true);
+      toggle.classList.add("is-x");
       toggle.focus({ preventScroll: true });
     }
 
@@ -261,8 +214,7 @@
       menu.classList.remove("is-open");
       menu.setAttribute("aria-hidden", "true");
       burger.setAttribute("aria-expanded", "false");
-      rollLabel(false);
-      spinIcon(false);
+      toggle.classList.remove("is-x");
       if (instant || reduce) { finishClose(restoreFocus); return; }
       menu.classList.add("is-closing");
       closeTimer = setTimeout(function () { finishClose(restoreFocus); }, CLOSE_MS);
