@@ -148,7 +148,7 @@ const PROJECTS = [
             caption: "Decision 1: an owner sets up the organization, adds stores and invites people with a role.",
             images: [
               {
-                src: ""
+                src: "assets/images/visicart-solution1.jpg"
               }
             ]
           },

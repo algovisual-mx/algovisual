@@ -94,6 +94,7 @@
     menu.setAttribute("aria-modal", "true");
     menu.setAttribute("aria-label", "Menu");
     menu.setAttribute("aria-hidden", "true");
+    menu.tabIndex = -1;
 
     var layers = document.createElement("div");
     layers.className = "sm-prelayers";
@@ -188,7 +189,7 @@
     var isOpen = false;
     var closeTimer = 0;
 
-    function open() {
+    function open(byKeyboard) {
       if (isOpen) return;
       isOpen = true;
       clearTimeout(closeTimer);
@@ -199,13 +200,15 @@
       burger.setAttribute("aria-expanded", "true");
       root.classList.add("menu-open");
       toggle.classList.add("is-x");
-      toggle.focus({ preventScroll: true });
+      /* Move focus into the dialog; only show a focus ring for keyboard users. */
+      (byKeyboard ? toggle : menu).focus({ preventScroll: true });
     }
 
     function finishClose(restoreFocus) {
       menu.classList.remove("is-closing");
       root.classList.remove("menu-open");
       if (restoreFocus) burger.focus({ preventScroll: true });
+      else if (document.activeElement && document.activeElement !== document.body && document.activeElement.blur) document.activeElement.blur();
     }
 
     function shut(restoreFocus, instant) {
@@ -220,8 +223,9 @@
       closeTimer = setTimeout(function () { finishClose(restoreFocus); }, CLOSE_MS);
     }
 
-    burger.addEventListener("click", open);
-    toggle.addEventListener("click", function () { shut(true); });
+    /* e.detail === 0 means the click came from the keyboard (Enter/Space). */
+    burger.addEventListener("click", function (e) { open(e.detail === 0); });
+    toggle.addEventListener("click", function (e) { shut(e.detail === 0); });
     menu.addEventListener("click", function (e) {
       if (e.target.closest("a")) shut(false);
     });

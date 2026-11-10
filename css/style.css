@@ -347,6 +347,7 @@ input:focus-visible {
     visibility: hidden;
     pointer-events: none;
   }
+  .sm:focus { outline: none; }
   .sm.is-open,
   .sm.is-closing { visibility: visible; }
   .sm.is-open { pointer-events: auto; }
