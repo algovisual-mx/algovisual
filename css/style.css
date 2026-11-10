@@ -65,6 +65,9 @@ html {
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
   --hero-canvas-opacity: 1;
   --logo-filter: invert(1);
+  /* Arrow cursor: purple with a black outline in dark mode. */
+  --cursor-fill: var(--accent);
+  --cursor-stroke: #000000;
 }
 
 :root[data-theme="light"] {
@@ -80,6 +83,8 @@ html {
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   --hero-canvas-opacity: 0.65;
   --logo-filter: none;
+  --cursor-fill: var(--fg);
+  --cursor-stroke: none;
 }
 
 @media (prefers-color-scheme: light) {
@@ -96,6 +101,8 @@ html {
     --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     --hero-canvas-opacity: 0.65;
     --logo-filter: none;
+    --cursor-fill: var(--fg);
+    --cursor-stroke: none;
   }
 }
 
@@ -490,9 +497,14 @@ main { display: block; }
   width: 30px;
   height: 30px;
   max-width: none;
-  /* var(--fg) rather than literal black — a pure-black cursor would vanish
-     against the dark theme's black background. */
-  color: var(--fg);
+  /* Dark mode: purple with a black outline. Light mode: var(--fg). The outline
+     is painted under the fill so it only shows outside the arrow. */
+  fill: var(--cursor-fill);
+  stroke: var(--cursor-stroke);
+  stroke-width: 9;
+  stroke-linejoin: round;
+  paint-order: stroke fill;
+  overflow: visible;
   transform-origin: 0 0;
   transition: opacity 0.2s ease, transform 0.25s var(--ease);
 }
