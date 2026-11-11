@@ -20,6 +20,8 @@
   var ICON_SCOPE =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
     '<path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 12.5 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>';
+  var ARROW_RIGHT =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>';
   var CHEV_L =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>';
   var CHEV_R =
@@ -124,46 +126,23 @@
     );
   }
 
-  function buildFindings(cs) {
-    var f = cs.findings;
-    return (
-      sectionHead("02", "Findings", f.heading) +
-      '<div class="cs-body">' +
-      '<ol class="cs-findings">' +
-      f.items.map(function (it) {
-        return "<li><h3>" + it.headline + "</h3><p>" + it.text + "</p></li>";
-      }).join("") +
-      "</ol>" +
-      (f.quote
-        ? '<blockquote class="cs-quote"><p>“' + f.quote.text + '”</p><cite>' + f.quote.who + "</cite></blockquote>"
-        : "") +
-      "</div>"
-    );
-  }
-
   function buildDecisions(cs) {
     var d = cs.decisions;
+    // The option that was chosen in each decision (its image is the one shown).
+    var chosen = d.items.map(function (it) { return it[it.chosen]; });
     return (
-      sectionHead("03", "Key decisions", d.heading) +
+      sectionHead("02", "Key decisions", d.heading) +
       '<div class="cs-body">' +
-      d.items.map(function (it, i) {
-        function option(o, key) {
-          var chosen = it.chosen === key;
-          return figure(
-            o.image,
-            "<strong>" + o.label + ".</strong> " + o.note,
-            chosen ? "Chosen" : "Discarded",
-            "cs-option" + (chosen ? " is-chosen" : "") + (o.fit === "contain" ? " is-contain" : "")
-          );
-        }
-        return (
-          '<article class="cs-decision">' +
-          '<h3><span>Decision ' + (i + 1) + "</span>" + it.title + "</h3>" +
-          '<p class="cs-why"><strong>Why:</strong> ' + it.why + "</p>" +
-          '<div class="cs-compare">' + option(it.a, "a") + option(it.b, "b") + "</div>" +
-          "</article>"
-        );
+      '<ul class="cs-decisions">' +
+      d.items.map(function (it) {
+        return "<li><strong>" + it.title + ".</strong> " + it.why + "</li>";
       }).join("") +
+      "</ul>" +
+      '<div class="cs-used" style="--n:' + chosen.length + '">' +
+      chosen.map(function (o, i) {
+        return figure(o.image, d.items[i].title, "", "cs-used__item" + (o.fit === "contain" ? " is-contain" : ""));
+      }).join("") +
+      "</div>" +
       "</div>"
     );
   }
@@ -171,7 +150,7 @@
   function buildSolution(cs) {
     var s = cs.solution;
     return (
-      sectionHead("04", "Solution", s.heading) +
+      sectionHead("03", "Solution", s.heading) +
       '<div class="cs-body">' +
       s.items.map(function (it) {
         var n = it.images.length;
@@ -182,14 +161,15 @@
         }
         return (
           '<div class="cs-solution">' +
-          '<p class="cs-solution__caption">' + it.caption + "</p>" +
-          (it.problem
-            ? '<dl class="cs-constraints cs-ps">' +
-              "<div><dt>Problem</dt><dd>" + it.problem + "</dd></div>" +
-              "<div><dt>Solution</dt><dd>" + it.solution + "</dd></div>" +
-              "</dl>"
-            : "") +
+          '<h3 class="cs-solution__title">' + it.caption + "</h3>" +
           (it.text ? '<div class="cs-copy cs-solution__text"><p>' + it.text + "</p></div>" : "") +
+          (it.problem
+            ? '<div class="cs-ps">' +
+              '<div class="cs-ps__box is-problem"><span class="cs-ps__label">Problem</span><p>' + it.problem + "</p></div>" +
+              '<span class="cs-ps__arrow" aria-hidden="true">' + ARROW_RIGHT + "</span>" +
+              '<div class="cs-ps__box is-solution"><span class="cs-ps__label">Solution</span><p>' + it.solution + "</p></div>" +
+              "</div>"
+            : "") +
           (carousel
             ? '<div class="cs-carousel" data-carousel role="group" aria-roledescription="carousel" aria-label="Screens">' +
               '<div class="cs-carousel__track" tabindex="0">' + it.images.map(shot).join("") + "</div>" +
@@ -210,7 +190,7 @@
   function buildResults(cs) {
     var r = cs.results;
     return (
-      sectionHead("05", "Results", r.heading) +
+      sectionHead("04", "Results", r.heading) +
       '<div class="cs-body">' +
       '<ul class="cs-results">' +
       r.items.map(function (it) {
@@ -225,7 +205,7 @@
   function buildLearnings(cs) {
     var l = cs.learnings;
     return (
-      sectionHead("06", "Learnings", l.heading) +
+      sectionHead("05", "Learnings", l.heading) +
       '<div class="cs-body"><ul class="cs-learnings">' + list(l.items, "li") + "</ul></div>"
     );
   }
@@ -243,7 +223,6 @@
     var sections = [
       { id: "summary", label: "Summary", html: buildSummary(project, cs), hero: true },
       { id: "problem", label: "Problem & scope", html: buildProblem(project, cs) },
-      { id: "findings", label: "Findings", html: buildFindings(cs) },
       { id: "decisions", label: "Key decisions", html: buildDecisions(cs) },
       { id: "solution", label: "Solution", html: buildSolution(cs) },
       { id: "results", label: "Results", html: buildResults(cs) },

@@ -8,8 +8,7 @@
      summary    problem / role / team / duration / one metric (first screen)
      problem    what was broken, for whom, what it cost (stat + image optional)
      role       what you did + constraints (shown together with the problem)
-     findings   findings (not methods) + one standout quote
-     decisions  2–3 key decisions: option A vs B, what was chosen, why
+     decisions  2–3 key decisions shown as bullets (title + why); only the chosen option's image is shown
      solution   big visuals, ideally before/after, each tied to a decision
      results    big numbers (or qualitative evidence)
      learnings  2–3 lines: what you'd do differently
@@ -79,23 +78,6 @@ const PROJECTS = [
           {
             label: "Scope",
             text: "The whole product, built from scratch while it was still taking shape."
-          }
-        ]
-      },
-      findings: {
-        heading: "The real problem wasn't giving access. It was seeing it.",
-        items: [
-          {
-            headline: "Access was spread across too many places",
-            text: "When I mapped the flows, checking who could do what meant opening each store one by one."
-          },
-          {
-            headline: "Owners think in people, not in settings",
-            text: "An owner asks 'what can Ana do?', not 'what are this store's permissions?'. The structure had to answer that question directly."
-          },
-          {
-            headline: "More roles meant less clarity",
-            text: "In similar tools, the ones with many custom roles were the hardest to read at a glance. A few clear roles worked better."
           }
         ]
       },
@@ -303,14 +285,6 @@ const PROJECTS = [
           { label: "Users", text: "Dispatchers work on shared wall monitors and small laptops." }
         ]
       },
-      findings: {
-        heading: "Dispatchers need exceptions in five seconds, not charts",
-        items: [
-          { headline: "The first five seconds of a shift decide the day", text: "Dispatchers checked late and idle vehicles first, then everything else." },
-          { headline: "Averages hid the vehicles that mattered", text: "Three of four dispatchers ignored the summary charts entirely." }
-        ],
-        quote: { text: "Don’t show me the average. Show me what’s on fire.", who: "Dispatcher, shadowing session" }
-      },
       decisions: {
         heading: "Exceptions first, charts second",
         items: [
@@ -403,14 +377,6 @@ const PROJECTS = [
           { label: "Tech", text: "Plain HTML, CSS and GSAP so the studio can edit case studies without a build step." },
           { label: "Budget", text: "No custom CMS; content lives in simple files." }
         ]
-      },
-      findings: {
-        heading: "Visitors leave if the reel does not play within seconds",
-        items: [
-          { headline: "Leads come from the first two case studies", text: "Analytics showed most visitors never scrolled past the second project." },
-          { headline: "Heavy motion hurt on mobile", text: "Early prototypes dropped frames on mid-range phones." }
-        ],
-        quote: { text: "If the site doesn’t move like our reel, why would anyone trust us?", who: "Studio director, kickoff" }
       },
       decisions: {
         heading: "Fast first, motion where it earns its place",
@@ -505,14 +471,6 @@ const PROJECTS = [
           { label: "Budget", text: "Two-color print on most packaging." }
         ]
       },
-      findings: {
-        heading: "Shoppers cared about where the coffee came from, not how it looked",
-        items: [
-          { headline: "Origin was the deciding factor in interviews", text: "Customers picked bags by country and farm, then by price." },
-          { headline: "Competitors all used the same visual cues", text: "Kraft paper, earth tones and hand lettering were everywhere on the shelf." }
-        ],
-        quote: { text: "I read the origin first. The rest I skip.", who: "Customer interview" }
-      },
       decisions: {
         heading: "Origin is the system: a map-based identity",
         items: [
@@ -606,14 +564,6 @@ const PROJECTS = [
           { label: "Budget", text: "One designer and an editor with limited layout experience." }
         ]
       },
-      findings: {
-        heading: "The layouts differed, but the structure underneath did not",
-        items: [
-          { headline: "Most pages used three layout patterns", text: "Long text, image-led spreads and data pages covered nearly everything." },
-          { headline: "Inconsistency came from spacing, not from the grid", text: "Margins and baselines were chosen by eye on every page." }
-        ],
-        quote: { text: "I don’t need more freedom. I need to know where things go.", who: "Editor, kickoff" }
-      },
       decisions: {
         heading: "Twelve columns, restrained type, documented rules",
         items: [
@@ -706,14 +656,6 @@ const PROJECTS = [
           { label: "Tech", text: "Generative studies in Cinema 4D, composited in After Effects." },
           { label: "Budget", text: "Studio time only; no external rendering." }
         ]
-      },
-      findings: {
-        heading: "Abstract work holds attention only with clear pacing",
-        items: [
-          { headline: "Early cuts lost viewers after 20 seconds", text: "Every shot had the same energy and the same palette." },
-          { headline: "Tension needs contrast", text: "Quiet frames made the loud ones read as intentional." }
-        ],
-        quote: { text: "It looked amazing in stills and boring in motion.", who: "Studio feedback on the first cut" }
       },
       decisions: {
         heading: "Contrast in pace and palette keeps it moving",
