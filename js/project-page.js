@@ -93,6 +93,16 @@
         ? '<div class="cs-stat"><strong>' + p.stat.value + "</strong><span>" + p.stat.label + "</span></div>"
         : "") +
       (p.image ? figure(p.image.src, p.image.caption) : "") +
+      (r.scope
+        ? '<div class="cs-subsection">' +
+          '<h3 class="cs-subhead">What I designed</h3>' +
+          '<dl class="cs-constraints">' +
+          r.scope.map(function (c) {
+            return "<div><dt>" + c.label + "</dt><dd>" + c.text + "</dd></div>";
+          }).join("") +
+          "</dl>" +
+          "</div>"
+        : "") +
       '<div class="cs-subsection">' +
       '<h3 class="cs-subhead">My role &amp; constraints</h3>' +
       '<div class="cs-copy"><p>' + r.text + "</p></div>" +
@@ -156,12 +166,22 @@
       sectionHead("04", "Solution", s.heading) +
       '<div class="cs-body">' +
       s.items.map(function (it) {
-        var two = it.images.length > 1;
+        var n = it.images.length;
+        var layout = it.stack ? " is-stack" : n === 2 ? " is-pair" : n > 2 ? " is-grid" : "";
         return (
           '<div class="cs-solution">' +
           '<p class="cs-solution__caption">' + it.caption + "</p>" +
-          '<div class="cs-solution__images' + (two ? " is-pair" : "") + '">' +
-          it.images.map(function (im) { return figure(im.src, "", im.label || "", "cs-shot"); }).join("") +
+          (it.problem
+            ? '<dl class="cs-constraints cs-ps">' +
+              "<div><dt>Problem</dt><dd>" + it.problem + "</dd></div>" +
+              "<div><dt>Solution</dt><dd>" + it.solution + "</dd></div>" +
+              "</dl>"
+            : "") +
+          (it.text ? '<div class="cs-copy cs-solution__text"><p>' + it.text + "</p></div>" : "") +
+          '<div class="cs-solution__images' + layout + '">' +
+          it.images.map(function (im) {
+            return figure(im.src, "", im.label || "", "cs-shot" + (im.fit === "contain" ? " is-contain" : ""));
+          }).join("") +
           "</div>" +
           "</div>"
         );

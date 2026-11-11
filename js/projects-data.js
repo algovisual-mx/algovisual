@@ -44,7 +44,7 @@ const PROJECTS = [
       outcome: "One click for a single person was easy. Then we scaled it.",
       summary: {
         problem: "Visicart is a one click AI tool for Shopify collection descriptions, originally intended as an internal tool, but once it worked, the tool had to be built to support multiple users in teams and organizations and provide them with a seamless flow.",
-        role: "Lead product designer: the product, the user flows and how the product works.",
+        role: "Lead product designer: the whole product, from the first login to a published description.",
         team: "Stakeholder + Developers",
         duration: "8 months",
         result: {
@@ -55,12 +55,21 @@ const PROJECTS = [
       problem: {
         heading: "A tool built for one click had to work for a whole team",
         text: [
-          "Visicart started simple: one click and every collection in a Shopify store got its SEO description. Then we decided it had to work for teams, and that's where the problem started.",
+          "Visicart connects to a Shopify store, syncs its collections and uses AI to write an SEO title and meta description for each one. A person adds keywords, picks a tone and length, checks the result against a Google preview, and publishes it back to the store.",
+          "It started simple: one click and every collection in a Shopify store got its SEO description. Then we decided it had to work for teams, and that's where the problem started.",
           "A team needs an owner, people with different roles, and sometimes several stores or organizations at once. The hard part wasn't the dashboard layout. It was deciding who gets access to what, and how far that access goes in each store."
         ]
       },
       role: {
-        text: "I was the lead designer. I designed the product, the user flows and how the tool works, working directly with the developers and the stakeholder.",
+        text: "I was the lead designer and I designed the whole product end to end: every screen, flow and state in this case, working directly with the developers and the stakeholder.",
+        scope: [
+          { label: "Sign-up and login", text: "Email and code sign-up, login with a password or a code, and Google sign-in." },
+          { label: "Organization setup", text: "A guided start: name the organization, connect a Shopify store and invite the team." },
+          { label: "AI connection", text: "Bring your own AI provider: choose it, add the API key, verify it and switch later." },
+          { label: "Dashboard and collections", text: "Store stats, the collections table with status filters, and bulk actions with progress states." },
+          { label: "Review panel", text: "Keywords, tone and length, the generated text and a Google preview, ending in reject, approve or publish." },
+          { label: "Teams and settings", text: "Roles, per-store access, invites, brand voice, organization settings and notifications." }
+        ],
         constraints: [
           {
             label: "Starting point",
@@ -68,7 +77,7 @@ const PROJECTS = [
           },
           {
             label: "Scope",
-            text: "Built from scratch, with the product still taking shape while we designed it."
+            text: "The whole product, built from scratch while it was still taking shape."
           }
         ]
       },
@@ -142,30 +151,84 @@ const PROJECTS = [
         ]
       },
       solution: {
-        heading: "Same one click, now with a team behind it",
+        heading: "Same one click, now a complete product for teams",
         items: [
           {
-            caption: "1. An owner sets up the organization, adds stores and invites people with a role.",
+            caption: "1. Sign-up and login",
+            problem: "Getting in had to be fast, for new accounts and for people returning to an organization.",
+            solution: "Email first, then a code. No password to create.",
+            text: "New users enter their email and confirm it with a six-digit code, or continue with Google. Returning users log in with a password, or choose \u201cI prefer a code\u201d. The code field has empty and filled states, and a way to send a new code if it doesn\u2019t arrive.",
             images: [
-              {
-                src: "assets/images/visicart-solution1.jpg?v=2"
-              }
+              { src: "assets/images/visicart-flow-signup-1.jpg" },
+              { src: "assets/images/visicart-flow-signup-2.jpg" },
+              { src: "assets/images/visicart-flow-signup-3.jpg" },
+              { src: "assets/images/visicart-flow-signup-4.jpg" }
             ]
           },
           {
-            caption: "2. One view shows everyone with access and their role in each store.",
+            caption: "2. Setting up an organization and connecting a store",
+            problem: "A new owner had to go from an empty account to a working workspace without help.",
+            solution: "A short guided setup: name it, connect Shopify, invite the team.",
+            text: "The setup explains what an organization is and asks for agreement to the terms. Then the owner names it, connects a Shopify store with its URL and an Admin API token, and invites teammates with a role and a store. The connection shows its progress while the store syncs, and each step can be skipped and finished later.",
             images: [
-              {
-                src: "assets/images/visicart-solution2.jpg?v=2"
-              }
+              { src: "assets/images/visicart-flow-org-1.jpg" },
+              { src: "assets/images/visicart-flow-org-2.jpg" },
+              { src: "assets/images/visicart-flow-org-3.jpg" },
+              { src: "assets/images/visicart-flow-org-4.jpg" }
             ]
           },
           {
-            caption: "3. The store and organization switcher stays in the navigation, so you always know where you are.",
+            caption: "3. Connecting your own AI provider",
+            problem: "Descriptions are written by an AI model, so every organization has to connect one and understand how it is billed.",
+            solution: "Choose a provider, paste a key, verify it, done.",
+            text: "The owner picks a provider (Claude by Anthropic is recommended, OpenAI and Google are also available), follows a three-step guide to create an API key, then pastes it and chooses a model. The key is verified before it is saved, with clear verifying and error states, and the screen says that usage is billed to the provider account. A banner and a sidebar warning show until AI is connected, with a different version for editors, and the provider can be switched later from the organization settings.",
+            stack: true,
             images: [
-              {
-                src: "assets/images/visicart-solution3.jpg"
-              }
+              { src: "assets/images/visicart-flow-ai-1.jpg" },
+              { src: "assets/images/visicart-flow-ai-2.jpg" }
+            ]
+          },
+          {
+            caption: "4. Dashboard, collections and settings",
+            problem: "Teams manage many collections at once and need to see where each one stands.",
+            solution: "Status at a glance, filters, and actions for one collection or all of them.",
+            text: "The dashboard counts the collections that were synced, generated, approved and published, and lists recent activity. The collections table filters by status (pending, generated, approved, published, rejected) and has one action per row. Sync store, Generate all and Publish approved handle the bulk work, with progress screens while they run. Each store also keeps its own brand voice, description length and meta description setting.",
+            images: [
+              { src: "assets/images/visicart-flow-generate-1.jpg", fit: "contain" },
+              { src: "assets/images/visicart-flow-generate-2.jpg", fit: "contain" },
+              { src: "assets/images/visicart-flow-settings-1.jpg", fit: "contain" },
+              { src: "assets/images/visicart-flow-settings-2.jpg", fit: "contain" }
+            ]
+          },
+          {
+            caption: "5. Reviewing, approving and publishing",
+            problem: "AI writes the draft, but a person has to trust it before it goes live on a store.",
+            solution: "A review panel with keywords, controls and a Google preview before anything is published.",
+            text: "Inside each collection, the person adds keywords from Semrush or writes their own, sets the tone and length, and generates a title and meta description. A character counter and a Google search preview show how the result will look. Then they reject, approve or publish it, and a message confirms what happened.",
+            stack: true,
+            images: [
+              { src: "assets/images/visicart-flow-generate-3.jpg" }
+            ]
+          },
+          {
+            caption: "6. Teams, roles and access",
+            problem: "Owners needed to give people access without opening every store.",
+            solution: "Organization, then stores, then people, with one view per person.",
+            text: "An owner sets up the organization, adds stores and invites people with a role. One view shows everyone with access and their role in each store. Editing a person, assigning stores and removing or deleting users and stores each have their own panel and confirmation.",
+            stack: true,
+            images: [
+              { src: "assets/images/visicart-solution1.jpg?v=2" },
+              { src: "assets/images/visicart-solution2.jpg?v=2" }
+            ]
+          },
+          {
+            caption: "7. Always knowing which store you\u2019re in",
+            problem: "With several stores and organizations, it is easy to act in the wrong one.",
+            solution: "The store and organization switcher stays in the navigation.",
+            text: "The organization menu and the store dropdown live in the navigation, next to notifications, so the current store and organization are always on screen. Switching never goes through a settings menu.",
+            stack: true,
+            images: [
+              { src: "assets/images/visicart-solution3.jpg" }
             ]
           }
         ]

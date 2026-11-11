@@ -494,3 +494,17 @@
   margin-bottom: 10px;
 }
 .project-hero .cs-eyebrow { margin-bottom: 6px; }
+
+/* ---- Solution flows (problem -> solution, short text, several screens) ---- */
+.cs-ps { grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0 0 18px; }
+@media (max-width: 780px) { .cs-ps { grid-template-columns: 1fr; } }
+.cs-solution__text { margin-bottom: 22px; }
+.cs-solution__images.is-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 680px) { .cs-solution__images.is-grid { grid-template-columns: 1fr; } }
+.cs-solution__images.is-grid .cs-figure__media { aspect-ratio: 3 / 2; }
+.cs-solution__images.is-grid .cs-figure:last-child:nth-child(odd) { grid-column: 1 / -1; }
+.cs-solution__images.is-grid .cs-figure:last-child:nth-child(odd) .cs-figure__media { aspect-ratio: 16 / 9; }
+.cs-solution__images.is-stack .cs-figure__media { aspect-ratio: auto; }
+.cs-solution__images.is-stack .cs-figure__media img { height: auto; }
+.cs-shot.is-contain .cs-figure__media { background: #fff; }
+.cs-shot.is-contain .cs-figure__media img { object-fit: contain; }
