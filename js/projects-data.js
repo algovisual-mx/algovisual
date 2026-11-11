@@ -44,7 +44,8 @@ const PROJECTS = [
       outcome: "One click for a single person was easy. Then we scaled it.",
       summary: {
         problem: "Visicart is a one click AI tool for Shopify collection descriptions, originally intended as an internal tool, but once it worked, the tool had to be built to support multiple users in teams and organizations and provide them with a seamless flow.",
-        role: "Lead product designer: the whole product, from the first login to a published description.",
+        role: "Lead designer",
+        scope: "The whole product, end to end \u00b7 8 months",
         team: "Stakeholder + Developers",
         duration: "8 months",
         result: {
@@ -184,8 +185,8 @@ const PROJECTS = [
             text: "The owner picks a provider (Claude by Anthropic is recommended, OpenAI and Google are also available), follows a three-step guide to create an API key, then pastes it and chooses a model. The key is verified before it is saved, with clear verifying and error states, and the screen says that usage is billed to the provider account. A banner and a sidebar warning show until AI is connected, with a different version for editors, and the provider can be switched later from the organization settings.",
             stack: true,
             images: [
-              { src: "assets/images/visicart-flow-ai-1.jpg" },
-              { src: "assets/images/visicart-flow-ai-2.jpg" }
+              { src: "assets/images/visicart-flow-ai-1.jpg", fit: "contain" },
+              { src: "assets/images/visicart-flow-ai-2.jpg", fit: "contain" }
             ]
           },
           {

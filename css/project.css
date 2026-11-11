@@ -97,7 +97,7 @@
 /* Summary (first screen) */
 .cs-summary {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 24px;
   margin-top: clamp(28px, 5vw, 48px);
   padding-top: 24px;
@@ -115,7 +115,38 @@
   color: var(--fg);
   line-height: 1.5;
 }
-@media (max-width: 680px) { .cs-summary { grid-template-columns: 1fr; } }
+.cs-summary dd { max-width: 70ch; }
+
+/* Role + scope row under the problem, each with a leading icon */
+.cs-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.cs-fact {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  column-gap: 16px;
+  align-items: start;
+}
+.cs-fact__icon {
+  grid-row: 1 / span 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  color: var(--accent);
+}
+.cs-fact__icon svg { width: 20px; height: 20px; }
+.cs-facts dt { font-size: 1rem; letter-spacing: 0.04em; color: var(--accent); margin-bottom: 4px; }
+.cs-facts dd { margin: 0; font-size: var(--cs-body); color: var(--fg); line-height: 1.5; }
+@media (max-width: 680px) { .cs-facts { grid-template-columns: 1fr; } }
 
 .cs-figure.cs-hero { margin-top: clamp(56px, 8vw, 96px); }
 
@@ -150,7 +181,8 @@
   border: 1px solid var(--border-strong);
 }
 
-.cs-hero .cs-figure__media { border-radius: var(--radius-lg); }
+.cs-hero .cs-figure__media { border-radius: var(--radius-lg); max-height: 480px; }
+.cs-hero .cs-figure__media img { max-height: 480px; object-fit: cover; }
 
 /* Big stat / results */
 .cs-stat { display: flex; flex-direction: column; gap: 6px; }
@@ -499,12 +531,51 @@
 .cs-ps { grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0 0 18px; }
 @media (max-width: 780px) { .cs-ps { grid-template-columns: 1fr; } }
 .cs-solution__text { margin-bottom: 22px; }
-.cs-solution__images.is-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@media (max-width: 680px) { .cs-solution__images.is-grid { grid-template-columns: 1fr; } }
-.cs-solution__images.is-grid .cs-figure__media { aspect-ratio: 3 / 2; }
-.cs-solution__images.is-grid .cs-figure:last-child:nth-child(odd) { grid-column: 1 / -1; }
-.cs-solution__images.is-grid .cs-figure:last-child:nth-child(odd) .cs-figure__media { aspect-ratio: 16 / 9; }
 .cs-solution__images.is-stack .cs-figure__media { aspect-ratio: auto; }
 .cs-solution__images.is-stack .cs-figure__media img { height: auto; }
 .cs-shot.is-contain .cs-figure__media { background: #fff; }
 .cs-shot.is-contain .cs-figure__media img { object-fit: contain; }
+
+/* ---- Carousel (several screens in one flow) ---- */
+.cs-carousel__track {
+  display: flex;
+  gap: clamp(14px, 2.4vw, 28px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border-radius: var(--radius-md);
+}
+.cs-carousel__track::-webkit-scrollbar { display: none; }
+.cs-carousel__track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.cs-carousel__track .cs-figure { flex: 0 0 100%; scroll-snap-align: start; min-width: 0; }
+.cs-carousel .cs-figure__media { aspect-ratio: 16 / 9; }
+.cs-carousel__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.cs-carousel__count {
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+.cs-carousel__btns { display: flex; gap: 10px; }
+.cs-carousel__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease);
+}
+.cs-carousel__btn svg { width: 20px; height: 20px; }
+.cs-carousel__btn:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); color: #fff; }
+.cs-carousel__btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.cs-carousel__btn:disabled { opacity: 0.35; cursor: default; }

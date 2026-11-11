@@ -14,6 +14,17 @@
     '<path d="M17 7L7 17M7 17H15M7 17V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
     "</svg>";
 
+  var ICON_ROLE =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>';
+  var ICON_SCOPE =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 12.5 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>';
+  var CHEV_L =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>';
+  var CHEV_R =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>';
+
   function getSlug() {
     var params = new URLSearchParams(window.location.search);
     return params.get("slug");
@@ -65,6 +76,10 @@
     );
   }
 
+  function fact(icon, label, text) {
+    return '<div class="cs-fact"><span class="cs-fact__icon">' + icon + "</span><dt>" + label + "</dt><dd>" + text + "</dd></div>";
+  }
+
   function buildSummary(project, cs) {
     var s = cs.summary;
     return (
@@ -74,8 +89,10 @@
       '<h1 class="project-title">' + cs.outcome + "</h1>" +
       '<dl class="cs-summary">' +
       '<div><dt>Problem</dt><dd>' + s.problem + "</dd></div>" +
-      '<div><dt>My role</dt><dd>' + s.role + "</dd></div>" +
-      '<div><dt>Team &amp; timeline</dt><dd>' + s.team + " &middot; " + s.duration + "</dd></div>" +
+      "</dl>" +
+      '<dl class="cs-facts">' +
+      fact(ICON_ROLE, "Role", s.role) +
+      fact(ICON_SCOPE, "Scope", s.scope || s.team + " &middot; " + s.duration) +
       "</dl>" +
       figure(project.cover, project.title + " — final design", "", "cs-hero").replace(' loading="lazy"', "").replace(/<figcaption>.*?<\/figcaption>/, "") +
       "</div>"
@@ -86,7 +103,7 @@
     var p = cs.problem;
     var r = cs.role;
     return (
-      sectionHead("01", "Problem &amp; role", p.heading) +
+      sectionHead("01", "Problem &amp; scope", p.heading) +
       '<div class="cs-body">' +
       '<div class="cs-copy">' + list(p.text, "p") + "</div>" +
       (p.stat
@@ -103,15 +120,6 @@
           "</dl>" +
           "</div>"
         : "") +
-      '<div class="cs-subsection">' +
-      '<h3 class="cs-subhead">My role &amp; constraints</h3>' +
-      '<div class="cs-copy"><p>' + r.text + "</p></div>" +
-      '<dl class="cs-constraints">' +
-      r.constraints.map(function (c) {
-        return "<div><dt>" + c.label + "</dt><dd>" + c.text + "</dd></div>";
-      }).join("") +
-      "</dl>" +
-      "</div>" +
       "</div>"
     );
   }
@@ -167,7 +175,11 @@
       '<div class="cs-body">' +
       s.items.map(function (it) {
         var n = it.images.length;
+        var carousel = n > 1 && !it.images.some(function (im) { return im.label; });
         var layout = it.stack ? " is-stack" : n === 2 ? " is-pair" : n > 2 ? " is-grid" : "";
+        function shot(im) {
+          return figure(im.src, "", im.label || "", "cs-shot" + (im.fit === "contain" ? " is-contain" : ""));
+        }
         return (
           '<div class="cs-solution">' +
           '<p class="cs-solution__caption">' + it.caption + "</p>" +
@@ -178,11 +190,16 @@
               "</dl>"
             : "") +
           (it.text ? '<div class="cs-copy cs-solution__text"><p>' + it.text + "</p></div>" : "") +
-          '<div class="cs-solution__images' + layout + '">' +
-          it.images.map(function (im) {
-            return figure(im.src, "", im.label || "", "cs-shot" + (im.fit === "contain" ? " is-contain" : ""));
-          }).join("") +
-          "</div>" +
+          (carousel
+            ? '<div class="cs-carousel" data-carousel role="group" aria-roledescription="carousel" aria-label="Screens">' +
+              '<div class="cs-carousel__track" tabindex="0">' + it.images.map(shot).join("") + "</div>" +
+              '<div class="cs-carousel__bar">' +
+              '<span class="cs-carousel__count" aria-live="polite"></span>' +
+              '<div class="cs-carousel__btns">' +
+              '<button type="button" class="cs-carousel__btn" data-dir="-1" aria-label="Previous screen">' + CHEV_L + "</button>" +
+              '<button type="button" class="cs-carousel__btn" data-dir="1" aria-label="Next screen">' + CHEV_R + "</button>" +
+              "</div></div></div>"
+            : '<div class="cs-solution__images' + layout + '">' + it.images.map(shot).join("") + "</div>") +
           "</div>"
         );
       }).join("") +
@@ -225,7 +242,7 @@
     // id, scrollspy label, inner HTML
     var sections = [
       { id: "summary", label: "Summary", html: buildSummary(project, cs), hero: true },
-      { id: "problem", label: "Problem & role", html: buildProblem(project, cs) },
+      { id: "problem", label: "Problem & scope", html: buildProblem(project, cs) },
       { id: "findings", label: "Findings", html: buildFindings(cs) },
       { id: "decisions", label: "Key decisions", html: buildDecisions(cs) },
       { id: "solution", label: "Solution", html: buildSolution(cs) },
@@ -261,8 +278,49 @@
       "</div>" +
       "</section>";
 
+    initCarousels();
     initScrollSpy();
     if (window.revealScan) window.revealScan();
+  }
+
+  /* ---- Carousels ------------------------------------------------------------
+     Scroll-snap track (swipe works natively) + prev/next buttons, a 01 / 04
+     counter and arrow keys when the track is focused. */
+  function initCarousels() {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    [].slice.call(document.querySelectorAll("[data-carousel]")).forEach(function (root) {
+      var track = root.querySelector(".cs-carousel__track");
+      var slides = [].slice.call(track.children);
+      var count = root.querySelector(".cs-carousel__count");
+      var prev = root.querySelector('[data-dir="-1"]');
+      var next = root.querySelector('[data-dir="1"]');
+
+      function pad(n) { return (n < 10 ? "0" : "") + n; }
+      function index() {
+        var step = slides.length > 1 ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth;
+        return Math.max(0, Math.min(slides.length - 1, Math.round(track.scrollLeft / step)));
+      }
+      function update() {
+        var i = index();
+        count.textContent = pad(i + 1) + " / " + pad(slides.length);
+        prev.disabled = i === 0;
+        next.disabled = i === slides.length - 1;
+      }
+      function go(dir) {
+        var i = Math.max(0, Math.min(slides.length - 1, index() + dir));
+        track.scrollTo({ left: slides[i].offsetLeft - slides[0].offsetLeft, behavior: reduce ? "auto" : "smooth" });
+      }
+
+      prev.addEventListener("click", function () { go(-1); });
+      next.addEventListener("click", function () { go(1); });
+      track.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") { e.preventDefault(); go(-1); }
+        else if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
+      });
+      track.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update);
+      update();
+    });
   }
 
   /* ---- Scrollspy ------------------------------------------------------------
