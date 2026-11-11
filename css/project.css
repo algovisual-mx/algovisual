@@ -103,7 +103,7 @@
 }
 .cs-summary dt,
 .cs-constraints dt {
-  font-size: clamp(1rem, 1.5vw, 1.125rem); /* same as the section eyebrows */
+  font-size: 1rem;
   letter-spacing: 0.04em;
   color: var(--accent);
   margin-bottom: 8px;
