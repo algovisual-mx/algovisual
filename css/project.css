@@ -579,3 +579,9 @@
 .cs-carousel__btn:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); color: #fff; }
 .cs-carousel__btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .cs-carousel__btn:disabled { opacity: 0.35; cursor: default; }
+
+/* Images never get wider than 820px (hero, solution screens, single figures) */
+.cs-figure.cs-hero,
+.cs-carousel,
+.cs-solution__images,
+.cs-body > .cs-figure { max-width: 820px; }
