@@ -119,34 +119,30 @@
 
 /* Role + scope row under the problem, each with a leading icon */
 .cs-facts {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   margin-top: 28px;
   padding-top: 24px;
   border-top: 1px solid var(--border);
 }
 .cs-fact {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr);
-  column-gap: 16px;
-  align-items: start;
+  grid-template-columns: 24px 4.5rem minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: center;
 }
 .cs-fact__icon {
-  grid-row: 1 / span 2;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid var(--border-strong);
   color: var(--accent);
 }
-.cs-fact__icon svg { width: 20px; height: 20px; }
-.cs-facts dt { font-size: 1rem; letter-spacing: 0.04em; color: var(--accent); margin-bottom: 4px; }
+.cs-fact__icon svg { width: 24px; height: 24px; }
+.cs-facts dt { font-size: 1rem; letter-spacing: 0.04em; color: var(--accent); }
 .cs-facts dd { margin: 0; font-size: var(--cs-body); color: var(--fg); line-height: 1.5; }
-@media (max-width: 680px) { .cs-facts { grid-template-columns: 1fr; } }
+@media (max-width: 680px) {
+  .cs-fact { grid-template-columns: 24px minmax(0, 1fr); row-gap: 2px; align-items: start; }
+  .cs-fact dd { grid-column: 2; }
+}
 
 .cs-figure.cs-hero { margin-top: clamp(56px, 8vw, 96px); }
 
