@@ -77,7 +77,7 @@
       '<div><dt>My role</dt><dd>' + s.role + "</dd></div>" +
       '<div><dt>Team &amp; timeline</dt><dd>' + s.team + " &middot; " + s.duration + "</dd></div>" +
       "</dl>" +
-      figure(project.cover, project.title + " — final design", "", "cs-hero").replace(' loading="lazy"', "") +
+      figure(project.cover, project.title + " — final design", "", "cs-hero").replace(' loading="lazy"', "").replace(/<figcaption>.*?<\/figcaption>/, "") +
       "</div>"
     );
   }

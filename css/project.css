@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* Body text on case pages: ~18px */
-:root { --cs-body: 1.125rem; }
+:root { --cs-body: 1.125rem; --cs-eyebrow-size: clamp(1rem, 1.5vw, 1.125rem); }
 
 .project-hero {
   padding-top: clamp(36px, 6vw, 64px);
@@ -67,6 +67,8 @@
   font-weight: 700;
   line-height: 1;
   font-variant-numeric: tabular-nums;
+  /* centre the circle on the eyebrow line (eyebrow line-height = 1.5 × its font size) */
+  margin-top: calc(var(--cs-eyebrow-size) * 0.75 - 28px);
 }
 .cs-heading {
   font-size: clamp(1.5rem, 3.2vw, 2.4rem);
@@ -295,7 +297,7 @@
 
 @media (max-width: 780px) {
   .cs-head { grid-template-columns: 1fr; gap: 8px; }
-  .cs-num { padding-top: 0; }
+  .cs-num { margin-top: 0; }
   .cs-body { padding-left: 0; }
 }
 
@@ -484,7 +486,7 @@
 /* Small purple section marker above each heading */
 .cs-eyebrow {
   display: block;
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-size: var(--cs-eyebrow-size);
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--accent);
