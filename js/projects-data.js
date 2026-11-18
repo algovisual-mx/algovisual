@@ -347,7 +347,7 @@ const PROJECTS = [
             text: "Before drawing any screen I mapped the flow with the stakeholders: sign in, set up the extraction, watch it run, review the results, and browse and organize them later. Team management sits apart, for the people who run the workspace.",
             stack: true,
             images: [
-              { src: "assets/images/pageplucker-flow.jpg?v=2" }
+              { src: "assets/images/pageplucker-flow.jpg?v=3" }
             ]
           },
           {
@@ -368,7 +368,7 @@ const PROJECTS = [
             text: "Every page belongs to a folder and every folder belongs to a project. That path is the backbone of the product: the sidebar opens projects and folders in place, every row shows its path, and breadcrumbs and permissions use the same levels. Each page keeps all its files together: the Google Doc, the Word and text versions, the PDFs and the images.",
             stack: true,
             images: [
-              { src: "assets/images/pageplucker-structure.jpg" },
+              { src: "assets/images/pageplucker-structure.jpg?v=2" },
               { src: "assets/images/pageplucker-s-sidebar.jpg" }
             ]
           },
