@@ -244,6 +244,199 @@ const PROJECTS = [
     }
   },
   {
+    slug: "page-plucker",
+    title: "Page Plucker",
+    category: "UI/UX Design",
+    section: "product",
+    year: "2026",
+    client: "Internal tool",
+    role: "Lead Product Designer",
+    tools: [
+      "Figma"
+    ],
+    excerpt: "An internal tool that turns hundreds of web pages into organized documents, PDFs and images, with a file structure that keeps everything findable.",
+    showcase: "assets/images/pageplucker_case_cover.png",
+    cover: "assets/images/pageplucker-cover.jpg",
+    gallery: [],
+    caseStudy: {
+      outcome: "Hundreds of pages, extracted and organized without copy and paste.",
+      summary: {
+        problem: "Getting the content of a website into editable documents meant copying every text into a doc by hand and saving every image one by one. Page Plucker is an internal tool that extracts pages into cloud documents, text files, PDFs and image folders. The real design challenge was not the extraction, it was how to organize and show everything that comes out.",
+        role: "Lead designer",
+        scope: "Workflows, design system and the full product · 6 months",
+        team: "Stakeholders + Developers",
+        duration: "6 months",
+        result: {
+          value: "6 months",
+          label: "from the first flow to the full product"
+        }
+      },
+      problem: {
+        heading: "One page produces a pile of files. Hundreds of pages bury you.",
+        text: [
+          "Before this tool there was no tool. To get a page into a document, someone opened it, copied the text, pasted it into a doc and then downloaded each image, one at a time. Doing that for a whole website could take days.",
+          "Extracting a page is easy to describe. What comes out is the hard part: for every page there is a Google Doc, a Word file, a text file, several PDFs and often dozens of images. Multiply that by hundreds of pages and several projects, and the output becomes the product.",
+          "The challenge was deciding how all of it is stored, named and shown, so anyone can find a file in seconds and a team can work in the same space without stepping on each other."
+        ]
+      },
+      role: {
+        text: "I was the lead designer. I defined the workflows, built the design system and designed every screen, working side by side with the developers and the stakeholders.",
+        scope: [
+          { label: "Workflows", text: "The end-to-end flow, from signing in to finding a file, defined with the stakeholders and the developers." },
+          { label: "Plucker Tool", text: "One screen to choose the destination, add the URLs and pick what to extract, plus the progress and results views." },
+          { label: "File structure", text: "Projects, folders and pages, shown the same way in the sidebar, the lists and every file path." },
+          { label: "Document lists", text: "A list and a grid view built for hundreds of documents, with a badge for every format." },
+          { label: "Team Manager", text: "Users, roles, per-person permissions and an activity log of every extraction." },
+          { label: "Design system", text: "Colors, type, icons and a component library, so every screen is built from the same pieces." }
+        ]
+      },
+      decisions: {
+        heading: "One structure for every file, and one row for every page",
+        items: [
+          {
+            title: "Set up an extraction on one screen, in three numbered steps",
+            why: "Project, URLs and formats are all visible at once, so nothing hides behind a wizard. Someone who has done it once can do it again without reading anything.",
+            chosen: "b",
+            a: {
+              label: "A step-by-step wizard",
+              note: "One decision per screen: simple the first time, slow every time after."
+            },
+            b: {
+              label: "Three steps, one screen",
+              note: "Everything visible, and the destination is always explicit.",
+              image: "assets/images/pageplucker-decision1.jpg"
+            }
+          },
+          {
+            title: "One row per page, with every format visible",
+            why: "Each page can have a Google Doc, a Word file, a text file, PDFs and images. Badges on a single row, with counts for PDFs and images and a disabled look for what is missing, make a page readable at a glance.",
+            chosen: "b",
+            a: {
+              label: "A separate list for each file type",
+              note: "Tidy per type, but one page ends up scattered across five places."
+            },
+            b: {
+              label: "One row, all the formats",
+              note: "The page is the unit, and its files hang from it.",
+              image: "assets/images/pageplucker-decision2.jpg"
+            }
+          },
+          {
+            title: "Project, then folder, then page, everywhere",
+            why: "The same three levels appear in the sidebar, in the lists, in every file path and in the permissions. Learn it once and you can find anything, even with hundreds of documents.",
+            chosen: "b",
+            a: {
+              label: "Free tags and a flat list",
+              note: "Flexible, but it falls apart as soon as the volume grows."
+            },
+            b: {
+              label: "A fixed hierarchy",
+              note: "Always the same path, always in the same place.",
+              image: "assets/images/pageplucker-decision3.jpg"
+            }
+          }
+        ]
+      },
+      solution: {
+        heading: "A tool that gets the content out, and a structure that keeps it findable",
+        items: [
+          {
+            caption: "1. The whole journey, from sign-in to a file in the right folder",
+            problem: "Without a tool, every step was manual: open a page, copy its text, paste it into a doc and save each image.",
+            solution: "One linear flow with a single place to start and a clear end state.",
+            text: "Before drawing any screen I mapped the flow with the stakeholders: sign in, set up the extraction, watch it run, review the results, and browse and organize them later. Team management sits apart, for the people who run the workspace.",
+            stack: true,
+            images: [
+              { src: "assets/images/pageplucker-flow.jpg" }
+            ]
+          },
+          {
+            caption: "2. Setting up an extraction",
+            problem: "Starting a large extraction had to be quick, and it had to say where everything would be saved.",
+            solution: "Destination first, then the URLs, then the formats, all on one screen.",
+            text: "The Plucker Tool puts three numbered steps on a single screen. The person picks or creates the project and folder where the files will live, pastes any number of URLs, one per line, and chooses what to extract: text as a Google Doc, a Word file or a TXT, images and PDFs. A progress screen shows what the engine is doing, and when it finishes the results appear right away.",
+            images: [
+              { src: "assets/images/pageplucker-s-plucker.jpg" },
+              { src: "assets/images/pageplucker-s-progress.jpg" },
+              { src: "assets/images/pageplucker-s-ready.jpg" }
+            ]
+          },
+          {
+            caption: "3. A file structure that mirrors the work",
+            problem: "One extraction creates many files per page, and hundreds of pages would bury them.",
+            solution: "A fixed hierarchy of project, folder and page, shown the same way everywhere.",
+            text: "Every page belongs to a folder and every folder belongs to a project. That path is the backbone of the product: the sidebar opens projects and folders in place, every row shows its path, and breadcrumbs and permissions use the same levels. Each page keeps all its files together: the Google Doc, the Word and text versions, the PDFs and the images.",
+            stack: true,
+            images: [
+              { src: "assets/images/pageplucker-structure.jpg" },
+              { src: "assets/images/pageplucker-s-sidebar.jpg" }
+            ]
+          },
+          {
+            caption: "4. Browsing hundreds of documents",
+            problem: "A single page can have five kinds of files, and a team can have hundreds of pages.",
+            solution: "One row or card per page, a badge for every format and a clear complete or incomplete state.",
+            text: "My Projects opens with the numbers that matter, then the projects, the most recent folders and the latest plucked documents. Documents can be shown as a list or a grid, sorted, selected in bulk and downloaded together. Each one carries badges for its Google Doc, Word and text versions, and counts for its PDFs and images. A format that wasn’t extracted looks disabled, and a page that is still empty offers a Pluck action instead.",
+            images: [
+              { src: "assets/images/pageplucker-s-projects-list.jpg" },
+              { src: "assets/images/pageplucker-s-projects-grid.jpg" },
+              { src: "assets/images/pageplucker-s-states.jpg" }
+            ]
+          },
+          {
+            caption: "5. Teams, roles and permissions",
+            problem: "With many people extracting into shared projects, owners needed to control access and see what was happening.",
+            solution: "Roles, per-project access, per-person permissions and an activity log.",
+            text: "The Team Manager lists everyone with a role (owner, admin or member), a status and the projects they can reach. A panel of toggles sets what each person can do: create projects, delete projects, invite users and edit content. The activity view totals extractions, items and storage, and logs every extraction by user, project and URL.",
+            images: [
+              { src: "assets/images/pageplucker-s-team-users.jpg" },
+              { src: "assets/images/pageplucker-s-team-perms.jpg" },
+              { src: "assets/images/pageplucker-s-team-activity.jpg" }
+            ]
+          },
+          {
+            caption: "6. A design system built for the product",
+            problem: "Many screens share the same rows, badges and navigation, and they had to look and behave the same.",
+            solution: "A shared component library in Figma, with every state defined.",
+            text: "Before the screens multiplied I built the component library: logo and icons, a purple base with an orange accent for actions, Montserrat and Red Hat Display for type, and components for navigation, document rows and cards, badges, buttons, inputs, progress and toasts. They come with their states (complete, incomplete, hover, disabled), list and grid variants, and mobile versions. Developers built from it, and new screens were assembled instead of drawn.",
+            images: [
+              { src: "assets/images/pageplucker-ds-1.jpg" },
+              { src: "assets/images/pageplucker-ds-2.jpg" },
+              { src: "assets/images/pageplucker-ds-3.jpg" },
+              { src: "assets/images/pageplucker-ds-4.jpg" }
+            ]
+          }
+        ]
+      },
+      results: {
+        heading: "A repeatable way to turn web pages into organized files",
+        items: [
+          {
+            value: "8x faster",
+            label: "to extract a page’s text and images, compared with doing it by hand"
+          },
+          {
+            value: "1,200+ pages",
+            label: "plucked by the team in the first two months"
+          },
+          {
+            value: "3 levels",
+            label: "project, folder and page, the same everywhere"
+          }
+        ],
+        note: "Figures come from internal use of the tool."
+      },
+      learnings: {
+        heading: "Design what comes out before designing how it goes in",
+        items: [
+          "Once the structure of projects, folders and pages was settled, every screen got simpler. I’d fix it with the stakeholders before drawing anything else.",
+          "A page with no images is as common as one with 23, so empty and partial states deserve as much attention as the full ones.",
+          "I’d test lists with realistic volumes from the start. A row that works with ten documents can break with a thousand."
+        ]
+      }
+    }
+  },
+  {
     slug: "shift-dashboard",
     title: "Shift Analytics Dashboard",
     category: "Product Design",
