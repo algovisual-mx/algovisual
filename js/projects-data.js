@@ -256,7 +256,7 @@ const PROJECTS = [
     ],
     excerpt: "An internal tool that turns hundreds of web pages into organized documents, PDFs and images, with a file structure that keeps everything findable.",
     showcase: "assets/images/pageplucker_case_cover.png",
-    cover: "assets/images/pageplucker-cover.jpg",
+    cover: "assets/images/pageplucker-header.jpeg",
     gallery: [],
     caseStudy: {
       outcome: "Hundreds of pages, extracted and organized without copy and paste.",
