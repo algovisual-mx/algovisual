@@ -347,7 +347,7 @@ const PROJECTS = [
             text: "Before drawing any screen I mapped the flow with the stakeholders: sign in, set up the extraction, watch it run, review the results, and browse and organize them later. Team management sits apart, for the people who run the workspace.",
             stack: true,
             images: [
-              { src: "assets/images/pageplucker-flow.jpg" }
+              { src: "assets/images/pageplucker-flow.jpg?v=2" }
             ]
           },
           {
