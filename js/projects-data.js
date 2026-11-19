@@ -36,7 +36,7 @@ const PROJECTS = [
     ],
     excerpt: "A one-click AI tool for Shopify collection descriptions that had to grow up and work for whole teams.",
     showcase: "assets/images/visicart_case_cover.png?v=2",
-    previewVideo: "assets/videos/Thumb_visi.mp4?v=2", // looping muted preview shown in the home card instead of the image
+    previewVideo: "assets/videos/Thumb_visi.mp4?v=3", // looping muted preview shown in the home card instead of the image
     cover: "assets/images/visicart-cover.jpg?v=1",
     gallery: [],
     caseStudy: {
