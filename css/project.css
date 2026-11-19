@@ -556,3 +556,13 @@
 .cs-used .cs-figure__media img { height: 100%; object-fit: cover; }
 .cs-used__item.is-contain .cs-figure__media { background: #fff; }
 .cs-used__item.is-contain .cs-figure__media img { object-fit: contain; }
+
+/* Inline links inside case copy (e.g. "Open the prototype") */
+.cs-copy a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: opacity 0.2s ease;
+}
+.cs-copy a:hover { opacity: 0.8; }

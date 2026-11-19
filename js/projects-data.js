@@ -438,6 +438,185 @@ const PROJECTS = [
     }
   },
   {
+    slug: "mibici",
+    title: "MiBici",
+    category: "UI/UX Design",
+    section: "product",
+    year: "2025",
+    client: "Personal project",
+    role: "UX Researcher & Designer",
+    tools: [
+      "Figma"
+    ],
+    excerpt: "A personal redesign of Guadalajara’s public bike-share app, rethinking how people find a station, unlock a bike, pay and return it.",
+    showcase: "assets/images/mibici_case_cover.png",
+    cover: "assets/images/mibici-header.jpg",
+    gallery: [],
+    caseStudy: {
+      outcome: "Redesigning MiBici so renting a bike feels simple and reliable.",
+      summary: {
+        problem: "MiBici is Guadalajara’s public bike system, and it works well on the street. The app does not. Unreliable payments, confusing navigation and scattered information make a simple ride feel bumpy and wear down trust in the service. I redesigned it as a personal project, from research to a high-fidelity prototype.",
+        role: "UX researcher & visual designer",
+        scope: "Research, flows, wireframes and a high-fidelity prototype · June 2025",
+        team: "Solo",
+        duration: "June 2025",
+        result: {
+          value: "End to end",
+          label: "from research to a high-fidelity prototype"
+        }
+      },
+      problem: {
+        heading: "The bikes are easy to use. The app isn’t.",
+        text: [
+          "When I moved to Guadalajara, MiBici became part of my daily routine: you take a bike at one station, ride across town and leave it at another. It’s practical, affordable and sustainable. In theory, it’s simple.",
+          "The app doesn’t keep up with the service. A few failed unlocks, a payment that didn’t go through on the first try and that nagging worry when returning a bike (did it lock, or will I be charged extra?) made me think it could be much friendlier. Interviews and store reviews showed it wasn’t bad luck: payments are unreliable, navigation is confusing and the essential information is scattered.",
+          "The goal was a more intuitive, reliable app that streamlines registration and payment, brings the key information together and removes friction from the core tasks, so people trust the service and use it more."
+        ],
+        image: {
+          src: "assets/images/mibici-station.jpg",
+          caption: "A MiBici station in Guadalajara."
+        }
+      },
+      role: {
+        text: "This was a personal project, so I did every part of it: I used the app in real situations, interviewed riders, mapped the flows and took the design from paper sketches to a clickable high-fidelity prototype in Figma.",
+        scope: [
+          { label: "Field research", text: "I used the app on a rushed Monday morning, a relaxed Sunday ride and under the midday sun with 15% battery." },
+          { label: "Interviews and reviews", text: "Frequent and occasional riders, plus the reviews on the App Store and Google Play." },
+          { label: "Personas and user flow", text: "Two personas, and a flow chart of every path from onboarding to returning a bike or changing a plan." },
+          { label: "Sketches and wireframes", text: "Paper sketches first, then a fast low-fidelity prototype in Figma to test layout and flow." },
+          { label: "High-fidelity design", text: "A cleaner interface with clear iconography and colors that convey security and ease of use." },
+          { label: "Prototype and feedback", text: "A clickable prototype that I showed to people who ride MiBici regularly." }
+        ]
+      },
+      decisions: {
+        heading: "Put the map first, and reassure people at every step",
+        items: [
+          {
+            title: "Make the map the main screen, with availability you can read at a glance",
+            why: "Many people couldn’t tell where to start, and some preferred Google Maps because it was faster. Opening on a live map, with bikes and docks color-coded and shown as large numbers, answers the first question before anyone has to look for it.",
+            chosen: "b",
+            a: {
+              label: "The map as one section among many",
+              note: "Leaves the first question unanswered."
+            },
+            b: {
+              label: "A live map as the home screen",
+              note: "Availability is visible before any tap.",
+              image: "assets/images/mibici-decision1.jpg"
+            }
+          },
+          {
+            title: "One floating button to start a trip, straight to the QR scan",
+            why: "Many users didn’t understand how to start a trip. A permanent “New trip” button in the center of the navigation opens the scanner directly, so the most common action is always one tap away.",
+            chosen: "b",
+            a: {
+              label: "Start a trip from a menu or a station screen",
+              note: "Extra taps for the task people do most."
+            },
+            b: {
+              label: "A floating New trip button",
+              note: "Always visible, always the same place.",
+              image: "assets/images/mibici-decision2.jpg"
+            }
+          },
+          {
+            title: "Say what is happening: the clock, the limit and the charge",
+            why: "The anxiety was never about riding. It was about the unknowns: how much time is left, what happens after 30 minutes, whether the bike locked and when the card gets charged. The timer, the limit reminder, the return confirmation and the plan’s charge date answer each one on screen.",
+            chosen: "b",
+            a: {
+              label: "Minimal screens with less text",
+              note: "Cleaner, but it leaves people guessing."
+            },
+            b: {
+              label: "Explicit status and reminders",
+              note: "Every uncertain moment gets a clear message.",
+              image: "assets/images/mibici-decision3.jpg"
+            }
+          }
+        ]
+      },
+      solution: {
+        heading: "A map you can trust and a trip you can follow",
+        items: [
+          {
+            caption: "1. Listening before drawing",
+            problem: "The app felt slow and unintuitive, and I couldn’t tell whether that was just me.",
+            solution: "Use it in real situations, interview riders and read the reviews, then turn the patterns into two personas.",
+            text: "I used the app in different situations and talked with people who just want to get from A to B without paying for a taxi. The same things kept coming up: the app is slow and unintuitive, it isn’t clear how to start a trip, bike and dock availability is confusing, and some riders open Google Maps instead because it is faster. Behind all of it were a cluttered interface, a poorly functional map, no real-time information and unnecessary steps for common actions. From that I defined two personas: Mariana, who commutes every day and wants speed and clarity, and Roberto, who rides on weekends and needs step-by-step guidance.",
+            images: [
+              { src: "assets/images/mibici-s-current.jpg" },
+              { src: "assets/images/mibici-s-personas.jpg" }
+            ]
+          },
+          {
+            caption: "2. Mapping the whole journey",
+            problem: "Essential actions were scattered, and common tasks took unnecessary steps.",
+            solution: "One user flow from onboarding to returning a bike, with support, account and plan changes as branches.",
+            text: "Before drawing screens I mapped what a person actually does: sign in or register, find a station on the map, unlock a bike, ride, return it, then take another or finish. Help, account and station search hang off the home map. Seeing it all in one picture made it clear which screens the design needed and which steps could go.",
+            stack: true,
+            images: [
+              { src: "assets/images/mibici-flow.jpg" }
+            ]
+          },
+          {
+            caption: "3. From paper to wireframes",
+            problem: "I needed to know whether the layout and the flow worked before investing in visual design.",
+            solution: "Sketch on paper, then build a quick low-fidelity prototype in Figma.",
+            text: "The sketches explored four ideas: the map as the main screen, clear availability with colors and large numbers, a simpler rental and return flow with confirmation screens, and trip information together with account status. I moved them into rough wireframes in Figma, kept deliberately plain, to check the overall experience quickly. <a href=\"https://www.figma.com/proto/PJZMogZNCpwXe5VZ8o7nIP/MiBici\" target=\"_blank\" rel=\"noopener\">Open the low-fidelity prototype</a>.",
+            images: [
+              { src: "assets/images/mibici-s-sketches.jpg" },
+              { src: "assets/images/mibici-s-wireframes.jpg" }
+            ]
+          },
+          {
+            caption: "4. Finding and unlocking a bike",
+            problem: "Availability was confusing, the map was slower than Google Maps and there was no obvious way to start a trip.",
+            solution: "A live map as the home screen, color-coded availability and one floating button that goes straight to the QR scan.",
+            text: "The high-fidelity design keeps the same structure with a cleaner look, clear iconography and colors that convey security and ease of use. Signing in is a short form with a clear way to register instead. The map is the home screen, and every station shows its bikes and free docks with color codes and big numbers. Tapping a station gives the distance and starts navigation. The New trip button sits in the middle of the bar and opens the QR scanner, with an Unlock button and Help one tap away. <a href=\"https://www.figma.com/proto/PJZMogZNCpwXe5VZ8o7nIP/MiBici\" target=\"_blank\" rel=\"noopener\">Open the final prototype</a>.",
+            images: [
+              { src: "assets/images/mibici-s-find.jpg" }
+            ]
+          },
+          {
+            caption: "5. Riding, returning and paying",
+            problem: "Riders weren’t sure whether the bike had locked, how much time was left or when they would be charged.",
+            solution: "A clear timer and limit, an explicit return step, and membership, balance and history one tap away.",
+            text: "During the ride a countdown and a progress bar show the time left, with a plain reminder that trips are limited to 30 minutes and that returning the bike to any station avoids extra charges. The ride ends with an explicit “I’ve returned the bike” step. The account section shows the plan, the date and amount of the next charge and the card used, with a clear way to change the plan or cancel it, while history and balance stay one tap away.",
+            images: [
+              { src: "assets/images/mibici-s-ride.jpg" }
+            ]
+          }
+        ]
+      },
+      results: {
+        heading: "Regular riders saw a clearer app",
+        items: [
+          {
+            value: "A clearer flow",
+            label: "People who ride MiBici regularly noticed the improvement in how the app moves from finding a bike to returning it."
+          },
+          {
+            value: "A better design",
+            label: "They noticed the improvement in the overall design as well."
+          },
+          {
+            value: "The right direction",
+            label: "Their feedback confirmed that simplifying the core tasks was the right call."
+          }
+        ],
+        note: "Informal feedback from acquaintances who ride MiBici regularly. This is a concept project, so there are no usage metrics."
+      },
+      learnings: {
+        heading: "Small reassurances matter as much as big features",
+        items: [
+          "Even a small change, like a clear confirmation message, lowers anxiety and builds trust in the service.",
+          "Registration and payment come first. If people can’t join easily, they won’t use the system at all.",
+          "Visual polish makes an app pleasant, but design proves its value in the moments when people feel stuck, unsure or anxious."
+        ]
+      }
+    }
+  },
+  {
     slug: "shift-dashboard",
     title: "Shift Analytics Dashboard",
     category: "Product Design",
