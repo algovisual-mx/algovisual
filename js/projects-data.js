@@ -562,7 +562,7 @@ const PROJECTS = [
             caption: "3. From paper to wireframes",
             problem: "I needed to know whether the layout and the flow worked before investing in visual design.",
             solution: "Sketch on paper, then build a quick low-fidelity prototype in Figma.",
-            text: "The sketches explored four ideas: the map as the main screen, clear availability with colors and large numbers, a simpler rental and return flow with confirmation screens, and trip information together with account status. I moved them into rough wireframes in Figma, kept deliberately plain, to check the overall experience quickly. <a href=\"https://www.figma.com/proto/PJZMogZNCpwXe5VZ8o7nIP/MiBici\" target=\"_blank\" rel=\"noopener\">Open the low-fidelity prototype</a>.",
+            text: "The sketches explored four ideas: the map as the main screen, clear availability with colors and large numbers, a simpler rental and return flow with confirmation screens, and trip information together with account status. I moved them into rough wireframes in Figma, kept deliberately plain, to check the overall experience quickly.",
             images: [
               { src: "assets/images/mibici-s-sketches.jpg" },
               { src: "assets/images/mibici-s-wireframes.jpg" }
@@ -572,7 +572,7 @@ const PROJECTS = [
             caption: "4. Finding and unlocking a bike",
             problem: "Availability was confusing, the map was slower than Google Maps and there was no obvious way to start a trip.",
             solution: "A live map as the home screen, color-coded availability and one floating button that goes straight to the QR scan.",
-            text: "The high-fidelity design keeps the same structure with a cleaner look, clear iconography and colors that convey security and ease of use. Signing in is a short form with a clear way to register instead. The map is the home screen, and every station shows its bikes and free docks with color codes and big numbers. Tapping a station gives the distance and starts navigation. The New trip button sits in the middle of the bar and opens the QR scanner, with an Unlock button and Help one tap away. <a href=\"https://www.figma.com/proto/PJZMogZNCpwXe5VZ8o7nIP/MiBici\" target=\"_blank\" rel=\"noopener\">Open the final prototype</a>.",
+            text: "The high-fidelity design keeps the same structure with a cleaner look, clear iconography and colors that convey security and ease of use. Signing in is a short form with a clear way to register instead. The map is the home screen, and every station shows its bikes and free docks with color codes and big numbers. Tapping a station gives the distance and starts navigation. The New trip button sits in the middle of the bar and opens the QR scanner, with an Unlock button and Help one tap away.",
             images: [
               { src: "assets/images/mibici-s-find.jpg" }
             ]
