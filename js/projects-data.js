@@ -256,6 +256,7 @@ const PROJECTS = [
     ],
     excerpt: "An internal tool that turns hundreds of web pages into organized documents, PDFs and images, with a file structure that keeps everything findable.",
     showcase: "assets/images/pageplucker_case_cover.png",
+    previewVideo: "assets/videos/Thumb_pageplucker.mp4", // looping muted preview shown in the home card instead of the image
     cover: "assets/images/pageplucker-header.jpeg",
     gallery: [],
     caseStudy: {
