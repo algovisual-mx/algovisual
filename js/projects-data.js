@@ -450,6 +450,7 @@ const PROJECTS = [
     ],
     excerpt: "A personal redesign of Guadalajara’s public bike-share app, rethinking how people find a station, unlock a bike, pay and return it.",
     showcase: "assets/images/mibici_case_cover.png",
+    previewVideo: "assets/videos/Thumb_mibici.mp4", // looping muted preview shown in the home card instead of the image
     cover: "assets/images/mibici-header.jpg",
     gallery: [],
     caseStudy: {
