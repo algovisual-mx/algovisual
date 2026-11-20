@@ -618,6 +618,228 @@ const PROJECTS = [
     }
   },
   {
+    "slug": "vinylmapper",
+    "title": "VinylMapper",
+    "category": "UI/UX Design",
+    "section": "product",
+    "year": "2025–2026",
+    "client": "Confidential",
+    "role": "UX/UI Designer",
+    "tools": [
+      "Figma"
+    ],
+    "excerpt": "A redesign of a social app for record collectors, rebuilding its navigation so finding a store and sharing a find is always clear.",
+    "showcase": "assets/images/vinylmapper_case_cover.png",
+    "cover": "assets/images/vinylmapper-header.jpg",
+    "gallery": [],
+    "caseStudy": {
+      "outcome": "Reorganising VinylMapper so every screen is easy to find.",
+      "summary": {
+        "problem": "VinylMapper is a social app where record collectors find stores, follow them, review them and share what they find. As it grew, its navigation didn’t: it was incomplete, unclear and hard to learn. I redesigned the structure first and the interface after, moving from a dark look to a light one.",
+        "role": "UX/UI designer",
+        "scope": "Navigation structure, interface redesign and first components · 2025–2026",
+        "team": "Agency product team",
+        "duration": "2025–2026",
+        "result": {
+          "value": "3 → 1",
+          "label": "icon-only tab sets, replaced by one labelled pattern"
+        }
+      },
+      "problem": {
+        "heading": "The app had a lot to offer and no clear way around it",
+        "text": [
+          "VinylMapper lets collectors find record stores on a map, follow them, review them, check in and share what they find. Its first version had well over a hundred screens and states, and a navigation that had grown screen by screen.",
+          "The bar had five equal slots, and Profile took one of them, while creating a post existed only as a button on Home. Profiles, stores and accounts each had their own row of tabs made only of icons, so every section had to be learned by tapping. And More was a grid of eleven tiles of the same size, with what people use every day next to what they rarely open.",
+          "The goal was a navigation that makes sense at a glance, so people can find a store, see what is happening around them and share a find without wondering where to go. The change from a dark interface to a light one follows from that structure, not the other way around."
+        ],
+        "image": {
+          "src": "assets/images/vm-map-before.jpg",
+          "caption": "The navigation of the original app, mapped."
+        }
+      },
+      "role": {
+        "text": "I redesigned VinylMapper at the agency that builds it. I worked on the navigation and the interface together, and adjusted the original design where its structure was incomplete, unclear or didn’t make sense.",
+        "scope": [
+          {
+            "label": "Navigation audit",
+            "text": "I mapped every screen and state of the original app, more than 130, and how each one was reached."
+          },
+          {
+            "label": "New structure",
+            "text": "The bottom bar, the secondary tabs and the More menu, redesigned together as one system."
+          },
+          {
+            "label": "Visual direction",
+            "text": "A move from a dark interface to a light, warmer one, with references gathered before drawing."
+          },
+          {
+            "label": "Home and Find",
+            "text": "Both reworked as discovery screens built around what is near you."
+          },
+          {
+            "label": "Components",
+            "text": "A first set of reusable components, starting with the button and the text field."
+          },
+          {
+            "label": "Redesigned screens",
+            "text": "Around a hundred screens and states, from onboarding and register to profiles, stores and settings."
+          }
+        ]
+      },
+      "decisions": {
+        "heading": "Fewer places to look, and the same place every time",
+        "items": [
+          {
+            "title": "Four destinations and one action that never moves",
+            "why": "Five equal slots made Profile compete with Find and Messages, and posting depended on being on Home. The new bar keeps four destinations and gives creating its own button, in the same place on every screen. Profile moves to the avatar on Home and a card at the top of More.",
+            "chosen": "b",
+            "a": {
+              "label": "Five equal tabs, and “+” only on Home",
+              "note": "Profile took a slot and posting depended on the screen."
+            },
+            "b": {
+              "label": "Four destinations and a global “+”",
+              "note": "Create from anywhere, always in the same place.",
+              "image": "assets/images/vm-decision1.jpg"
+            }
+          },
+          {
+            "title": "Tabs that say what they are, in one pattern",
+            "why": "Profiles, stores and accounts each had a row of icons with no text. Now profiles and stores share one labelled pattern, with Activity first and the same logic in both. The store went from six tabs to five by merging Contact into Hours, next to the map, and the account became a plain list.",
+            "chosen": "b",
+            "a": {
+              "label": "Icon-only tabs in each section",
+              "note": "Each set had to be learned by tapping."
+            },
+            "b": {
+              "label": "One labelled tab pattern",
+              "note": "Every tab says what it is.",
+              "image": "assets/images/vm-decision2.jpg"
+            }
+          },
+          {
+            "title": "A More menu with hierarchy",
+            "why": "More was a grid of eleven tiles of the same size, from Manage Account to Collecting Tips. It is now ordered by purpose: your profile first, then reading with featured cards, collectables progress, account, support and invitations, with Log out at the end as a quiet link.",
+            "chosen": "b",
+            "a": {
+              "label": "A grid of equal tiles",
+              "note": "No way to tell what matters."
+            },
+            "b": {
+              "label": "A list grouped by purpose",
+              "note": "The important things come first.",
+              "image": "assets/images/vm-decision3.jpg"
+            }
+          },
+          {
+            "title": "A Home that shows what is around you",
+            "why": "Home opened with a welcome message and a long feed. It now opens with what is happening near you: new drops from nearby stores, a rail of stores with a one-tap check-in, and tabs for For you, Following and Stores. The feed is still there, one scroll below.",
+            "chosen": "b",
+            "a": {
+              "label": "A feed with a welcome message",
+              "note": "No reason to explore."
+            },
+            "b": {
+              "label": "Discovery first, feed second",
+              "note": "The map and the stores come into Home.",
+              "image": "assets/images/vm-decision4.jpg"
+            }
+          }
+        ]
+      },
+      "solution": {
+        "heading": "A navigation that explains itself",
+        "items": [
+          {
+            "caption": "1. Mapping the whole navigation",
+            "problem": "Nobody had the whole picture of how the app was organised.",
+            "solution": "Map every screen and how it is reached, then redraw the structure before touching the interface.",
+            "text": "Before designing anything I mapped the original app: the five tabs, what lives behind each one, the three icon-only tab sets and the eleven tiles of More. Seeing it on one page made the problems concrete (the single “+”, the unlabeled tabs, the flat menu) and gave the new structure a clear brief: four destinations, one create action, one tab pattern and a menu with hierarchy.",
+            "stack": true,
+            "images": [
+              {
+                "src": "assets/images/vm-map-after.jpg"
+              }
+            ]
+          },
+          {
+            "caption": "2. Home: from a feed to a starting point",
+            "problem": "Home opened with a welcome message and a long feed, and gave no reason to explore.",
+            "solution": "Lead with what is nearby and keep the feed one scroll below.",
+            "text": "The header becomes a compact bar with your avatar, notifications and search. Below it, a highlighted card brings new drops from stores within a few miles, followed by a rail of nearby stores with their rating and a check-in button. The For you, Following and Stores tabs filter the feed, whose cards now show the store, its tags and quick actions.",
+            "images": [
+              {
+                "src": "assets/images/vm-s-home.jpg"
+              }
+            ]
+          },
+          {
+            "caption": "3. Find: the map, with more to decide on",
+            "problem": "The map was the right idea, but previews gave little to decide with and there were no filters beyond distance.",
+            "solution": "Keep the map at the center and add filters, a count of nearby stores and richer previews.",
+            "text": "Search stays at the top with a filter button, distance chips and an Open now toggle. A card at the bottom says how many stores are nearby and switches to the list. Tapping a pin opens a sheet with the rating, whether the store is open, its tags and four scores (selection, price, vibe and layout), with Call and Directions and the store page one tap away. When a store isn’t on the map, the search offers to suggest it in a sheet over the map, with live results, a confirmation of the details and a thank-you.",
+            "images": [
+              {
+                "src": "assets/images/vm-s-find.jpg"
+              },
+              {
+                "src": "assets/images/vm-s-suggest.jpg"
+              }
+            ]
+          },
+          {
+            "caption": "4. Profiles and stores: one tab pattern",
+            "problem": "Profiles and stores used rows of icons with no labels, in different orders.",
+            "solution": "Labelled tabs with Activity first, and the identity and main actions above them.",
+            "text": "A profile now opens with the cover, the avatar and three highlighted figures for coins, reviews and collectables, with Edit profile and Share below. A store page shows its logo, rating, open status, tags and the Follow and Message buttons. Both use the same labelled tabs. Stores nobody has claimed keep the “Is this your store?” prompt, now as a card with a Claim button.",
+            "images": [
+              {
+                "src": "assets/images/vm-s-profile.jpg"
+              }
+            ]
+          },
+          {
+            "caption": "5. More: grouped by purpose",
+            "problem": "Eleven tiles of the same weight, with no hierarchy between them.",
+            "solution": "A list that starts with you, then reading, then account and support.",
+            "text": "The menu opens with a card for your profile. Reading comes next, with featured cards for city guides, buying guides, music features and music lists, and a row for collecting tips. Then your collectables with their progress, the account rows, support, an invitation to bring friends and a quiet Log out at the end.",
+            "images": [
+              {
+                "src": "assets/images/vm-s-more.jpg"
+              }
+            ]
+          }
+        ]
+      },
+      "results": {
+        "heading": "A structure you can read at a glance",
+        "items": [
+          {
+            "value": "5 → 4 + 1",
+            "label": "Bottom bar: four destinations and a create button that is always available."
+          },
+          {
+            "value": "3 → 1",
+            "label": "Icon-only tab sets, replaced by one labelled tab pattern."
+          },
+          {
+            "value": "Grouped",
+            "label": "More went from eleven equal tiles to a list ordered by purpose."
+          }
+        ],
+        "note": "These are structural changes counted from the design files, not usage metrics."
+      },
+      "learnings": {
+        "heading": "Structure first, then style",
+        "items": [
+          "Most of the problems of the original were about where things lived, not how they looked. Mapping the navigation first made every later decision easier to explain.",
+          "A create action that is always in the same place and tabs that say what they are remove the need to learn the app by tapping.",
+          "Redesigning a real product means respecting what exists. I kept its content and flows and changed how they are organised."
+        ]
+      }
+    }
+  },
+  {
     slug: "shift-dashboard",
     title: "Shift Analytics Dashboard",
     category: "Product Design",
