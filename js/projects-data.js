@@ -691,7 +691,7 @@ const PROJECTS = [
         "items": [
           {
             "title": "Four destinations and one action that never moves",
-            "why": "Five equal slots made Profile compete with Find and Messages, and posting depended on being on Home. The new bar keeps four destinations and gives creating its own button, in the same place on every screen. Profile moves to the avatar on Home and a card at the top of More.",
+            "why": "Five equal slots made Profile compete with Find and Messages, and posting depended on being on Home, so the most frequent action had to be found each time. The new bar keeps four destinations and gives creating its own button, in the same place on every screen and in the zone where the thumb already rests. Profile moves to the avatar on Home and a card at the top of More, the usual places for “your” things in apps like this.",
             "chosen": "b",
             "a": {
               "label": "Five equal tabs, and “+” only on Home",
@@ -705,7 +705,7 @@ const PROJECTS = [
           },
           {
             "title": "Tabs that say what they are, in one pattern",
-            "why": "Profiles, stores and accounts each had a row of icons with no text. Now profiles and stores share one labelled pattern, with Activity first and the same logic in both. The store went from six tabs to five by merging Contact into Hours, next to the map, and the account became a plain list.",
+            "why": "Profiles, stores and accounts each had a row of icons with no text, which asks people to recognise a symbol and remember what it means, and the store and the profile used different symbols in a different order. Labels turn recall into recognition, and one shared pattern, with Activity first, means that what you learn in one place works in the other. The store went from six tabs to five by merging Contact into Hours, next to the map, and the account became a plain list.",
             "chosen": "b",
             "a": {
               "label": "Icon-only tabs in each section",
@@ -719,7 +719,7 @@ const PROJECTS = [
           },
           {
             "title": "A More menu with hierarchy",
-            "why": "More was a grid of eleven tiles of the same size, from Manage Account to Collecting Tips. It is now ordered by purpose: your profile first, then reading with featured cards, collectables progress, account, support and invitations, with Log out at the end as a quiet link.",
+            "why": "More was a grid of eleven tiles of the same size, from Manage Account to Collecting Tips. When every option weighs the same, every option takes longer to weigh. It is now ordered by purpose and by how often it is needed: your profile first, then reading with featured cards, collectables progress, account, support and invitations, with Log out at the end as a quiet link, far from where a thumb lands by accident.",
             "chosen": "b",
             "a": {
               "label": "A grid of equal tiles",
@@ -733,7 +733,7 @@ const PROJECTS = [
           },
           {
             "title": "A Home that shows what is around you",
-            "why": "Home opened with a welcome message and a long feed. It now opens with what is happening near you: new drops from nearby stores, a rail of stores with a one-tap check-in, and tabs for For you, Following and Stores. The feed is still there, one scroll below.",
+            "why": "Home opened with a welcome message and a long feed. A feed says what happened, but not where to go, and VinylMapper is about places. It now opens with what is happening near you: new drops from nearby stores, a rail of stores with a one-tap check-in, and tabs for For you, Following and Stores. The feed is still there, one scroll below.",
             "chosen": "b",
             "a": {
               "label": "A feed with a welcome message",
