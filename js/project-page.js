@@ -36,9 +36,12 @@
     return PROJECTS.filter(function (p) { return p.slug === slug; })[0];
   }
 
+  // The next case is always another published case (one with a case study),
+  // never the current one.
   function nextProject(current) {
-    var index = PROJECTS.indexOf(current);
-    return PROJECTS[(index + 1) % PROJECTS.length];
+    var real = PROJECTS.filter(function (p) { return p.caseStudy; });
+    var index = real.indexOf(current);
+    return real[(index + 1) % real.length];
   }
 
   function renderNotFound() {

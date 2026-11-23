@@ -13,14 +13,7 @@
      results    big numbers (or qualitative evidence)
      learnings  2–3 lines: what you'd do differently
    Section headings are written as the conclusion, not the stage name.
-   Keep every text short. NOTE: the copy and metrics below are placeholders —
-   replace them with the real ones.
-   Images in `decisions` / `solution` currently reuse each project's gallery
-   placeholders; swap in the real before/after and option A/B visuals. */
-
-function galleryImg(slug, n) {
-  return "assets/images/" + slug + "-0" + n + ".svg";
-}
+   Keep every text short. */
 
 const PROJECTS = [
   {
@@ -889,6 +882,4 @@ const PROJECTS = [
 
 const PROJECT_SECTIONS = [
   { id: "product", title: "Some of my Work...", subtitle: "Product, UI & UX design" }
-  // Hidden for now — uncomment (and add the comma above) to bring it back:
-  // { id: "brand", title: "Brand & Art Direction", subtitle: "Identity, print & motion" }
 ];
