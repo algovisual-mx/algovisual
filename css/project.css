@@ -34,8 +34,6 @@
   font-size: clamp(2rem, 5vw, 3.8rem);
   max-width: 24ch;
   margin-top: 14px;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
 }
 
 /* ---- Case study sections -------------------------------------------------- */
@@ -72,8 +70,6 @@
 }
 .cs-heading {
   font-size: clamp(1.5rem, 3.2vw, 2.4rem);
-  line-height: 1.15;
-  letter-spacing: -0.025em;
   max-width: 26ch;
 }
 
@@ -186,6 +182,7 @@
 .cs-results strong {
   display: block;
   font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  font-weight: 600;
   line-height: 1;
   letter-spacing: -0.03em;
   color: var(--accent);
@@ -362,8 +359,6 @@
 }
 .next-card__title {
   font-size: clamp(1.8rem, 4vw, 3rem);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
 }
 .next-card__meta { font-size: 0.95rem; color: var(--fg-faint); }
 .next-card__excerpt {

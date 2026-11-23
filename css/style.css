@@ -114,11 +114,12 @@ body {
   transition: background-color var(--dur-med) var(--ease), color var(--dur-med) var(--ease);
 }
 
+/* One heading style for the whole site: the one used by the home title. */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
 p { color: var(--fg-muted); }
@@ -395,7 +396,7 @@ input:focus-visible {
     position: relative;
     display: inline-block;
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 600;
     font-size: clamp(3rem, 16vw, 4rem);
     line-height: 1;
     letter-spacing: -0.04em;
