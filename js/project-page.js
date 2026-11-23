@@ -214,10 +214,14 @@
   }
 
   function render(project) {
-    document.title = project.title + " — Algovisual";
+    document.title = project.title + " — Salvador González, UX/UI Designer";
 
     var meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", project.excerpt);
+    var ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", project.title + " — case study by Salvador González");
+    var ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute("content", project.excerpt);
 
     var cs = project.caseStudy;
     var next = nextProject(project);

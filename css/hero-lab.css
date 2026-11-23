@@ -79,22 +79,29 @@
   color: var(--accent);
 }
 
-/* Revealed once the wordmark has been designed. */
-.lab-line--b,
+/* The positioning line and the meta row are the key facts: they show right
+   away (a short fade), without waiting for the wordmark to be designed. */
+.lab-line--b {
+  max-width: 34ch;
+  margin-top: clamp(4px, 1.2vh, 14px);
+  font-size: clamp(1.05rem, min(2.2vw, 3.4vh), 1.7rem);
+  color: var(--fg-muted);
+  animation: lab-in 0.9s var(--ease) 0.6s both;
+  text-wrap: balance;
+}
+
 .lab-meta {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  animation: lab-in 0.9s var(--ease) 0.8s both;
 }
 
-.lab-hero.is-ready .lab-line--b,
-.lab-hero.is-ready .lab-meta {
-  opacity: 1;
-  transform: none;
-}
-
-.lab-hero.is-ready .lab-meta {
-  transition-delay: 0.18s;
+/* Shown only when JavaScript is off (the wordmark is a canvas). */
+.lab-word-fallback {
+  display: block;
+  font-size: clamp(3rem, 12vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-align: center;
 }
 
 /* ---- Meta row (pills, same look as the About tags) --------------------- */
@@ -139,7 +146,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .lab-line--b,
-  .lab-meta,
+  .lab-meta { animation: none; }
   .lab-scroll { opacity: 1; transform: none; }
   .lab-scroll { transform: translateX(-50%); }
 }

@@ -75,18 +75,18 @@
       hero.classList.add("is-ready");
     };
     el.addEventListener("techtext:introend", ready, { once: true });
-    setTimeout(ready, 9000);
+    setTimeout(ready, 5000);
 
     window.TechText(el, {
-      text: "UX Designer",
+      text: "UX/UI Designer",
       fontWeight: 700,
       fontSize: 200,
       letterSpacing: -0.03,
       rest: el.getAttribute("data-rest") || "fill",
       reveal: "letter",
       intro: "design",
-      introDelay: 1.1,
-      introDuration: 4.4,
+      introDelay: 0.4,
+      introDuration: 2.6,
       ghostName: "Sal",
       specks: 15
     });
