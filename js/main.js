@@ -131,6 +131,7 @@
       var a = document.createElement("a");
       a.className = "sm-panel-item" + (l.getAttribute("data-nav") === page ? " is-active" : "");
       a.href = l.getAttribute("href");
+      if (l.hasAttribute("download")) a.setAttribute("download", l.getAttribute("download"));
       a.style.setProperty("--i", i);
       a.setAttribute("data-index", i + 1);
       var label = document.createElement("span");

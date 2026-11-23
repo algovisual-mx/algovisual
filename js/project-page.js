@@ -69,12 +69,13 @@
     );
   }
 
-  function figure(src, caption, label, extraClass) {
+  function figure(src, caption, label, extraClass, alt) {
+    var text = alt != null ? alt : (caption || label || "");
     return (
       '<figure class="cs-figure' + (extraClass ? " " + extraClass : "") + '">' +
       '<div class="cs-figure__media">' +
       (label ? '<span class="cs-figure__tag">' + label + "</span>" : "") +
-      (src ? '<img src="' + src + '" alt="' + (caption || label || "") + '" loading="lazy">' : "") +
+      (src ? '<img src="' + src + '" alt="' + text.replace(/"/g, "&quot;") + '" loading="lazy">' : "") +
       "</div>" +
       (caption ? "<figcaption>" + caption + "</figcaption>" : "") +
       "</figure>"
@@ -159,8 +160,10 @@
         var n = it.images.length;
         var carousel = n > 1 && !it.images.some(function (im) { return im.label; });
         var layout = it.stack ? " is-stack" : n === 2 ? " is-pair" : n > 2 ? " is-grid" : "";
-        function shot(im) {
-          return figure(im.src, "", im.label || "", "cs-shot" + (im.fit === "contain" ? " is-contain" : ""));
+        var topic = it.caption.replace(/^\d+\.\s*/, "");
+        function shot(im, k) {
+          var alt = im.alt || topic + (n > 1 ? " (" + (k + 1) + " of " + n + ")" : "");
+          return figure(im.src, "", im.label || "", "cs-shot" + (im.fit === "contain" ? " is-contain" : ""), alt);
         }
         return (
           '<div class="cs-solution">' +
@@ -182,7 +185,7 @@
               '<button type="button" class="cs-carousel__btn" data-dir="-1" aria-label="Previous screen">' + CHEV_L + "</button>" +
               '<button type="button" class="cs-carousel__btn" data-dir="1" aria-label="Next screen">' + CHEV_R + "</button>" +
               "</div></div></div>"
-            : '<div class="cs-solution__images' + layout + '">' + it.images.map(shot).join("") + "</div>") +
+            : (n ? '<div class="cs-solution__images' + layout + '">' + it.images.map(shot).join("") + "</div>" : "")) +
           "</div>"
         );
       }).join("") +
@@ -214,12 +217,12 @@
   }
 
   function render(project) {
-    document.title = project.title + " — Salvador González, UX/UI Designer";
+    document.title = project.title + " — Sal Gonzalez, UX/UI Designer";
 
     var meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", project.excerpt);
     var ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", project.title + " — case study by Salvador González");
+    if (ogTitle) ogTitle.setAttribute("content", project.title + " — case study by Sal Gonzalez");
     var ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute("content", project.excerpt);
 
