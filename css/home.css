@@ -4,8 +4,27 @@
 
 /* ---- Intro (home): a static headline and a short paragraph, no motion --- */
 .intro {
+  position: relative;
+  overflow: hidden;
   padding-top: clamp(150px, 24vh, 240px);
-  padding-bottom: clamp(24px, 5vw, 56px);
+  padding-bottom: clamp(48px, 8vw, 110px);
+}
+
+.intro .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Perspective grid behind the intro (js/perspective-grid.js). The mask fades
+   it out toward the edges and the horizon so the text stays readable. */
+.intro-grid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 75%, #000 25%, transparent 78%);
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 75%, #000 25%, transparent 78%);
 }
 
 .intro-title {
