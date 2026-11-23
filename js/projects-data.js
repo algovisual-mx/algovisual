@@ -628,28 +628,28 @@ const PROJECTS = [
     "tools": [
       "Figma"
     ],
-    "excerpt": "A redesign of a social app for record collectors, driven by a persona research round that turned five verdicts into a ranked list of changes.",
+    "excerpt": "A redesign of a social app for record collectors, driven by five interviews that turned five verdicts into a ranked list of changes.",
     "showcase": "assets/images/vinylmapper_case_cover.png?v=2",
     "cover": "assets/images/vinylmapper-header.jpg?v=2",
     "gallery": [],
     "caseStudy": {
-      "outcome": "Turning five personas’ verdicts into a clearer, more useful VinylMapper.",
+      "outcome": "Turning five interviews into a clearer, more useful VinylMapper.",
       "summary": {
-        "problem": "VinylMapper is a social app where record collectors find stores, follow them, review them and share what they find. Its prototype looked good, but it had not picked a main job. I ran a persona research round on the original design, ranked the findings and redesigned the navigation and the product around them.",
+        "problem": "VinylMapper is a social app where record collectors find stores, follow them, review them and share what they find. Its prototype looked good, but it had not picked a main job. I interviewed five people on the original design, ranked the findings and redesigned the navigation and the product around them.",
         "role": "UX/UI designer",
-        "scope": "Persona research, navigation, interface and prioritised changes · 2025–2026",
+        "scope": "Interviews, navigation, interface and prioritised changes · 2025–2026",
         "team": "Agency product team",
         "duration": "2025–2026",
         "result": {
           "value": "2 No · 2 Maybe · 1 Yes",
-          "label": "the five personas’ verdicts on the original, and the brief for what changed"
+          "label": "the five interviewees’ verdicts on the original, and the brief for what changed"
         }
       },
       "problem": {
         "heading": "A good-looking app that had not picked a main job",
         "text": [
           "VinylMapper lets collectors find record stores on a map, follow them, review them, check in and share what they find, and lets store owners claim and manage their listing. The first version had well over a hundred screens and states, and a navigation that had grown screen by screen: five equal tabs, three icon-only tab sets and a More menu with eleven tiles.",
-          "To see how it held up, I walked the original prototype with five personas drawn from its audiences: two store owners, a crate digger, a traveling collector and a release chaser. Only one of the five would have used it as it was. The others said Maybe or No, for reasons that pointed to the same few problems.",
+          "To see how it held up, I interviewed five people from its audiences while they walked through the original prototype: two store owners, a crate digger, a traveling collector and a release chaser. Only one of the five would have used it as it was. The others said Maybe or No, for reasons that pointed to the same few problems.",
           "The goal became to act on those problems in order of impact: pick a front door, use the data the app already collects, give owners a reason to stay, earn their trust and stop making people learn the app by tapping."
         ],
         "image": {
@@ -661,8 +661,8 @@ const PROJECTS = [
         "text": "I worked on this at the agency that builds VinylMapper. I ran the research round, turned it into a ranked list of changes and redesigned the product around it, from the navigation to the owner tools.",
         "scope": [
           {
-            "label": "Persona research",
-            "text": "Five personas, covering owners and collectors, each walked through the original prototype."
+            "label": "Interviews",
+            "text": "Five people, covering owners and collectors, each walked through the original prototype."
           },
           {
             "label": "Findings and priorities",
@@ -687,7 +687,7 @@ const PROJECTS = [
         ]
       },
       "decisions": {
-        "heading": "Six changes, each traced to what the personas said",
+        "heading": "Six changes, each traced to what people said",
         "items": [
           {
             "title": "Make the map the front door, and keep Create one tap away",
@@ -779,13 +779,13 @@ const PROJECTS = [
         "heading": "From verdicts to a ranked set of changes",
         "items": [
           {
-            "caption": "1. Five personas, one list of findings",
+            "caption": "1. Five interviews, one list of findings",
             "problem": "The prototype looked good, but nobody had checked whether it worked for the people it was for.",
-            "solution": "Walk it with five personas, then trace every finding to who raised it and rank it.",
-            "text": "I built five personas around the app’s audiences: Marlene, a veteran shop owner; Jordan, who runs a newer shop with a bar; Dez, a crate digger and DJ; Sofía, a collector who travels; and Ray, a release chaser with his collection on Discogs. Each walked the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
+            "solution": "Interview five people as they walk it, then trace every finding to who raised it and rank it.",
+            "text": "I interviewed five people from the app’s audiences: Marlene, a veteran shop owner; Jordan, who runs a newer shop with a bar; Dez, a crate digger and DJ; Sofía, a collector who travels; and Ray, a release chaser with his collection on Discogs. Each one walked through the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
             "images": [
               {
-                "src": "assets/images/vk-panel.jpg"
+                "src": "assets/images/vk-panel.jpg?v=2"
               },
               {
                 "src": "assets/images/vk-findings.jpg"
@@ -845,12 +845,12 @@ const PROJECTS = [
           },
           {
             "caption": "5. Validate before building",
-            "problem": "These changes rest on personas, so they need real people before they are built.",
+            "problem": "These changes rest on five interviews, a small sample, so they need a wider check before they are built.",
             "solution": "Plan a 5-user usability test, owner interviews and a first-click test on tab order.",
             "text": "The redesign is a set of bets, and I wrote down how to check them. A usability test with five people, two store owners, two diggers or release chasers and one traveler, on tasks like finding an open used-soul shop within 10 miles, claiming a store and posting an event. Owner interviews before any owner tool is built, asking what proof would make them post weekly. And a first-click test comparing a Map-first with a Feed-first landing, to ship the order that wins on discovery tasks.",
             "images": [
               {
-                "src": "assets/images/vk-validation.jpg"
+                "src": "assets/images/vk-validation.jpg?v=2"
               }
             ]
           }
@@ -861,7 +861,7 @@ const PROJECTS = [
         "items": [
           {
             "value": "7 findings",
-            "label": "Ranked from P0 to P2 and traced to the persona who raised each one."
+            "label": "Ranked from P0 to P2 and traced to the person who raised each one."
           },
           {
             "value": "40 screens",
@@ -872,7 +872,7 @@ const PROJECTS = [
             "label": "Planned before building: a 5-user usability test, owner interviews and a first-click test on tab order."
           }
         ],
-        "note": "The research is a persona walkthrough of the prototype, not a study with real users, so the verdicts and findings are directional until the validation plan is run."
+        "note": "Five interviews are a small, qualitative sample, so the verdicts and findings are directional until the validation plan is run."
       },
       "learnings": {
         "heading": "Pick a front door, then earn the rest",
