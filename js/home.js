@@ -31,8 +31,13 @@
           : '<img class="work-card__img" src="' + (p.showcase || p.cover) + '" alt="" loading="lazy">') +
         "</div>" +
         '<div class="work-card__body">' +
+        '<div class="work-card__head">' +
         '<h3 class="work-card__title">' + p.title + "</h3>" +
-        '<p class="work-card__desc">' + p.excerpt + "</p>" +
+        (p.card ? '<span class="work-card__role">' + p.card.role + "</span>" : "") +
+        "</div>" +
+        (p.card
+          ? '<p class="work-card__desc"><span class="work-card__type">' + p.card.type + '</span><span class="work-card__result">' + p.card.result + "</span></p>"
+          : '<p class="work-card__desc">' + p.excerpt + "</p>") +
         '<ul class="work-card__tags">' +
         tags.map(function (t) { return "<li>" + t + "</li>"; }).join("") +
         "</ul>" +

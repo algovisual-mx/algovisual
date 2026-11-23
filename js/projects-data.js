@@ -27,7 +27,8 @@ const PROJECTS = [
     tools: [
       "Figma"
     ],
-    excerpt: "Product & design lead · AI tool for Shopify stores · A three-level access model for teams",
+    card: { role: "Product & design lead", type: "AI tool for Shopify stores", result: "A three-level access model for teams" },
+    excerpt: "An AI tool for Shopify stores with a three-level access model for teams.",
     showcase: "assets/images/visicart_case_cover.png?v=2",
     previewVideo: "assets/videos/Thumb_visi.mp4?v=3", // looping muted preview shown in the home card instead of the image
     cover: "assets/images/visicart-cover.jpg?v=1",
@@ -255,7 +256,8 @@ const PROJECTS = [
     tools: [
       "Figma"
     ],
-    excerpt: "Product & design lead · Content-extraction tool for SEO teams · 8x faster than doing it by hand",
+    card: { role: "Product & design lead", type: "Content-extraction tool for SEO teams", result: "8x faster than doing it by hand" },
+    excerpt: "A content-extraction tool for SEO teams, 8x faster than doing it by hand.",
     showcase: "assets/images/pageplucker_case_cover.png",
     previewVideo: "assets/videos/Thumb_pageplucker.mp4", // looping muted preview shown in the home card instead of the image
     cover: "assets/images/pageplucker-header.jpeg",
@@ -457,7 +459,8 @@ const PROJECTS = [
     tools: [
       "Figma"
     ],
-    excerpt: "UX/UI designer · Bike-share app redesign · A personal project, from research to a high-fidelity prototype",
+    card: { role: "UX/UI designer", type: "Bike-share app redesign", result: "A personal project, from research to a high-fidelity prototype" },
+    excerpt: "A bike-share app redesign, a personal project from research to a high-fidelity prototype.",
     showcase: "assets/images/mibici_case_cover.png",
     previewVideo: "assets/videos/Thumb_mibici.mp4?v=2", // looping muted preview shown in the home card instead of the image
     cover: "assets/images/mibici-header.jpg",
@@ -637,7 +640,12 @@ const PROJECTS = [
     "tools": [
       "Figma"
     ],
-    "excerpt": "UX/UI designer · Social app for record collectors · Navigation rebuilt from audience research",
+    "card": {
+      "role": "UX/UI designer",
+      "type": "Social app for record collectors",
+      "result": "Navigation rebuilt from audience research"
+    },
+    "excerpt": "A social app for record collectors, with its navigation rebuilt from audience research.",
     "showcase": "assets/images/vinylmapper_case_cover.png?v=3",
     "cover": "assets/images/vinylmapper-header.jpg?v=3",
     "gallery": [],

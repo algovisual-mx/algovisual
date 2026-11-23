@@ -550,6 +550,38 @@
   font-size: clamp(1.3rem, 2.2vw, 1.75rem);
 }
 
+/* Title with the role beside it: smaller and lighter than the title. */
+.work-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 12px;
+}
+
+.work-card__body .work-card__role {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(10, 10, 12, 0.5);
+}
+
+/* Product type and result stacked, told apart by weight and tone (no separator). */
+.work-card__desc .work-card__type,
+.work-card__desc .work-card__result {
+  display: block;
+}
+
+.work-card__body .work-card__desc .work-card__type {
+  font-weight: 400;
+  color: rgba(10, 10, 12, 0.6);
+}
+
+.work-card__body .work-card__desc .work-card__result {
+  margin-top: 2px;
+  font-weight: 600;
+  color: #0a0a0c;
+}
+
 .work-card__desc {
   margin-top: 10px;
   font-size: 1rem;
