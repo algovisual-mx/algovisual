@@ -258,6 +258,7 @@
       "</section>";
 
     initCarousels();
+    initLightbox();
     initScrollSpy();
     if (window.revealScan) window.revealScan();
   }
@@ -300,6 +301,156 @@
       window.addEventListener("resize", update);
       update();
     });
+  }
+
+  /* ---- Lightbox ---------------------------------------------------------------
+     Any image in the case (hero, figures, decisions, carousel slides) opens
+     full size in an overlay. Prev/next walk through every image of the case;
+     Esc, the close button or a click anywhere else closes it. Focus moves into
+     the dialog and goes back to the image that opened it. */
+  function initLightbox() {
+    var root = document.querySelector("[data-project-root]");
+    if (!root) return;
+
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var CLOSE_SVG =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
+
+    var box = document.createElement("div");
+    box.className = "lb";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-label", "Image viewer");
+    box.hidden = true;
+    box.innerHTML =
+      '<div class="lb__stage"><img class="lb__img" alt=""></div>' +
+      '<div class="lb__bar"><span class="lb__caption" aria-live="polite"></span><span class="lb__count"></span></div>' +
+      '<button type="button" class="lb__btn lb__close" aria-label="Close image">' + CLOSE_SVG + "</button>" +
+      '<button type="button" class="lb__btn lb__nav lb__prev" aria-label="Previous image">' + CHEV_L + "</button>" +
+      '<button type="button" class="lb__btn lb__nav lb__next" aria-label="Next image">' + CHEV_R + "</button>";
+    document.body.appendChild(box);
+
+    var img = box.querySelector(".lb__img");
+    var caption = box.querySelector(".lb__caption");
+    var count = box.querySelector(".lb__count");
+    var btnClose = box.querySelector(".lb__close");
+    var btnPrev = box.querySelector(".lb__prev");
+    var btnNext = box.querySelector(".lb__next");
+
+    var items = [];
+    var index = 0;
+    var opener = null;
+    var isOpen = false;
+
+    function pad(n) { return (n < 10 ? "0" : "") + n; }
+    function collect() {
+      items = [].slice.call(root.querySelectorAll(".cs-figure__media img"));
+    }
+    function show(i) {
+      index = (i + items.length) % items.length;
+      var el = items[index];
+      var src = el.currentSrc || el.src;
+      img.classList.remove("is-in");
+      img.src = src;
+      img.alt = el.alt || "";
+      caption.textContent = el.alt || "";
+      count.textContent = pad(index + 1) + " / " + pad(items.length);
+      var multi = items.length > 1;
+      btnPrev.hidden = !multi;
+      btnNext.hidden = !multi;
+      // Warm the neighbours so stepping through feels instant.
+      if (multi) {
+        [index - 1, index + 1].forEach(function (n) {
+          var m = items[(n + items.length) % items.length];
+          if (m) { var pre = new Image(); pre.src = m.currentSrc || m.src; }
+        });
+      }
+      requestAnimationFrame(function () { img.classList.add("is-in"); });
+    }
+
+    function open(el, from) {
+      collect();
+      var i = items.indexOf(el);
+      if (i < 0) return;
+      opener = from || null;
+      isOpen = true;
+      box.hidden = false;
+      document.documentElement.classList.add("lb-open");
+      var gap = window.innerWidth - document.documentElement.clientWidth;
+      if (gap > 0) document.documentElement.style.paddingRight = gap + "px";
+      show(i);
+      requestAnimationFrame(function () { box.classList.add("is-open"); });
+      btnClose.focus({ preventScroll: true });
+    }
+
+    function close() {
+      if (!isOpen) return;
+      isOpen = false;
+      box.classList.remove("is-open");
+      var done = function () {
+        box.hidden = true;
+        img.removeAttribute("src");
+        document.documentElement.classList.remove("lb-open");
+        document.documentElement.style.paddingRight = "";
+      };
+      if (reduce) done(); else setTimeout(done, 200);
+      if (opener && document.contains(opener)) opener.focus({ preventScroll: true });
+    }
+
+    // Open: any image in the case. Figures are keyboard-reachable buttons.
+    [].slice.call(root.querySelectorAll(".cs-figure__media")).forEach(function (m) {
+      if (!m.querySelector("img")) return;
+      m.classList.add("is-zoomable");
+      m.setAttribute("tabindex", "0");
+      m.setAttribute("role", "button");
+      m.setAttribute("aria-label", "View larger" + (m.querySelector("img").alt ? ": " + m.querySelector("img").alt : ""));
+    });
+    root.addEventListener("click", function (e) {
+      var m = e.target.closest(".cs-figure__media.is-zoomable");
+      if (!m) return;
+      open(m.querySelector("img"), m);
+    });
+    root.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      var m = e.target.closest && e.target.closest(".cs-figure__media.is-zoomable");
+      if (!m || e.target !== m) return;
+      e.preventDefault();
+      open(m.querySelector("img"), m);
+    });
+
+    // Close: click anywhere that isn't a control.
+    box.addEventListener("click", function (e) {
+      if (e.target.closest(".lb__nav")) return;
+      close();
+    });
+    btnPrev.addEventListener("click", function (e) { e.stopPropagation(); show(index - 1); });
+    btnNext.addEventListener("click", function (e) { e.stopPropagation(); show(index + 1); });
+
+    document.addEventListener("keydown", function (e) {
+      if (!isOpen) return;
+      if (e.key === "Escape") { e.preventDefault(); close(); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); show(index - 1); }
+      else if (e.key === "ArrowRight") { e.preventDefault(); show(index + 1); }
+      else if (e.key === "Tab") {
+        var f = [btnClose, btnPrev, btnNext].filter(function (b) { return !b.hidden; });
+        var at = f.indexOf(document.activeElement);
+        e.preventDefault();
+        f[(at + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+      }
+    });
+
+    // Swipe to step through on touch screens.
+    var sx = null;
+    box.addEventListener("touchstart", function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener("touchend", function (e) {
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx;
+      sx = null;
+      if (Math.abs(dx) > 60) { show(index + (dx < 0 ? 1 : -1)); box.dataset.swiped = "1"; setTimeout(function () { delete box.dataset.swiped; }, 350); }
+    }, { passive: true });
+    box.addEventListener("click", function (e) {
+      if (box.dataset.swiped) { e.stopImmediatePropagation(); }
+    }, true);
   }
 
   /* ---- Scrollspy ------------------------------------------------------------
