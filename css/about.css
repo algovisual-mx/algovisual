@@ -102,7 +102,7 @@
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 140px 1fr auto;
+  grid-template-columns: 190px 1fr auto;
   gap: 24px;
   align-items: baseline;
   padding-block: 28px;
@@ -182,3 +182,22 @@
   margin-top: 10px;
   font-size: 0.88rem;
 }
+
+
+/* Work history: one or two lines on what each role covered */
+.timeline-desc {
+  margin: 8px 0 0;
+  max-width: 62ch;
+  color: var(--fg-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* Hero actions (CV download) */
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: clamp(24px, 3vw, 32px);
+}
+.about-actions .btn { display: inline-flex; align-items: center; gap: 10px; }
