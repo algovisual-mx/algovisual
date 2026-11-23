@@ -593,25 +593,40 @@
 .has-custom-cursor .lb,
 .has-custom-cursor .lb * { cursor: none; }
 
+.lb {
+  --lb-px: clamp(16px, 6vw, 96px);
+  --lb-pt: clamp(64px, 9vh, 88px);
+  --lb-pb: clamp(72px, 10vh, 96px);
+}
 .lb__stage {
-  display: grid;
-  place-items: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  padding: clamp(56px, 8vh, 84px) clamp(16px, 6vw, 96px) clamp(64px, 9vh, 92px);
+  padding: var(--lb-pt) var(--lb-px) var(--lb-pb);
 }
 .lb__img {
   display: block;
-  max-width: 100%;
-  max-height: 100%;
+  flex: 0 1 auto;
   width: auto;
   height: auto;
+  /* Sized from the viewport, not from the parent: a percentage max-height
+     does not resolve here and tall images ran past the bottom edge. */
+  max-width: calc(100vw - 2 * var(--lb-px));
+  max-height: calc(100vh - var(--lb-pt) - var(--lb-pb));
   object-fit: contain;
   border-radius: var(--radius-sm);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
   opacity: 0;
   transform: scale(0.985);
   transition: opacity 0.22s ease, transform 0.32s var(--ease);
+}
+@supports (height: 100dvh) {
+  .lb__img {
+    max-height: calc(100dvh - var(--lb-pt) - var(--lb-pb));
+  }
 }
 .lb__img.is-in { opacity: 1; transform: none; }
 
