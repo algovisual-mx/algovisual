@@ -628,28 +628,28 @@ const PROJECTS = [
     "tools": [
       "Figma"
     ],
-    "excerpt": "A redesign of a social app for record collectors, driven by five interviews that turned five verdicts into a ranked list of changes.",
+    "excerpt": "A redesign of a social app for record collectors, driven by research with five audience groups that turned five verdicts into a ranked list of changes.",
     "showcase": "assets/images/vinylmapper_case_cover.png?v=2",
     "cover": "assets/images/vinylmapper-header.jpg?v=2",
     "gallery": [],
     "caseStudy": {
-      "outcome": "Turning five interviews into a clearer, more useful VinylMapper.",
+      "outcome": "Turning feedback from five audience groups into a clearer, more useful VinylMapper.",
       "summary": {
-        "problem": "VinylMapper is a social app where record collectors find stores, follow them, review them and share what they find. Its prototype looked good, but it had not picked a main job. I interviewed five people on the original design, ranked the findings and redesigned the navigation and the product around them.",
+        "problem": "VinylMapper is a social app where record collectors find stores, follow them, review them and share what they find. Its prototype looked good, but it had not picked a main job. I researched five audience groups on the original design, ranked the findings and redesigned the navigation and the product around them.",
         "role": "UX/UI designer",
-        "scope": "Interviews, navigation, interface and prioritised changes · 2025–2026",
+        "scope": "Group research, navigation, interface and prioritised changes · 2025–2026",
         "team": "Agency product team",
         "duration": "2025–2026",
         "result": {
           "value": "2 No · 2 Maybe · 1 Yes",
-          "label": "the five interviewees’ verdicts on the original, and the brief for what changed"
+          "label": "the five groups’ verdicts on the original, and the brief for what changed"
         }
       },
       "problem": {
         "heading": "A good-looking app that had not picked a main job",
         "text": [
           "VinylMapper lets collectors find record stores on a map, follow them, review them, check in and share what they find, and lets store owners claim and manage their listing. The first version had well over a hundred screens and states, and a navigation that had grown screen by screen: five equal tabs, three icon-only tab sets and a More menu with eleven tiles.",
-          "To see how it held up, I interviewed five people from its audiences while they walked through the original prototype: two store owners, a crate digger, a traveling collector and a release chaser. Only one of the five would have used it as it was. The others said Maybe or No, for reasons that pointed to the same few problems.",
+          "To see how it held up, I researched five audience groups on the original prototype: veteran store owners, newer store owners, crate diggers, traveling collectors and release chasers, each represented by one interview. Only one of the five groups would have used it as it was. The others said Maybe or No, for reasons that pointed to the same few problems.",
           "The goal became to act on those problems in order of impact: pick a front door, use the data the app already collects, give owners a reason to stay, earn their trust and stop making people learn the app by tapping."
         ],
         "image": {
@@ -661,12 +661,12 @@ const PROJECTS = [
         "text": "I worked on this at the agency that builds VinylMapper. I ran the research round, turned it into a ranked list of changes and redesigned the product around it, from the navigation to the owner tools.",
         "scope": [
           {
-            "label": "Interviews",
-            "text": "Five people, covering owners and collectors, each walked through the original prototype."
+            "label": "Group research",
+            "text": "Five audience groups, covering owners and collectors, each represented by one interview on the original prototype."
           },
           {
             "label": "Findings and priorities",
-            "text": "Seven findings, each traced to who raised it and ranked from P0 to P2."
+            "text": "Seven findings, each traced to the group that raised it and ranked from P0 to P2."
           },
           {
             "label": "Navigation",
@@ -682,16 +682,16 @@ const PROJECTS = [
           },
           {
             "label": "Validation plan",
-            "text": "A 5-user usability test, owner interviews and a first-click test, planned before building."
+            "text": "A usability test across the five groups, owner interviews and a first-click test, planned before building."
           }
         ]
       },
       "decisions": {
-        "heading": "Six changes, each traced to what people said",
+        "heading": "Six changes, each traced to what the groups said",
         "items": [
           {
             "title": "Make the map the front door, and keep Create one tap away",
-            "why": "The collectors came for Find and the owners came to post. Meanwhile the most useful content, guides, collectables and claiming a store, sat in More. The bar is now Map, Feed, Create, Messages and Profile: the map opens after login, Create works from any screen, city guides appear on the map for whatever city you browse, and More is gone, replaced by Settings behind the profile gear.",
+            "why": "Collector groups came for Find and owner groups came to post. Meanwhile the most useful content, guides, collectables and claiming a store, sat in More. The bar is now Map, Feed, Create, Messages and Profile: the map opens after login, Create works from any screen, city guides appear on the map for whatever city you browse, and More is gone, replaced by Settings behind the profile gear.",
             "chosen": "b",
             "a": {
               "label": "Social Home as the front door",
@@ -705,7 +705,7 @@ const PROJECTS = [
           },
           {
             "title": "Turn the data we already collect into filters",
-            "why": "Stores already fill in genres, formats, buy, sell or trade and a used-to-new mix, but Find only offered a name and a distance. The crate digger’s first reaction was that every store on the map was rated 5.0, which told nothing about which shop was worth the drive. Find now filters by open now, genre, format, buy-sell-trade and used or new, sorts by distance, rating, Selection or Price, and shows every rating with its review count, so 5.0 (2) reads honestly.",
+            "why": "Stores already fill in genres, formats, buy, sell or trade and a used-to-new mix, but Find only offered a name and a distance. Crate diggers’ first reaction was that every store on the map was rated 5.0, which told them nothing about which shop was worth the drive. Find now filters by open now, genre, format, buy-sell-trade and used or new, sorts by distance, rating, Selection or Price, and shows every rating with its review count, so 5.0 (2) reads honestly.",
             "chosen": "b",
             "a": {
               "label": "A name search and a distance",
@@ -719,7 +719,7 @@ const PROJECTS = [
           },
           {
             "title": "Give owners control, proof and tools",
-            "why": "The veteran owner could not reply to a review, saw no numbers on what the app did for the shop and could not even find Store Manager, hidden behind a small icon in the top bar. The newer shop had no events, no way to hold a record and no team access. Owners now switch stores from the top of Profile, see views, followers, direction and call taps and check-ins, invite a team with roles, post New arrivals, Events and Announcements, and reply publicly to reviews.",
+            "why": "Veteran owners could not reply to a review, saw no numbers on what the app did for the shop and could not even find Store Manager, hidden behind a small icon in the top bar. Newer shops had no events, no way to hold a record and no team access. Owners now switch stores from the top of Profile, see views, followers, direction and call taps and check-ins, invite a team with roles, post New arrivals, Events and Announcements, and reply publicly to reviews.",
             "chosen": "b",
             "a": {
               "label": "Edit Store and Store Profile",
@@ -727,13 +727,13 @@ const PROJECTS = [
             },
             "b": {
               "label": "A switcher, insights and a team",
-              "note": "Control and proof for the people who feed the app.",
+              "note": "Control and proof for the stores that feed the app.",
               "image": "assets/images/vk-decision3.jpg"
             }
           },
           {
             "title": "Earn trust before asking for it",
-            "why": "The veteran owner read a prefilled unclaimed page with a “spread the word” banner as Yelp’s playbook, and wanted to know who owns the platform that ranks the shop. The claim screen now says who runs the app and links to how ratings work, the unclaimed line speaks to owners in a neutral tone, only people who checked in can review, and collectables reward quality, such as a review with a photo, instead of review count.",
+            "why": "Veteran owners read a prefilled unclaimed page with a “spread the word” banner as Yelp’s playbook, and wanted to know who owns the platform that ranks the shop. The claim screen now says who runs the app and links to how ratings work, the unclaimed line speaks to owners in a neutral tone, only visitors who checked in can review, and collectables reward quality, such as a review with a photo, instead of review count.",
             "chosen": "b",
             "a": {
               "label": "A banner aimed at customers",
@@ -747,7 +747,7 @@ const PROJECTS = [
           },
           {
             "title": "Say it in vinyl, and say what things are",
-            "why": "A repress is a real reissue in vinyl, so “Repress this post” confused the crate digger: it is now Share, with the notification copy to match. The traveling collector tapped through six unlabeled tabs to learn which one was Vault and which was Discogs, and asked what the 6,280 coins were for. Tabs are now labelled and Discogs stays hidden until connected, Coins has an explainer sheet, and distances follow the locale.",
+            "why": "A repress is a real reissue in vinyl, so “Repress this post” confused crate diggers: it is now Share, with the notification copy to match. Traveling collectors tapped through six unlabeled tabs to learn which one was Vault and which was Discogs, and asked what the 6,280 coins were for. Tabs are now labelled and Discogs stays hidden until connected, Coins has an explainer sheet, and distances follow the locale.",
             "chosen": "b",
             "a": {
               "label": "Icons without labels, unexplained terms",
@@ -761,7 +761,7 @@ const PROJECTS = [
           },
           {
             "title": "Make Discogs and records useful",
-            "why": "For the release chaser, Discogs was decoration: the app displayed a collection he already keeps elsewhere, and the wantlist was used nowhere. The map now highlights stores that match his wantlist, search finds records across store posts, a releases layer shows Record Store Day and new pressings, and favorite artists fill in from Discogs. Group chats grow from 4 to 12 people for record clubs.",
+            "why": "For release chasers, Discogs was decoration: the app displayed a collection they already keep elsewhere, and the wantlist was used nowhere. The map now highlights stores that match the wantlist, search finds records across store posts, a releases layer shows Record Store Day and new pressings, and favorite artists fill in from Discogs. Group chats grow from 4 to 12 members for record clubs.",
             "chosen": "b",
             "a": {
               "label": "A Discogs grid you already have",
@@ -779,16 +779,16 @@ const PROJECTS = [
         "heading": "From verdicts to a ranked set of changes",
         "items": [
           {
-            "caption": "1. Five interviews, one list of findings",
-            "problem": "The prototype looked good, but nobody had checked whether it worked for the people it was for.",
-            "solution": "Interview five people as they walk it, then trace every finding to who raised it and rank it.",
-            "text": "I interviewed five people from the app’s audiences: the owner of a veteran shop, the owner of a newer shop with a bar, a crate digger and DJ, a collector who travels, and a release chaser with a collection on Discogs. Each one walked through the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
+            "caption": "1. Five audience groups, one list of findings",
+            "problem": "The prototype looked good, but nobody had checked whether it worked for the groups it was for.",
+            "solution": "Research five audience groups on the prototype, then trace every finding to the group that raised it and rank it.",
+            "text": "I researched five audience groups: veteran store owners, newer store owners with a bar, crate diggers and DJs, collectors who travel, and release chasers with a collection on Discogs. Each group was represented by one interview on the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
             "images": [
               {
-                "src": "assets/images/vk-panel.jpg?v=3"
+                "src": "assets/images/vk-panel.jpg?v=4"
               },
               {
-                "src": "assets/images/vk-findings.jpg?v=2"
+                "src": "assets/images/vk-findings.jpg?v=3"
               }
             ]
           },
@@ -830,7 +830,7 @@ const PROJECTS = [
             "caption": "4. P2: records, community and first run",
             "problem": "The app was about places, not records, and the network and the first run did not fit either audience.",
             "solution": "A records layer from Discogs, one relationship model and a first run for collectors and owners.",
-            "text": "Wantlist matches turn the map’s pins gold, search finds records in store posts and a releases layer shows Record Store Day and new pressings, with a Hold for me button on New arrivals. Follow becomes the default relationship for collectors and stores, with the basics public and the collection private. Group chats grow to 12 people with a Record Club, and the map has a Spanish version with kilometres. The first run is one welcome you can skip to browse the map, a short setup for collectors and a checklist for owners that ends in their first post.",
+            "text": "Wantlist matches turn the map’s pins gold, search finds records in store posts and a releases layer shows Record Store Day and new pressings, with a Hold for me button on New arrivals. Follow becomes the default relationship for collectors and stores, with the basics public and the collection private. Group chats grow to 12 members with a Record Club, and the map has a Spanish version with kilometres. The first run is one welcome you can skip to browse the map, a short setup for collectors and a checklist for owners that ends in their first post.",
             "images": [
               {
                 "src": "assets/images/vk-s-records.jpg"
@@ -845,12 +845,12 @@ const PROJECTS = [
           },
           {
             "caption": "5. Validate before building",
-            "problem": "These changes rest on five interviews, a small sample, so they need a wider check before they are built.",
-            "solution": "Plan a 5-user usability test, owner interviews and a first-click test on tab order.",
-            "text": "The redesign is a set of bets, and I wrote down how to check them. A usability test with five people, two store owners, two diggers or release chasers and one traveler, on tasks like finding an open used-soul shop within 10 miles, claiming a store and posting an event. Owner interviews before any owner tool is built, asking what proof would make them post weekly. And a first-click test comparing a Map-first with a Feed-first landing, to ship the order that wins on discovery tasks.",
+            "problem": "These changes rest on five groups, each represented by one interview, so they need a wider check before they are built.",
+            "solution": "Plan a usability test across the five groups, owner interviews and a first-click test on tab order.",
+            "text": "The redesign is a set of bets, and I wrote down how to check them. A usability test across the five groups, covering owners, diggers or release chasers and travelers, on tasks like finding an open used-soul shop within 10 miles, claiming a store and posting an event. Owner interviews before any owner tool is built, asking what proof would make them post weekly. And a first-click test comparing a Map-first with a Feed-first landing, to ship the order that wins on discovery tasks.",
             "images": [
               {
-                "src": "assets/images/vk-validation.jpg?v=3"
+                "src": "assets/images/vk-validation.jpg?v=4"
               }
             ]
           }
@@ -861,7 +861,7 @@ const PROJECTS = [
         "items": [
           {
             "value": "7 findings",
-            "label": "Ranked from P0 to P2 and traced to the person who raised each one."
+            "label": "Ranked from P0 to P2 and traced to the group that raised each one."
           },
           {
             "value": "40 screens",
@@ -869,10 +869,10 @@ const PROJECTS = [
           },
           {
             "value": "3 tests",
-            "label": "Planned before building: a 5-user usability test, owner interviews and a first-click test on tab order."
+            "label": "Planned before building: a usability test across the five groups, owner interviews and a first-click test on tab order."
           }
         ],
-        "note": "Five interviews are a small, qualitative sample, so the verdicts and findings are directional until the validation plan is run."
+        "note": "Each of the five groups was represented by one interview, a small qualitative sample, so the verdicts and findings are directional until the validation plan is run."
       },
       "learnings": {
         "heading": "Pick a front door, then earn the rest",
