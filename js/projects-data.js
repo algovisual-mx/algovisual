@@ -65,7 +65,7 @@ const PROJECTS = [
           { label: "Dashboard and collections", text: "Store stats, the collections table with status filters, and bulk actions with progress states." },
           { label: "Review panel", text: "Keywords, tone and length, the generated text and a Google preview, ending in reject, approve or publish." },
           { label: "Teams and settings", text: "Roles, per-store access, invites, brand voice, organization settings and notifications." },
-          { label: "Internal user tests", text: "Tests with the people who use the tool, inside the team." }
+          { label: "Wireframe reviews", text: "Walkthroughs with the team who use the tool, which moved store navigation from the sidebar to the top bar." }
         ],
         constraints: [
           {
@@ -115,7 +115,7 @@ const PROJECTS = [
           },
           {
             title: "The current store is always on screen",
-            why: "With several stores and organizations, the worst mistake is generating or approving in the wrong one.",
+            why: "With several stores and organizations, the worst mistake is generating or approving in the wrong one. When I showed the team wireframes with the store navigation in the sidebar, they got confused. With it in the top bar, they understood it better.",
             chosen: "b",
             a: {
               label: "Switch from a settings menu",
@@ -226,7 +226,7 @@ const PROJECTS = [
         heading: "Decide who sees what before designing any screen",
         items: [
           "I'd map access with the stakeholder before the first screen, because that structure shaped every page after it.",
-          "Internal user tests helped shape the flows, and I'd start them earlier, with the access view, because that's where confusion shows up first."
+          "Showing wireframes to the team caught a real problem: they got lost with store navigation in the sidebar, so it moved to the top bar. I'd start those reviews earlier, with the access view, because that's where confusion shows up first."
         ]
       }
     }
@@ -445,14 +445,14 @@ const PROJECTS = [
     "caseStudy": {
       "outcome": "Turning feedback from five audience groups into a clearer, more useful VinylMapper.",
       "summary": {
-        "problem": "VinylMapper is a startup’s social app where record collectors find stores, follow them, review them and share what they find. The team handed it to me already “designed”, but it was incomplete and poorly built: no flows, no style and no coherence between screens, an improvised design with no research behind it. I interviewed five audience groups, built the flows and a new system from that research, and rebuilt the app around it.",
+        "problem": "VinylMapper is a startup’s social app where record collectors find stores, follow them, review them and share what they find. The team handed it to me already “designed”, but it was incomplete and poorly built: no flows, no style and no coherence between screens, an improvised design with no research behind it. I ran 10 interviews across five audience groups, built the flows and a new system from that research, and rebuilt the app around it.",
         "role": "UX/UI designer",
         "scope": "Research, flows, navigation, design system and interface · 2025–2026",
         "team": "Startup client",
         "duration": "2025–2026",
         "result": {
-          "value": "5 groups",
-          "label": "interviewed on the original prototype, then the app was rebuilt around what they said"
+          "value": "10 interviews",
+          "label": "across 5 audience groups on the original prototype, then the app was rebuilt around what they said"
         }
       },
       "problem": {
@@ -460,7 +460,7 @@ const PROJECTS = [
         "text": [
           "VinylMapper is a startup’s app for record collectors: they find stores on a map, follow them, review them, check in and share what they find, and store owners claim and manage their listing.",
           "The team handed it to me already “designed”, but it was incomplete and poorly built: no flows, no style and no coherence between screens. It reflected what the owner wanted rather than what worked, with no research or testing behind it, and a navigation that had grown screen by screen: five equal tabs, three icon-only tab sets and a More menu with eleven tiles.",
-          "I started with research: I interviewed five audience groups on the original prototype, veteran store owners, newer store owners, crate diggers, traveling collectors and release chasers. Only one of the five groups would have used it as it was. The others said Maybe or No, for reasons that pointed to the same few problems.",
+          "I started with research: 10 interviews across five audience groups on the original prototype, veteran store owners, newer store owners, crate diggers, traveling collectors and release chasers. Only one of the five groups would have used it as it was. The others said Maybe or No, for reasons that pointed to the same few problems.",
           "The goal became to act on those problems in order of impact: pick a front door, use the data the app already collects, give owners a reason to stay, earn their trust and stop making people learn the app by tapping."
         ],
         "image": {
@@ -473,7 +473,7 @@ const PROJECTS = [
         "scope": [
           {
             "label": "Group research",
-            "text": "Five audience groups, covering owners and collectors, each taking the original prototype for a walkthrough."
+            "text": "10 interviews across five audience groups, owners and collectors, each walking through the original prototype."
           },
           {
             "label": "Findings and priorities",
@@ -549,7 +549,7 @@ const PROJECTS = [
         "items": [
           {
             "caption": "1. Five audience groups, one list of findings",
-            "text": "I researched five audience groups: veteran store owners, newer store owners with a bar, crate diggers and DJs, collectors who travel, and release chasers with a collection on Discogs. Each group walked through the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
+            "text": "I ran 10 interviews across five audience groups: veteran store owners, newer store owners with a bar, crate diggers and DJs, collectors who travel, and release chasers with a collection on Discogs. Each group walked through the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
             "images": [
               {
                 "src": "assets/images/vk-panel.jpg?v=5"
@@ -624,7 +624,7 @@ const PROJECTS = [
             "label": "There is no usage data yet. A usability test, owner interviews and a first-click test are planned to check whether the changes work."
           }
         ],
-        "note": "The baseline is the app as it was handed over: no flows, no style and no research. Each of the five groups was explored through a small qualitative sample, so the verdicts and findings are directional until the validation plan is run."
+        "note": "The baseline is the app as it was handed over: no flows, no style and no research. The 10 interviews are a small qualitative sample across the five groups, so the verdicts and findings are directional until the validation plan is run."
       },
       "learnings": {
         "heading": "Pick a front door, then earn the rest",
