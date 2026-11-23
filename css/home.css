@@ -19,26 +19,28 @@
    orbits (js/glow.js pauses them off screen). Inspired by the glow on
    niklaspeterson.com, rebuilt here with plain CSS. */
 .intro-glow {
-  --glow-opacity: 0.44;
+  --glow-opacity: 0.26;
   container-type: inline-size;
   position: absolute;
   top: 0;
+  bottom: 0;
   left: 50%;
   width: 100%;
   min-width: 768px;
   max-width: 1440px;
-  aspect-ratio: 9 / 5;
   transform: translateX(-50%);
   opacity: var(--glow-opacity);
   pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  /* Fully faded by the bottom edge of the section, so the next section
+     starts on the plain page background with no visible cut. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 22%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 22%, transparent 100%);
 }
 
-:root[data-theme="light"] .intro-glow { --glow-opacity: 0.5; }
+:root[data-theme="light"] .intro-glow { --glow-opacity: 0.34; }
 
 @media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .intro-glow { --glow-opacity: 0.5; }
+  :root:not([data-theme="dark"]) .intro-glow { --glow-opacity: 0.34; }
 }
 
 .glow-blob {
@@ -57,7 +59,7 @@
 
 .glow-blob--orange {
   --color: #fb5607;
-  --x: 76cqw; --y: 5cqw; --size: 40cqw;
+  --x: 76cqw; --y: -1cqw; --size: 40cqw;
   --shape: 58% 42% 49% 51% / 47% 56% 44% 53%;
   --duration: 36s;
   --radius: 11cqw;
@@ -65,7 +67,7 @@
 
 .glow-blob--pink {
   --color: #ff006e;
-  --x: 36cqw; --y: 7cqw; --size: 34cqw;
+  --x: 36cqw; --y: 1cqw; --size: 34cqw;
   --shape: 44% 56% 61% 39% / 52% 41% 59% 48%;
   --duration: 32s;
   --radius: 9cqw;
@@ -73,7 +75,7 @@
 
 .glow-blob--blue {
   --color: #3a86ff;
-  --x: 56cqw; --y: 9cqw; --size: 42cqw;
+  --x: 56cqw; --y: 3cqw; --size: 42cqw;
   --shape: 52% 48% 40% 60% / 46% 57% 43% 54%;
   --duration: 40s;
   --radius: 12cqw;
