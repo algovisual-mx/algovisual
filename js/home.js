@@ -9,8 +9,7 @@
     "</svg>";
 
   // "cards" (two-column cards, whole card is the link), "zigzag" (alternating
-  // image/text rows), "accordion" (js/accordion-gallery.js) or "grid" (the
-  // original image-only card grid).
+  // image/text rows) or "grid" (the original image-only card grid).
   var WORK_LAYOUT = "cards";
 
   function renderCards(items) {
@@ -103,27 +102,6 @@
       if (WORK_LAYOUT === "zigzag") {
         sectionEl.appendChild(renderZigzag(items));
         root.appendChild(sectionEl);
-        return;
-      }
-
-      if (WORK_LAYOUT === "accordion" && window.AccordionGallery) {
-        var holder = document.createElement("div");
-        holder.className = "reveal";
-        sectionEl.appendChild(holder);
-        root.appendChild(sectionEl);
-        new window.AccordionGallery(holder, {
-          items: items.map(function (p) {
-            return {
-              image: p.cover,
-              label: p.title,
-              link: "project.html?slug=" + encodeURIComponent(p.slug)
-            };
-          }),
-          defaultIndex: 0,
-          accentColor: "#475DD7",
-          expandRatio: 0.52,
-          trigger: "hover"
-        });
         return;
       }
 

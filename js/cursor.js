@@ -50,7 +50,7 @@
     document.addEventListener(
       "mouseover",
       function (e) {
-        var card = e.target.closest(".project-card, .ag-panel, .work-row__media, .work-card, .cs-figure__media.is-zoomable");
+        var card = e.target.closest(".project-card, .work-row__media, .work-card, .cs-figure__media.is-zoomable");
         dot.classList.toggle("is-view", !!card);
       },
       { passive: true }
@@ -59,9 +59,9 @@
     document.addEventListener(
       "mouseout",
       function (e) {
-        var card = e.target.closest(".project-card, .ag-panel, .work-row__media, .work-card, .cs-figure__media.is-zoomable");
+        var card = e.target.closest(".project-card, .work-row__media, .work-card, .cs-figure__media.is-zoomable");
         if (!card) return;
-        var toCard = e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(".project-card, .ag-panel, .work-row__media, .work-card, .cs-figure__media.is-zoomable");
+        var toCard = e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(".project-card, .work-row__media, .work-card, .cs-figure__media.is-zoomable");
         if (toCard === card) return;
         dot.classList.remove("is-view");
       },

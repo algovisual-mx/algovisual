@@ -63,7 +63,6 @@ html {
   --border-strong: rgba(255, 255, 255, 0.22);
   --wave-line: rgba(255, 255, 255, 0.5);
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-  --hero-canvas-opacity: 1;
   --logo-filter: invert(1);
   /* Arrow cursor: purple with a black outline in dark mode. */
   --cursor-fill: var(--accent);
@@ -81,7 +80,6 @@ html {
   --border-strong: rgba(10, 10, 12, 0.18);
   --wave-line: rgba(10, 10, 12, 0.4);
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-  --hero-canvas-opacity: 0.65;
   --logo-filter: none;
   --cursor-fill: var(--fg);
   --cursor-stroke: none;
@@ -99,7 +97,6 @@ html {
     --border-strong: rgba(10, 10, 12, 0.18);
     --wave-line: rgba(10, 10, 12, 0.4);
     --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    --hero-canvas-opacity: 0.65;
     --logo-filter: none;
     --cursor-fill: var(--fg);
     --cursor-stroke: none;
@@ -579,24 +576,6 @@ main { display: block; }
   margin-top: clamp(64px, 9vw, 120px);
 }
 
-.icon-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border: 1px solid var(--border-strong);
-  border-radius: 50%;
-  color: var(--fg);
-  transition: transform var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
-}
-.icon-link svg { width: 24px; height: 24px; }
-.icon-link:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-  transform: translateY(-3px);
-}
 
 .footer-bottom {
   display: flex;

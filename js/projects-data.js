@@ -133,7 +133,7 @@ const PROJECTS = [
         items: [
           {
             caption: "1. Sign-up and login",
-            problem: "Getting in had to be fast, for new accounts and for people returning to an organization.",
+            problem: "Getting in had to be fast.",
             solution: "Email first, then a code. No password to create.",
             text: "New users enter their email and confirm it with a six-digit code, or continue with Google. Returning users log in with a password, or choose \u201cI prefer a code\u201d. The code field has empty and filled states, and a way to send a new code if it doesn\u2019t arrive.",
             images: [
@@ -145,8 +145,8 @@ const PROJECTS = [
           },
           {
             caption: "2. Setting up an organization and connecting a store",
-            problem: "A new owner had to go from an empty account to a working workspace without help.",
-            solution: "A short guided setup: name it, connect Shopify, invite the team.",
+            problem: "A new owner had to reach a working workspace alone.",
+            solution: "Name it, connect Shopify, invite the team.",
             text: "The setup explains what an organization is and asks for agreement to the terms. Then the owner names it, connects a Shopify store with its URL and an Admin API token, and invites teammates with a role and a store. The connection shows its progress while the store syncs, and each step can be skipped and finished later.",
             images: [
               { src: "assets/images/visicart-flow-org-1.jpg" },
@@ -157,8 +157,8 @@ const PROJECTS = [
           },
           {
             caption: "3. Connecting your own AI provider",
-            problem: "Descriptions are written by an AI model, so every organization has to connect one and understand how it is billed.",
-            solution: "Choose a provider, paste a key, verify it, done.",
+            problem: "Every organization has to connect an AI model and understand the billing.",
+            solution: "Choose a provider, paste a key, verify it.",
             text: "The owner picks a provider (Claude by Anthropic is recommended, OpenAI and Google are also available), follows a three-step guide to create an API key, then pastes it and chooses a model. The key is verified before it is saved, with clear verifying and error states, and the screen says that usage is billed to the provider account. A banner and a sidebar warning show until AI is connected, with a different version for editors, and the provider can be switched later from the organization settings.",
             stack: true,
             images: [
@@ -168,8 +168,8 @@ const PROJECTS = [
           },
           {
             caption: "4. Dashboard, collections and settings",
-            problem: "Teams manage many collections at once and need to see where each one stands.",
-            solution: "Status at a glance, filters, and actions for one collection or all of them.",
+            problem: "Teams manage many collections at once.",
+            solution: "Status at a glance, filters and bulk actions.",
             text: "The dashboard counts the collections that were synced, generated, approved and published, and lists recent activity. The collections table filters by status (pending, generated, approved, published, rejected) and has one action per row. Sync store, Generate all and Publish approved handle the bulk work, with progress screens while they run. Each store also keeps its own brand voice, description length and meta description setting.",
             images: [
               { src: "assets/images/visicart-flow-generate-1.jpg", fit: "contain" },
@@ -180,8 +180,8 @@ const PROJECTS = [
           },
           {
             caption: "5. Reviewing, approving and publishing",
-            problem: "AI writes the draft, but a person has to trust it before it goes live on a store.",
-            solution: "A review panel with keywords, controls and a Google preview before anything is published.",
+            problem: "AI writes the draft, but a person has to trust it.",
+            solution: "A review panel with a Google preview before anything is published.",
             text: "Inside each collection, the person adds keywords from Semrush or writes their own, sets the tone and length, and generates a title and meta description. A character counter and a Google search preview show how the result will look. Then they reject, approve or publish it, and a message confirms what happened.",
             stack: true,
             images: [
@@ -190,8 +190,8 @@ const PROJECTS = [
           },
           {
             caption: "6. Teams, roles and access",
-            problem: "Owners needed to give people access without opening every store.",
-            solution: "Organization, then stores, then people, with one view per person.",
+            problem: "Owners needed to give access without opening every store.",
+            solution: "Organization, then stores, then people, in one view.",
             text: "An owner sets up the organization, adds stores and invites people with a role. One view shows everyone with access and their role in each store. Editing a person, assigning stores and removing or deleting users and stores each have their own panel and confirmation.",
             stack: true,
             images: [
@@ -201,8 +201,8 @@ const PROJECTS = [
           },
           {
             caption: "7. Always knowing which store you\u2019re in",
-            problem: "With several stores and organizations, it is easy to act in the wrong one.",
-            solution: "The store and organization switcher stays in the navigation.",
+            problem: "With several stores it is easy to act in the wrong one.",
+            solution: "The switcher stays in the navigation.",
             text: "The organization menu and the store dropdown live in the navigation, next to notifications, so the current store and organization are always on screen. Switching never goes through a settings menu.",
             stack: true,
             images: [
@@ -211,8 +211,6 @@ const PROJECTS = [
           },
           {
             caption: "8. Accessible by default",
-            problem: "Tools that teams work in all day need to stay readable and easy to operate for everyone.",
-            solution: "Check color, contrast, minimum sizes and touch areas on every screen.",
             text: "I treated accessibility as part of the design, not a final pass. I checked the color choices and the contrast between text, controls and their backgrounds, set minimum text sizes, and sized touch areas so every control is comfortable to hit.",
             images: []
           }
@@ -347,8 +345,8 @@ const PROJECTS = [
         items: [
           {
             caption: "1. The whole journey, from sign-in to a file in the right folder",
-            problem: "Without a tool, every step was manual: open a page, copy its text, paste it into a doc and save each image.",
-            solution: "One linear flow with a single place to start and a clear end state.",
+            problem: "Without a tool, every step was manual.",
+            solution: "One linear flow, with a single place to start.",
             text: "Before drawing any screen I mapped the flow with the stakeholders: sign in, set up the extraction, watch it run, review the results, and browse and organize them later. Team management sits apart, for the people who run the workspace.",
             stack: true,
             images: [
@@ -357,8 +355,8 @@ const PROJECTS = [
           },
           {
             caption: "2. Setting up an extraction",
-            problem: "Starting a large extraction had to be quick, and it had to say where everything would be saved.",
-            solution: "Destination first, then the URLs, then the formats, all on one screen.",
+            problem: "Starting a large extraction had to be quick.",
+            solution: "Destination, URLs, formats: three steps on one screen.",
             text: "The Plucker Tool puts three numbered steps on a single screen. The person picks or creates the project and folder where the files will live, pastes any number of URLs, one per line, and chooses what to extract: text as a Google Doc, a Word file or a TXT, images and PDFs. A progress screen shows what the engine is doing, and when it finishes the results appear right away.",
             images: [
               { src: "assets/images/pageplucker-s-plucker.jpg" },
@@ -368,8 +366,8 @@ const PROJECTS = [
           },
           {
             caption: "3. A file structure that mirrors the work",
-            problem: "One extraction creates many files per page, and hundreds of pages would bury them.",
-            solution: "A fixed hierarchy of project, folder and page, shown the same way everywhere.",
+            problem: "Hundreds of pages would bury the files.",
+            solution: "A fixed hierarchy of project, folder and page.",
             text: "Every page belongs to a folder and every folder belongs to a project. That path is the backbone of the product: the sidebar opens projects and folders in place, every row shows its path, and breadcrumbs and permissions use the same levels. Each page keeps all its files together: the Google Doc, the Word and text versions, the PDFs and the images.",
             stack: true,
             images: [
@@ -379,8 +377,8 @@ const PROJECTS = [
           },
           {
             caption: "4. Browsing hundreds of documents",
-            problem: "A single page can have five kinds of files, and a team can have hundreds of pages.",
-            solution: "One row or card per page, a badge for every format and a clear complete or incomplete state.",
+            problem: "One page can have five kinds of files.",
+            solution: "One row per page, a badge for each format.",
             text: "My Projects opens with the numbers that matter, then the projects, the most recent folders and the latest plucked documents. Documents can be shown as a list or a grid, sorted, selected in bulk and downloaded together. Each one carries badges for its Google Doc, Word and text versions, and counts for its PDFs and images. A format that wasn’t extracted looks disabled, and a page that is still empty offers a Pluck action instead.",
             images: [
               { src: "assets/images/pageplucker-s-projects-list.jpg" },
@@ -390,8 +388,8 @@ const PROJECTS = [
           },
           {
             caption: "5. Teams, roles and permissions",
-            problem: "With many people extracting into shared projects, owners needed to control access and see what was happening.",
-            solution: "Roles, per-project access, per-person permissions and an activity log.",
+            problem: "Owners needed to control access and see activity.",
+            solution: "Roles, per-project access and an activity log.",
             text: "The Team Manager lists everyone with a role (owner, admin or member), a status and the projects they can reach. A panel of toggles sets what each person can do: create projects, delete projects, invite users and edit content. The activity view totals extractions, items and storage, and logs every extraction by user, project and URL.",
             images: [
               { src: "assets/images/pageplucker-s-team-users.jpg" },
@@ -401,8 +399,8 @@ const PROJECTS = [
           },
           {
             caption: "6. A design system built for the product",
-            problem: "Many screens share the same rows, badges and navigation, and they had to look and behave the same.",
-            solution: "A shared component library in Figma, with every state defined.",
+            problem: "Many screens share rows, badges and navigation.",
+            solution: "A shared component library with every state.",
             text: "Before the screens multiplied I built the component library: logo and icons, a purple base with an orange accent for actions, Montserrat and Red Hat Display for type, and components for navigation, document rows and cards, badges, buttons, inputs, progress and toasts. They come with their states (complete, incomplete, hover, disabled), list and grid variants, and mobile versions. Developers built from it, and new screens were assembled instead of drawn.",
             images: [
               { src: "assets/images/pageplucker-ds-1.jpg" },
@@ -413,8 +411,6 @@ const PROJECTS = [
           },
           {
             caption: "7. Accessible by default",
-            problem: "A tool the team lives in has to stay readable and easy to operate for everyone.",
-            solution: "Check color, contrast, minimum sizes and touch areas on every screen.",
             text: "I treated accessibility as part of the design, not a final pass. I checked the color choices and the contrast between text, controls and their backgrounds, set minimum text sizes, and sized touch areas so every control is comfortable to hit.",
             images: []
           }
@@ -553,8 +549,8 @@ const PROJECTS = [
         items: [
           {
             caption: "1. Listening before drawing",
-            problem: "The app felt slow and unintuitive, and I couldn’t tell whether that was just me.",
-            solution: "Use it in real situations, interview riders and read the reviews, then turn the patterns into two personas.",
+            problem: "I couldn\u2019t tell if the app\u2019s problems were just mine.",
+            solution: "Real use, interviews and reviews, then two personas.",
             text: "I used the app in different situations and talked with people who just want to get from A to B without paying for a taxi. The same things kept coming up: the app is slow and unintuitive, it isn’t clear how to start a trip, bike and dock availability is confusing, and some riders open Google Maps instead because it is faster. Behind all of it were a cluttered interface, a poorly functional map, no real-time information and unnecessary steps for common actions. From that I defined two personas: Mariana, who commutes every day and wants speed and clarity, and Roberto, who rides on weekends and needs step-by-step guidance.",
             images: [
               { src: "assets/images/mibici-s-current.jpg" },
@@ -563,8 +559,8 @@ const PROJECTS = [
           },
           {
             caption: "2. Mapping the whole journey",
-            problem: "Essential actions were scattered, and common tasks took unnecessary steps.",
-            solution: "One user flow from onboarding to returning a bike, with support, account and plan changes as branches.",
+            problem: "Common tasks took unnecessary steps.",
+            solution: "One flow from onboarding to returning a bike.",
             text: "Before drawing screens I mapped what a person actually does: sign in or register, find a station on the map, unlock a bike, ride, return it, then take another or finish. Help, account and station search hang off the home map. Seeing it all in one picture made it clear which screens the design needed and which steps could go.",
             stack: true,
             images: [
@@ -573,8 +569,8 @@ const PROJECTS = [
           },
           {
             caption: "3. From paper to wireframes",
-            problem: "I needed to know whether the layout and the flow worked before investing in visual design.",
-            solution: "Sketch on paper, then build a quick low-fidelity prototype in Figma.",
+            problem: "Layout and flow had to work before the visual design.",
+            solution: "Paper sketches, then a quick Figma prototype.",
             text: "The sketches explored four ideas: the map as the main screen, clear availability with colors and large numbers, a simpler rental and return flow with confirmation screens, and trip information together with account status. I moved them into rough wireframes in Figma, kept deliberately plain, to check the overall experience quickly.",
             images: [
               { src: "assets/images/mibici-s-sketches.jpg" },
@@ -583,8 +579,8 @@ const PROJECTS = [
           },
           {
             caption: "4. Finding and unlocking a bike",
-            problem: "Availability was confusing, the map was slower than Google Maps and there was no obvious way to start a trip.",
-            solution: "A live map as the home screen, color-coded availability and one floating button that goes straight to the QR scan.",
+            problem: "Availability was confusing and starting a trip wasn\u2019t obvious.",
+            solution: "A live map home and one button straight to the QR scan.",
             text: "The high-fidelity design keeps the same structure with a cleaner look, clear iconography and colors that convey security and ease of use. Signing in is a short form with a clear way to register instead. The map is the home screen, and every station shows its bikes and free docks with color codes and big numbers. Tapping a station gives the distance and starts navigation. The New trip button sits in the middle of the bar and opens the QR scanner, with an Unlock button and Help one tap away.",
             images: [
               { src: "assets/images/mibici-s-find.jpg" }
@@ -592,8 +588,8 @@ const PROJECTS = [
           },
           {
             caption: "5. Riding, returning and paying",
-            problem: "Riders weren’t sure whether the bike had locked, how much time was left or when they would be charged.",
-            solution: "A clear timer and limit, an explicit return step, and membership, balance and history one tap away.",
+            problem: "Riders didn\u2019t know if the bike locked or when they\u2019d be charged.",
+            solution: "A clear timer, an explicit return step, balance one tap away.",
             text: "During the ride a countdown and a progress bar show the time left, with a plain reminder that trips are limited to 30 minutes and that returning the bike to any station avoids extra charges. The ride ends with an explicit “I’ve returned the bike” step. The account section shows the plan, the date and amount of the next charge and the card used, with a clear way to change the plan or cancel it, while history and balance stay one tap away.",
             images: [
               { src: "assets/images/mibici-s-ride.jpg" }
@@ -756,8 +752,8 @@ const PROJECTS = [
         "items": [
           {
             "caption": "1. Five audience groups, one list of findings",
-            "problem": "The prototype looked good, but nobody had checked whether it worked for the groups it was for.",
-            "solution": "Research five audience groups on the prototype, then trace every finding to the group that raised it and rank it.",
+            "problem": "Nobody had checked it worked for the people it was for.",
+            "solution": "Research five audience groups, then rank every finding.",
             "text": "I researched five audience groups: veteran store owners, newer store owners with a bar, crate diggers and DJs, collectors who travel, and release chasers with a collection on Discogs. Each group walked through the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
             "images": [
               {
@@ -770,8 +766,8 @@ const PROJECTS = [
           },
           {
             "caption": "2. What changed, by priority",
-            "problem": "The handoff had no structure, so the changes had to start with the structure.",
-            "solution": "P0 first: navigation, labels and trust. Then P1: Find, owners and reviews. Then P2: records, community and first run.",
+            "problem": "The handoff had no structure.",
+            "solution": "Fix navigation, labels and trust first, then Find, owners and records.",
             "text": "P0 puts the map first with Create on every screen, labels every tab, explains Coins, renames “Repress” to Share and adds the ownership and ratings disclosure. P1 adds filters and honest cards to Find, a switcher, insights, a team and events for owners, and reviews that need a real visit. P2 adds wantlist matches, record search and releases from Discogs, one Follow model, group chats of up to 12 and a first run for collectors and owners.",
             "images": [
               {
@@ -805,8 +801,8 @@ const PROJECTS = [
           },
           {
             "caption": "3. Validate before building",
-            "problem": "These changes rest on a small round of research, so they need a wider check before they are built.",
-            "solution": "Plan a usability test across the five groups, owner interviews and a first-click test on tab order.",
+            "problem": "These changes rest on a small round of research.",
+            "solution": "A usability test, owner interviews and a first-click test, before building.",
             "text": "The redesign is a set of bets, and I wrote down how to check them. A usability test across the five groups, covering owners, diggers or release chasers and travelers, on tasks like finding an open used-soul shop within 10 miles, claiming a store and posting an event. Owner interviews before any owner tool is built, asking what proof would make them post weekly. And a first-click test comparing a Map-first with a Feed-first landing, to ship the order that wins on discovery tasks.",
             "images": [
               {
