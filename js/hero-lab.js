@@ -1,4 +1,4 @@
-/* Hero lab (hero-lab.html):
+/* Home hero:
    - the head tilts toward the pointer like a 3D model (layers stacked in Z),
    - the wordmark is designed live by js/tech-text.js, then the line below and
      the meta row come in. */

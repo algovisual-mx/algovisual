@@ -30,31 +30,6 @@
   transition: opacity var(--dur-med) var(--ease);
 }
 
-/* "Worm cursor" trail hero background (js/cursor-trail.js) — currently the
-   active one; the dot-grid it replaced is still wired up, just commented
-   out, in case it's wanted back. */
-.cursor-trail-wrap {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.cursor-trail-svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.cursor-trail-svg line {
-  stroke-width: 10px;
-  stroke-linecap: round;
-  shape-rendering: optimizeSpeed;
-}
-
 .hero-scrim {
   position: absolute;
   inset: 0;
@@ -83,46 +58,6 @@
   font-size: clamp(2.1rem, 7.2vw, 5.2rem);
   max-width: 18ch;
   animation: heroSlideIn 0.9s var(--ease) both;
-}
-
-.hero-type-line {
-  display: block;
-}
-
-.hero-type-static {
-  display: block;
-}
-
-.hero-type-dynamic {
-  display: inline-block;
-}
-
-.hero-type-dynamic [data-text-type] {
-  color: var(--accent);
-}
-
-.hero-type-suffix {
-  color: var(--fg);
-}
-
-.text-type__cursor {
-  display: inline-block;
-  color: var(--accent);
-  font-weight: 400;
-}
-.text-type__cursor--hidden { display: none; }
-
-/* Content is empty (between words): stay visible, but collapse our own
-   box-width to zero (so the static text after us lands exactly where it
-   would if we weren't here at all) and nudge the glyph itself left with
-   a position offset, which — unlike margin — doesn't affect layout, so
-   it can't disturb that alignment. */
-.text-type__cursor--offset {
-  width: 0;
-  overflow: visible;
-  position: relative;
-  left: -0.25em;
-  transition: left var(--dur-fast) var(--ease);
 }
 
 .hero-sub {

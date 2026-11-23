@@ -611,15 +611,6 @@ main { display: block; }
 
 .footer-bottom a:hover { color: var(--accent); }
 
-/* ---- TextType cursor fallback (used only if GSAP fails to load) ----------*/
-@keyframes textTypeCssBlink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-.text-type__cursor--css-blink {
-  animation: textTypeCssBlink 1s step-end infinite;
-}
-
 /* ---- Reveal-on-scroll utility ---------------------------------------------*/
 .reveal {
   opacity: 0;
