@@ -691,7 +691,7 @@ const PROJECTS = [
         "items": [
           {
             "title": "Make the map the front door, and keep Create one tap away",
-            "why": "Sofía, Dez and Ray came for Find. Marlene and Jordan came to post. Meanwhile the most useful content, guides, collectables and claiming a store, sat in More. The bar is now Map, Feed, Create, Messages and Profile: the map opens after login, Create works from any screen, city guides appear on the map for whatever city you browse, and More is gone, replaced by Settings behind the profile gear.",
+            "why": "The collectors came for Find and the owners came to post. Meanwhile the most useful content, guides, collectables and claiming a store, sat in More. The bar is now Map, Feed, Create, Messages and Profile: the map opens after login, Create works from any screen, city guides appear on the map for whatever city you browse, and More is gone, replaced by Settings behind the profile gear.",
             "chosen": "b",
             "a": {
               "label": "Social Home as the front door",
@@ -705,7 +705,7 @@ const PROJECTS = [
           },
           {
             "title": "Turn the data we already collect into filters",
-            "why": "Stores already fill in genres, formats, buy, sell or trade and a used-to-new mix, but Find only offered a name and a distance. Dez’s first reaction was that every store on the map was rated 5.0, which told him nothing. Find now filters by open now, genre, format, buy-sell-trade and used or new, sorts by distance, rating, Selection or Price, and shows every rating with its review count, so 5.0 (2) reads honestly.",
+            "why": "Stores already fill in genres, formats, buy, sell or trade and a used-to-new mix, but Find only offered a name and a distance. The crate digger’s first reaction was that every store on the map was rated 5.0, which told nothing about which shop was worth the drive. Find now filters by open now, genre, format, buy-sell-trade and used or new, sorts by distance, rating, Selection or Price, and shows every rating with its review count, so 5.0 (2) reads honestly.",
             "chosen": "b",
             "a": {
               "label": "A name search and a distance",
@@ -719,7 +719,7 @@ const PROJECTS = [
           },
           {
             "title": "Give owners control, proof and tools",
-            "why": "Marlene could not reply to a review, saw no numbers on what the app did for her and could not even find Store Manager, hidden behind a small icon in the top bar. Jordan had no events, no way to hold a record and no team access. Owners now switch stores from the top of Profile, see views, followers, direction and call taps and check-ins, invite a team with roles, post New arrivals, Events and Announcements, and reply publicly to reviews.",
+            "why": "The veteran owner could not reply to a review, saw no numbers on what the app did for the shop and could not even find Store Manager, hidden behind a small icon in the top bar. The newer shop had no events, no way to hold a record and no team access. Owners now switch stores from the top of Profile, see views, followers, direction and call taps and check-ins, invite a team with roles, post New arrivals, Events and Announcements, and reply publicly to reviews.",
             "chosen": "b",
             "a": {
               "label": "Edit Store and Store Profile",
@@ -733,7 +733,7 @@ const PROJECTS = [
           },
           {
             "title": "Earn trust before asking for it",
-            "why": "Marlene read a prefilled unclaimed page with a “spread the word” banner as Yelp’s playbook, and wanted to know who owns the platform that ranks her shop. The claim screen now says who runs the app and links to how ratings work, the unclaimed line speaks to owners in a neutral tone, only people who checked in can review, and collectables reward quality, such as a review with a photo, instead of review count.",
+            "why": "The veteran owner read a prefilled unclaimed page with a “spread the word” banner as Yelp’s playbook, and wanted to know who owns the platform that ranks the shop. The claim screen now says who runs the app and links to how ratings work, the unclaimed line speaks to owners in a neutral tone, only people who checked in can review, and collectables reward quality, such as a review with a photo, instead of review count.",
             "chosen": "b",
             "a": {
               "label": "A banner aimed at customers",
@@ -747,7 +747,7 @@ const PROJECTS = [
           },
           {
             "title": "Say it in vinyl, and say what things are",
-            "why": "A repress is a real reissue in vinyl, so “Repress this post” confused Dez: it is now Share, with the notification copy to match. Sofía tapped through six unlabeled tabs to learn which one was Vault and which was Discogs, and asked what the 6,280 coins were for. Tabs are now labelled and Discogs stays hidden until connected, Coins has an explainer sheet, and distances follow the locale.",
+            "why": "A repress is a real reissue in vinyl, so “Repress this post” confused the crate digger: it is now Share, with the notification copy to match. The traveling collector tapped through six unlabeled tabs to learn which one was Vault and which was Discogs, and asked what the 6,280 coins were for. Tabs are now labelled and Discogs stays hidden until connected, Coins has an explainer sheet, and distances follow the locale.",
             "chosen": "b",
             "a": {
               "label": "Icons without labels, unexplained terms",
@@ -761,7 +761,7 @@ const PROJECTS = [
           },
           {
             "title": "Make Discogs and records useful",
-            "why": "For Ray, Discogs was decoration: the app displayed a collection he already keeps elsewhere, and the wantlist was used nowhere. The map now highlights stores that match his wantlist, search finds records across store posts, a releases layer shows Record Store Day and new pressings, and favorite artists fill in from Discogs. Group chats grow from 4 to 12 people for record clubs.",
+            "why": "For the release chaser, Discogs was decoration: the app displayed a collection he already keeps elsewhere, and the wantlist was used nowhere. The map now highlights stores that match his wantlist, search finds records across store posts, a releases layer shows Record Store Day and new pressings, and favorite artists fill in from Discogs. Group chats grow from 4 to 12 people for record clubs.",
             "chosen": "b",
             "a": {
               "label": "A Discogs grid you already have",
@@ -782,13 +782,13 @@ const PROJECTS = [
             "caption": "1. Five interviews, one list of findings",
             "problem": "The prototype looked good, but nobody had checked whether it worked for the people it was for.",
             "solution": "Interview five people as they walk it, then trace every finding to who raised it and rank it.",
-            "text": "I interviewed five people from the app’s audiences: Marlene, a veteran shop owner; Jordan, who runs a newer shop with a bar; Dez, a crate digger and DJ; Sofía, a collector who travels; and Ray, a release chaser with his collection on Discogs. Each one walked through the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
+            "text": "I interviewed five people from the app’s audiences: the owner of a veteran shop, the owner of a newer shop with a bar, a crate digger and DJ, a collector who travels, and a release chaser with a collection on Discogs. Each one walked through the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
             "images": [
               {
-                "src": "assets/images/vk-panel.jpg?v=2"
+                "src": "assets/images/vk-panel.jpg?v=3"
               },
               {
-                "src": "assets/images/vk-findings.jpg"
+                "src": "assets/images/vk-findings.jpg?v=2"
               }
             ]
           },
