@@ -629,8 +629,8 @@ const PROJECTS = [
       "Figma"
     ],
     "excerpt": "A redesign of a social app for record collectors, driven by research with five audience groups that turned five verdicts into a ranked list of changes.",
-    "showcase": "assets/images/vinylmapper_case_cover.png?v=2",
-    "cover": "assets/images/vinylmapper-header.jpg?v=2",
+    "showcase": "assets/images/vinylmapper_case_cover.png?v=3",
+    "cover": "assets/images/vinylmapper-header.jpg?v=3",
     "gallery": [],
     "caseStudy": {
       "outcome": "Turning feedback from five audience groups into a clearer, more useful VinylMapper.",
@@ -756,7 +756,7 @@ const PROJECTS = [
             "b": {
               "label": "Labelled tabs and plain explanations",
               "note": "Nothing needs to be learned by tapping.",
-              "image": "assets/images/vk-decision5.jpg"
+              "image": "assets/images/vk-decision5.jpg?v=2"
             }
           },
           {
@@ -802,10 +802,10 @@ const PROJECTS = [
                 "src": "assets/images/vk-s-nav.jpg"
               },
               {
-                "src": "assets/images/vk-s-trust.jpg"
+                "src": "assets/images/vk-s-trust.jpg?v=2"
               },
               {
-                "src": "assets/images/vk-s-profile.jpg"
+                "src": "assets/images/vk-s-profile.jpg?v=2"
               }
             ]
           },
@@ -819,7 +819,7 @@ const PROJECTS = [
                 "src": "assets/images/vk-s-find.jpg"
               },
               {
-                "src": "assets/images/vk-s-owner.jpg"
+                "src": "assets/images/vk-s-owner.jpg?v=2"
               },
               {
                 "src": "assets/images/vk-s-reviews.jpg"
