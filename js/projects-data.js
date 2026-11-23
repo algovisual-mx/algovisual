@@ -638,179 +638,229 @@ const PROJECTS = [
     }
   },
   {
-    slug: "mibici",
-    coverAlt: "Preview of the redesigned MiBici app screens",
-    title: "MiBici",
-    category: "UI/UX Design",
-    section: "product",
-    year: "2025",
-    client: "Personal project",
-    role: "UX/UI Designer",
-    tools: [
+    "slug": "mibici",
+    "title": "MiBici",
+    "category": "UI/UX Design",
+    "section": "product",
+    "year": "2025–2026",
+    "client": "GDL en Bici · social proposal",
+    "role": "UX/UI Designer",
+    "tools": [
       "Figma"
     ],
-    card: { role: "UX/UI designer", type: "Bike-share app redesign", result: "A personal project, from research to a high-fidelity prototype" },
-    excerpt: "A bike-share app redesign, a personal project from research to a high-fidelity prototype.",
-    showcase: "assets/images/mibici_case_cover.png",
-    previewVideo: "assets/videos/Thumb_mibici.mp4?v=2", // looping muted preview shown in the home card instead of the image
-    cover: "assets/images/mibici-header.jpg",
-    gallery: [],
-    caseStudy: {
-      outcome: "Redesigning MiBici so renting a bike feels simple and reliable.",
-      summary: {
-        problem: "MiBici is Guadalajara’s public bike system, and it works well on the street. The app does not. Unreliable payments, confusing navigation and scattered information make a simple ride feel bumpy and wear down trust in the service. I redesigned it as a personal project, from research to a high-fidelity prototype.",
-        role: "UX/UI designer",
-        scope: "Research, flows, wireframes and a high-fidelity prototype · June 2025",
-        team: "Solo",
-        duration: "June 2025",
-        result: {
-          value: "End to end",
-          label: "from research to a high-fidelity prototype"
+    "coverAlt": "Preview of the redesigned MiBici app screens",
+    "card": {
+      "role": "UX/UI designer",
+      "type": "Reform proposal for the MiBici app",
+      "result": "For the GDL en Bici collective, from research to 19 screens"
+    },
+    "excerpt": "A reform proposal for the official MiBici app, made for the GDL en Bici collective: research, a redesign and 19 screens.",
+    "showcase": "assets/images/mibici_case_cover.png?v=4",
+    "cover": "assets/images/mibici-header.jpg?v=4",
+    "gallery": [],
+    "caseStudy": {
+      "outcome": "A reform proposal that makes renting a MiBici simple, clear and trustworthy.",
+      "summary": {
+        "problem": "GDL en Bici, a Guadalajara cycling collective, asked me to research, redesign and present a reform proposal for the official MiBici app, as a social proposal to improve the experience of the people who use it. I studied the app, redesigned it and ran the first version past 30 synthetic users. Their objections shaped a second version of 19 screens.",
+        "role": "UX/UI designer",
+        "scope": "Research, redesign, a synthetic user panel and 19 screens · 2025–2026",
+        "team": "Solo designer, for GDL en Bici",
+        "duration": "2025–2026",
+        "result": {
+          "value": "19 screens",
+          "label": "in the second version, built from the objections of 30 synthetic users"
         }
       },
-      problem: {
-        heading: "The bikes are easy to use. The app isn’t.",
-        text: [
-          "When I moved to Guadalajara, MiBici became part of my daily routine: you take a bike at one station, ride across town and leave it at another. It’s practical, affordable and sustainable. In theory, it’s simple.",
-          "The app doesn’t keep up with the service. A few failed unlocks, a payment that didn’t go through on the first try and that nagging worry when returning a bike (did it lock, or will I be charged extra?) made me think it could be much friendlier. Interviews and store reviews showed it wasn’t bad luck: payments are unreliable, navigation is confusing and the essential information is scattered.",
-          "The goal was a more intuitive, reliable app that streamlines registration and payment, brings the key information together and removes friction from the core tasks, so people trust the service and use it more."
+      "problem": {
+        "heading": "The bikes work. The app makes people doubt the service.",
+        "text": [
+          "MiBici is Guadalajara’s public bike system: you take a bike at one station, ride across town and leave it at another. It is practical, affordable and sustainable. The app is where it breaks. A failed unlock, a payment that doesn’t go through and that nagging worry when returning a bike (did it lock, or will I be charged extra?) wear down trust in the service.",
+          "GDL en Bici, a cycling collective in Guadalajara, asked me to research the app, redesign it and present a reform proposal for the official app. It is a social proposal to improve the experience of the people who use it.",
+          "I started from my own use of the app and more than 20 store reviews, then designed a first version. To check it before showing it to anyone, I ran it past 30 synthetic users: simulated riders of different ages, jobs and needs. They are hypotheses to decide what to test, not real riders. The result: 5 would use the app, 15 maybe and 10 would not. They liked the look. Prices, payment and the return step made them distrust it.",
+          "The goal of the second version was to fix what made them doubt, in order of severity."
         ],
-        image: {
-          src: "assets/images/mibici-station.jpg",
-          caption: "A MiBici station in Guadalajara."
+        "image": {
+          "src": "assets/images/mibici-station.jpg",
+          "caption": "A MiBici station in Guadalajara."
         }
       },
-      role: {
-        text: "This was a personal project, so I did every part of it: I used the app in real situations, interviewed riders, mapped the flows and took the design from paper sketches to a clickable high-fidelity prototype in Figma.",
-        scope: [
-          { label: "Field research", text: "I used the app on a rushed Monday morning, a relaxed Sunday ride and under the midday sun with 15% battery." },
-          { label: "Interviews and reviews", text: "30 interviews with frequent and occasional riders, plus more than 20 reviews on the App Store and Google Play." },
-          { label: "Personas and user flow", text: "Two personas, and a flow chart of every path from onboarding to returning a bike or changing a plan." },
-          { label: "Sketches and wireframes", text: "Paper sketches first, then a fast low-fidelity prototype in Figma to test layout and flow." },
-          { label: "High-fidelity design", text: "A cleaner interface with clear iconography and colors that convey security and ease of use." },
-          { label: "Prototype and feedback", text: "A clickable prototype that I showed to people who ride MiBici regularly." }
+      "role": {
+        "text": "I did every part of it: I used the app in real situations, read its reviews, designed a first version, ran the synthetic user panel, ranked what it found and designed the second version in Figma.",
+        "scope": [
+          {
+            "label": "Field research",
+            "text": "I used the app on a rushed Monday morning, a relaxed Sunday ride and under the midday sun with 15% battery."
+          },
+          {
+            "label": "Store reviews",
+            "text": "More than 20 reviews on the App Store and Google Play."
+          },
+          {
+            "label": "First redesign",
+            "text": "A live map as the home screen, a floating New trip button and explicit timer and return screens."
+          },
+          {
+            "label": "Synthetic user panel",
+            "text": "30 simulated riders walked through every screen and gave a verdict."
+          },
+          {
+            "label": "Findings",
+            "text": "Eight blind spots, ranked from most to least severe."
+          },
+          {
+            "label": "Second version",
+            "text": "19 screens, from sign-up and payment to receipts, reports and help."
+          }
         ]
       },
-      decisions: {
-        heading: "Put the map first, and reassure people at every step",
-        items: [
+      "decisions": {
+        "heading": "Make money and trust clear before, during and after the ride",
+        "items": [
           {
-            title: "Make the map the main screen, with availability you can read at a glance",
-            why: "Many people couldn’t tell where to start, and some preferred Google Maps because it was faster. Opening on a live map, with bikes and docks color-coded and shown as large numbers, answers the first question before anyone has to look for it.",
-            chosen: "b",
-            a: {
-              label: "The map as one section among many",
-              note: "Leaves the first question unanswered."
+            "title": "Show the prices and the payment before the first ride",
+            "why": "Three users caught prices that contradicted each other across screens, and three more could not find where to pay before the first unlock. The second version has consistent prices with a cost per day, a payment step inside sign-up that accepts cards, Apple Pay and cash at OXXO, and a published charge for going over 30 minutes.",
+            "chosen": "b",
+            "a": {
+              "label": "Sign-up straight to the map",
+              "note": "No plan or card was asked before the first unlock."
             },
-            b: {
-              label: "A live map as the home screen",
-              note: "Availability is visible before any tap.",
-              image: "assets/images/mibici-decision1.jpg"
+            "b": {
+              "label": "Plan and payment inside sign-up",
+              "note": "Consistent prices, a cost per day and cash as an option.",
+              "image": "assets/images/mibici-v2-decision1.jpg"
             }
           },
           {
-            title: "One floating button to start a trip, straight to the QR scan",
-            why: "Many users didn’t understand how to start a trip. A permanent “New trip” button in the center of the navigation opens the scanner directly, so the most common action is always one tap away.",
-            chosen: "b",
-            a: {
-              label: "Start a trip from a menu or a station screen",
-              note: "Extra taps for the task people do most."
+            "title": "Let the dock confirm the return, not a button",
+            "why": "The first version had a Return bike button, but a bike is returned by docking it. Two users asked what the button did and whether they would be charged if it wasn’t docked, and three missed a history or a receipt to dispute a charge. Now the dock confirms the return with the bike number, station and time, the ride ends in a receipt, and reporting a problem is one tap away, including a dock that didn’t register the bike.",
+            "chosen": "b",
+            "a": {
+              "label": "A Return bike button",
+              "note": "It was unclear which action ended the trip."
             },
-            b: {
-              label: "A floating New trip button",
-              note: "Always visible, always the same place.",
-              image: "assets/images/mibici-decision2.jpg"
+            "b": {
+              "label": "The dock confirms, with a receipt and a way to report",
+              "note": "Proof for every ride, and a way out when it fails.",
+              "image": "assets/images/mibici-v2-decision2.jpg"
             }
           },
           {
-            title: "Say what is happening: the clock, the limit and the charge",
-            why: "The anxiety was never about riding. It was about the unknowns: how much time is left, what happens after 30 minutes, whether the bike locked and when the card gets charged. The timer, the limit reminder, the return confirmation and the plan’s charge date answer each one on screen.",
-            chosen: "b",
-            a: {
-              label: "Minimal screens with less text",
-              note: "Cleaner, but it leaves people guessing."
+            "title": "Explain every uncertain moment while riding",
+            "why": "The anxiety was never about riding. Users didn’t know what going over 30 minutes costs, got no warning before the limit and found no help to find a free dock or to understand what Emergency does. The ride screen now shows elapsed time with a friendlier tone, a push notification at 25 minutes, the nearest station with free docks, and an Emergency button that says it calls 911 and shares the location.",
+            "chosen": "b",
+            "a": {
+              "label": "A countdown and a warning",
+              "note": "Pressure, without the information."
             },
-            b: {
-              label: "Explicit status and reminders",
-              note: "Every uncertain moment gets a clear message.",
-              image: "assets/images/mibici-decision3.jpg"
+            "b": {
+              "label": "Elapsed time, a warning and next steps",
+              "note": "Every unknown gets an answer on screen.",
+              "image": "assets/images/mibici-v2-decision3.jpg"
             }
           }
         ]
       },
-      solution: {
-        heading: "A map you can trust and a trip you can follow",
-        items: [
+      "solution": {
+        "heading": "From a first redesign to a 19-screen proposal",
+        "items": [
           {
-            caption: "1. Listening before drawing",
-            text: "I used the app in different situations, interviewed 30 riders, frequent and occasional, and read more than 20 App Store and Google Play reviews. The same things kept coming up: the app is slow and unintuitive, it isn’t clear how to start a trip, bike and dock availability is confusing, and some riders open Google Maps instead because it is faster. Behind all of it were a cluttered interface, a poorly functional map, no real-time information and unnecessary steps for common actions. From that I defined two personas: Mariana, who commutes every day and wants speed and clarity, and Roberto, who rides on weekends and needs step-by-step guidance.",
-            images: [
-              { src: "assets/images/mibici-s-current.jpg" },
-              { src: "assets/images/mibici-s-personas.jpg" }
+            "caption": "1. A first redesign from real use",
+            "text": "I used the app in different situations and read more than 20 App Store and Google Play reviews. The same things kept coming up: the app is slow and unintuitive, it isn’t clear how to start a trip, bike and dock availability is confusing, and some riders open Google Maps instead because it is faster. The first version answered with a live map on the home screen, a floating New trip button that opens the scanner, and explicit timer and return screens.",
+            "images": [
+              {
+                "src": "assets/images/mibici-s-current.jpg"
+              },
+              {
+                "src": "assets/images/mibici-s-find.jpg"
+              }
             ]
           },
           {
-            caption: "2. Mapping the whole journey",
-            text: "Before drawing screens I mapped what a person actually does: sign in or register, find a station on the map, unlock a bike, ride, return it, then take another or finish. Help, account and station search hang off the home map. Seeing it all in one picture made it clear which screens the design needed and which steps could go.",
-            stack: true,
-            images: [
-              { src: "assets/images/mibici-flow.jpg" }
+            "caption": "2. Testing it with 30 synthetic users",
+            "text": "I built a panel of 30 simulated riders, among them a student, a retiree, a tourist, a delivery rider, a rider with low vision and a data-protection lawyer. Each walked through every screen and gave a first impression, objections and a verdict: 5 yes, 15 maybe, 10 no. I grouped the objections into eight blind spots and ranked them. The panel is a set of hypotheses to decide what to test. It does not replace real riders.",
+            "stack": true,
+            "images": [
+              {
+                "src": "assets/images/mibici-v2-panel.jpg"
+              }
             ]
           },
           {
-            caption: "3. From paper to wireframes",
-            text: "The sketches explored four ideas: the map as the main screen, clear availability with colors and large numbers, a simpler rental and return flow with confirmation screens, and trip information together with account status. I moved them into rough wireframes in Figma, kept deliberately plain, to check the overall experience quickly.",
-            images: [
-              { src: "assets/images/mibici-s-sketches.jpg" },
-              { src: "assets/images/mibici-s-wireframes.jpg" }
+            "caption": "3. Joining and paying",
+            "text": "Sign-up now ends with a plan and a payment, not at the map. The welcome screen states the passes and how to pay, with an ES/EN switch. Sign-up accepts a foreign phone number, shows the password requirements and explains why it asks for location and camera. Login gets Google, Apple and Face ID. Plans have consistent prices, their own duration and a cost per day, and publish the extra charge. Payment takes cards, including foreign ones, Apple Pay, Google Pay and cash at OXXO. A short tutorial explains that the dock confirms the return.",
+            "images": [
+              {
+                "src": "assets/images/mibici-v2-join-1.jpg"
+              },
+              {
+                "src": "assets/images/mibici-v2-join-2.jpg"
+              }
             ]
           },
           {
-            caption: "4. Finding and unlocking a bike",
-            text: "The high-fidelity design keeps the same structure with a cleaner look, clear iconography and colors that convey security and ease of use. Signing in is a short form with a clear way to register instead. The map is the home screen, and every station shows its bikes and free docks with color codes and big numbers. Tapping a station gives the distance and starts navigation. The New trip button sits in the middle of the bar and opens the QR scanner, with an Unlock button and Help one tap away.",
-            images: [
-              { src: "assets/images/mibici-s-find.jpg" }
+            "caption": "4. Finding a bike and unlocking it",
+            "text": "The map has a pin legend, bike counts inside the pins and a live indicator. Stations filter by favorites and free docks, say free docks instead of ports and show real data on every card. The station detail adds walking time, a bike route, an hourly trend and a way to hold a bike for 10 minutes. Unlocking scans the bike’s code, not the station’s, so it is clear which bike is released, with a flashlight, manual code entry, vibration on a good scan and a +1 bike option for companions.",
+            "stack": true,
+            "images": [
+              {
+                "src": "assets/images/mibici-v2-find.jpg"
+              }
             ]
           },
           {
-            caption: "5. Riding, returning and paying",
-            text: "During the ride a countdown and a progress bar show the time left, with a plain reminder that trips are limited to 30 minutes and that returning the bike to any station avoids extra charges. The ride ends with an explicit “I’ve returned the bike” step. The account section shows the plan, the date and amount of the next charge and the card used, with a clear way to change the plan or cancel it, while history and balance stay one tap away.",
-            images: [
-              { src: "assets/images/mibici-s-ride.jpg" }
+            "caption": "5. Riding, returning and reporting",
+            "text": "While riding, the screen shows elapsed time, what the pass includes and the cost of going over, plus the nearest station with free docks and a Take me there button. Report bike, Share trip and Emergency 911 stay visible. A push arrives at minute 25 even with the app closed. The dock confirms the return, and the ride ends in a receipt with duration, route and cost, plus distance, CO₂ saved and a card to share. If something goes wrong, the report screen covers a dock that didn’t take the bike, a damaged bike, free in the first minute, and an overcharge, with a photo as evidence.",
+            "stack": true,
+            "images": [
+              {
+                "src": "assets/images/mibici-v2-ride.jpg"
+              }
             ]
           },
           {
-            caption: "6. Accessibility check",
-            text: "MiBici is a public service, and people use it outdoors, in daylight, on the move. I measured contrast on the final screens, and this is where the design falls short: white labels on the green buttons measure 2.5:1 and on the yellow buttons 1.5:1, well under the WCAG AA minimum of 4.5:1. Secondary text passes at 4.7:1. The fix is a darker green, about #388636 for white text (4.5:1), and dark labels on the yellow (about 11:1).",
-            images: []
+            "caption": "6. Account and help",
+            "text": "The account shows the right plan price and adds My trips, Payment methods, Invoicing, Language and Privacy, with account deletion inside it. My trips lists every ride with its receipt and the status of open reports. Invoicing handles tax data and automatic invoices, with a link to company plans. Help says what Emergency does, offers an optional trusted contact and a FAQ built from the panel’s questions. In the chat, the rider writes first and End chat becomes a secondary action.",
+            "images": [
+              {
+                "src": "assets/images/mibici-v2-account-1.jpg"
+              },
+              {
+                "src": "assets/images/mibici-v2-account-2.jpg"
+              }
+            ]
+          },
+          {
+            "caption": "7. Accessibility check",
+            "text": "I measured contrast on the second version. One thing is fixed: the yellow buttons now carry dark text at 10.9:1, where white measured 1.5:1. Three still fall short of the WCAG AA minimum of 4.5:1: white labels on the green buttons (2.5:1), secondary gray text (about 3.8:1) and green text on white (3.9:1). Next, I’d darken the green to about #388636, which gives 4.5:1 with white, and the gray text.",
+            "images": []
           }
         ]
       },
-      results: {
-        heading: "Regular riders saw a clearer app",
-        items: [
+      "results": {
+        "heading": "From a first version people doubted to a proposal built on their objections",
+        "items": [
           {
-            value: "A clearer flow",
-            label: "People who ride MiBici regularly noticed the improvement in how the app moves from finding a bike to returning it."
+            "value": "5 · 15 · 10",
+            "label": "yes, maybe and no among 30 synthetic users on the first version."
           },
           {
-            value: "A better design",
-            label: "They noticed the improvement in the overall design as well."
+            "value": "Traceable",
+            "label": "Every change in the second version points back to a blind spot, and every blind spot to the simulated riders who raised it."
           },
           {
-            value: "The right direction",
-            label: "Their feedback confirmed that simplifying the core tasks was the right call."
+            "value": "Not yet tested",
+            "label": "The second version hasn’t been run with real riders. The next step is a usability test with five of them, on how prices are understood and on the return flow."
           }
         ],
-        note: "The 30 interviews were research before designing. After the prototype I only collected informal feedback from acquaintances who ride MiBici regularly, and I did not run a structured usability test. This is a concept project, so there are no usage metrics."
+        "note": "The 30 users are synthetic, simulated riders used as hypotheses, not research participants, so the counts are directional. The prices in the prototype are example values to validate against the official fare."
       },
-      learnings: {
-        heading: "Small reassurances matter as much as big features",
-        items: [
-          "The interviews shaped the design, but I never tested it. I\u2019d run a usability test with five riders on unlocking and returning a bike before calling it done.",
-          "Even a small change, like a clear confirmation message, lowers anxiety and builds trust in the service.",
-          "Registration and payment come first. If people can’t join easily, they won’t use the system at all.",
-          "Visual polish makes an app pleasant, but design proves its value in the moments when people feel stuck, unsure or anxious."
+      "learnings": {
+        "heading": "Simulated users find inconsistencies fast, but only real riders can confirm",
+        "items": [
+          "Money and trust decide whether people use a service. The panel liked the look and still said no because of prices, payment and the return step.",
+          "Many findings were mistakes in my own first version, like prices that contradicted each other across screens. A synthetic panel is a cheap way to catch those before showing a design to anyone.",
+          "If docking the bike is what ends a ride, the app shouldn’t ask for a button. It should confirm what the dock already did.",
+          "Synthetic users are hypotheses. I’d run the first real test with five riders on prices and the return flow."
         ]
       }
     }
