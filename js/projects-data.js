@@ -872,7 +872,7 @@ const PROJECTS = [
             "label": "Planned before building: a usability test across the five groups, owner interviews and a first-click test on tab order."
           }
         ],
-        "note": "Each of the five groups was represented by one interview, a small qualitative sample, so the verdicts and findings are directional until the validation plan is run."
+        "note": "Each of the five groups was explored through a small qualitative sample, so the verdicts and findings are directional until the validation plan is run."
       },
       "learnings": {
         "heading": "Pick a front door, then earn the rest",
