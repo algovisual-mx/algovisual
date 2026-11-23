@@ -628,29 +628,29 @@ const PROJECTS = [
     "tools": [
       "Figma"
     ],
-    "excerpt": "A redesign of a social app for record collectors, rebuilding its navigation so finding a store and sharing a find is always clear.",
-    "showcase": "assets/images/vinylmapper_case_cover.png",
-    "cover": "assets/images/vinylmapper-header.jpg",
+    "excerpt": "A redesign of a social app for record collectors, driven by a persona research round that turned five verdicts into a ranked list of changes.",
+    "showcase": "assets/images/vinylmapper_case_cover.png?v=2",
+    "cover": "assets/images/vinylmapper-header.jpg?v=2",
     "gallery": [],
     "caseStudy": {
-      "outcome": "Reorganising VinylMapper so every screen is easy to find.",
+      "outcome": "Turning five personas’ verdicts into a clearer, more useful VinylMapper.",
       "summary": {
-        "problem": "VinylMapper is a social app where record collectors find stores, follow them, review them and share what they find. As it grew, its navigation didn’t: it was incomplete, unclear and hard to learn. I redesigned the structure first and the interface after, moving from a dark look to a light one.",
+        "problem": "VinylMapper is a social app where record collectors find stores, follow them, review them and share what they find. Its prototype looked good, but it had not picked a main job. I ran a persona research round on the original design, ranked the findings and redesigned the navigation and the product around them.",
         "role": "UX/UI designer",
-        "scope": "Navigation structure, interface redesign and first components · 2025–2026",
+        "scope": "Persona research, navigation, interface and prioritised changes · 2025–2026",
         "team": "Agency product team",
         "duration": "2025–2026",
         "result": {
-          "value": "3 → 1",
-          "label": "icon-only tab sets, replaced by one labelled pattern"
+          "value": "2 No · 2 Maybe · 1 Yes",
+          "label": "the five personas’ verdicts on the original, and the brief for what changed"
         }
       },
       "problem": {
-        "heading": "The app had a lot to offer and no clear way around it",
+        "heading": "A good-looking app that had not picked a main job",
         "text": [
-          "VinylMapper lets collectors find record stores on a map, follow them, review them, check in and share what they find. Its first version had well over a hundred screens and states, and a navigation that had grown screen by screen.",
-          "The bar had five equal slots, and Profile took one of them, while creating a post existed only as a button on Home. Profiles, stores and accounts each had their own row of tabs made only of icons, so every section had to be learned by tapping. And More was a grid of eleven tiles of the same size, with what people use every day next to what they rarely open.",
-          "The goal was a navigation that makes sense at a glance, so people can find a store, see what is happening around them and share a find without wondering where to go. The change from a dark interface to a light one follows from that structure, not the other way around."
+          "VinylMapper lets collectors find record stores on a map, follow them, review them, check in and share what they find, and lets store owners claim and manage their listing. The first version had well over a hundred screens and states, and a navigation that had grown screen by screen: five equal tabs, three icon-only tab sets and a More menu with eleven tiles.",
+          "To see how it held up, I walked the original prototype with five personas drawn from its audiences: two store owners, a crate digger, a traveling collector and a release chaser. Only one of the five would have used it as it was. The others said Maybe or No, for reasons that pointed to the same few problems.",
+          "The goal became to act on those problems in order of impact: pick a front door, use the data the app already collects, give owners a reason to stay, earn their trust and stop making people learn the app by tapping."
         ],
         "image": {
           "src": "assets/images/vm-map-before.jpg",
@@ -658,183 +658,229 @@ const PROJECTS = [
         }
       },
       "role": {
-        "text": "I redesigned VinylMapper at the agency that builds it. I worked on the navigation and the interface together, and adjusted the original design where its structure was incomplete, unclear or didn’t make sense.",
+        "text": "I worked on this at the agency that builds VinylMapper. I ran the research round, turned it into a ranked list of changes and redesigned the product around it, from the navigation to the owner tools.",
         "scope": [
           {
-            "label": "Navigation audit",
-            "text": "I mapped every screen and state of the original app, more than 130, and how each one was reached."
+            "label": "Persona research",
+            "text": "Five personas, covering owners and collectors, each walked through the original prototype."
           },
           {
-            "label": "New structure",
-            "text": "The bottom bar, the secondary tabs and the More menu, redesigned together as one system."
+            "label": "Findings and priorities",
+            "text": "Seven findings, each traced to who raised it and ranked from P0 to P2."
           },
           {
-            "label": "Visual direction",
-            "text": "A move from a dark interface to a light, warmer one, with references gathered before drawing."
+            "label": "Navigation",
+            "text": "A new bar with the map first and Create within reach of every screen."
           },
           {
-            "label": "Home and Find",
-            "text": "Both reworked as discovery screens built around what is near you."
+            "label": "Trust and wording",
+            "text": "Ownership disclosure, verified reviews, neutral claim copy and a vocabulary that speaks vinyl."
           },
           {
-            "label": "Components",
-            "text": "A first set of reusable components, starting with the button and the text field."
+            "label": "Find, owners and records",
+            "text": "Filters, owner tools, wantlist matching and releases, around 40 screens of changes in total."
           },
           {
-            "label": "Redesigned screens",
-            "text": "Around a hundred screens and states, from onboarding and register to profiles, stores and settings."
+            "label": "Validation plan",
+            "text": "A 5-user usability test, owner interviews and a first-click test, planned before building."
           }
         ]
       },
       "decisions": {
-        "heading": "Fewer places to look, and the same place every time",
+        "heading": "Six changes, each traced to what the personas said",
         "items": [
           {
-            "title": "Four destinations and one action that never moves",
-            "why": "Five equal slots made Profile compete with Find and Messages, and posting depended on being on Home, so the most frequent action had to be found each time. The new bar keeps four destinations and gives creating its own button, in the same place on every screen and in the zone where the thumb already rests. Profile moves to the avatar on Home and a card at the top of More, the usual places for “your” things in apps like this.",
+            "title": "Make the map the front door, and keep Create one tap away",
+            "why": "Sofía, Dez and Ray came for Find. Marlene and Jordan came to post. Meanwhile the most useful content, guides, collectables and claiming a store, sat in More. The bar is now Map, Feed, Create, Messages and Profile: the map opens after login, Create works from any screen, city guides appear on the map for whatever city you browse, and More is gone, replaced by Settings behind the profile gear.",
             "chosen": "b",
             "a": {
-              "label": "Five equal tabs, and “+” only on Home",
-              "note": "Profile took a slot and posting depended on the screen."
+              "label": "Social Home as the front door",
+              "note": "Discovery was one tab among five."
             },
             "b": {
-              "label": "Four destinations and a global “+”",
-              "note": "Create from anywhere, always in the same place.",
-              "image": "assets/images/vm-decision1.jpg"
+              "label": "Map first, Create everywhere",
+              "note": "The front door matches why people download the app.",
+              "image": "assets/images/vk-decision1.jpg"
             }
           },
           {
-            "title": "Tabs that say what they are, in one pattern",
-            "why": "Profiles, stores and accounts each had a row of icons with no text, which asks people to recognise a symbol and remember what it means, and the store and the profile used different symbols in a different order. Labels turn recall into recognition, and one shared pattern, with Activity first, means that what you learn in one place works in the other. The store went from six tabs to five by merging Contact into Hours, next to the map, and the account became a plain list.",
+            "title": "Turn the data we already collect into filters",
+            "why": "Stores already fill in genres, formats, buy, sell or trade and a used-to-new mix, but Find only offered a name and a distance. Dez’s first reaction was that every store on the map was rated 5.0, which told him nothing. Find now filters by open now, genre, format, buy-sell-trade and used or new, sorts by distance, rating, Selection or Price, and shows every rating with its review count, so 5.0 (2) reads honestly.",
             "chosen": "b",
             "a": {
-              "label": "Icon-only tabs in each section",
-              "note": "Each set had to be learned by tapping."
+              "label": "A name search and a distance",
+              "note": "Collected data that nobody could use."
             },
             "b": {
-              "label": "One labelled tab pattern",
-              "note": "Every tab says what it is.",
-              "image": "assets/images/vm-decision2.jpg"
+              "label": "Filters, sort and honest cards",
+              "note": "Search by what collectors actually look for.",
+              "image": "assets/images/vk-decision2.jpg"
             }
           },
           {
-            "title": "A More menu with hierarchy",
-            "why": "More was a grid of eleven tiles of the same size, from Manage Account to Collecting Tips. When every option weighs the same, every option takes longer to weigh. It is now ordered by purpose and by how often it is needed: your profile first, then reading with featured cards, collectables progress, account, support and invitations, with Log out at the end as a quiet link, far from where a thumb lands by accident.",
+            "title": "Give owners control, proof and tools",
+            "why": "Marlene could not reply to a review, saw no numbers on what the app did for her and could not even find Store Manager, hidden behind a small icon in the top bar. Jordan had no events, no way to hold a record and no team access. Owners now switch stores from the top of Profile, see views, followers, direction and call taps and check-ins, invite a team with roles, post New arrivals, Events and Announcements, and reply publicly to reviews.",
             "chosen": "b",
             "a": {
-              "label": "A grid of equal tiles",
-              "note": "No way to tell what matters."
+              "label": "Edit Store and Store Profile",
+              "note": "Nothing to show it was working."
             },
             "b": {
-              "label": "A list grouped by purpose",
-              "note": "The important things come first.",
-              "image": "assets/images/vm-decision3.jpg"
+              "label": "A switcher, insights and a team",
+              "note": "Control and proof for the people who feed the app.",
+              "image": "assets/images/vk-decision3.jpg"
             }
           },
           {
-            "title": "A Home that shows what is around you",
-            "why": "Home opened with a welcome message and a long feed. A feed says what happened, but not where to go, and VinylMapper is about places. It now opens with what is happening near you: new drops from nearby stores, a rail of stores with a one-tap check-in, and tabs for For you, Following and Stores. The feed is still there, one scroll below.",
+            "title": "Earn trust before asking for it",
+            "why": "Marlene read a prefilled unclaimed page with a “spread the word” banner as Yelp’s playbook, and wanted to know who owns the platform that ranks her shop. The claim screen now says who runs the app and links to how ratings work, the unclaimed line speaks to owners in a neutral tone, only people who checked in can review, and collectables reward quality, such as a review with a photo, instead of review count.",
             "chosen": "b",
             "a": {
-              "label": "A feed with a welcome message",
-              "note": "No reason to explore."
+              "label": "A banner aimed at customers",
+              "note": "It felt coercive to owners."
             },
             "b": {
-              "label": "Discovery first, feed second",
-              "note": "The map and the stores come into Home.",
-              "image": "assets/images/vm-decision4.jpg"
+              "label": "Disclosure and verified reviews",
+              "note": "Neutral by design, and explained.",
+              "image": "assets/images/vk-decision4.jpg"
+            }
+          },
+          {
+            "title": "Say it in vinyl, and say what things are",
+            "why": "A repress is a real reissue in vinyl, so “Repress this post” confused Dez: it is now Share, with the notification copy to match. Sofía tapped through six unlabeled tabs to learn which one was Vault and which was Discogs, and asked what the 6,280 coins were for. Tabs are now labelled and Discogs stays hidden until connected, Coins has an explainer sheet, and distances follow the locale.",
+            "chosen": "b",
+            "a": {
+              "label": "Icons without labels, unexplained terms",
+              "note": "Every section had to be learned by tapping."
+            },
+            "b": {
+              "label": "Labelled tabs and plain explanations",
+              "note": "Nothing needs to be learned by tapping.",
+              "image": "assets/images/vk-decision5.jpg"
+            }
+          },
+          {
+            "title": "Make Discogs and records useful",
+            "why": "For Ray, Discogs was decoration: the app displayed a collection he already keeps elsewhere, and the wantlist was used nowhere. The map now highlights stores that match his wantlist, search finds records across store posts, a releases layer shows Record Store Day and new pressings, and favorite artists fill in from Discogs. Group chats grow from 4 to 12 people for record clubs.",
+            "chosen": "b",
+            "a": {
+              "label": "A Discogs grid you already have",
+              "note": "The wantlist went unused."
+            },
+            "b": {
+              "label": "Wantlist matches and a records layer",
+              "note": "The app finally knows about records.",
+              "image": "assets/images/vk-decision6.jpg"
             }
           }
         ]
       },
       "solution": {
-        "heading": "A navigation that explains itself",
+        "heading": "From verdicts to a ranked set of changes",
         "items": [
           {
-            "caption": "1. Mapping the whole navigation",
-            "problem": "Nobody had the whole picture of how the app was organised.",
-            "solution": "Map every screen and how it is reached, then redraw the structure before touching the interface.",
-            "text": "Before designing anything I mapped the original app: the five tabs, what lives behind each one, the three icon-only tab sets and the eleven tiles of More. Seeing it on one page made the problems concrete (the single “+”, the unlabeled tabs, the flat menu) and gave the new structure a clear brief: four destinations, one create action, one tab pattern and a menu with hierarchy.",
-            "stack": true,
+            "caption": "1. Five personas, one list of findings",
+            "problem": "The prototype looked good, but nobody had checked whether it worked for the people it was for.",
+            "solution": "Walk it with five personas, then trace every finding to who raised it and rank it.",
+            "text": "I built five personas around the app’s audiences: Marlene, a veteran shop owner; Jordan, who runs a newer shop with a bar; Dez, a crate digger and DJ; Sofía, a collector who travels; and Ray, a release chaser with his collection on Discogs. Each walked the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
             "images": [
               {
-                "src": "assets/images/vm-map-after.jpg"
-              }
-            ]
-          },
-          {
-            "caption": "2. Home: from a feed to a starting point",
-            "problem": "Home opened with a welcome message and a long feed, and gave no reason to explore.",
-            "solution": "Lead with what is nearby and keep the feed one scroll below.",
-            "text": "The header becomes a compact bar with your avatar, notifications and search. Below it, a highlighted card brings new drops from stores within a few miles, followed by a rail of nearby stores with their rating and a check-in button. The For you, Following and Stores tabs filter the feed, whose cards now show the store, its tags and quick actions.",
-            "images": [
-              {
-                "src": "assets/images/vm-s-home.jpg"
-              }
-            ]
-          },
-          {
-            "caption": "3. Find: the map, with more to decide on",
-            "problem": "The map was the right idea, but previews gave little to decide with and there were no filters beyond distance.",
-            "solution": "Keep the map at the center and add filters, a count of nearby stores and richer previews.",
-            "text": "Search stays at the top with a filter button, distance chips and an Open now toggle. A card at the bottom says how many stores are nearby and switches to the list. Tapping a pin opens a sheet with the rating, whether the store is open, its tags and four scores (selection, price, vibe and layout), with Call and Directions and the store page one tap away. When a store isn’t on the map, the search offers to suggest it in a sheet over the map, with live results, a confirmation of the details and a thank-you.",
-            "images": [
-              {
-                "src": "assets/images/vm-s-find.jpg"
+                "src": "assets/images/vk-panel.jpg"
               },
               {
-                "src": "assets/images/vm-s-suggest.jpg"
+                "src": "assets/images/vk-findings.jpg"
               }
             ]
           },
           {
-            "caption": "4. Profiles and stores: one tab pattern",
-            "problem": "Profiles and stores used rows of icons with no labels, in different orders.",
-            "solution": "Labelled tabs with Activity first, and the identity and main actions above them.",
-            "text": "A profile now opens with the cover, the avatar and three highlighted figures for coins, reviews and collectables, with Edit profile and Share below. A store page shows its logo, rating, open status, tags and the Follow and Message buttons. Both use the same labelled tabs. Stores nobody has claimed keep the “Is this your store?” prompt, now as a card with a Claim button.",
+            "caption": "2. P0: structure, labels and trust",
+            "problem": "People could not tell what the app was for, where things were or who was behind it.",
+            "solution": "A map-first bar, a Create action on every screen, labelled tabs and a trust layer for owners.",
+            "text": "The new bar puts the map first, followed by Feed, Create, Messages and Profile. A city guide card appears on the map while you browse a city, an empty search offers to suggest the store, and Create opens a sheet from any tab. Profile gets a gear for Settings, five labelled tabs and an explainer for Coins. Stores get labelled tabs, a review count on every rating, a neutral line on unclaimed pages, a disclosure of who runs VinylMapper on the claim screen and a How ratings work sheet.",
             "images": [
               {
-                "src": "assets/images/vm-s-profile.jpg"
+                "src": "assets/images/vk-s-nav.jpg"
+              },
+              {
+                "src": "assets/images/vk-s-trust.jpg"
+              },
+              {
+                "src": "assets/images/vk-s-profile.jpg"
               }
             ]
           },
           {
-            "caption": "5. More: grouped by purpose",
-            "problem": "Eleven tiles of the same weight, with no hierarchy between them.",
-            "solution": "A list that starts with you, then reading, then account and support.",
-            "text": "The menu opens with a card for your profile. Reading comes next, with featured cards for city guides, buying guides, music features and music lists, and a row for collecting tips. Then your collectables with their progress, the account rows, support, an invitation to bring friends and a quiet Log out at the end.",
+            "caption": "3. P1: Find, owners and reviews",
+            "problem": "Find ignored the data stores provide, and owners had no reason to stay.",
+            "solution": "Filters and honest cards for collectors, a dashboard, a team and events for owners, and reviews that need a real visit.",
+            "text": "Find gets filters and honest store cards, plus a Want to visit list that groups stores by city into a route. For owners there is a store switcher, insights, a team with roles, post types for New arrivals, Event and Announcement, an Events tab on every store and an Events near me layer on the map. Reviews now show the verified check-in, owners can reply publicly under an OWNER tag without being able to edit or hide anything, and any review can be reported. Collectables live only in Profile and Vault, and reward quality.",
             "images": [
               {
-                "src": "assets/images/vm-s-more.jpg"
+                "src": "assets/images/vk-s-find.jpg"
+              },
+              {
+                "src": "assets/images/vk-s-owner.jpg"
+              },
+              {
+                "src": "assets/images/vk-s-reviews.jpg"
+              }
+            ]
+          },
+          {
+            "caption": "4. P2: records, community and first run",
+            "problem": "The app was about places, not records, and the network and the first run did not fit either audience.",
+            "solution": "A records layer from Discogs, one relationship model and a first run for collectors and owners.",
+            "text": "Wantlist matches turn the map’s pins gold, search finds records in store posts and a releases layer shows Record Store Day and new pressings, with a Hold for me button on New arrivals. Follow becomes the default relationship for collectors and stores, with the basics public and the collection private. Group chats grow to 12 people with a Record Club, and the map has a Spanish version with kilometres. The first run is one welcome you can skip to browse the map, a short setup for collectors and a checklist for owners that ends in their first post.",
+            "images": [
+              {
+                "src": "assets/images/vk-s-records.jpg"
+              },
+              {
+                "src": "assets/images/vk-s-social.jpg"
+              },
+              {
+                "src": "assets/images/vk-s-first.jpg"
+              }
+            ]
+          },
+          {
+            "caption": "5. Validate before building",
+            "problem": "These changes rest on personas, so they need real people before they are built.",
+            "solution": "Plan a 5-user usability test, owner interviews and a first-click test on tab order.",
+            "text": "The redesign is a set of bets, and I wrote down how to check them. A usability test with five people, two store owners, two diggers or release chasers and one traveler, on tasks like finding an open used-soul shop within 10 miles, claiming a store and posting an event. Owner interviews before any owner tool is built, asking what proof would make them post weekly. And a first-click test comparing a Map-first with a Feed-first landing, to ship the order that wins on discovery tasks.",
+            "images": [
+              {
+                "src": "assets/images/vk-validation.jpg"
               }
             ]
           }
         ]
       },
       "results": {
-        "heading": "A structure you can read at a glance",
+        "heading": "A redesign with a reason behind every change",
         "items": [
           {
-            "value": "5 → 4 + 1",
-            "label": "Bottom bar: four destinations and a create button that is always available."
+            "value": "7 findings",
+            "label": "Ranked from P0 to P2 and traced to the persona who raised each one."
           },
           {
-            "value": "3 → 1",
-            "label": "Icon-only tab sets, replaced by one labelled tab pattern."
+            "value": "40 screens",
+            "label": "Of changes designed on top of the original, each with a note on why it exists."
           },
           {
-            "value": "Grouped",
-            "label": "More went from eleven equal tiles to a list ordered by purpose."
+            "value": "3 tests",
+            "label": "Planned before building: a 5-user usability test, owner interviews and a first-click test on tab order."
           }
         ],
-        "note": "These are structural changes counted from the design files, not usage metrics."
+        "note": "The research is a persona walkthrough of the prototype, not a study with real users, so the verdicts and findings are directional until the validation plan is run."
       },
       "learnings": {
-        "heading": "Structure first, then style",
+        "heading": "Pick a front door, then earn the rest",
         "items": [
-          "Most of the problems of the original were about where things lived, not how they looked. Mapping the navigation first made every later decision easier to explain.",
-          "A create action that is always in the same place and tabs that say what they are remove the need to learn the app by tapping.",
-          "Redesigning a real product means respecting what exists. I kept its content and flows and changed how they are organised."
+          "An app that tries to be a map, a network, a collection viewer and a magazine ends up convincing no one. Choosing the map as the front door made every other decision easier.",
+          "The cheapest high-value fix was already in the data. Genres, formats and buy-sell-trade were collected and never used.",
+          "Owners judge a platform on control and proof. Replies, numbers and a clear answer to who owns the app mattered more to them than any visual change.",
+          "In a niche, vocabulary is part of the interface. A word like “repress” already means something to collectors."
         ]
       }
     }
