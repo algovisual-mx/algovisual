@@ -649,7 +649,7 @@ const PROJECTS = [
         "heading": "A good-looking app that had not picked a main job",
         "text": [
           "VinylMapper lets collectors find record stores on a map, follow them, review them, check in and share what they find, and lets store owners claim and manage their listing. The first version had well over a hundred screens and states, and a navigation that had grown screen by screen: five equal tabs, three icon-only tab sets and a More menu with eleven tiles.",
-          "To see how it held up, I researched five audience groups on the original prototype: veteran store owners, newer store owners, crate diggers, traveling collectors and release chasers, each represented by one interview. Only one of the five groups would have used it as it was. The others said Maybe or No, for reasons that pointed to the same few problems.",
+          "To see how it held up, I researched five audience groups on the original prototype: veteran store owners, newer store owners, crate diggers, traveling collectors and release chasers. Only one of the five groups would have used it as it was. The others said Maybe or No, for reasons that pointed to the same few problems.",
           "The goal became to act on those problems in order of impact: pick a front door, use the data the app already collects, give owners a reason to stay, earn their trust and stop making people learn the app by tapping."
         ],
         "image": {
@@ -662,7 +662,7 @@ const PROJECTS = [
         "scope": [
           {
             "label": "Group research",
-            "text": "Five audience groups, covering owners and collectors, each represented by one interview on the original prototype."
+            "text": "Five audience groups, covering owners and collectors, each taking the original prototype for a walkthrough."
           },
           {
             "label": "Findings and priorities",
@@ -782,10 +782,10 @@ const PROJECTS = [
             "caption": "1. Five audience groups, one list of findings",
             "problem": "The prototype looked good, but nobody had checked whether it worked for the groups it was for.",
             "solution": "Research five audience groups on the prototype, then trace every finding to the group that raised it and rank it.",
-            "text": "I researched five audience groups: veteran store owners, newer store owners with a bar, crate diggers and DJs, collectors who travel, and release chasers with a collection on Discogs. Each group was represented by one interview on the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
+            "text": "I researched five audience groups: veteran store owners, newer store owners with a bar, crate diggers and DJs, collectors who travel, and release chasers with a collection on Discogs. Each group walked through the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
             "images": [
               {
-                "src": "assets/images/vk-panel.jpg?v=4"
+                "src": "assets/images/vk-panel.jpg?v=5"
               },
               {
                 "src": "assets/images/vk-findings.jpg?v=3"
@@ -845,7 +845,7 @@ const PROJECTS = [
           },
           {
             "caption": "5. Validate before building",
-            "problem": "These changes rest on five groups, each represented by one interview, so they need a wider check before they are built.",
+            "problem": "These changes rest on a small round of research, so they need a wider check before they are built.",
             "solution": "Plan a usability test across the five groups, owner interviews and a first-click test on tab order.",
             "text": "The redesign is a set of bets, and I wrote down how to check them. A usability test across the five groups, covering owners, diggers or release chasers and travelers, on tasks like finding an open used-soul shop within 10 miles, claiming a store and posting an event. Owner interviews before any owner tool is built, asking what proof would make them post weekly. And a first-click test comparing a Map-first with a Feed-first landing, to ship the order that wins on discovery tasks.",
             "images": [
