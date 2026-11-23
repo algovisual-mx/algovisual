@@ -138,7 +138,7 @@
         return "<li><strong>" + it.title + ".</strong> " + it.why + "</li>";
       }).join("") +
       "</ul>" +
-      '<div class="cs-used" style="--n:' + chosen.length + '">' +
+      '<div class="cs-used" style="--n:' + Math.min(chosen.length, 3) + '">' +
       chosen.map(function (o, i) {
         return figure(o.image, d.items[i].title, "", "cs-used__item" + (o.fit === "contain" ? " is-contain" : ""));
       }).join("") +
