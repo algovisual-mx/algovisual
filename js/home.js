@@ -26,8 +26,8 @@
       card.innerHTML =
         '<div class="work-card__media">' +
         (p.previewVideo
-          ? '<video class="work-card__video" src="' + p.previewVideo + '#t=0.001" muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>'
-          : '<img class="work-card__img" src="' + (p.showcase || p.cover) + '" alt="" loading="lazy">') +
+          ? '<video class="work-card__video" src="' + p.previewVideo + '#t=0.001" muted loop playsinline preload="metadata" role="img" aria-label="' + (p.coverAlt || p.title) + '" tabindex="-1"></video>'
+          : '<img class="work-card__img" src="' + (p.showcase || p.cover) + '" alt="' + (p.coverAlt || p.title) + '" loading="lazy">') +
         "</div>" +
         '<div class="work-card__body">' +
         '<div class="work-card__head">' +

@@ -18,6 +18,7 @@
 const PROJECTS = [
   {
     slug: "visicart",
+    coverAlt: "Preview of the Visicart interface",
     title: "Visicart",
     category: "UI/UX Design",
     section: "product",
@@ -134,8 +135,6 @@ const PROJECTS = [
         items: [
           {
             caption: "1. Sign-up and login",
-            problem: "Getting in had to be fast.",
-            solution: "Email first, then a code. No password to create.",
             text: "New users enter their email and confirm it with a six-digit code, or continue with Google. Returning users log in with a password, or choose \u201cI prefer a code\u201d. The code field has empty and filled states, and a way to send a new code if it doesn\u2019t arrive.",
             images: [
               { src: "assets/images/visicart-flow-signup-1.jpg" },
@@ -146,8 +145,6 @@ const PROJECTS = [
           },
           {
             caption: "2. Setting up an organization and connecting a store",
-            problem: "A new owner had to reach a working workspace alone.",
-            solution: "Name it, connect Shopify, invite the team.",
             text: "The setup explains what an organization is and asks for agreement to the terms. Then the owner names it, connects a Shopify store with its URL and an Admin API token, and invites teammates with a role and a store. The connection shows its progress while the store syncs, and each step can be skipped and finished later.",
             images: [
               { src: "assets/images/visicart-flow-org-1.jpg" },
@@ -158,8 +155,6 @@ const PROJECTS = [
           },
           {
             caption: "3. Connecting your own AI provider",
-            problem: "Every organization has to connect an AI model and understand the billing.",
-            solution: "Choose a provider, paste a key, verify it.",
             text: "The owner picks a provider (Claude by Anthropic is recommended, OpenAI and Google are also available), follows a three-step guide to create an API key, then pastes it and chooses a model. The key is verified before it is saved, with clear verifying and error states, and the screen says that usage is billed to the provider account. A banner and a sidebar warning show until AI is connected, with a different version for editors, and the provider can be switched later from the organization settings.",
             stack: true,
             images: [
@@ -169,8 +164,6 @@ const PROJECTS = [
           },
           {
             caption: "4. Dashboard, collections and settings",
-            problem: "Teams manage many collections at once.",
-            solution: "Status at a glance, filters and bulk actions.",
             text: "The dashboard counts the collections that were synced, generated, approved and published, and lists recent activity. The collections table filters by status (pending, generated, approved, published, rejected) and has one action per row. Sync store, Generate all and Publish approved handle the bulk work, with progress screens while they run. Each store also keeps its own brand voice, description length and meta description setting.",
             images: [
               { src: "assets/images/visicart-flow-generate-1.jpg", fit: "contain" },
@@ -181,8 +174,6 @@ const PROJECTS = [
           },
           {
             caption: "5. Reviewing, approving and publishing",
-            problem: "AI writes the draft, but a person has to trust it.",
-            solution: "A review panel with a Google preview before anything is published.",
             text: "Inside each collection, the person adds keywords from Semrush or writes their own, sets the tone and length, and generates a title and meta description. A character counter and a Google search preview show how the result will look. Then they reject, approve or publish it, and a message confirms what happened.",
             stack: true,
             images: [
@@ -191,8 +182,6 @@ const PROJECTS = [
           },
           {
             caption: "6. Teams, roles and access",
-            problem: "Owners needed to give access without opening every store.",
-            solution: "Organization, then stores, then people, in one view.",
             text: "An owner sets up the organization, adds stores and invites people with a role. One view shows everyone with access and their role in each store. Editing a person, assigning stores and removing or deleting users and stores each have their own panel and confirmation.",
             stack: true,
             images: [
@@ -202,8 +191,6 @@ const PROJECTS = [
           },
           {
             caption: "7. Always knowing which store you\u2019re in",
-            problem: "With several stores it is easy to act in the wrong one.",
-            solution: "The switcher stays in the navigation.",
             text: "The organization menu and the store dropdown live in the navigation, next to notifications, so the current store and organization are always on screen. Switching never goes through a settings menu.",
             stack: true,
             images: [
@@ -211,8 +198,8 @@ const PROJECTS = [
             ]
           },
           {
-            caption: "8. Accessible by default",
-            text: "I treated accessibility as part of the design, not a final pass. I checked the color choices and the contrast between text, controls and their backgrounds, set minimum text sizes, and sized touch areas so every control is comfortable to hit.",
+            caption: "8. Accessibility check",
+            text: "I measured text contrast on the review panel, the screen where people spend the most time. Titles, labels and body text measure 5.4:1 to 20:1, above the WCAG AA minimum of 4.5:1. Two things fall short: placeholder text in inputs measures 3.0:1, and the disabled Reject, Approve and Publish buttons measure 2.0:1. WCAG exempts disabled controls, but they are hard to read. Next, I\u2019d darken the placeholder to pass.",
             images: []
           }
         ]
@@ -246,6 +233,7 @@ const PROJECTS = [
   },
   {
     slug: "page-plucker",
+    coverAlt: "Preview of the Page Plucker interface",
     title: "Page Plucker",
     category: "UI/UX Design",
     section: "product",
@@ -255,8 +243,8 @@ const PROJECTS = [
     tools: [
       "Figma"
     ],
-    card: { role: "Product & design lead", type: "Content-extraction tool for SEO teams", result: "8x faster than doing it by hand" },
-    excerpt: "A content-extraction tool for SEO teams, 8x faster than doing it by hand.",
+    card: { role: "Product & design lead", type: "Content-extraction tool for SEO teams", result: "Used by a 10-person SEO team" },
+    excerpt: "A content-extraction tool that spares SEO teams the copy and paste of pulling a whole site into documents.",
     showcase: "assets/images/pageplucker_case_cover.png",
     previewVideo: "assets/videos/Thumb_pageplucker.mp4", // looping muted preview shown in the home card instead of the image
     cover: "assets/images/pageplucker-header.jpeg",
@@ -346,8 +334,6 @@ const PROJECTS = [
         items: [
           {
             caption: "1. The whole journey, from sign-in to a file in the right folder",
-            problem: "Without a tool, every step was manual.",
-            solution: "One linear flow, with a single place to start.",
             text: "Before drawing any screen I mapped the flow with the stakeholders: sign in, set up the extraction, watch it run, review the results, and browse and organize them later. Team management sits apart, for the people who run the workspace.",
             stack: true,
             images: [
@@ -356,8 +342,6 @@ const PROJECTS = [
           },
           {
             caption: "2. Setting up an extraction",
-            problem: "Starting a large extraction had to be quick.",
-            solution: "Destination, URLs, formats: three steps on one screen.",
             text: "The Plucker Tool puts three numbered steps on a single screen. The person picks or creates the project and folder where the files will live, pastes any number of URLs, one per line, and chooses what to extract: text as a Google Doc, a Word file or a TXT, images and PDFs. A progress screen shows what the engine is doing, and when it finishes the results appear right away.",
             images: [
               { src: "assets/images/pageplucker-s-plucker.jpg" },
@@ -367,8 +351,6 @@ const PROJECTS = [
           },
           {
             caption: "3. A file structure that mirrors the work",
-            problem: "Hundreds of pages would bury the files.",
-            solution: "A fixed hierarchy of project, folder and page.",
             text: "Every page belongs to a folder and every folder belongs to a project. That path is the backbone of the product: the sidebar opens projects and folders in place, every row shows its path, and breadcrumbs and permissions use the same levels. Each page keeps all its files together: the Google Doc, the Word and text versions, the PDFs and the images.",
             stack: true,
             images: [
@@ -378,8 +360,6 @@ const PROJECTS = [
           },
           {
             caption: "4. Browsing hundreds of documents",
-            problem: "One page can have five kinds of files.",
-            solution: "One row per page, a badge for each format.",
             text: "My Projects opens with the numbers that matter, then the projects, the most recent folders and the latest plucked documents. Documents can be shown as a list or a grid, sorted, selected in bulk and downloaded together. Each one carries badges for its Google Doc, Word and text versions, and counts for its PDFs and images. A format that wasn’t extracted looks disabled, and a page that is still empty offers a Pluck action instead.",
             images: [
               { src: "assets/images/pageplucker-s-projects-list.jpg" },
@@ -389,8 +369,6 @@ const PROJECTS = [
           },
           {
             caption: "5. Teams, roles and permissions",
-            problem: "Owners needed to control access and see activity.",
-            solution: "Roles, per-project access and an activity log.",
             text: "The Team Manager lists everyone with a role (owner, admin or member), a status and the projects they can reach. A panel of toggles sets what each person can do: create projects, delete projects, invite users and edit content. The activity view totals extractions, items and storage, and logs every extraction by user, project and URL.",
             images: [
               { src: "assets/images/pageplucker-s-team-users.jpg" },
@@ -400,8 +378,6 @@ const PROJECTS = [
           },
           {
             caption: "6. A design system built for the product",
-            problem: "Many screens share rows, badges and navigation.",
-            solution: "A shared component library with every state.",
             text: "Before the screens multiplied I built the component library: logo and icons, a purple base with an orange accent for actions, Montserrat and Red Hat Display for type, and components for navigation, document rows and cards, badges, buttons, inputs, progress and toasts. They come with their states (complete, incomplete, hover, disabled), list and grid variants, and mobile versions. Developers built from it, and new screens were assembled instead of drawn.",
             images: [
               { src: "assets/images/pageplucker-ds-1.jpg" },
@@ -411,29 +387,29 @@ const PROJECTS = [
             ]
           },
           {
-            caption: "7. Accessible by default",
-            text: "I treated accessibility as part of the design, not a final pass. I checked the color choices and the contrast between text, controls and their backgrounds, set minimum text sizes, and sized touch areas so every control is comfortable to hit.",
+            caption: "7. Accessibility check",
+            text: "I measured contrast on the Plucker Tool, the screen people use most. Text on white measures 4.5:1 to 21:1 and sidebar text on the purple 8:1 to 12.7:1, all above the WCAG AA minimum of 4.5:1. Two pairs fall short: the white label on the orange Start Plucking button measures 2.3:1, and the selected Google Doc chip 4.3:1. A dark label on the same orange would measure about 7:1.",
             images: []
           }
         ]
       },
       results: {
-        heading: "Compared with doing it by hand, a faster and simpler way to extract web pages",
+        heading: "Compared with copy and paste, a simpler way to extract a whole site",
         items: [
           {
-            value: "8x faster",
-            label: "than doing it by hand, which took up to a day, the only option before the tool existed"
-          },
-          {
-            value: "1,200+ pages",
-            label: "extracted in the first two months, all of it copy and paste before"
+            value: "Up to 1 day",
+            label: "was the manual cost of extracting a whole website by copy and paste, the only option before the tool existed"
           },
           {
             value: "10 people",
-            label: "on an SEO marketing team use it. It simplified their extraction and documentation work."
+            label: "on an SEO marketing team use it today"
+          },
+          {
+            value: "A simpler process",
+            label: "The team reports time saved and a simpler extraction and documentation process."
           }
         ],
-        note: "No comparable tool existed, so the baseline is doing the work by hand. Figures and feedback come from internal use at Captivate."
+        note: "No comparable tool existed, so the baseline is doing the work by hand. Feedback comes from internal use at Captivate. The time saved has not been measured, so no speed-up figure is given."
       },
       learnings: {
         heading: "Design what comes out before designing how it goes in",
@@ -446,7 +422,224 @@ const PROJECTS = [
     }
   },
   {
+    "slug": "vinylmapper",
+    "coverAlt": "Preview of the redesigned VinylMapper app screens",
+    "title": "VinylMapper",
+    "category": "UI/UX Design",
+    "section": "product",
+    "year": "2025–2026",
+    "client": "Startup client",
+    "role": "UX/UI Designer",
+    "tools": [
+      "Figma"
+    ],
+    "card": {
+      "role": "UX/UI designer",
+      "type": "Social app for record collectors",
+      "result": "Navigation rebuilt from audience research"
+    },
+    "excerpt": "A social app for record collectors, with its navigation rebuilt from audience research.",
+    "showcase": "assets/images/vinylmapper_case_cover.png?v=3",
+    "cover": "assets/images/vinylmapper-header.jpg?v=3",
+    "gallery": [],
+    "caseStudy": {
+      "outcome": "Turning feedback from five audience groups into a clearer, more useful VinylMapper.",
+      "summary": {
+        "problem": "VinylMapper is a startup’s social app where record collectors find stores, follow them, review them and share what they find. The team handed it to me already “designed”, but it was incomplete and poorly built: no flows, no style and no coherence between screens, an improvised design with no research behind it. I interviewed five audience groups, built the flows and a new system from that research, and rebuilt the app around it.",
+        "role": "UX/UI designer",
+        "scope": "Research, flows, navigation, design system and interface · 2025–2026",
+        "team": "Startup client",
+        "duration": "2025–2026",
+        "result": {
+          "value": "5 groups",
+          "label": "interviewed on the original prototype, then the app was rebuilt around what they said"
+        }
+      },
+      "problem": {
+        "heading": "A “finished” design with no flows, no style and no research",
+        "text": [
+          "VinylMapper is a startup’s app for record collectors: they find stores on a map, follow them, review them, check in and share what they find, and store owners claim and manage their listing.",
+          "The team handed it to me already “designed”, but it was incomplete and poorly built: no flows, no style and no coherence between screens. It reflected what the owner wanted rather than what worked, with no research or testing behind it, and a navigation that had grown screen by screen: five equal tabs, three icon-only tab sets and a More menu with eleven tiles.",
+          "I started with research: I interviewed five audience groups on the original prototype, veteran store owners, newer store owners, crate diggers, traveling collectors and release chasers. Only one of the five groups would have used it as it was. The others said Maybe or No, for reasons that pointed to the same few problems.",
+          "The goal became to act on those problems in order of impact: pick a front door, use the data the app already collects, give owners a reason to stay, earn their trust and stop making people learn the app by tapping."
+        ],
+        "image": {
+          "src": "assets/images/vm-map-before.jpg",
+          "caption": "The navigation of the original app, mapped."
+        }
+      },
+      "role": {
+        "text": "The startup handed me an app that was already “designed” but incomplete. I ran the research, built the flows and the new system, and redesigned the product around what the research showed, from the navigation to the owner tools.",
+        "scope": [
+          {
+            "label": "Group research",
+            "text": "Five audience groups, covering owners and collectors, each taking the original prototype for a walkthrough."
+          },
+          {
+            "label": "Findings and priorities",
+            "text": "Seven findings, each traced to the group that raised it and ranked from P0 to P2."
+          },
+          {
+            "label": "Navigation",
+            "text": "A new bar with the map first and Create within reach of every screen."
+          },
+          {
+            "label": "Trust and wording",
+            "text": "Ownership disclosure, verified reviews, neutral claim copy and a vocabulary that speaks vinyl."
+          },
+          {
+            "label": "Find, owners and records",
+            "text": "Filters, owner tools, wantlist matching and releases, around 40 screens of changes in total."
+          },
+          {
+            "label": "Validation plan",
+            "text": "A usability test across the five groups, owner interviews and a first-click test, planned before building."
+          }
+        ]
+      },
+      "decisions": {
+        "heading": "Three changes, each traced to what the groups said",
+        "items": [
+          {
+            "title": "Make the map the front door, and keep Create one tap away",
+            "why": "Collector groups came for Find and owner groups came to post. Meanwhile the most useful content, guides, collectables and claiming a store, sat in More. The bar is now Map, Feed, Create, Messages and Profile: the map opens after login, Create works from any screen, city guides appear on the map for whatever city you browse, and More is gone, replaced by Settings behind the profile gear.",
+            "chosen": "b",
+            "a": {
+              "label": "Social Home as the front door",
+              "note": "Discovery was one tab among five."
+            },
+            "b": {
+              "label": "Map first, Create everywhere",
+              "note": "The front door matches why people download the app.",
+              "image": "assets/images/vk-decision1.jpg"
+            }
+          },
+          {
+            "title": "Turn the data we already collect into filters",
+            "why": "Stores already fill in genres, formats, buy, sell or trade and a used-to-new mix, but Find only offered a name and a distance. Crate diggers’ first reaction was that every store on the map was rated 5.0, which told them nothing about which shop was worth the drive. Find now filters by open now, genre, format, buy-sell-trade and used or new, sorts by distance, rating, Selection or Price, and shows every rating with its review count, so 5.0 (2) reads honestly.",
+            "chosen": "b",
+            "a": {
+              "label": "A name search and a distance",
+              "note": "Collected data that nobody could use."
+            },
+            "b": {
+              "label": "Filters, sort and honest cards",
+              "note": "Search by what collectors actually look for.",
+              "image": "assets/images/vk-decision2.jpg"
+            }
+          },
+          {
+            "title": "Give owners control, proof and trust",
+            "why": "The veteran owners could not reply to a review, saw no numbers on what the app did for the shop and could not even find Store Manager, hidden behind a small icon in the top bar. They also read a prefilled unclaimed page with a “spread the word” banner as Yelp’s playbook, and wanted to know who owns the platform that ranks the shop. Owners now switch stores from the top of Profile, see views, followers, direction and call taps and check-ins, and reply publicly to reviews. The claim screen says who runs the app and links to how ratings work, and only visitors who checked in can review.",
+            "chosen": "b",
+            "a": {
+              "label": "Edit Store and Store Profile",
+              "note": "Nothing to show it was working, or who was behind it."
+            },
+            "b": {
+              "label": "A switcher, insights, replies and disclosure",
+              "note": "Control, proof and trust for the people who feed the app.",
+              "image": "assets/images/vk-decision3.jpg"
+            }
+          }
+        ]
+      },
+      "solution": {
+        "heading": "From verdicts to a ranked set of changes",
+        "items": [
+          {
+            "caption": "1. Five audience groups, one list of findings",
+            "text": "I researched five audience groups: veteran store owners, newer store owners with a bar, crate diggers and DJs, collectors who travel, and release chasers with a collection on Discogs. Each group walked through the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
+            "images": [
+              {
+                "src": "assets/images/vk-panel.jpg?v=5"
+              },
+              {
+                "src": "assets/images/vk-findings.jpg?v=3"
+              }
+            ]
+          },
+          {
+            "caption": "2. What changed, by priority",
+            "text": "P0 puts the map first with Create on every screen, labels every tab, explains Coins, renames “Repress” to Share and adds the ownership and ratings disclosure. P1 adds filters and honest cards to Find, a switcher, insights, a team and events for owners, and reviews that need a real visit. P2 adds wantlist matches, record search and releases from Discogs, one Follow model, group chats of up to 12 and a first run for collectors and owners.",
+            "images": [
+              {
+                "src": "assets/images/vk-s-nav.jpg"
+              },
+              {
+                "src": "assets/images/vk-s-trust.jpg?v=2"
+              },
+              {
+                "src": "assets/images/vk-s-profile.jpg?v=2"
+              },
+              {
+                "src": "assets/images/vk-s-find.jpg"
+              },
+              {
+                "src": "assets/images/vk-s-owner.jpg?v=2"
+              },
+              {
+                "src": "assets/images/vk-s-reviews.jpg"
+              },
+              {
+                "src": "assets/images/vk-s-records.jpg"
+              },
+              {
+                "src": "assets/images/vk-s-social.jpg"
+              },
+              {
+                "src": "assets/images/vk-s-first.jpg"
+              }
+            ]
+          },
+          {
+            "caption": "3. Accessibility check",
+            "text": "I measured more than a dozen text and control pairs on the redesigned screens. All clear the WCAG AA minimum of 4.5:1: secondary text on white measures 5.4:1 to 9.5:1, dark labels on the yellow chips about 7:1, and white on the red Create button 4.7:1, the lowest. Replacing rows of icon-only tabs with labelled ones also removed a barrier for anyone who can’t decode icons.",
+            "images": []
+          },
+          {
+            "caption": "4. Validate before building",
+            "text": "The redesign is a set of bets, and I wrote down how to check them. A usability test across the five groups, covering owners, diggers or release chasers and travelers, on tasks like finding an open used-soul shop within 10 miles, claiming a store and posting an event. Owner interviews before any owner tool is built, asking what proof would make them post weekly. And a first-click test comparing a Map-first with a Feed-first landing, to ship the order that wins on discovery tasks.",
+            "images": [
+              {
+                "src": "assets/images/vk-validation.jpg?v=4"
+              }
+            ]
+          }
+        ]
+      },
+      "results": {
+        "heading": "From an untested handoff to a redesign the research supports",
+        "items": [
+          {
+            "value": "1 of 5",
+            "label": "groups said they would use the original app as it was. The other four said Maybe or No."
+          },
+          {
+            "value": "Traceable",
+            "label": "Every change in the redesign points back to a ranked finding, and every finding to the group that raised it."
+          },
+          {
+            "value": "Not yet tested",
+            "label": "There is no usage data yet. A usability test, owner interviews and a first-click test are planned to check whether the changes work."
+          }
+        ],
+        "note": "The baseline is the app as it was handed over: no flows, no style and no research. Each of the five groups was explored through a small qualitative sample, so the verdicts and findings are directional until the validation plan is run."
+      },
+      "learnings": {
+        "heading": "Pick a front door, then earn the rest",
+        "items": [
+          "An app that tries to be a map, a network, a collection viewer and a magazine ends up convincing no one. Choosing the map as the front door made every other decision easier.",
+          "The cheapest high-value fix was already in the data. Genres, formats and buy-sell-trade were collected and never used.",
+          "Owners judge a platform on control and proof. Replies, numbers and a clear answer to who owns the app mattered more to them than any visual change.",
+          "In a niche, vocabulary is part of the interface. A word like “repress” already means something to collectors."
+        ]
+      }
+    }
+  },
+  {
     slug: "mibici",
+    coverAlt: "Preview of the redesigned MiBici app screens",
     title: "MiBici",
     category: "UI/UX Design",
     section: "product",
@@ -550,8 +743,6 @@ const PROJECTS = [
         items: [
           {
             caption: "1. Listening before drawing",
-            problem: "I couldn\u2019t tell if the app\u2019s problems were just mine.",
-            solution: "Real use, interviews and reviews, then two personas.",
             text: "I used the app in different situations, interviewed 30 riders, frequent and occasional, and read more than 20 App Store and Google Play reviews. The same things kept coming up: the app is slow and unintuitive, it isn’t clear how to start a trip, bike and dock availability is confusing, and some riders open Google Maps instead because it is faster. Behind all of it were a cluttered interface, a poorly functional map, no real-time information and unnecessary steps for common actions. From that I defined two personas: Mariana, who commutes every day and wants speed and clarity, and Roberto, who rides on weekends and needs step-by-step guidance.",
             images: [
               { src: "assets/images/mibici-s-current.jpg" },
@@ -560,8 +751,6 @@ const PROJECTS = [
           },
           {
             caption: "2. Mapping the whole journey",
-            problem: "Common tasks took unnecessary steps.",
-            solution: "One flow from onboarding to returning a bike.",
             text: "Before drawing screens I mapped what a person actually does: sign in or register, find a station on the map, unlock a bike, ride, return it, then take another or finish. Help, account and station search hang off the home map. Seeing it all in one picture made it clear which screens the design needed and which steps could go.",
             stack: true,
             images: [
@@ -570,8 +759,6 @@ const PROJECTS = [
           },
           {
             caption: "3. From paper to wireframes",
-            problem: "Layout and flow had to work before the visual design.",
-            solution: "Paper sketches, then a quick Figma prototype.",
             text: "The sketches explored four ideas: the map as the main screen, clear availability with colors and large numbers, a simpler rental and return flow with confirmation screens, and trip information together with account status. I moved them into rough wireframes in Figma, kept deliberately plain, to check the overall experience quickly.",
             images: [
               { src: "assets/images/mibici-s-sketches.jpg" },
@@ -580,8 +767,6 @@ const PROJECTS = [
           },
           {
             caption: "4. Finding and unlocking a bike",
-            problem: "Availability was confusing and starting a trip wasn\u2019t obvious.",
-            solution: "A live map home and one button straight to the QR scan.",
             text: "The high-fidelity design keeps the same structure with a cleaner look, clear iconography and colors that convey security and ease of use. Signing in is a short form with a clear way to register instead. The map is the home screen, and every station shows its bikes and free docks with color codes and big numbers. Tapping a station gives the distance and starts navigation. The New trip button sits in the middle of the bar and opens the QR scanner, with an Unlock button and Help one tap away.",
             images: [
               { src: "assets/images/mibici-s-find.jpg" }
@@ -589,16 +774,14 @@ const PROJECTS = [
           },
           {
             caption: "5. Riding, returning and paying",
-            problem: "Riders didn\u2019t know if the bike locked or when they\u2019d be charged.",
-            solution: "A clear timer, an explicit return step, balance one tap away.",
             text: "During the ride a countdown and a progress bar show the time left, with a plain reminder that trips are limited to 30 minutes and that returning the bike to any station avoids extra charges. The ride ends with an explicit “I’ve returned the bike” step. The account section shows the plan, the date and amount of the next charge and the card used, with a clear way to change the plan or cancel it, while history and balance stay one tap away.",
             images: [
               { src: "assets/images/mibici-s-ride.jpg" }
             ]
           },
           {
-            caption: "6. Accessible by default",
-            text: "MiBici is a public service, so the app has to work for everyone who rides. I checked the color choices and the contrast between text, controls and their backgrounds, set minimum text sizes, and sized touch areas so every control is comfortable to hit, including on the move.",
+            caption: "6. Accessibility check",
+            text: "MiBici is a public service, and people use it outdoors, in daylight, on the move. I measured contrast on the final screens, and this is where the design falls short: white labels on the green buttons measure 2.5:1 and on the yellow buttons 1.5:1, well under the WCAG AA minimum of 4.5:1. Secondary text passes at 4.7:1. The fix is a darker green, about #388636 for white text (4.5:1), and dark labels on the yellow (about 11:1).",
             images: []
           }
         ]
@@ -619,235 +802,15 @@ const PROJECTS = [
             label: "Their feedback confirmed that simplifying the core tasks was the right call."
           }
         ],
-        note: "Informal feedback from acquaintances who ride MiBici regularly. This is a concept project, so there are no usage metrics."
+        note: "The 30 interviews were research before designing. After the prototype I only collected informal feedback from acquaintances who ride MiBici regularly, and I did not run a structured usability test. This is a concept project, so there are no usage metrics."
       },
       learnings: {
         heading: "Small reassurances matter as much as big features",
         items: [
+          "The interviews shaped the design, but I never tested it. I\u2019d run a usability test with five riders on unlocking and returning a bike before calling it done.",
           "Even a small change, like a clear confirmation message, lowers anxiety and builds trust in the service.",
           "Registration and payment come first. If people can’t join easily, they won’t use the system at all.",
           "Visual polish makes an app pleasant, but design proves its value in the moments when people feel stuck, unsure or anxious."
-        ]
-      }
-    }
-  },
-  {
-    "slug": "vinylmapper",
-    "title": "VinylMapper",
-    "category": "UI/UX Design",
-    "section": "product",
-    "year": "2025–2026",
-    "client": "Startup client",
-    "role": "UX/UI Designer",
-    "tools": [
-      "Figma"
-    ],
-    "card": {
-      "role": "UX/UI designer",
-      "type": "Social app for record collectors",
-      "result": "Navigation rebuilt from audience research"
-    },
-    "excerpt": "A social app for record collectors, with its navigation rebuilt from audience research.",
-    "showcase": "assets/images/vinylmapper_case_cover.png?v=3",
-    "cover": "assets/images/vinylmapper-header.jpg?v=3",
-    "gallery": [],
-    "caseStudy": {
-      "outcome": "Turning feedback from five audience groups into a clearer, more useful VinylMapper.",
-      "summary": {
-        "problem": "VinylMapper is a startup’s social app where record collectors find stores, follow them, review them and share what they find. The team handed it to me already “designed”, but it was incomplete and poorly built: no flows, no style and no coherence between screens, an improvised design with no research behind it. I interviewed five audience groups, built the flows and a new system from that research, and rebuilt the app around it.",
-        "role": "UX/UI designer",
-        "scope": "Research, flows, navigation, design system and interface · 2025–2026",
-        "team": "Startup client",
-        "duration": "2025–2026",
-        "result": {
-          "value": "0 → 12",
-          "label": "mapped flows, from a handoff with none"
-        }
-      },
-      "problem": {
-        "heading": "A “finished” design with no flows, no style and no research",
-        "text": [
-          "VinylMapper is a startup’s app for record collectors: they find stores on a map, follow them, review them, check in and share what they find, and store owners claim and manage their listing.",
-          "The team handed it to me already “designed”, but it was incomplete and poorly built: no flows, no style and no coherence between screens. It reflected what the owner wanted rather than what worked, with no research or testing behind it, and a navigation that had grown screen by screen: five equal tabs, three icon-only tab sets and a More menu with eleven tiles.",
-          "I started with research: I interviewed five audience groups on the original prototype, veteran store owners, newer store owners, crate diggers, traveling collectors and release chasers. Only one of the five groups would have used it as it was. The others said Maybe or No, for reasons that pointed to the same few problems.",
-          "The goal became to act on those problems in order of impact: pick a front door, use the data the app already collects, give owners a reason to stay, earn their trust and stop making people learn the app by tapping."
-        ],
-        "image": {
-          "src": "assets/images/vm-map-before.jpg",
-          "caption": "The navigation of the original app, mapped."
-        }
-      },
-      "role": {
-        "text": "The startup handed me an app that was already “designed” but incomplete. I ran the research, built the flows and the new system, and redesigned the product around what the research showed, from the navigation to the owner tools.",
-        "scope": [
-          {
-            "label": "Group research",
-            "text": "Five audience groups, covering owners and collectors, each taking the original prototype for a walkthrough."
-          },
-          {
-            "label": "Findings and priorities",
-            "text": "Seven findings, each traced to the group that raised it and ranked from P0 to P2."
-          },
-          {
-            "label": "Navigation",
-            "text": "A new bar with the map first and Create within reach of every screen."
-          },
-          {
-            "label": "Trust and wording",
-            "text": "Ownership disclosure, verified reviews, neutral claim copy and a vocabulary that speaks vinyl."
-          },
-          {
-            "label": "Find, owners and records",
-            "text": "Filters, owner tools, wantlist matching and releases, around 40 screens of changes in total."
-          },
-          {
-            "label": "Validation plan",
-            "text": "A usability test across the five groups, owner interviews and a first-click test, planned before building."
-          }
-        ]
-      },
-      "decisions": {
-        "heading": "Three changes, each traced to what the groups said",
-        "items": [
-          {
-            "title": "Make the map the front door, and keep Create one tap away",
-            "why": "Collector groups came for Find and owner groups came to post. Meanwhile the most useful content, guides, collectables and claiming a store, sat in More. The bar is now Map, Feed, Create, Messages and Profile: the map opens after login, Create works from any screen, city guides appear on the map for whatever city you browse, and More is gone, replaced by Settings behind the profile gear.",
-            "chosen": "b",
-            "a": {
-              "label": "Social Home as the front door",
-              "note": "Discovery was one tab among five."
-            },
-            "b": {
-              "label": "Map first, Create everywhere",
-              "note": "The front door matches why people download the app.",
-              "image": "assets/images/vk-decision1.jpg"
-            }
-          },
-          {
-            "title": "Turn the data we already collect into filters",
-            "why": "Stores already fill in genres, formats, buy, sell or trade and a used-to-new mix, but Find only offered a name and a distance. Crate diggers’ first reaction was that every store on the map was rated 5.0, which told them nothing about which shop was worth the drive. Find now filters by open now, genre, format, buy-sell-trade and used or new, sorts by distance, rating, Selection or Price, and shows every rating with its review count, so 5.0 (2) reads honestly.",
-            "chosen": "b",
-            "a": {
-              "label": "A name search and a distance",
-              "note": "Collected data that nobody could use."
-            },
-            "b": {
-              "label": "Filters, sort and honest cards",
-              "note": "Search by what collectors actually look for.",
-              "image": "assets/images/vk-decision2.jpg"
-            }
-          },
-          {
-            "title": "Give owners control, proof and trust",
-            "why": "The veteran owners could not reply to a review, saw no numbers on what the app did for the shop and could not even find Store Manager, hidden behind a small icon in the top bar. They also read a prefilled unclaimed page with a “spread the word” banner as Yelp’s playbook, and wanted to know who owns the platform that ranks the shop. Owners now switch stores from the top of Profile, see views, followers, direction and call taps and check-ins, and reply publicly to reviews. The claim screen says who runs the app and links to how ratings work, and only visitors who checked in can review.",
-            "chosen": "b",
-            "a": {
-              "label": "Edit Store and Store Profile",
-              "note": "Nothing to show it was working, or who was behind it."
-            },
-            "b": {
-              "label": "A switcher, insights, replies and disclosure",
-              "note": "Control, proof and trust for the people who feed the app.",
-              "image": "assets/images/vk-decision3.jpg"
-            }
-          }
-        ]
-      },
-      "solution": {
-        "heading": "From verdicts to a ranked set of changes",
-        "items": [
-          {
-            "caption": "1. Five audience groups, one list of findings",
-            "problem": "Nobody had checked it worked for the people it was for.",
-            "solution": "Research five audience groups, then rank every finding.",
-            "text": "I researched five audience groups: veteran store owners, newer store owners with a bar, crate diggers and DJs, collectors who travel, and release chasers with a collection on Discogs. Each group walked through the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
-            "images": [
-              {
-                "src": "assets/images/vk-panel.jpg?v=5"
-              },
-              {
-                "src": "assets/images/vk-findings.jpg?v=3"
-              }
-            ]
-          },
-          {
-            "caption": "2. What changed, by priority",
-            "problem": "The handoff had no structure.",
-            "solution": "Fix navigation, labels and trust first, then Find, owners and records.",
-            "text": "P0 puts the map first with Create on every screen, labels every tab, explains Coins, renames “Repress” to Share and adds the ownership and ratings disclosure. P1 adds filters and honest cards to Find, a switcher, insights, a team and events for owners, and reviews that need a real visit. P2 adds wantlist matches, record search and releases from Discogs, one Follow model, group chats of up to 12 and a first run for collectors and owners.",
-            "images": [
-              {
-                "src": "assets/images/vk-s-nav.jpg"
-              },
-              {
-                "src": "assets/images/vk-s-trust.jpg?v=2"
-              },
-              {
-                "src": "assets/images/vk-s-profile.jpg?v=2"
-              },
-              {
-                "src": "assets/images/vk-s-find.jpg"
-              },
-              {
-                "src": "assets/images/vk-s-owner.jpg?v=2"
-              },
-              {
-                "src": "assets/images/vk-s-reviews.jpg"
-              },
-              {
-                "src": "assets/images/vk-s-records.jpg"
-              },
-              {
-                "src": "assets/images/vk-s-social.jpg"
-              },
-              {
-                "src": "assets/images/vk-s-first.jpg"
-              }
-            ]
-          },
-          {
-            "caption": "3. Accessible by default",
-            "text": "I checked color and contrast on the new light interface, set minimum text sizes and sized touch areas so every control is comfortable to hit. Replacing rows of icon-only tabs with labelled ones also removed a barrier for anyone who can’t decode icons.",
-            "images": []
-          },
-          {
-            "caption": "4. Validate before building",
-            "problem": "These changes rest on a small round of research.",
-            "solution": "A usability test, owner interviews and a first-click test, before building.",
-            "text": "The redesign is a set of bets, and I wrote down how to check them. A usability test across the five groups, covering owners, diggers or release chasers and travelers, on tasks like finding an open used-soul shop within 10 miles, claiming a store and posting an event. Owner interviews before any owner tool is built, asking what proof would make them post weekly. And a first-click test comparing a Map-first with a Feed-first landing, to ship the order that wins on discovery tasks.",
-            "images": [
-              {
-                "src": "assets/images/vk-validation.jpg?v=4"
-              }
-            ]
-          }
-        ]
-      },
-      "results": {
-        "heading": "From a handoff with no flows, style or research to a plan the research supports",
-        "items": [
-          {
-            "value": "0 → 5",
-            "label": "audience groups researched on the original app, where the handoff had no research."
-          },
-          {
-            "value": "0 → 7",
-            "label": "ranked findings, each traced to a change in the redesign."
-          },
-          {
-            "value": "0 → 12",
-            "label": "mapped flows, from onboarding and sign-up to the store manager, where the handoff had none."
-          }
-        ],
-        "note": "The comparison is against the app as it was handed over: no flows, no style and no research. Each of the five groups was explored through a small qualitative sample, so the verdicts and findings are directional until the validation plan is run."
-      },
-      "learnings": {
-        "heading": "Pick a front door, then earn the rest",
-        "items": [
-          "An app that tries to be a map, a network, a collection viewer and a magazine ends up convincing no one. Choosing the map as the front door made every other decision easier.",
-          "The cheapest high-value fix was already in the data. Genres, formats and buy-sell-trade were collected and never used.",
-          "Owners judge a platform on control and proof. Replies, numbers and a clear answer to who owns the app mattered more to them than any visual change.",
-          "In a niche, vocabulary is part of the interface. A word like “repress” already means something to collectors."
         ]
       }
     }

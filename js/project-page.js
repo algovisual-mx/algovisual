@@ -20,8 +20,6 @@
   var ICON_SCOPE =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
     '<path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 12.5 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>';
-  var ARROW_RIGHT =
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>';
   var CHEV_L =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>';
   var CHEV_R =
@@ -169,13 +167,6 @@
           '<div class="cs-solution">' +
           '<h3 class="cs-solution__title">' + it.caption + "</h3>" +
           (it.text ? '<div class="cs-copy cs-solution__text"><p>' + it.text + "</p></div>" : "") +
-          (it.problem
-            ? '<div class="cs-ps">' +
-              '<div class="cs-ps__box is-problem"><span class="cs-ps__label">Problem</span><p>' + it.problem + "</p></div>" +
-              '<span class="cs-ps__arrow" aria-hidden="true">' + ARROW_RIGHT + "</span>" +
-              '<div class="cs-ps__box is-solution"><span class="cs-ps__label">Solution</span><p>' + it.solution + "</p></div>" +
-              "</div>"
-            : "") +
           (carousel
             ? '<div class="cs-carousel" data-carousel role="group" aria-roledescription="carousel" aria-label="Screens">' +
               '<div class="cs-carousel__track" tabindex="0">' + it.images.map(shot).join("") + "</div>" +
@@ -217,12 +208,12 @@
   }
 
   function render(project) {
-    document.title = project.title + " — Sal Gonzalez, UX/UI Designer";
+    document.title = project.title + " — Sal Gonzalez Alvizouri, UX/UI Designer";
 
     var meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", project.excerpt);
     var ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", project.title + " — case study by Sal Gonzalez");
+    if (ogTitle) ogTitle.setAttribute("content", project.title + " — case study by Sal Gonzalez Alvizouri");
     var ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute("content", project.excerpt);
 
