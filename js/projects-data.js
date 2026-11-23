@@ -850,7 +850,7 @@ const PROJECTS = [
             "text": "The redesign is a set of bets, and I wrote down how to check them. A usability test with five people, two store owners, two diggers or release chasers and one traveler, on tasks like finding an open used-soul shop within 10 miles, claiming a store and posting an event. Owner interviews before any owner tool is built, asking what proof would make them post weekly. And a first-click test comparing a Map-first with a Feed-first landing, to ship the order that wins on discovery tasks.",
             "images": [
               {
-                "src": "assets/images/vk-validation.jpg?v=2"
+                "src": "assets/images/vk-validation.jpg?v=3"
               }
             ]
           }
