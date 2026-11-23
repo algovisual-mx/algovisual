@@ -27,8 +27,8 @@ const PROJECTS = [
     tools: [
       "Figma"
     ],
-    card: { role: "Product & design lead", type: "AI tool for Shopify stores", result: "A three-level access model for teams" },
-    excerpt: "An AI tool for Shopify stores with a three-level access model for teams.",
+    card: { role: "Product & design lead", type: "AI tool for Shopify stores", result: "One click instead of 3 to 5 minutes per description" },
+    excerpt: "An AI tool for Shopify stores that replaces 3 to 5 minutes of writing per description with one click.",
     showcase: "assets/images/visicart_case_cover.png?v=2",
     previewVideo: "assets/videos/Thumb_visi.mp4?v=3", // looping muted preview shown in the home card instead of the image
     cover: "assets/images/visicart-cover.jpg?v=1",
@@ -63,7 +63,8 @@ const PROJECTS = [
           { label: "AI connection", text: "Bring your own AI provider: choose it, add the API key, verify it and switch later." },
           { label: "Dashboard and collections", text: "Store stats, the collections table with status filters, and bulk actions with progress states." },
           { label: "Review panel", text: "Keywords, tone and length, the generated text and a Google preview, ending in reject, approve or publish." },
-          { label: "Teams and settings", text: "Roles, per-store access, invites, brand voice, organization settings and notifications." }
+          { label: "Teams and settings", text: "Roles, per-store access, invites, brand voice, organization settings and notifications." },
+          { label: "Internal user tests", text: "Tests with the people who use the tool, inside the team." }
         ],
         constraints: [
           {
@@ -217,28 +218,28 @@ const PROJECTS = [
         ]
       },
       results: {
-        heading: "Compared with doing it by hand, the structure already holds",
+        heading: "Compared with writing by hand, one click and a team of ten",
         items: [
           {
-            value: "1 click",
-            label: "to write SEO titles and meta descriptions for a store\u2019s collections, instead of writing each one by hand"
+            value: "3\u20135 min \u2192 1 click",
+            label: "to write an SEO title and meta description for a collection, instead of writing each one by hand"
           },
           {
-            value: "3 levels",
-            label: "of access (organization, store and person) managed by one owner, a structure that did not exist before the tool"
+            value: "100 collections",
+            label: "processed so far, about 5 to 8 hours of writing nobody had to do by hand (an estimate: 100 collections \u00d7 3\u20135 minutes)"
           },
           {
-            value: "1 view",
-            label: "to see who has access to what, with nothing comparable before"
+            value: "10 people",
+            label: "on the team use it today"
           }
         ],
-        note: "No comparable tool existed, so the baseline is doing the work by hand. The product is still in development; launch numbers will be added here."
+        note: "No comparable tool existed, so the baseline is doing the work by hand. The time saved is an estimate based on the manual time per description. The product is still in development; launch numbers will be added here."
       },
       learnings: {
         heading: "Decide who sees what before designing any screen",
         items: [
           "I'd map access with the stakeholder before the first screen, because that structure shaped every page after it.",
-          "I'd test the access view with a real team as early as possible; that's where confusion shows up first."
+          "Internal user tests helped shape the flows, and I'd start them earlier, with the access view, because that's where confusion shows up first."
         ]
       }
     }
@@ -277,7 +278,7 @@ const PROJECTS = [
         heading: "One page produces a pile of files. Hundreds of pages bury you.",
         text: [
           "Page Plucker began as an internal tool at Captivate, a search marketing agency, and is being built as a commercial product for SEO and content teams and agencies that work with large, complex sites. The team was one designer, two developers and the agency owner.",
-          "Before this tool there was no tool. To get a page into a document, someone opened it, copied the text, pasted it into a doc and then downloaded each image, one at a time. Doing that for a whole website could take days.",
+          "Before this tool there was no tool. To get a page into a document, someone opened it, copied the text, pasted it into a doc and then downloaded each image, one at a time. Doing that for a whole website could take up to a day.",
           "Extracting a page is easy to describe. What comes out is the hard part: for every page there is a Google Doc, a Word file, a text file, several PDFs and often dozens of images. Multiply that by hundreds of pages and several projects, and the output becomes the product.",
           "The challenge was deciding how all of it is stored, named and shown, so anyone can find a file in seconds and a team can work in the same space without stepping on each other."
         ]
@@ -417,22 +418,22 @@ const PROJECTS = [
         ]
       },
       results: {
-        heading: "Compared with doing it by hand, a repeatable way to organize web pages",
+        heading: "Compared with doing it by hand, a faster and simpler way to extract web pages",
         items: [
           {
             value: "8x faster",
-            label: "to extract a page\u2019s text and images than by hand, the only option before the tool existed"
+            label: "than doing it by hand, which took up to a day, the only option before the tool existed"
           },
           {
             value: "1,200+ pages",
-            label: "extracted by the team in the first two months, all of it copy and paste before"
+            label: "extracted in the first two months, all of it copy and paste before"
           },
           {
-            value: "1 structure",
-            label: "project, folder and page, shown the same way everywhere, where by hand there was no shared structure"
+            value: "10 people",
+            label: "on an SEO marketing team use it. It simplified their extraction and documentation work."
           }
         ],
-        note: "No comparable tool existed, so the baseline is doing the work by hand. Figures come from internal use at Captivate."
+        note: "No comparable tool existed, so the baseline is doing the work by hand. Figures and feedback come from internal use at Captivate."
       },
       learnings: {
         heading: "Design what comes out before designing how it goes in",
@@ -490,7 +491,7 @@ const PROJECTS = [
         text: "This was a personal project, so I did every part of it: I used the app in real situations, interviewed riders, mapped the flows and took the design from paper sketches to a clickable high-fidelity prototype in Figma.",
         scope: [
           { label: "Field research", text: "I used the app on a rushed Monday morning, a relaxed Sunday ride and under the midday sun with 15% battery." },
-          { label: "Interviews and reviews", text: "Frequent and occasional riders, plus the reviews on the App Store and Google Play." },
+          { label: "Interviews and reviews", text: "30 interviews with frequent and occasional riders, plus more than 20 reviews on the App Store and Google Play." },
           { label: "Personas and user flow", text: "Two personas, and a flow chart of every path from onboarding to returning a bike or changing a plan." },
           { label: "Sketches and wireframes", text: "Paper sketches first, then a fast low-fidelity prototype in Figma to test layout and flow." },
           { label: "High-fidelity design", text: "A cleaner interface with clear iconography and colors that convey security and ease of use." },
@@ -551,7 +552,7 @@ const PROJECTS = [
             caption: "1. Listening before drawing",
             problem: "I couldn\u2019t tell if the app\u2019s problems were just mine.",
             solution: "Real use, interviews and reviews, then two personas.",
-            text: "I used the app in different situations and talked with people who just want to get from A to B without paying for a taxi. The same things kept coming up: the app is slow and unintuitive, it isn’t clear how to start a trip, bike and dock availability is confusing, and some riders open Google Maps instead because it is faster. Behind all of it were a cluttered interface, a poorly functional map, no real-time information and unnecessary steps for common actions. From that I defined two personas: Mariana, who commutes every day and wants speed and clarity, and Roberto, who rides on weekends and needs step-by-step guidance.",
+            text: "I used the app in different situations, interviewed 30 riders, frequent and occasional, and read more than 20 App Store and Google Play reviews. The same things kept coming up: the app is slow and unintuitive, it isn’t clear how to start a trip, bike and dock availability is confusing, and some riders open Google Maps instead because it is faster. Behind all of it were a cluttered interface, a poorly functional map, no real-time information and unnecessary steps for common actions. From that I defined two personas: Mariana, who commutes every day and wants speed and clarity, and Roberto, who rides on weekends and needs step-by-step guidance.",
             images: [
               { src: "assets/images/mibici-s-current.jpg" },
               { src: "assets/images/mibici-s-personas.jpg" }
@@ -594,6 +595,11 @@ const PROJECTS = [
             images: [
               { src: "assets/images/mibici-s-ride.jpg" }
             ]
+          },
+          {
+            caption: "6. Accessible by default",
+            text: "MiBici is a public service, so the app has to work for everyone who rides. I checked the color choices and the contrast between text, controls and their backgrounds, set minimum text sizes, and sized touch areas so every control is comfortable to hit, including on the move.",
+            images: []
           }
         ]
       },
@@ -800,7 +806,12 @@ const PROJECTS = [
             ]
           },
           {
-            "caption": "3. Validate before building",
+            "caption": "3. Accessible by default",
+            "text": "I checked color and contrast on the new light interface, set minimum text sizes and sized touch areas so every control is comfortable to hit. Replacing rows of icon-only tabs with labelled ones also removed a barrier for anyone who can’t decode icons.",
+            "images": []
+          },
+          {
+            "caption": "4. Validate before building",
             "problem": "These changes rest on a small round of research.",
             "solution": "A usability test, owner interviews and a first-click test, before building.",
             "text": "The redesign is a set of bets, and I wrote down how to check them. A usability test across the five groups, covering owners, diggers or release chasers and travelers, on tasks like finding an open used-soul shop within 10 miles, claiming a store and posting an event. Owner interviews before any owner tool is built, asking what proof would make them post weekly. And a first-click test comparing a Map-first with a Feed-first landing, to ship the order that wins on discovery tasks.",
