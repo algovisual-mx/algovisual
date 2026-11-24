@@ -96,6 +96,8 @@
       '<h1 class="project-title">' + cs.outcome + "</h1>" +
       '<dl class="cs-summary">' +
       '<div><dt>Problem</dt><dd>' + s.problem + "</dd></div>" +
+      (s.decision ? '<div><dt>Key decision</dt><dd>' + s.decision + "</dd></div>" : "") +
+      (s.outcome ? '<div><dt>Outcome</dt><dd>' + s.outcome + "</dd></div>" : "") +
       "</dl>" +
       '<dl class="cs-facts">' +
       fact(ICON_ROLE, "Role", s.role) +
@@ -160,8 +162,10 @@
       '<div class="cs-body">' +
       s.items.map(function (it) {
         var n = it.images.length;
-        var carousel = n > 1 && !it.images.some(function (im) { return im.label; });
-        var layout = it.stack ? " is-stack" : n === 2 ? " is-pair" : n > 2 ? " is-grid" : "";
+        // No carousels: every screen is shown, one per row at full width, so
+        // nothing hides behind a swipe. Click any image to enlarge it.
+        var carousel = false;
+        var layout = n > 1 || it.stack ? " is-stack" : "";
         var topic = it.caption.replace(/^\d+\.\s*/, "");
         function shot(im, k) {
           var alt = im.alt || topic + (n > 1 ? " (" + (k + 1) + " of " + n + ")" : "");
@@ -293,7 +297,7 @@
   }
 
   function render(project) {
-    document.title = project.title + " — Sal Gonzalez, UX/UI Designer";
+    document.title = project.title + " — Sal Gonzalez, Product Designer";
 
     var meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", project.excerpt);

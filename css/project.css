@@ -608,6 +608,8 @@
 .cs-carousel,
 .cs-solution__images,
 .cs-body > .cs-figure { max-width: 820px; }
+/* Solution screens fill the column so the UI is readable without enlarging it. */
+.cs-solution__images.is-stack { max-width: none; }
 
 /* ---- Key decisions: bullets + the chosen visuals in one row ---- */
 .cs-decisions {

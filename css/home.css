@@ -13,8 +13,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: calc(var(--nav-h, 80px) + 24px);
-  padding-bottom: clamp(48px, 8vw, 110px);
+  padding-top: calc(var(--nav-h, 80px) + 16px);
+  padding-bottom: clamp(32px, 4vw, 56px);
 }
 
 .intro .container {
@@ -108,7 +108,7 @@
   align-items: center;
   gap: 18px;
   max-width: 100%;
-  margin-bottom: clamp(20px, 3vw, 32px);
+  margin-bottom: clamp(14px, 2vw, 22px);
   padding: 12px clamp(22px, 3vw, 34px) 12px 14px;
   color: #ffffff;
   background: linear-gradient(180deg, #4b5fd9 0%, #2f3fbe 100%);
@@ -600,3 +600,53 @@
 @media (prefers-reduced-motion: reduce) {
   .work-card__img { animation: none; }
 }
+
+/* ---- Hero: proof line and a strip of the four projects --------------------- */
+.hero-proof {
+  max-width: 74ch;
+  margin-top: clamp(14px, 2vw, 22px);
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+  line-height: 1.5;
+  color: var(--fg);
+}
+
+.hero-work {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+  max-width: 980px;
+  margin-top: clamp(14px, 2vw, 22px);
+}
+.hero-work__item { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.hero-work__thumb {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-elev-2);
+}
+.hero-work__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-med) var(--ease);
+}
+.hero-work__item:hover .hero-work__thumb img { transform: scale(1.04); }
+.hero-work__name {
+  margin-top: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+}
+.hero-work__meta { font-size: 0.78rem; line-height: 1.35; color: var(--fg-muted); }
+@media (max-width: 640px) {
+  .hero-work { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+}
+
+/* Visicart's exported preview video carries a small watermark near its right edge;
+   sliding the crop window to the left keeps it out of the frame. */
+.work-card__video--crop { object-position: 25% 50%; }

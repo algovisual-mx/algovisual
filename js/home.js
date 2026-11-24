@@ -17,7 +17,7 @@
     grid.className = "work-cards";
 
     items.forEach(function (p) {
-      var tags = [p.category].concat((p.tools || []).slice(0, 2));
+      var tags = p.tags || [p.category].concat((p.tools || []).slice(0, 2));
 
       var card = document.createElement("a");
       card.className = "work-card reveal";
@@ -26,7 +26,7 @@
       card.innerHTML =
         '<div class="work-card__media">' +
         (p.previewVideo
-          ? '<video class="work-card__video" src="' + p.previewVideo + '#t=0.001" muted loop playsinline preload="metadata" role="img" aria-label="' + (p.coverAlt || p.title) + '" tabindex="-1"></video>'
+          ? '<video class="work-card__video' + (p.cropVideo ? " work-card__video--crop" : "") + '" src="' + p.previewVideo + '#t=0.001" muted loop playsinline preload="metadata" role="img" aria-label="' + (p.coverAlt || p.title) + '" tabindex="-1"></video>'
           : '<img class="work-card__img" src="' + (p.showcase || p.cover) + '" alt="' + (p.coverAlt || p.title) + '" loading="lazy">') +
         "</div>" +
         '<div class="work-card__body">' +
@@ -74,6 +74,22 @@
     });
 
     return list;
+  }
+
+  /* A strip of the four projects in the first screen, so work is visible at
+     once. Tags come from the same data as the cards. */
+  function renderHeroWork() {
+    var root = document.querySelector("[data-hero-work]");
+    if (!root || typeof PROJECTS === "undefined") return;
+    root.innerHTML = PROJECTS.map(function (p) {
+      var meta = (p.tags || [p.category]).slice(0, 2).join(" &middot; ");
+      return (
+        '<a class="hero-work__item" href="project.html?slug=' + encodeURIComponent(p.slug) + '" data-wipe="' + p.title + '">' +
+        '<span class="hero-work__thumb"><img src="' + p.cover + '" alt="" loading="eager" decoding="async"></span>' +
+        '<span class="hero-work__name">' + p.title + "</span>" +
+        '<span class="hero-work__meta">' + meta + "</span></a>"
+      );
+    }).join("");
   }
 
   function renderGalleries() {
@@ -155,6 +171,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    renderHeroWork();
     renderGalleries();
   });
 })();

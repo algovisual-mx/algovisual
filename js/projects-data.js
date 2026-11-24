@@ -18,9 +18,11 @@
 const PROJECTS = [
   {
     slug: "visicart",
+    tags: ["B2B SaaS", "In daily use", "Permissions & IA"],
+    cropVideo: true, // trims the corner watermark of the exported preview video
     coverAlt: "Preview of the Visicart interface",
     title: "Visicart",
-    category: "UI/UX Design",
+    category: "Product Design",
     section: "product",
     year: "2026",
     client: "Captivate · internal tool, now a product",
@@ -37,6 +39,8 @@ const PROJECTS = [
     caseStudy: {
       outcome: "One click for a single person was easy. Then we scaled it.",
       summary: {
+        decision: "Three levels, where organizations contain stores and stores contain people, so one owner can run several stores without mixing them up.",
+        outcome: "A working product in use by an SEO team: 80% of generated descriptions are approved without editing, and 9 of 10 testers switched stores without trouble.",
         problem: "Visicart writes SEO titles and meta descriptions for Shopify collections with one click. It began as an internal tool at Captivate, a search marketing agency, and is now being built as a commercial product for e-commerce teams and Shopify-focused agencies. The hard part was deciding who gets access to what.",
         role: "Product & design lead",
         scope: "The whole product, end to end \u00b7 8 months \u00b7 with the agency owner and two developers",
@@ -199,7 +203,7 @@ const PROJECTS = [
             ]
           },
           {
-            caption: "8. Accessibility check",
+            caption: "8. Contrast check",
             text: "I measured text contrast on the review panel, the screen where people spend the most time. Titles, labels and body text measure 5.4:1 to 20:1, above the WCAG AA minimum of 4.5:1. Two things fall short: placeholder text in inputs measures 3.0:1, and the disabled Reject, Approve and Publish buttons measure 2.0:1. WCAG exempts disabled controls, but they are hard to read. Next, I\u2019d darken the placeholder to pass.",
             images: []
           }
@@ -210,20 +214,20 @@ const PROJECTS = [
         "goal": "a person could switch between stores easily and write a description in seconds.",
         "items": [
           {
-            "value": "1 click",
-          "label": "to write an SEO title and meta description for a collection, instead of 3 to 5 minutes writing each one by hand."
+            "value": "9 of 10",
+            "label": "of 10 e-commerce team members switched between stores without trouble when testing the prototype (task: switch to another store)."
           },
           {
             "value": "80%",
             "label": "of the generated descriptions are approved without editing."
           },
           {
-            "value": "9 of 10",
-            "label": "people switched between stores without trouble when testing the prototype."
-          },
-          {
             "value": "1,500+",
             "label": "collections analyzed and written for, across more than 20 e-commerce stores."
+          },
+          {
+            "value": "1 click",
+            "label": "to write an SEO title and meta description for a collection, instead of 3 to 5 minutes writing each one by hand."
           }
         ],
         "note": "The time saved is an estimate based on the manual time per description."
@@ -239,9 +243,10 @@ const PROJECTS = [
   },
   {
     slug: "page-plucker",
+    tags: ["B2B SaaS", "In daily use", "IA & design system"],
     coverAlt: "Preview of the Page Plucker interface",
     title: "Page Plucker",
-    category: "UI/UX Design",
+    category: "Product Design",
     section: "product",
     year: "2026",
     client: "Captivate · internal tool, now a product",
@@ -258,6 +263,8 @@ const PROJECTS = [
     caseStudy: {
       outcome: "Hundreds of pages, extracted and organized without copy and paste.",
       summary: {
+        decision: "Design what comes out before how it goes in: project, folder and page everywhere, so hundreds of documents stay findable.",
+        outcome: "About 12 minutes per link down to one click (about 90 seconds), with 1,200+ documents extracted a day by an SEO team.",
         problem: "Page Plucker extracts the pages of a website into cloud documents, text files, PDFs and image folders. It began as an internal tool at Captivate, a search marketing agency, and is now being built as a commercial product for SEO, content-generation and content-analysis teams and agencies that work with large, complex sites. The real design challenge was not the extraction, it was how to organize and show everything that comes out.",
         role: "Product & design lead",
         scope: "Workflows, design system and the full product · 6 months · with the agency owner and two developers",
@@ -394,7 +401,7 @@ const PROJECTS = [
             ]
           },
           {
-            caption: "7. Accessibility check",
+            caption: "7. Contrast check",
             text: "I measured contrast on the Plucker Tool, the screen people use most. Text on white measures 4.5:1 to 21:1 and sidebar text on the purple 8:1 to 12.7:1, all above the WCAG AA minimum of 4.5:1. Two pairs fall short: the white label on the orange Start Plucking button measures 2.3:1, and the selected Google Doc chip 4.3:1. A dark label on the same orange would measure about 7:1.",
             images: []
           }
@@ -405,20 +412,20 @@ const PROJECTS = [
         "goal": "replacing the manual copy and paste with one click that anyone on the team could use.",
         "items": [
           {
+            "value": "10 of 10",
+            "label": "of the 10 people who tested it knew how to use it."
+          },
+          {
             "value": "12 → 1.5 min",
             "label": "per link: 12 minutes extracting the elements by hand, about 90 seconds with one click in Page Plucker."
           },
           {
-            "value": "~17 h / day",
-            "label": "of manual work saved across the team, estimated from 100 links a day at about 10.5 minutes saved each."
-          },
-          {
-            "value": "10 of 10",
-            "label": "people who tested it knew how to use it."
-          },
-          {
             "value": "1,200+",
             "label": "documents extracted per day, from more than 100 links."
+          },
+          {
+            "value": "~17 h / day",
+            "label": "of manual work saved across the team, estimated from 100 links a day at about 10.5 minutes saved each."
           }
         ],
         "note": "No comparable tool existed, so the baseline is the manual process. The manual time is a team average that was not timed, and the hours saved are calculated from it."
@@ -435,18 +442,19 @@ const PROJECTS = [
   },
   {
     "slug": "vinylmapper",
+    "tags": ["Mobile app", "Research-led", "Redesign launching"],
     "coverAlt": "Preview of the redesigned VinylMapper app screens",
     "title": "VinylMapper",
-    "category": "UI/UX Design",
+    "category": "Product Design",
     "section": "product",
     "year": "2025–2026",
     "client": "Startup client",
-    "role": "UX/UI Designer",
+    "role": "Lead designer",
     "tools": [
       "Figma"
     ],
     "card": {
-      "role": "UX/UI designer",
+      "role": "Lead designer",
       "type": "Social app for record collectors",
       "result": "Turning research insights into frictionless discovery for record collectors"
     },
@@ -458,7 +466,9 @@ const PROJECTS = [
     "caseStudy": {
       "outcome": "Turning feedback from five audience groups into a clearer, more useful VinylMapper.",
       "summary": {
-        "problem": "VinylMapper is a startup’s social app where record collectors find stores, follow them, review them and share what they find. The team handed it to me already “designed”, but it was incomplete and poorly built: no flows, no style and no coherence between screens, an improvised design with no research behind it. I ran 10 interviews across five audience groups, built the flows and a new system from that research, and rebuilt the app around it.",
+        "decision": "Make the map the front door and keep Create one tap away: finding stores is the one main thing, everything else is secondary.",
+        "outcome": "8 of 10 interviewees could not find the map or the blogs menu in the original app. All 10 did in the redesigned prototype (directional). The redesign launches next.",
+        "problem": "VinylMapper is a startup’s social app where record collectors find stores, follow them, review them and share what they find. The team handed it to me as a first build, made quickly before any research: it had no flows, no shared style and little coherence between screens. I ran 10 interviews across five audience groups, built the flows and a new system from that research, and rebuilt the app around it.",
         "role": "UX/UI designer",
         "scope": "Research, flows, navigation, design system and interface · 2025–2026",
         "team": "Lead designer, with 2 developers",
@@ -470,10 +480,10 @@ const PROJECTS = [
         }
       },
       "problem": {
-        "heading": "A “finished” design with no flows, no style and no research",
+        "heading": "A first build with no flows, no style and no research",
         "text": [
           "VinylMapper is a startup’s app for record collectors: they find stores on a map, follow them, review them, check in and share what they find, and store owners claim and manage their listing.",
-          "The team handed it to me already “designed”, but it was incomplete and poorly built: no flows, no style and no coherence between screens. It reflected what the owner wanted rather than what worked, with no research or testing behind it, and a navigation that had grown screen by screen: five equal tabs, three icon-only tab sets and a More menu with eleven tiles.",
+          "The team handed it to me as a first build, made quickly before any research: it had no flows, no shared style and little coherence between screens. It had not been tested with users, and its navigation had grown screen by screen: five equal tabs, three icon-only tab sets and a More menu with eleven tiles.",
           "I started with research: 10 interviews across five audience groups on the original prototype, veteran store owners, newer store owners, crate diggers, traveling collectors and release chasers. Only one of the five groups would have used it as it was. The others said Maybe or No, for reasons that pointed to the same few problems.",
           "The goal became to act on those problems in order of impact: pick a front door, use the data the app already collects, give owners a reason to stay, earn their trust and stop making people learn the app by tapping."
         ],
@@ -483,7 +493,7 @@ const PROJECTS = [
         }
       },
       "role": {
-        "text": "The startup handed me an app that was already “designed” but incomplete. I ran the research, built the flows and the new system, and redesigned the product around what the research showed, from the navigation to the owner tools, working with two developers. When the team disagreed, research or testing with users settled it.",
+        "text": "The startup handed me an early build of the app. I ran the research, built the flows and the new system, and redesigned the product around what the research showed, from the navigation to the owner tools, working with two developers. When the team disagreed, research or testing with users settled it.",
         "scope": [
           {
             "label": "Group research",
@@ -603,14 +613,14 @@ const PROJECTS = [
             ]
           },
           {
-            "caption": "3. Accessibility check",
+            "caption": "3. Contrast check",
             "text": "I measured more than a dozen text and control pairs on the redesigned screens. All clear the WCAG AA minimum of 4.5:1: secondary text on white measures 5.4:1 to 9.5:1, dark labels on the yellow chips about 7:1, and white on the red Create button 4.7:1, the lowest. Replacing rows of icon-only tabs with labelled ones also removed a barrier for anyone who can’t decode icons.",
             "images": []
           }
         ]
       },
       "results": {
-        "heading": "From 8 of 10 people lost to 10 of 10 finding their way",
+        "heading": "8 of 10 people could not find the map or the blogs menu in the original app",
         "goal": "people could find stores and interact with them.",
         "items": [
           {
@@ -618,16 +628,16 @@ const PROJECTS = [
             "label": "people could not find the map or the blogs menu in the original app."
           },
           {
-            "value": "10 of 10",
-            "label": "found their way in the redesigned prototype, after the changes these sessions called for."
+            "value": "~40 screens",
+            "label": "of changes, each traced to a ranked finding and to the group that raised it."
           },
           {
             "value": "10 interviews",
             "label": "two people from each of five audience groups, on a prototype."
           },
           {
-            "value": "~40 screens",
-            "label": "of changes, each traced to a ranked finding and to the group that raised it."
+            "value": "10 of 10",
+            "label": "found their way in the redesigned prototype. The same people took part in both rounds, so treat this as directional."
           }
         ],
         "note": "The baseline is the app as it was handed over, a quick first build with a structure that did not work. The sessions are a small qualitative sample, so the findings are directional."
@@ -647,18 +657,19 @@ const PROJECTS = [
   },
   {
     "slug": "mibici",
+    "tags": ["Mobile app", "Research-led", "Proposal"],
     "title": "MiBici",
-    "category": "UI/UX Design",
+    "category": "Product Design",
     "section": "product",
     "year": "2025–2026",
     "client": "GDL en Bici · social proposal",
-    "role": "UX/UI Designer",
+    "role": "Lead designer",
     "tools": [
       "Figma"
     ],
     "coverAlt": "Preview of the redesigned MiBici app screens",
     "card": {
-      "role": "UX/UI designer",
+      "role": "Lead designer",
       "type": "Reform proposal for the MiBici app",
       "result": "Redesigning a station to station bike share app around real user needs"
     },
@@ -670,6 +681,8 @@ const PROJECTS = [
     "caseStudy": {
       "outcome": "A reform proposal that makes renting a MiBici simple, clear and trustworthy.",
       "summary": {
+        "decision": "Show prices and payment before the first ride, let the dock confirm the return, and explain every uncertain moment while riding.",
+        "outcome": "30 riders tested the prototype and 80% preferred it to the current app. It was presented but not adopted in the official app.",
         "problem": "GDL en Bici, a Guadalajara cycling collective, asked me to research, redesign and present a reform proposal for the official MiBici app, as a social proposal to improve the experience of the people who use it. I studied the app, redesigned it and interviewed 30 riders about the first version. Their objections shaped a second version of 19 screens.",
         "role": "UX/UI designer",
         "scope": "Research, redesign, 30 rider interviews and 19 screens · 2025–2026",
@@ -840,24 +853,16 @@ const PROJECTS = [
             ]
           },
           {
-            "caption": "7. Accessibility check",
+            "caption": "7. Contrast check",
             "text": "I measured contrast on the second version. One thing is fixed: the yellow buttons now carry dark text at 10.9:1, where white measured 1.5:1. Three still fall short of the WCAG AA minimum of 4.5:1: white labels on the green buttons (2.5:1), secondary gray text (about 3.8:1) and green text on white (3.9:1). Next, I’d darken the green to about #388636, which gives 4.5:1 with white, and the gray text.",
             "images": []
           }
         ]
       },
       "results": {
-        "heading": "80% of riders preferred the redesign to the current app",
+        "heading": "From 8 ranked blind spots to a 19-screen redesign riders preferred",
         "goal": "testing with riders and getting better feedback than the current app.",
         "items": [
-          {
-            "value": "80%",
-            "label": "of riders liked the redesign more than the current app and found it more usable, with more useful, friendlier information."
-          },
-          {
-            "value": "30 riders",
-            "label": "the same riders who gave feedback on the first version used the interactive prototype."
-          },
           {
             "value": "8 blind spots",
             "label": "ranked by severity, with every change in the redesign traced to one of them."
@@ -865,6 +870,14 @@ const PROJECTS = [
           {
             "value": "19 screens",
             "label": "from sign-up and payment to receipts, reports and help."
+          },
+          {
+            "value": "30 riders",
+            "label": "the same riders who gave feedback on the first version used the interactive prototype."
+          },
+          {
+            "value": "80%",
+            "label": "of riders preferred the redesign to the current app and found it more usable, with more useful, friendlier information. This is a preference check with the same riders who shaped it, so it is directional."
           }
         ],
         "note": "The same 30 riders saw both rounds. On the first version, 5 said they would use the app, 15 maybe and 10 no. After the redesign, 80% preferred it to the current app. The prices in the prototype are example values, not official fares."
@@ -882,5 +895,5 @@ const PROJECTS = [
 ];
 
 const PROJECT_SECTIONS = [
-  { id: "product", title: "Some of my Work...", subtitle: "Product, UI & UX design" }
+  { id: "product", title: "Selected work", subtitle: "Product, UI & UX design" }
 ];
