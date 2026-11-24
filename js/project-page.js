@@ -20,6 +20,9 @@
   var ICON_SCOPE =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
     '<path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 12.5 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>';
+  var ICON_STATUS =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg>';
   var CHEV_L =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg>';
   var CHEV_R =
@@ -97,6 +100,7 @@
       '<dl class="cs-facts">' +
       fact(ICON_ROLE, "Role", s.role) +
       fact(ICON_SCOPE, "Scope", s.scope || s.team + " &middot; " + s.duration) +
+      (s.status ? fact(ICON_STATUS, "Status", s.status) : "") +
       "</dl>" +
       figure(project.cover, project.title + " — final design", "", "cs-hero").replace(' loading="lazy"', "").replace(/<figcaption>.*?<\/figcaption>/, "") +
       "</div>"
@@ -247,8 +251,21 @@
     );
   }
 
+  function metricCards(items) {
+    return '<ul class="cs-results">' + items.map(function (it) {
+      return "<li><strong>" + esc(it.value) + "</strong><span>" + esc(it.label) + "</span></li>";
+    }).join("") + "</ul>";
+  }
+
   function buildResults(cs) {
     var r = cs.results;
+    if (!r.hero) {
+      return (
+        sectionHead("04", "Results", r.heading) +
+        '<div class="cs-body">' + metricCards(r.items) +
+        (r.note ? '<p class="cs-meta">' + r.note + "</p>" : "") + "</div>"
+      );
+    }
     return (
       '<header class="cs-head cs-head--aside"><span class="cs-num">04</span>' +
       '<div><span class="cs-eyebrow">Results</span><h2 class="cs-heading">' + esc(r.heading) + "</h2></div>" +
@@ -261,9 +278,6 @@
       }).join("") + "</div>" + panelCard(r.panel) + "</div></div>" +
       usabilityCard(r.usability) +
       (r.note ? '<p class="cs-meta">' + r.note + "</p>" : "") +
-      (r.disclosure
-        ? '<p class="cs-disclosure"><span>Illustrative data</span>' + r.disclosure + "</p>"
-        : "") +
       "</div>"
     );
   }

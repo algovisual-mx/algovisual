@@ -88,7 +88,7 @@
 }
 .cs-copy p + p { margin-top: 14px; }
 
-.cs-meta { display:none; font-size: 0.85rem; color: var(--fg-faint); }
+.cs-meta { font-size: 0.85rem; color: var(--fg-muted); max-width: 70ch; line-height: 1.55; }
 
 /* Summary (first screen) */
 .cs-summary {
@@ -303,33 +303,6 @@
   border-left: 2px solid var(--accent);
   border-bottom: 2px solid var(--accent);
   transform: rotate(-45deg);
-}
-
-/* Disclosure for illustrative figures */
-.cs-disclosure {
-  display: none;
-  align-items: baseline;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin: clamp(28px, 4vw, 40px) 0 0;
-  padding: 14px 18px;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: var(--fg-muted);
-  background: var(--bg-elev);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-sm);
-}
-.cs-disclosure span {
-  flex-shrink: 0;
-  padding: 3px 10px;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--accent);
-  background: var(--accent-soft);
-  border-radius: var(--radius-pill);
 }
 
 /* Role & constraints */
