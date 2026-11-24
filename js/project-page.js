@@ -184,95 +184,82 @@
     );
   }
 
-  /* Results are built from blocks so each case can compose its own layout:
-     kpi (one big number), metrics (number cards), bars (before/after or
-     time comparison), split (a stacked bar), meter (one value and a bar),
-     table (task performance), list (what testing changed) and row (blocks
-     side by side). Cases without blocks fall back to plain metric cards. */
+  /* Results: one dashboard layout for every case (header with a short intro,
+     a hero comparison card beside a column of stats and one panel, then a
+     usability card with a tile per task). Each case fills the same slots. */
   function esc(t) { return String(t == null ? "" : t); }
 
-  function blockTitle(b) {
-    return b.title ? '<h3 class="cs-block__title">' + esc(b.title) + "</h3>" : "";
+  function dotsHtml(on, total) {
+    var out = "";
+    for (var i = 0; i < total; i++) out += '<i class="rs-dot' + (i < on ? " is-on" : "") + '"></i>';
+    return '<span class="rs-dots" aria-hidden="true">' + out + "</span>";
   }
 
-  function metricCards(items) {
-    return '<ul class="cs-results">' + items.map(function (it) {
-      return "<li><strong>" + esc(it.value) + "</strong><span>" + esc(it.label) + "</span></li>";
-    }).join("") + "</ul>";
+  function heroCard(h) {
+    return (
+      '<article class="rs-card rs-hero">' +
+      '<h3 class="rs-title">' + esc(h.title) + "</h3>" +
+      '<div class="rs-big"><strong>' + esc(h.value) + "</strong><span>" + esc(h.label) + "</span></div>" +
+      '<div class="rs-rows">' + h.rows.map(function (r) {
+        return '<div class="rs-row rs-row--' + (r.tone || "accent") + '">' +
+          '<span class="rs-row__label">' + esc(r.label) + "</span>" +
+          '<div class="rs-track" aria-hidden="true"><i style="width:' + r.pct + '%"></i></div>' +
+          '<span class="rs-row__val">' + esc(r.value) + "</span></div>";
+      }).join("") + "</div></article>"
+    );
   }
 
-  function resultBlock(b) {
-    switch (b.type) {
-      case "kpi":
-        return '<div class="cs-block cs-kpi"><strong>' + esc(b.value) + "</strong>" +
-          '<div class="cs-kpi__text"><b>' + esc(b.label) + "</b>" +
-          (b.sub ? "<span>" + esc(b.sub) + "</span>" : "") + "</div></div>";
+  function panelCard(p) {
+    var body = p.type === "split"
+      ? '<div class="rs-split" aria-hidden="true">' + p.parts.map(function (x, i) {
+          return '<i class="rs-split__part rs-split__part--' + (i % 2) + '" style="flex:' + x.pct + ' 1 0"></i>';
+        }).join("") + "</div>" +
+        '<ul class="rs-legend">' + p.parts.map(function (x, i) {
+          return '<li><i class="rs-legend__dot rs-legend__dot--' + (i % 2) + '"></i><strong>' + esc(x.value) + "</strong> " + esc(x.label) + "</li>";
+        }).join("") + "</ul>"
+      : '<div class="rs-track" aria-hidden="true"><i style="width:' + p.pct + '%"></i></div>' +
+        '<p class="rs-panel__text">' + esc(p.caption) + "</p>";
+    return (
+      '<article class="rs-card rs-panel"><div class="rs-panel__head">' +
+      '<h3 class="rs-title">' + esc(p.title) + "</h3>" +
+      '<span class="rs-panel__sum"><strong>' + esc(p.headline.value) + "</strong> " + esc(p.headline.label) + "</span></div>" +
+      body + "</article>"
+    );
+  }
 
-      case "metrics":
-        return '<div class="cs-block">' + blockTitle(b) + metricCards(b.items) + "</div>";
-
-      case "bars":
-        return '<div class="cs-block">' + blockTitle(b) +
-          '<div class="cs-bars' + (b.size === "lg" ? " cs-bars--lg" : "") + '">' +
-          b.rows.map(function (r) {
-            return '<div class="cs-bar cs-bar--' + (r.tone || "accent") + '">' +
-              '<div class="cs-bar__head"><span>' + esc(r.label) + "</span><strong>" + esc(r.value) + "</strong></div>" +
-              '<div class="cs-bar__track" aria-hidden="true"><i style="width:' + r.pct + '%"></i></div>' +
-              (r.sub ? "<small>" + esc(r.sub) + "</small>" : "") + "</div>";
-          }).join("") + "</div>" +
-          (b.delta
-            ? '<p class="cs-delta"><strong>' + esc(b.delta.value) + "</strong><span>" + esc(b.delta.label) + "</span></p>"
-            : "") + "</div>";
-
-      case "split":
-        return '<div class="cs-block">' + blockTitle(b) +
-          '<div class="cs-split" aria-hidden="true">' + b.parts.map(function (p, i) {
-            return '<i class="cs-split__part cs-split__part--' + (i % 2) + '" style="width:' + p.pct + '%"></i>';
-          }).join("") + "</div>" +
-          '<ul class="cs-split__legend">' + b.parts.map(function (p, i) {
-            return '<li><i class="cs-split__dot cs-split__dot--' + (i % 2) + '"></i><strong>' + esc(p.value) +
-              "</strong><span>" + esc(p.label) + "</span></li>";
-          }).join("") + "</ul></div>";
-
-      case "meter":
-        return '<div class="cs-block">' + blockTitle(b) +
-          '<div class="cs-meter"><strong>' + esc(b.value) + "</strong>" +
-          '<div class="cs-bar cs-bar--accent"><div class="cs-bar__track" aria-hidden="true"><i style="width:' + b.pct + '%"></i></div></div></div>' +
-          '<p class="cs-block__text">' + esc(b.label) + "</p></div>";
-
-      case "table":
-        return '<div class="cs-block">' + blockTitle(b) +
-          '<div class="cs-table-wrap"><table class="cs-table"><thead><tr>' +
-          b.columns.map(function (c) { return "<th scope=\"col\">" + esc(c) + "</th>"; }).join("") +
-          "</tr></thead><tbody>" +
-          b.rows.map(function (r) {
-            return "<tr>" + r.map(function (c, i) {
-              return i === 0 ? "<th scope=\"row\">" + esc(c) + "</th>" : "<td data-label=\"" + esc(b.columns[i]) + "\">" + esc(c) + "</td>";
-            }).join("") + "</tr>";
-          }).join("") + "</tbody>" +
-          (b.foot ? "<tfoot><tr>" + b.foot.map(function (c, i) {
-            return i === 0 ? "<th scope=\"row\">" + esc(c) + "</th>" : "<td data-label=\"" + esc(b.columns[i]) + "\">" + esc(c) + "</td>";
-          }).join("") + "</tr></tfoot>" : "") +
-          "</table></div></div>";
-
-      case "list":
-        return '<div class="cs-block">' + blockTitle(b) +
-          '<ul class="cs-checks">' + b.items.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul></div>";
-
-      case "row":
-        return '<div class="cs-row">' + b.blocks.map(resultBlock).join("") + "</div>";
-
-      default:
-        return "";
-    }
+  function usabilityCard(u) {
+    return (
+      '<article class="rs-usability">' +
+      '<div class="rs-usability__head"><h3 class="rs-title">' + esc(u.title) + "</h3>" +
+      '<span class="rs-usability__sum"><strong>' + esc(u.summary.value) + "</strong> " + esc(u.summary.label) + "</span></div>" +
+      '<ol class="rs-tiles">' + u.tiles.map(function (t) {
+        return '<li class="rs-tile"><span class="rs-tile__name">' + esc(t.name) + "</span>" +
+          '<div class="rs-tile__row">' +
+          (t.dots ? dotsHtml(t.dots.on, t.dots.total) : t.pct != null ? '<span class="rs-mini" aria-hidden="true"><i style="width:' + t.pct + '%"></i></span>' : "") +
+          '<span class="rs-tile__score">' + esc(t.score) + "</span></div>" +
+          (t.sub ? '<span class="rs-tile__sub">' + esc(t.sub) + "</span>" : "") + "</li>";
+      }).join("") + "</ol>" +
+      (u.changes
+        ? '<div class="rs-changes"><h4 class="rs-title">What testing changed</h4><ul>' +
+          u.changes.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ul></div>"
+        : "") +
+      "</article>"
+    );
   }
 
   function buildResults(cs) {
     var r = cs.results;
     return (
-      sectionHead("04", "Results", r.heading) +
-      '<div class="cs-body">' +
-      (r.blocks ? r.blocks.map(resultBlock).join("") : metricCards(r.items || [])) +
+      '<header class="cs-head cs-head--aside"><span class="cs-num">04</span>' +
+      '<div><span class="cs-eyebrow">Results</span><h2 class="cs-heading">' + esc(r.heading) + "</h2></div>" +
+      (r.intro ? '<p class="cs-head__aside">' + esc(r.intro) + "</p>" : "") + "</header>" +
+      '<div class="cs-body cs-body--wide">' +
+      '<div class="rs-grid">' + heroCard(r.hero) +
+      '<div class="rs-side"><div class="rs-stats">' + r.stats.map(function (st) {
+        return '<article class="rs-card rs-stat"><strong class="' + (st.tone === "accent" ? "is-accent" : "") + '">' + esc(st.value) +
+          "</strong><span>" + esc(st.label) + "</span></article>";
+      }).join("") + "</div>" + panelCard(r.panel) + "</div></div>" +
+      usabilityCard(r.usability) +
       (r.note ? '<p class="cs-meta">' + r.note + "</p>" : "") +
       (r.disclosure
         ? '<p class="cs-disclosure"><span>Illustrative data</span>' + r.disclosure + "</p>"
