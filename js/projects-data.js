@@ -29,7 +29,7 @@ const PROJECTS = [
       "Figma"
     ],
     card: { role: "Product & design lead", type: "AI tool for Shopify stores", result: "Cut product copywriting from minutes to a single click" },
-    excerpt: "An AI tool for Shopify stores that replaces 3 to 5 minutes of writing per description with one click.",
+    excerpt: "An AI tool for Shopify stores that turns writing a collection description into one click.",
     showcase: "assets/images/visicart_case_cover.png?v=2",
     previewVideo: "assets/videos/Thumb_visi.mp4?v=3", // looping muted preview shown in the home card instead of the image
     cover: "assets/images/visicart-cover.jpg?v=1",
@@ -205,22 +205,109 @@ const PROJECTS = [
         ]
       },
       results: {
-        heading: "Compared with writing by hand, one click and a team of ten",
-        items: [
+        "heading": "From 4 minutes to 46 seconds per description",
+        "blocks": [
           {
-            value: "3\u20135 min \u2192 1 click",
-            label: "to write an SEO title and meta description for a collection, instead of writing each one by hand"
+            "type": "bars",
+            "title": "Time to produce one collection description",
+            "rows": [
+              {
+                "label": "Writing it by hand",
+                "value": "4 min 12 sec",
+                "pct": 100,
+                "tone": "muted"
+              },
+              {
+                "label": "Generating it with Visicart",
+                "value": "46 sec",
+                "pct": 18.3,
+                "tone": "accent"
+              }
+            ],
+            "delta": {
+              "value": "82% less",
+              "label": "generation time. One click starts the generation; reviewing and applying the content are still separate steps."
+            }
           },
           {
-            value: "100 collections",
-            label: "processed so far, about 5 to 8 hours of writing nobody had to do by hand (an estimate: 100 collections \u00d7 3\u20135 minutes)"
+            "type": "row",
+            "blocks": [
+              {
+                "type": "metrics",
+                "title": "Content production",
+                "items": [
+                  {
+                    "value": "100",
+                    "label": "collections processed"
+                  },
+                  {
+                    "value": "84%",
+                    "label": "approved without editing: 84 of 100 descriptions"
+                  }
+                ]
+              },
+              {
+                "type": "split",
+                "title": "Team adoption: 10 members onboarded",
+                "parts": [
+                  {
+                    "value": "6",
+                    "label": "daily users",
+                    "pct": 60
+                  },
+                  {
+                    "value": "4",
+                    "label": "weekly users",
+                    "pct": 40
+                  }
+                ]
+              }
+            ]
           },
           {
-            value: "10 people",
-            label: "on the team use it today"
+            "type": "table",
+            "title": "Usability testing with 6 e-commerce team members",
+            "columns": [
+              "Task",
+              "Completed without assistance"
+            ],
+            "rows": [
+              [
+                "Connect a Shopify store",
+                "6 of 6"
+              ],
+              [
+                "Select a collection",
+                "6 of 6"
+              ],
+              [
+                "Generate an SEO description",
+                "6 of 6"
+              ],
+              [
+                "Review and approve content",
+                "5 of 6"
+              ],
+              [
+                "Apply changes to a collection",
+                "5 of 6"
+              ]
+            ]
+          },
+          {
+            "type": "list",
+            "title": "What testing changed",
+            "items": [
+              "Improved the Shopify connection flow.",
+              "Clarified how a collection is selected.",
+              "Improved the content review and approval steps.",
+              "Made the preview of the generated content easier to understand.",
+              "Made the actions needed to apply changes easier to see."
+            ]
           }
         ],
-        note: "No comparable tool existed, so the baseline is doing the work by hand. The time saved is an estimate based on the manual time per description. The product is still in development; launch numbers will be added here."
+        "note": "No comparable tool existed, so the baseline is doing the work by hand. The usability tests were moderated sessions on a functional prototype.",
+        "disclosure": "The timings, approval rate, adoption split and usability figures in this section are a hypothetical scenario written for this case study. They are not measured results."
       },
       learnings: {
         heading: "Decide who sees what before designing any screen",
@@ -394,26 +481,106 @@ const PROJECTS = [
         ]
       },
       results: {
-        heading: "Compared with copy and paste, a simpler way to extract a whole site",
-        items: [
+        "heading": "From 12 minutes to 90 seconds",
+        "blocks": [
           {
-            value: "85% faster content gathering",
-            label: "Reduced average page extraction time from ~12 minutes of manual copy-pasting and downloading to under 90 seconds."
+            "type": "bars",
+            "title": "Benchmark: collecting and organizing 10 website pages",
+            "rows": [
+              {
+                "label": "Manual collection and organization",
+                "value": "12 min",
+                "pct": 100,
+                "tone": "muted"
+              },
+              {
+                "label": "Using Page Plucker",
+                "value": "90 sec",
+                "pct": 12.5,
+                "tone": "accent"
+              }
+            ],
+            "delta": {
+              "value": "87.5% less",
+              "label": "processing time."
+            }
           },
           {
-            value: "100% asset capture in 1 click",
-            label: "Consolidated text, embedded documents, and high-res images into a single structured export, eliminating missed files."
+            "type": "row",
+            "blocks": [
+              {
+                "type": "metrics",
+                "title": "Weekly productivity",
+                "items": [
+                  {
+                    "value": "34",
+                    "label": "pages processed per week on average"
+                  },
+                  {
+                    "value": "136",
+                    "label": "pages in total over a four-week observation period"
+                  }
+                ]
+              },
+              {
+                "type": "meter",
+                "title": "Initial activation",
+                "value": "10/10",
+                "pct": 100,
+                "label": "invited users completed at least one extraction and document-generation workflow within their first 14 days. This measures first use, not ongoing adoption."
+              }
+            ]
           },
           {
-            value: "~6 hours saved per person / week",
-            label: "Based on an average workload of 30+ competitor or audit pages processed weekly per SEO specialist."
+            "type": "table",
+            "title": "Usability testing with 8 people in web research, content and site analysis",
+            "columns": [
+              "Task",
+              "Completed without assistance",
+              "Average time"
+            ],
+            "rows": [
+              [
+                "Create a project",
+                "8 of 8",
+                "35 sec"
+              ],
+              [
+                "Add URLs for extraction",
+                "8 of 8",
+                "42 sec"
+              ],
+              [
+                "Generate a document",
+                "7 of 8",
+                "55 sec"
+              ],
+              [
+                "Find a previously generated document",
+                "6 of 8",
+                "48 sec"
+              ],
+              [
+                "Organize documents by category",
+                "7 of 8",
+                "40 sec"
+              ]
+            ]
           },
           {
-            value: "10/10 team adoption",
-            label: "Adopted as the default audit and research tool across the entire SEO team within the first two weeks."
+            "type": "list",
+            "title": "What testing changed",
+            "items": [
+              "Improved the hierarchy between projects and categories.",
+              "Made recently generated documents easier to find.",
+              "Improved how URL processing and completion are shown.",
+              "Improved navigation between projects and documents.",
+              "Made the document generation action easier to see."
+            ]
           }
         ],
-        note: "No comparable tool existed, so the baseline is doing the work by hand. Feedback comes from internal use at Captivate."
+        "note": "No comparable tool existed, so the baseline is doing the work by hand. The usability tests were moderated sessions on a functional prototype.",
+        "disclosure": "The benchmark, weekly volume, activation and usability figures in this section are a hypothetical scenario written for this case study. They are not measured results."
       },
       learnings: {
         heading: "Design what comes out before designing how it goes in",
@@ -495,10 +662,6 @@ const PROJECTS = [
           {
             "label": "Find, owners and records",
             "text": "Filters, owner tools, wantlist matching and releases, around 40 screens of changes in total."
-          },
-          {
-            "label": "Validation plan",
-            "text": "A usability test across the five groups, owner interviews and a first-click test, planned before building."
           }
         ]
       },
@@ -601,31 +764,91 @@ const PROJECTS = [
             "caption": "3. Accessibility check",
             "text": "I measured more than a dozen text and control pairs on the redesigned screens. All clear the WCAG AA minimum of 4.5:1: secondary text on white measures 5.4:1 to 9.5:1, dark labels on the yellow chips about 7:1, and white on the red Create button 4.7:1, the lowest. Replacing rows of icon-only tabs with labelled ones also removed a barrier for anyone who can’t decode icons.",
             "images": []
-          },
-          {
-            "caption": "4. Validate before building",
-            "text": "The redesign is a set of bets, and I wrote down how to check them. A usability test across the five groups, covering owners, diggers or release chasers and travelers, on tasks like finding an open used-soul shop within 10 miles, claiming a store and posting an event. Owner interviews before any owner tool is built, asking what proof would make them post weekly. And a first-click test comparing a Map-first with a Feed-first landing, to ship the order that wins on discovery tasks.",
-            "images": [
-              {
-                "src": "assets/images/vk-validation.jpg?v=4"
-              }
-            ]
           }
         ]
       },
       "results": {
-        "heading": "From a handoff with no research to a redesign the research supports",
-        "items": [
+        "heading": "90% of tasks completed without help, with an SUS score of 81",
+        "blocks": [
           {
-            "value": "1 of 5",
-            "label": "groups said they would use the original app as it was. The other four said Maybe or No."
+            "type": "kpi",
+            "value": "90%",
+            "label": "task success rate",
+            "sub": "46 of 51 task attempts were completed without assistance in moderated usability testing on an interactive prototype."
           },
           {
-            "value": "Traceable",
-            "label": "Every change in the redesign points back to a ranked finding, and every finding to the group that raised it."
+            "type": "metrics",
+            "title": "The study at a glance",
+            "items": [
+              {
+                "value": "12",
+                "label": "participants: 9 vinyl collectors and 3 record store owners"
+              },
+              {
+                "value": "81/100",
+                "label": "System Usability Scale (SUS) score"
+              },
+              {
+                "value": "5 tasks",
+                "label": "from finding a nearby store to claiming one as an owner"
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Task performance",
+            "columns": [
+              "Task",
+              "Completed without assistance",
+              "Average time"
+            ],
+            "rows": [
+              [
+                "Find a nearby record store",
+                "11 of 12",
+                "38 sec"
+              ],
+              [
+                "View store information",
+                "12 of 12",
+                "42 sec"
+              ],
+              [
+                "Create a community post",
+                "10 of 12",
+                "1 min 35 sec"
+              ],
+              [
+                "Suggest a missing store",
+                "10 of 12",
+                "1 min 10 sec"
+              ],
+              [
+                "Claim a store (owners only)",
+                "3 of 3",
+                "1 min 25 sec"
+              ]
+            ],
+            "foot": [
+              "Overall",
+              "46 of 51 (90%)",
+              ""
+            ]
+          },
+          {
+            "type": "list",
+            "title": "What testing changed",
+            "items": [
+              "Made store search easier to see from the map.",
+              "Clarified the difference between suggesting a store and claiming an existing one.",
+              "Improved the information hierarchy inside store cards.",
+              "Simplified the community post creation flow.",
+              "Made the interaction options in store profiles easier to see."
+            ]
           }
         ],
-        "note": "The baseline is the app as it was handed over: no flows, no style and no research. The 10 interviews are a small qualitative sample across the five groups, so the verdicts and findings are directional."
+        "note": "The baseline is the app as it was handed over: no flows, no style and no research. The 10 interviews are a small qualitative sample across the five groups, so the findings are directional.",
+        "disclosure": "The usability figures in this section are a hypothetical scenario written for this case study. They are not measured results."
       },
       "learnings": {
         "heading": "Pick a front door, then earn the rest",
@@ -839,18 +1062,106 @@ const PROJECTS = [
         ]
       },
       "results": {
-        "heading": "From a first version people doubted to a proposal built on their objections",
-        "items": [
+        "heading": "User interest rose from 17% to 77%",
+        "blocks": [
           {
-            "value": "5 · 15 · 10",
-            "label": "yes, maybe and no among the 30 riders interviewed about the first version."
+            "type": "bars",
+            "size": "lg",
+            "title": "Would use MiBici, same 30 participants before and after",
+            "rows": [
+              {
+                "label": "Before the redesign",
+                "value": "17%",
+                "sub": "5 of 30",
+                "pct": 17,
+                "tone": "muted"
+              },
+              {
+                "label": "After the redesign",
+                "value": "77%",
+                "sub": "23 of 30",
+                "pct": 77,
+                "tone": "accent"
+              }
+            ],
+            "delta": {
+              "value": "+60 points",
+              "label": "in the share of participants who would use the service."
+            }
           },
           {
-            "value": "Traceable",
-            "label": "Every change in the second version points back to a blind spot, and every blind spot to the riders who raised it."
+            "type": "metrics",
+            "title": "Usability testing at a glance",
+            "items": [
+              {
+                "value": "12",
+                "label": "current and potential MiBici users in moderated testing on an interactive prototype"
+              },
+              {
+                "value": "93%",
+                "label": "task success rate: 56 of 60 task attempts completed without assistance"
+              },
+              {
+                "value": "24–55 sec",
+                "label": "average time per task, from understanding the price to resolving a problem"
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "title": "Task performance",
+            "columns": [
+              "Task",
+              "Completed without assistance",
+              "Average time"
+            ],
+            "rows": [
+              [
+                "Understand pricing before the first ride",
+                "12 of 12",
+                "24 sec"
+              ],
+              [
+                "Understand how to start a ride",
+                "11 of 12",
+                "35 sec"
+              ],
+              [
+                "Understand how to end a ride",
+                "11 of 12",
+                "29 sec"
+              ],
+              [
+                "Find nearby stations",
+                "12 of 12",
+                "31 sec"
+              ],
+              [
+                "Understand what to do when a bike has a problem",
+                "10 of 12",
+                "55 sec"
+              ]
+            ],
+            "foot": [
+              "Overall",
+              "56 of 60 (93%)",
+              ""
+            ]
+          },
+          {
+            "type": "list",
+            "title": "What testing changed",
+            "items": [
+              "Made pricing information visible before registration.",
+              "Simplified the instructions for starting and ending a ride.",
+              "Made station and bike availability easier to see.",
+              "Clarified the messages that confirm a ride has started and ended.",
+              "Reorganized the help information for solving a problem during a ride."
+            ]
           }
         ],
-        "note": "The 30 interviews are a small qualitative sample, so the counts are directional. The prices in the prototype are example values to validate against the official fare."
+        "note": "The 30 interviews are a small qualitative sample, so the counts are directional. The prices in the prototype are example values, not official fares.",
+        "disclosure": "The 17% baseline (5 of 30) comes from the interviews described above. The figures after the redesign are a hypothetical scenario written for this case study. They are not measured results."
       },
       "learnings": {
         "heading": "Walking riders through a design shows what I can’t see",

@@ -184,17 +184,99 @@
     );
   }
 
+  /* Results are built from blocks so each case can compose its own layout:
+     kpi (one big number), metrics (number cards), bars (before/after or
+     time comparison), split (a stacked bar), meter (one value and a bar),
+     table (task performance), list (what testing changed) and row (blocks
+     side by side). Cases without blocks fall back to plain metric cards. */
+  function esc(t) { return String(t == null ? "" : t); }
+
+  function blockTitle(b) {
+    return b.title ? '<h3 class="cs-block__title">' + esc(b.title) + "</h3>" : "";
+  }
+
+  function metricCards(items) {
+    return '<ul class="cs-results">' + items.map(function (it) {
+      return "<li><strong>" + esc(it.value) + "</strong><span>" + esc(it.label) + "</span></li>";
+    }).join("") + "</ul>";
+  }
+
+  function resultBlock(b) {
+    switch (b.type) {
+      case "kpi":
+        return '<div class="cs-block cs-kpi"><strong>' + esc(b.value) + "</strong>" +
+          '<div class="cs-kpi__text"><b>' + esc(b.label) + "</b>" +
+          (b.sub ? "<span>" + esc(b.sub) + "</span>" : "") + "</div></div>";
+
+      case "metrics":
+        return '<div class="cs-block">' + blockTitle(b) + metricCards(b.items) + "</div>";
+
+      case "bars":
+        return '<div class="cs-block">' + blockTitle(b) +
+          '<div class="cs-bars' + (b.size === "lg" ? " cs-bars--lg" : "") + '">' +
+          b.rows.map(function (r) {
+            return '<div class="cs-bar cs-bar--' + (r.tone || "accent") + '">' +
+              '<div class="cs-bar__head"><span>' + esc(r.label) + "</span><strong>" + esc(r.value) + "</strong></div>" +
+              '<div class="cs-bar__track" aria-hidden="true"><i style="width:' + r.pct + '%"></i></div>' +
+              (r.sub ? "<small>" + esc(r.sub) + "</small>" : "") + "</div>";
+          }).join("") + "</div>" +
+          (b.delta
+            ? '<p class="cs-delta"><strong>' + esc(b.delta.value) + "</strong><span>" + esc(b.delta.label) + "</span></p>"
+            : "") + "</div>";
+
+      case "split":
+        return '<div class="cs-block">' + blockTitle(b) +
+          '<div class="cs-split" aria-hidden="true">' + b.parts.map(function (p, i) {
+            return '<i class="cs-split__part cs-split__part--' + (i % 2) + '" style="width:' + p.pct + '%"></i>';
+          }).join("") + "</div>" +
+          '<ul class="cs-split__legend">' + b.parts.map(function (p, i) {
+            return '<li><i class="cs-split__dot cs-split__dot--' + (i % 2) + '"></i><strong>' + esc(p.value) +
+              "</strong><span>" + esc(p.label) + "</span></li>";
+          }).join("") + "</ul></div>";
+
+      case "meter":
+        return '<div class="cs-block">' + blockTitle(b) +
+          '<div class="cs-meter"><strong>' + esc(b.value) + "</strong>" +
+          '<div class="cs-bar cs-bar--accent"><div class="cs-bar__track" aria-hidden="true"><i style="width:' + b.pct + '%"></i></div></div></div>' +
+          '<p class="cs-block__text">' + esc(b.label) + "</p></div>";
+
+      case "table":
+        return '<div class="cs-block">' + blockTitle(b) +
+          '<div class="cs-table-wrap"><table class="cs-table"><thead><tr>' +
+          b.columns.map(function (c) { return "<th scope=\"col\">" + esc(c) + "</th>"; }).join("") +
+          "</tr></thead><tbody>" +
+          b.rows.map(function (r) {
+            return "<tr>" + r.map(function (c, i) {
+              return i === 0 ? "<th scope=\"row\">" + esc(c) + "</th>" : "<td data-label=\"" + esc(b.columns[i]) + "\">" + esc(c) + "</td>";
+            }).join("") + "</tr>";
+          }).join("") + "</tbody>" +
+          (b.foot ? "<tfoot><tr>" + b.foot.map(function (c, i) {
+            return i === 0 ? "<th scope=\"row\">" + esc(c) + "</th>" : "<td data-label=\"" + esc(b.columns[i]) + "\">" + esc(c) + "</td>";
+          }).join("") + "</tr></tfoot>" : "") +
+          "</table></div></div>";
+
+      case "list":
+        return '<div class="cs-block">' + blockTitle(b) +
+          '<ul class="cs-checks">' + b.items.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul></div>";
+
+      case "row":
+        return '<div class="cs-row">' + b.blocks.map(resultBlock).join("") + "</div>";
+
+      default:
+        return "";
+    }
+  }
+
   function buildResults(cs) {
     var r = cs.results;
     return (
       sectionHead("04", "Results", r.heading) +
       '<div class="cs-body">' +
-      '<ul class="cs-results">' +
-      r.items.map(function (it) {
-        return "<li><strong>" + it.value + "</strong><span>" + it.label + "</span></li>";
-      }).join("") +
-      "</ul>" +
+      (r.blocks ? r.blocks.map(resultBlock).join("") : metricCards(r.items || [])) +
       (r.note ? '<p class="cs-meta">' + r.note + "</p>" : "") +
+      (r.disclosure
+        ? '<p class="cs-disclosure"><span>Illustrative data</span>' + r.disclosure + "</p>"
+        : "") +
       "</div>"
     );
   }
