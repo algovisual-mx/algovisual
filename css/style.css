@@ -74,8 +74,8 @@ html {
   --bg-elev: #f4f4f7;
   --bg-elev-2: #ececf1;
   --fg: #0a0a0c;
-  --fg-muted: rgba(10, 10, 12, 0.64);
-  --fg-faint: rgba(10, 10, 12, 0.42);
+  --fg-muted: rgba(10, 10, 12, 0.8);
+  --fg-faint: rgba(10, 10, 12, 0.6);
   --border: rgba(10, 10, 12, 0.1);
   --border-strong: rgba(10, 10, 12, 0.18);
   --wave-line: rgba(10, 10, 12, 0.4);
@@ -91,8 +91,8 @@ html {
     --bg-elev: #f4f4f7;
     --bg-elev-2: #ececf1;
     --fg: #0a0a0c;
-    --fg-muted: rgba(10, 10, 12, 0.64);
-    --fg-faint: rgba(10, 10, 12, 0.42);
+    --fg-muted: rgba(10, 10, 12, 0.8);
+    --fg-faint: rgba(10, 10, 12, 0.6);
     --border: rgba(10, 10, 12, 0.1);
     --border-strong: rgba(10, 10, 12, 0.18);
     --wave-line: rgba(10, 10, 12, 0.4);

@@ -176,16 +176,93 @@
   border-color: var(--accent);
 }
 
+.skill-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 18px;
+  color: var(--accent);
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+}
+.skill-icon svg { width: 24px; height: 24px; }
+
 .skill-card h3 {
-  font-size: 0.95rem;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.25rem, 2vw, 1.45rem);
+  letter-spacing: -0.02em;
   color: var(--fg);
   text-transform: none;
 }
 
 .skill-card p {
   margin-top: 10px;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
+}
+
+/* ---- Process: four boxes in sequence, an arrow between each ------------------*/
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(28px, 3.4vw, 44px);
+  margin-top: clamp(24px, 4vw, 40px);
+  padding: 0;
+  list-style: none;
+}
+
+.process-step {
+  position: relative;
+  padding: 26px 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-elev);
+  transition: transform var(--dur-med) var(--ease), border-color var(--dur-med) var(--ease);
+}
+.process-step:hover { transform: translateY(-4px); border-color: var(--accent); }
+
+.process-num {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.process-step h3 {
+  margin-top: 10px;
+  font-size: clamp(1.15rem, 1.7vw, 1.3rem);
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+
+.process-step p {
+  margin-top: 10px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+/* The arrow sits in the gap between two boxes. */
+.process-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(100% + (clamp(28px, 3.4vw, 44px) - 22px) / 2);
+  width: 22px;
+  height: 22px;
+  transform: translateY(-50%);
+  background: var(--fg-muted);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m13 6 6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m13 6 6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+@media (max-width: 1000px) {
+  .process-grid { grid-template-columns: 1fr; }
+  /* Stacked: the arrow points down, in the gap under each box. */
+  .process-step:not(:last-child)::after {
+    top: calc(100% + (clamp(28px, 3.4vw, 44px) - 22px) / 2);
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
 }
 
 
