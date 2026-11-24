@@ -218,9 +218,8 @@ body[data-page="work"] .nav-wrap {
   letter-spacing: 0.01em;
   line-height: 1.2;
   white-space: nowrap;
-  color: var(--fg);
-  background: var(--bg-elev-2);
-  border: 1px solid var(--border-strong);
+  color: var(--bg);
+  background: var(--fg);
   border-radius: var(--radius-pill);
   box-shadow: var(--shadow);
   opacity: 0;
@@ -274,7 +273,7 @@ body[data-page="work"] .nav-wrap {
 .nav-logo:hover {
   background: var(--bg-elev-2);
 }
-.nav-logo:hover .nav-id__role { color: var(--fg-muted); }
+.nav-logo:hover .nav-id__role { color: var(--fg); }
 
 /* Circle avatar — solid accent for now, an <img> inside it later. */
 .nav-avatar {
@@ -308,7 +307,7 @@ body[data-page="work"] .nav-wrap {
 }
 .nav-id__role {
   font-size: 0.85rem;
-  color: var(--fg-faint);
+  color: var(--fg);
   transition: color var(--dur-fast) var(--ease);
 }
 
@@ -318,7 +317,7 @@ body[data-page="work"] .nav-wrap {
   font-family: var(--font-heading);
   font-size: 1.125rem;
   letter-spacing: 0.01em;
-  color: var(--fg-muted);
+  color: var(--fg);
   border-radius: var(--radius-pill);
   white-space: nowrap;
   transition: color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
@@ -338,7 +337,7 @@ body[data-page="work"] .nav-wrap {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  color: var(--fg-muted);
+  color: var(--fg);
   transition: color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
   flex-shrink: 0;
 }
