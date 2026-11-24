@@ -113,9 +113,9 @@
 .intro-title .accent { color: var(--accent); }
 
 .intro-text {
-  max-width: 46ch;
-  margin-top: clamp(18px, 2.4vw, 28px);
-  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  max-width: 40ch;
+  margin-top: clamp(20px, 2.6vw, 32px);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
   line-height: 1.55;
   color: var(--fg-muted);
 }
