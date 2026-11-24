@@ -208,12 +208,12 @@
   }
 
   function render(project) {
-    document.title = project.title + " — Sal Gonzalez Alvizouri, UX/UI Designer";
+    document.title = project.title + " — Sal Gonzalez, UX/UI Designer";
 
     var meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", project.excerpt);
     var ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", project.title + " — case study by Sal Gonzalez Alvizouri");
+    if (ogTitle) ogTitle.setAttribute("content", project.title + " — case study by Sal Gonzalez");
     var ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute("content", project.excerpt);
 
