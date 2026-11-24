@@ -439,6 +439,7 @@ const PROJECTS = [
       "result": "Navigation rebuilt from audience research"
     },
     "excerpt": "A social app for record collectors, with its navigation rebuilt from audience research.",
+    "previewVideo": "assets/videos/Thumb_vinylmapper.mp4",
     "showcase": "assets/images/vinylmapper_case_cover.png?v=3",
     "cover": "assets/images/vinylmapper-header.jpg?v=3",
     "gallery": [],
