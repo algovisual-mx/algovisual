@@ -272,6 +272,19 @@
     window.addEventListener("load", function () { measure(); syncScrollState(); });
   });
 
+  /* ---- Dropdowns (About: work history) -------------------------------------
+     Each .exp-item has a button that opens and closes its panel. */
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".exp-item .exp-head").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var item = btn.closest(".exp-item");
+        var open = !item.classList.contains("is-open");
+        item.classList.toggle("is-open", open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+    });
+  });
+
   /* ---- Footer year ------------------------------------------------------*/
   document.addEventListener("DOMContentLoaded", function () {
     var yearEl = document.querySelector("[data-year]");

@@ -22,9 +22,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css?v=20261208">
-<link rel="stylesheet" href="css/about.css?v=20261208">
-<script src="js/page-wipe.js?v=20261208"></script>
+<link rel="stylesheet" href="css/style.css?v=20261210">
+<link rel="stylesheet" href="css/about.css?v=20261210">
+<script src="js/page-wipe.js?v=20261210"></script>
 </head>
 <body data-page="about">
 
@@ -84,78 +84,160 @@
     <div class="container">
       <h2 class="section-title">Where I&rsquo;ve worked</h2>
 
-      <div class="timeline">
-        <div class="timeline-item reveal">
-          <span class="timeline-date">Nov 2025 — Now</span>
-          <div>
-            <div class="timeline-role">User Experience Designer</div>
-            <div class="timeline-org">Captivate Search Marketing · Full-time · Remote</div>
-            <p class="timeline-desc">End-to-end UX on internal tools that are becoming commercial products: research, flows, analysis, accessibility, wireframes, prototypes and UI. Product and design lead of Visicart and Page Plucker, working with the agency owner and two developers.</p>
+      <div class="exp-list">
+        <div class="exp-item reveal is-open">
+          <button class="exp-head" type="button" id="exp-btn-1" aria-expanded="true" aria-controls="exp-panel-1">
+            <span class="exp-date">Nov 2025 — Now</span>
+            <span class="exp-title">
+              <span class="exp-company">Captivate Search Marketing<span class="exp-meta">Full-time · Remote</span></span>
+              <span class="exp-role">User Experience Designer</span>
+            </span>
+            <span class="exp-tag">UX</span>
+            <span class="exp-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path class="exp-toggle__v" d="M12 5v14"/></svg></span>
+          </button>
+          <div class="exp-panel" id="exp-panel-1" role="region" aria-labelledby="exp-btn-1">
+            <div class="exp-panel__inner">
+              <ul class="exp-bullets">
+                <li>End-to-end UX on internal tools that are becoming commercial products: research, flows, analysis, accessibility, wireframes, prototypes and UI.</li>
+                <li>Product and design lead of Visicart and Page Plucker, working with the agency owner and two developers.</li>
+              </ul>
+            </div>
           </div>
-          <span class="timeline-tag">UX</span>
         </div>
-        <div class="timeline-item reveal">
-          <span class="timeline-date">May 2020 — Now</span>
-          <div>
-            <div class="timeline-role">Web Designer / UX Designer</div>
-            <div class="timeline-org">Freelance · Jalisco, Mexico · Remote</div>
-            <p class="timeline-desc">Responsive websites and digital products for clients: wireframes, prototypes and high-fidelity UI in Figma, branding and illustration, and projects managed end to end with developers.</p>
+        <div class="exp-item reveal">
+          <button class="exp-head" type="button" id="exp-btn-2" aria-expanded="false" aria-controls="exp-panel-2">
+            <span class="exp-date">May 2020 — Now</span>
+            <span class="exp-title">
+              <span class="exp-company">Freelance<span class="exp-meta">Jalisco, Mexico · Remote</span></span>
+              <span class="exp-role">Web Designer / UX Designer</span>
+            </span>
+            <span class="exp-tag">Web · UI</span>
+            <span class="exp-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path class="exp-toggle__v" d="M12 5v14"/></svg></span>
+          </button>
+          <div class="exp-panel" id="exp-panel-2" role="region" aria-labelledby="exp-btn-2">
+            <div class="exp-panel__inner">
+              <ul class="exp-bullets">
+                <li>Responsive websites and digital products for clients.</li>
+                <li>Wireframes, prototypes and high-fidelity UI in Figma, branding and illustration.</li>
+                <li>Projects managed end to end with developers.</li>
+              </ul>
+            </div>
           </div>
-          <span class="timeline-tag">Web · UI</span>
         </div>
-        <div class="timeline-item reveal">
-          <span class="timeline-date">Dec 2018 — May 2020</span>
-          <div>
-            <div class="timeline-role">UI / UX Designer</div>
-            <div class="timeline-org">Gara Group, Inc · Guadalajara</div>
-            <p class="timeline-desc">Responsive web and mobile interfaces for internal clients. Led design from research to prototyping and testing, and built WordPress sites.</p>
+        <div class="exp-item reveal">
+          <button class="exp-head" type="button" id="exp-btn-3" aria-expanded="false" aria-controls="exp-panel-3">
+            <span class="exp-date">Dec 2018 — May 2020</span>
+            <span class="exp-title">
+              <span class="exp-company">Gara Group, Inc<span class="exp-meta">Guadalajara</span></span>
+              <span class="exp-role">UI / UX Designer</span>
+            </span>
+            <span class="exp-tag">UI · UX · Web</span>
+            <span class="exp-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path class="exp-toggle__v" d="M12 5v14"/></svg></span>
+          </button>
+          <div class="exp-panel" id="exp-panel-3" role="region" aria-labelledby="exp-btn-3">
+            <div class="exp-panel__inner">
+              <ul class="exp-bullets">
+                <li>Responsive web and mobile interfaces for internal clients.</li>
+                <li>Led design from research to prototyping and testing.</li>
+                <li>Built WordPress sites.</li>
+              </ul>
+            </div>
           </div>
-          <span class="timeline-tag">UI · UX · Web</span>
         </div>
-        <div class="timeline-item reveal">
-          <span class="timeline-date">Aug 2016 — Dec 2017</span>
-          <div>
-            <div class="timeline-role">Creative Lead</div>
-            <div class="timeline-org">Sarape Social · Guadalajara</div>
-            <p class="timeline-desc">Directed a team of designers, copywriters, community managers and account managers on digital campaigns and websites, and was the main contact for stakeholders.</p>
+        <div class="exp-item reveal">
+          <button class="exp-head" type="button" id="exp-btn-4" aria-expanded="false" aria-controls="exp-panel-4">
+            <span class="exp-date">Aug 2016 — Dec 2017</span>
+            <span class="exp-title">
+              <span class="exp-company">Sarape Social<span class="exp-meta">Guadalajara</span></span>
+              <span class="exp-role">Creative Lead</span>
+            </span>
+            <span class="exp-tag">Creative direction</span>
+            <span class="exp-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path class="exp-toggle__v" d="M12 5v14"/></svg></span>
+          </button>
+          <div class="exp-panel" id="exp-panel-4" role="region" aria-labelledby="exp-btn-4">
+            <div class="exp-panel__inner">
+              <ul class="exp-bullets">
+                <li>Directed a team of designers, copywriters, community managers and account managers on digital campaigns and websites.</li>
+                <li>Main contact for stakeholders.</li>
+              </ul>
+            </div>
           </div>
-          <span class="timeline-tag">Creative direction</span>
         </div>
-        <div class="timeline-item reveal">
-          <span class="timeline-date">May 2014 — Mar 2015</span>
-          <div>
-            <div class="timeline-role">Digital Art Director</div>
-            <div class="timeline-org">WPP · Mexico City</div>
-            <p class="timeline-desc">Art direction for national digital campaigns and websites, including wireframes, prototypes and responsive interfaces.</p>
+        <div class="exp-item reveal">
+          <button class="exp-head" type="button" id="exp-btn-5" aria-expanded="false" aria-controls="exp-panel-5">
+            <span class="exp-date">May 2014 — Mar 2015</span>
+            <span class="exp-title">
+              <span class="exp-company">WPP<span class="exp-meta">Mexico City</span></span>
+              <span class="exp-role">Digital Art Director</span>
+            </span>
+            <span class="exp-tag">Art direction</span>
+            <span class="exp-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path class="exp-toggle__v" d="M12 5v14"/></svg></span>
+          </button>
+          <div class="exp-panel" id="exp-panel-5" role="region" aria-labelledby="exp-btn-5">
+            <div class="exp-panel__inner">
+              <ul class="exp-bullets">
+                <li>Art direction for national digital campaigns and websites.</li>
+                <li>Wireframes, prototypes and responsive interfaces.</li>
+              </ul>
+            </div>
           </div>
-          <span class="timeline-tag">Art direction</span>
         </div>
-        <div class="timeline-item reveal">
-          <span class="timeline-date">Apr 2013 — Feb 2014</span>
-          <div>
-            <div class="timeline-role">Art Director</div>
-            <div class="timeline-org">Cáustica diseño · Mexico City</div>
-            <p class="timeline-desc">Visual direction for Mondelez International campaigns across digital and print, plus illustration for national campaigns.</p>
+        <div class="exp-item reveal">
+          <button class="exp-head" type="button" id="exp-btn-6" aria-expanded="false" aria-controls="exp-panel-6">
+            <span class="exp-date">Apr 2013 — Feb 2014</span>
+            <span class="exp-title">
+              <span class="exp-company">Cáustica diseño<span class="exp-meta">Mexico City</span></span>
+              <span class="exp-role">Art Director</span>
+            </span>
+            <span class="exp-tag">Art direction</span>
+            <span class="exp-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path class="exp-toggle__v" d="M12 5v14"/></svg></span>
+          </button>
+          <div class="exp-panel" id="exp-panel-6" role="region" aria-labelledby="exp-btn-6">
+            <div class="exp-panel__inner">
+              <ul class="exp-bullets">
+                <li>Visual direction for Mondelez International campaigns across digital and print.</li>
+                <li>Illustration for national campaigns.</li>
+              </ul>
+            </div>
           </div>
-          <span class="timeline-tag">Art direction</span>
         </div>
-        <div class="timeline-item reveal">
-          <span class="timeline-date">Jan 2013 — Jun 2013</span>
-          <div>
-            <div class="timeline-role">2D Animator</div>
-            <div class="timeline-org">MapData · Full-time · Mexico City</div>
-            <p class="timeline-desc">2D animation and visual assets for interactive platforms, working with designers and developers.</p>
+        <div class="exp-item reveal">
+          <button class="exp-head" type="button" id="exp-btn-7" aria-expanded="false" aria-controls="exp-panel-7">
+            <span class="exp-date">Jan 2013 — Jun 2013</span>
+            <span class="exp-title">
+              <span class="exp-company">MapData<span class="exp-meta">Full-time · Mexico City</span></span>
+              <span class="exp-role">2D Animator</span>
+            </span>
+            <span class="exp-tag">Animation</span>
+            <span class="exp-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path class="exp-toggle__v" d="M12 5v14"/></svg></span>
+          </button>
+          <div class="exp-panel" id="exp-panel-7" role="region" aria-labelledby="exp-btn-7">
+            <div class="exp-panel__inner">
+              <ul class="exp-bullets">
+                <li>2D animation and visual assets for interactive platforms.</li>
+                <li>Worked with designers and developers.</li>
+              </ul>
+            </div>
           </div>
-          <span class="timeline-tag">Animation</span>
         </div>
-        <div class="timeline-item reveal">
-          <span class="timeline-date">Feb 2012 — Jun 2012</span>
-          <div>
-            <div class="timeline-role">Jr. Web Designer</div>
-            <div class="timeline-org">IA Interactive · Morelia</div>
-            <p class="timeline-desc">Internal websites and microsites, and maintenance of Cinépolis websites and apps.</p>
+        <div class="exp-item reveal">
+          <button class="exp-head" type="button" id="exp-btn-8" aria-expanded="false" aria-controls="exp-panel-8">
+            <span class="exp-date">Feb 2012 — Jun 2012</span>
+            <span class="exp-title">
+              <span class="exp-company">IA Interactive<span class="exp-meta">Morelia</span></span>
+              <span class="exp-role">Jr. Web Designer</span>
+            </span>
+            <span class="exp-tag">Web</span>
+            <span class="exp-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path class="exp-toggle__v" d="M12 5v14"/></svg></span>
+          </button>
+          <div class="exp-panel" id="exp-panel-8" role="region" aria-labelledby="exp-btn-8">
+            <div class="exp-panel__inner">
+              <ul class="exp-bullets">
+                <li>Internal websites and microsites.</li>
+                <li>Maintenance of Cinépolis websites and apps.</li>
+              </ul>
+            </div>
           </div>
-          <span class="timeline-tag">Web</span>
         </div>
       </div>
     </div>
@@ -275,7 +357,7 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20261208"></script>
-<script src="js/cursor.js?v=20261208"></script>
+<script src="js/main.js?v=20261210"></script>
+<script src="js/cursor.js?v=20261210"></script>
 </body>
 </html>
