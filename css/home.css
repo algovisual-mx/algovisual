@@ -6,7 +6,14 @@
 .intro {
   position: relative;
   overflow: hidden;
-  padding-top: clamp(150px, 24vh, 240px);
+  /* Fills the first screen (the nav floats over its top edge), so the work
+     section is not visible until the visitor scrolls. */
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: calc(var(--nav-h, 80px) + 24px);
   padding-bottom: clamp(48px, 8vw, 110px);
 }
 
