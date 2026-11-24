@@ -652,9 +652,10 @@ const PROJECTS = [
     "card": {
       "role": "UX/UI designer",
       "type": "Reform proposal for the MiBici app",
-      "result": "For the GDL en Bici collective, from research to 19 screens"
+      "result": "30 rider interviews became 19 redesigned screens"
     },
     "excerpt": "A reform proposal for the official MiBici app, made for the GDL en Bici collective: research, a redesign and 19 screens.",
+    "previewVideo": "assets/videos/Thumb_mibici.mp4?v=2",
     "showcase": "assets/images/mibici_case_cover.png?v=4",
     "cover": "assets/images/mibici-header.jpg?v=4",
     "gallery": [],
