@@ -6,15 +6,10 @@
 .intro {
   position: relative;
   overflow: hidden;
-  /* Fills the first screen (the nav floats over its top edge), so the work
-     section is not visible until the visitor scrolls. */
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: calc(var(--nav-h, 80px) + 16px);
-  padding-bottom: clamp(32px, 4vw, 56px);
+  /* Compact: the nav floats over the top edge and the hero ends early, so the
+     start of the work section shows above the fold. */
+  padding-top: calc(var(--nav-h, 80px) + 28px);
+  padding-bottom: clamp(16px, 2.4vw, 32px);
 }
 
 .intro .container {
@@ -267,7 +262,7 @@
 }
 
 .work-section:first-of-type {
-  padding-top: clamp(40px, 7vw, 80px);
+  padding-top: clamp(8px, 2vw, 24px);
 }
 
 /* ---- Project grid ---------------------------------------------------------*/
@@ -608,43 +603,6 @@
   font-size: clamp(0.95rem, 1.3vw, 1.05rem);
   line-height: 1.5;
   color: var(--fg);
-}
-
-.hero-work {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 1.6vw, 20px);
-  max-width: 980px;
-  margin-top: clamp(14px, 2vw, 22px);
-}
-.hero-work__item { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.hero-work__thumb {
-  display: block;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--bg-elev-2);
-}
-.hero-work__thumb img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--dur-med) var(--ease);
-}
-.hero-work__item:hover .hero-work__thumb img { transform: scale(1.04); }
-.hero-work__name {
-  margin-top: 6px;
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--fg);
-}
-.hero-work__meta { font-size: 0.78rem; line-height: 1.35; color: var(--fg-muted); }
-@media (max-width: 640px) {
-  .hero-work { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 }
 
 /* Visicart's exported preview video carries a small watermark near its right edge;

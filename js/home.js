@@ -76,22 +76,6 @@
     return list;
   }
 
-  /* A strip of the four projects in the first screen, so work is visible at
-     once. Tags come from the same data as the cards. */
-  function renderHeroWork() {
-    var root = document.querySelector("[data-hero-work]");
-    if (!root || typeof PROJECTS === "undefined") return;
-    root.innerHTML = PROJECTS.map(function (p) {
-      var meta = (p.tags || [p.category]).slice(0, 2).join(" &middot; ");
-      return (
-        '<a class="hero-work__item" href="project.html?slug=' + encodeURIComponent(p.slug) + '" data-wipe="' + p.title + '">' +
-        '<span class="hero-work__thumb"><img src="' + p.cover + '" alt="" loading="eager" decoding="async"></span>' +
-        '<span class="hero-work__name">' + p.title + "</span>" +
-        '<span class="hero-work__meta">' + meta + "</span></a>"
-      );
-    }).join("");
-  }
-
   function renderGalleries() {
     var root = document.querySelector("[data-project-sections]");
     if (!root || typeof PROJECTS === "undefined") return;
@@ -171,7 +155,6 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    renderHeroWork();
     renderGalleries();
   });
 })();
