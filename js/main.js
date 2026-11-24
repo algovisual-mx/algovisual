@@ -30,6 +30,20 @@
     /* localStorage unavailable — fall back to prefers-color-scheme */
   }
 
+  /* The nav toggle's tooltip names the mode it switches to. */
+  function syncThemeTips() {
+    var label = currentTheme() === "dark" ? "Switch to light mode" : "Switch to dark mode";
+    document.querySelectorAll(".theme-toggle.has-tip").forEach(function (btn) {
+      btn.setAttribute("data-tip", label);
+      btn.setAttribute("aria-label", label);
+    });
+  }
+  document.addEventListener("DOMContentLoaded", syncThemeTips);
+  if (window.matchMedia) {
+    var schemeMq = window.matchMedia("(prefers-color-scheme: light)");
+    if (schemeMq.addEventListener) schemeMq.addEventListener("change", syncThemeTips);
+  }
+
   /* Delegated, so the toggle in the mobile menu works too. */
   document.addEventListener("click", function (e) {
     if (!e.target.closest || !e.target.closest("[data-theme-toggle]")) return;
@@ -39,6 +53,7 @@
       localStorage.setItem(THEME_KEY, next);
     } catch (err) {}
     document.dispatchEvent(new CustomEvent("algovisual:themechange", { detail: { theme: next } }));
+    syncThemeTips();
   });
 
   /* ---- Active nav link ------------------------------------------------- */
