@@ -20,7 +20,8 @@
 }
 
 .about-title {
-  font-size: clamp(2rem, 4.4vw, 3.1rem);
+  /* A full sentence rather than a short title, so a notch smaller. */
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
   margin-top: 14px;
 }
 
@@ -396,6 +397,24 @@
   background: var(--fg-muted);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m13 6 6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='m13 6 6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* Three rules: no sequence, so no arrows. */
+.process-grid.rules-grid { grid-template-columns: repeat(3, 1fr); }
+.rules-grid .process-step:not(:last-child)::after { display: none; }
+.rules-grid .process-step h3 { font-size: clamp(1.3rem, 2.2vw, 1.6rem); }
+.rules-grid .process-step p:not(.rule-evidence) { font-size: 1rem; color: var(--fg); }
+.rule-evidence {
+  margin-top: 18px !important;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem !important;
+  color: var(--fg-muted) !important;
+}
+.rule-evidence a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.rule-evidence a:hover { text-decoration-thickness: 2px; }
+@media (max-width: 860px) {
+  .process-grid.rules-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 1000px) {
