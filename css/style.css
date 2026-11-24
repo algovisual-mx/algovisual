@@ -197,6 +197,53 @@ input:focus-visible {
   box-shadow: 0 1px 0 var(--border);
 }
 
+/* Home: the bar floats over the hero so its glow runs right to the top edge
+   (no cut). js/main.js measures the bar into --nav-h and turns it solid once
+   the work section arrives. */
+body[data-page="work"] .nav-wrap {
+  margin-bottom: calc(-1 * var(--nav-h, 80px));
+}
+
+/* Tooltip for nav items: data-tip text in a small pill under the item. */
+.has-tip { position: relative; }
+.has-tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  padding: 0.45em 0.9em;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--fg);
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -4px);
+  transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+}
+.has-tip--end::after { left: auto; right: 0; transform: translate(0, -4px); }
+@media (hover: hover) {
+  .has-tip:hover::after,
+  .has-tip:focus-visible::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    transition-delay: 0.25s;
+  }
+  .has-tip--end:hover::after,
+  .has-tip--end:focus-visible::after { transform: translate(0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .has-tip::after { transition: opacity var(--dur-fast) linear; transform: translate(-50%, 0); }
+  .has-tip--end::after { transform: none; }
+}
+
 .nav {
   display: flex;
   align-items: center;

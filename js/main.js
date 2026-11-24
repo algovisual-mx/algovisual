@@ -245,15 +245,31 @@
   });
 
   /* ---- Nav scroll state ---------------------------------------------------
-     Transparent over the top of the page, solid once scrolled. */
+     Transparent over the top of the page. On the home page it turns solid when
+     the hero text reaches the bar; elsewhere, as soon as the page scrolls. */
   document.addEventListener("DOMContentLoaded", function () {
     var navWrap = document.querySelector(".nav-wrap");
     if (!navWrap) return;
-    function syncScrollState() {
-      navWrap.classList.toggle("is-scrolled", window.scrollY > 8);
+    /* Home: solid as soon as the hero text would slide under the bar, so the
+       headline never overlaps the links; the work section follows right after. */
+    var work = document.body.getAttribute("data-page") === "work"
+      ? document.querySelector(".intro .container") : null;
+    var navH = navWrap.offsetHeight;
+    function measure() {
+      navH = navWrap.offsetHeight;
+      document.documentElement.style.setProperty("--nav-h", navH + "px");
     }
+    function syncScrollState() {
+      var solid = work
+        ? work.getBoundingClientRect().top <= navH - 12
+        : window.scrollY > 8;
+      navWrap.classList.toggle("is-scrolled", solid);
+    }
+    measure();
     syncScrollState();
     window.addEventListener("scroll", syncScrollState, { passive: true });
+    window.addEventListener("resize", function () { measure(); syncScrollState(); });
+    window.addEventListener("load", function () { measure(); syncScrollState(); });
   });
 
   /* ---- Footer year ------------------------------------------------------*/
