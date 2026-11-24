@@ -113,7 +113,7 @@
 .intro-title .accent { color: var(--accent); }
 
 .intro-text {
-  max-width: 40ch;
+  max-width: 66ch;
   margin-top: clamp(20px, 2.6vw, 32px);
   font-size: clamp(1.15rem, 2vw, 1.5rem);
   line-height: 1.55;
