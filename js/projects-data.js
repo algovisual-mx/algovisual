@@ -28,7 +28,7 @@ const PROJECTS = [
     tools: [
       "Figma"
     ],
-    card: { role: "Product & design lead", type: "AI tool for Shopify stores", result: "One click instead of 3 to 5 minutes per description" },
+    card: { role: "Product & design lead", type: "AI tool for Shopify stores", result: "Cut product copywriting from minutes to a single click" },
     excerpt: "An AI tool for Shopify stores that replaces 3 to 5 minutes of writing per description with one click.",
     showcase: "assets/images/visicart_case_cover.png?v=2",
     previewVideo: "assets/videos/Thumb_visi.mp4?v=3", // looping muted preview shown in the home card instead of the image
@@ -243,7 +243,7 @@ const PROJECTS = [
     tools: [
       "Figma"
     ],
-    card: { role: "Product & design lead", type: "Content-extraction tool for SEO teams", result: "Used by a 10-person SEO team" },
+    card: { role: "Product & design lead", type: "Content-extraction tool for SEO teams", result: "Replacing manual scraping with a workflow a SEO team actually uses" },
     excerpt: "A content-extraction tool that spares SEO teams the copy and paste of pulling a whole site into documents.",
     showcase: "assets/images/pageplucker_case_cover.png",
     previewVideo: "assets/videos/Thumb_pageplucker.mp4", // looping muted preview shown in the home card instead of the image
@@ -436,7 +436,7 @@ const PROJECTS = [
     "card": {
       "role": "UX/UI designer",
       "type": "Social app for record collectors",
-      "result": "Navigation rebuilt from audience research"
+      "result": "Turning research insights into frictionless discovery for record collectors"
     },
     "excerpt": "A social app for record collectors, with its navigation rebuilt from audience research.",
     "previewVideo": "assets/videos/Thumb_vinylmapper.mp4",
@@ -653,7 +653,7 @@ const PROJECTS = [
     "card": {
       "role": "UX/UI designer",
       "type": "Reform proposal for the MiBici app",
-      "result": "30 rider interviews became 19 redesigned screens"
+      "result": "Redesigning a station to station bike share app around real user needs"
     },
     "excerpt": "A reform proposal for the official MiBici app, made for the GDL en Bici collective: research, a redesign and 19 screens.",
     "previewVideo": "assets/videos/Thumb_mibici.mp4?v=2",
