@@ -330,6 +330,34 @@ body[data-page="work"] .nav-wrap {
   flex-shrink: 0;
 }
 
+/* Availability, left of the contact button: a green dot and text, no background. */
+.nav-right { display: flex; align-items: center; gap: 22px; flex-shrink: 0; }
+.nav-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  white-space: nowrap;
+  color: var(--fg);
+}
+.nav-status__dot {
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #2fbf4a;
+  animation: nav-dot 2.4s ease-out infinite;
+}
+@keyframes nav-dot {
+  0%   { box-shadow: 0 0 0 0 rgba(47, 191, 74, 0.55); }
+  70%  { box-shadow: 0 0 0 8px rgba(47, 191, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47, 191, 74, 0); }
+}
+@media (prefers-reduced-motion: reduce) { .nav-status__dot { animation: none; } }
+@media (max-width: 1040px) { .nav-status { display: none; } }
+
 .theme-toggle {
   display: inline-flex;
   align-items: center;

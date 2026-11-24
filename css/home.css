@@ -8,7 +8,7 @@
   overflow: hidden;
   /* Compact: the nav floats over the top edge and the hero ends early, so the
      start of the work section shows above the fold. */
-  padding-top: calc(var(--nav-h, 80px) + 28px);
+  padding-top: calc(var(--nav-h, 80px) + 40px);
   padding-bottom: clamp(16px, 2.4vw, 32px);
 }
 
@@ -94,101 +94,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .glow-blob { animation: none; }
-}
-
-/* ---- Hero badge: slides in once the page has loaded; the avatar pops with a
-   bounce. Pure CSS, delayed so it plays after first paint and page transitions. */
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  max-width: 100%;
-  margin-bottom: clamp(14px, 2vw, 22px);
-  padding: 12px clamp(22px, 3vw, 34px) 12px 14px;
-  color: #ffffff;
-  background: linear-gradient(180deg, #4b5fd9 0%, #2f3fbe 100%);
-  border-radius: var(--radius-pill);
-  box-shadow: 0 14px 34px rgba(var(--accent-rgb), 0.28);
-  animation: badge-in 0.9s var(--ease) 0.5s both;
-}
-
-.hero-badge__avatar {
-  flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  overflow: hidden;
-  border-radius: 50%;
-  background: #d9d9d9;
-  animation: badge-pop 0.9s cubic-bezier(0.3, 1.5, 0.5, 1) 0.95s both;
-}
-.hero-badge__avatar img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 25%;
-}
-
-.hero-badge__text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-
-.hero-badge__hi {
-  font-family: var(--font-heading);
-  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.hero-badge__status {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: clamp(0.82rem, 1.5vw, 1rem);
-  line-height: 1.25;
-}
-
-.hero-badge__dot {
-  flex-shrink: 0;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #6ee05c;
-  animation: badge-dot 2.4s ease-out 1.6s infinite;
-}
-
-@keyframes badge-in {
-  from { opacity: 0; transform: translateX(-64px); }
-  to   { opacity: 1; transform: none; }
-}
-@keyframes badge-pop {
-  0%   { transform: scale(0); }
-  55%  { transform: scale(1.22); }
-  75%  { transform: scale(0.92); }
-  100% { transform: scale(1); }
-}
-@keyframes badge-dot {
-  0%   { box-shadow: 0 0 0 0 rgba(110, 224, 92, 0.6); }
-  70%  { box-shadow: 0 0 0 9px rgba(110, 224, 92, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(110, 224, 92, 0); }
-}
-
-/* Reduced motion: no sliding or bouncing, just a soft fade so the badge still
-   arrives instead of being there from the start. */
-@keyframes badge-fade { from { opacity: 0; } to { opacity: 1; } }
-@media (prefers-reduced-motion: reduce) {
-  .hero-badge { animation: badge-fade 0.8s ease 0.5s both; }
-  .hero-badge__avatar, .hero-badge__dot { animation: none; }
-}
-
-/* Safety net (js/main.js): if the browser never started the entrance, show the
-   badge as it is rather than leaving it invisible. */
-.hero-badge.is-static,
-.hero-badge.is-static .hero-badge__avatar,
-.hero-badge.is-static .hero-badge__dot { animation: none; }
-
-@media (max-width: 480px) {
-  .hero-badge { gap: 14px; padding-left: 12px; }
-  .hero-badge__avatar { width: 52px; height: 52px; }
 }
 
 .intro-title {
@@ -596,14 +501,6 @@
   .work-card__img { animation: none; }
 }
 
-/* ---- Hero: proof line and a strip of the four projects --------------------- */
-.hero-proof {
-  max-width: 74ch;
-  margin-top: clamp(14px, 2vw, 22px);
-  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
-  line-height: 1.5;
-  color: var(--fg);
-}
 
 /* Visicart's exported preview video carries a small watermark near its right edge;
    sliding the crop window to the left keeps it out of the frame. */

@@ -300,29 +300,6 @@
     });
   });
 
-  /* ---- Hero badge safety net ------------------------------------------------
-     The badge enters with a CSS animation. If it is still invisible a few
-     seconds after load (the browser never ran it), show it as it is. */
-  window.addEventListener("load", function () {
-    var badge = document.querySelector(".hero-badge");
-    if (!badge) return;
-    function check() {
-      setTimeout(function () {
-        if (parseFloat(getComputedStyle(badge).opacity) < 0.05) badge.classList.add("is-static");
-      }, 3000);
-    }
-    /* A tab opened in the background doesn't run animations until it is shown. */
-    if (document.hidden) {
-      document.addEventListener("visibilitychange", function once() {
-        if (document.hidden) return;
-        document.removeEventListener("visibilitychange", once);
-        check();
-      });
-    } else {
-      check();
-    }
-  });
-
   /* ---- Footer year ------------------------------------------------------*/
   document.addEventListener("DOMContentLoaded", function () {
     var yearEl = document.querySelector("[data-year]");
