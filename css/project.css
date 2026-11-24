@@ -308,6 +308,9 @@
 .cs-goal { margin: 0; max-width: 62ch; font-size: var(--cs-body); line-height: 1.5; color: var(--fg-muted); }
 .cs-goal strong { color: var(--fg); font-weight: 600; margin-right: 6px; }
 
+.cs-decisions__alt { display: block; margin-top: 6px; font-size: 0.95rem; color: var(--fg-muted); }
+.cs-decisions__alt em { font-style: normal; font-weight: 600; color: var(--fg); }
+
 /* Role & constraints */
 .cs-constraints {
   display: grid;

@@ -39,7 +39,7 @@ const PROJECTS = [
     caseStudy: {
       outcome: "One click for a single person was easy. Then we scaled it.",
       summary: {
-        decision: "Three levels, where organizations contain stores and stores contain people, so one owner can run several stores without mixing them up.",
+        decision: "Three roles, not two: an owner who controls access, an admin who can run almost everything and an editor who does the day-to-day work, inside organizations that contain stores.",
         outcome: "A working product in use by an SEO team: 80% of generated descriptions are approved without editing, and 9 of 10 testers switched stores without trouble.",
         problem: "Visicart writes SEO titles and meta descriptions for Shopify collections with one click. It began as an internal tool at Captivate, a search marketing agency, and is now being built as a commercial product for e-commerce teams and Shopify-focused agencies. The hard part was deciding who gets access to what.",
         role: "Product & design lead",
@@ -62,9 +62,10 @@ const PROJECTS = [
         ]
       },
       role: {
-        text: "I led product and design. I designed the whole product end to end, every screen, flow and state in this case, while the two developers built it and the agency owner was the stakeholder. When the team disagreed, research or testing with users settled it.",
+        text: "I led product and design. I designed the whole product end to end, every screen, flow and state in this case, while the two developers built it and the agency owner was the stakeholder. When the team disagreed, research or testing with users settled it. I designed it in parallel with Page Plucker.",
         scope: [
-          { label: "Sign-up and login", text: "Email and code sign-up, login with a password or a code, and Google sign-in." },
+          { label: "Team research", text: "Talked with the SEO team about how they work before drawing the first screen." },
+                  { label: "Sign-up and login", text: "Email and code sign-up, login with a password or a code, and Google sign-in." },
           { label: "Organization setup", text: "A guided start: name the organization, connect a Shopify store and invite the team." },
           { label: "AI connection", text: "Bring your own AI provider: choose it, add the API key, verify it and switch later." },
           { label: "Dashboard and collections", text: "Store stats, the collections table with status filters, and bulk actions with progress states." },
@@ -132,6 +133,19 @@ const PROJECTS = [
               note: "You always know which store you're working in.",
               image: "assets/images/visicart-option6.jpg"
             }
+          },
+          {
+            title: "Three roles, not two",
+            why: "I talked with the SEO team before drawing anything. Their work fell into three jobs: the day-to-day work, running almost everything, and deciding who has access to what. So the roles are three: an owner, who controls access to every organization, store and person; an admin, who can run almost everything; and an editor, the operational role, who does the daily work. A two-level model would have squeezed two of those jobs into one role. A person's role is set store by store.",
+            chosen: "b",
+            a: {
+              label: "Two levels",
+              note: "Simpler to explain, but two of the three jobs would share one role."
+            },
+            b: {
+              label: "Owner, admin and editor",
+              note: "Each job gets its own level of access."
+            }
           }
         ]
       },
@@ -187,7 +201,7 @@ const PROJECTS = [
           },
           {
             caption: "6. Teams, roles and access",
-            text: "An owner sets up the organization, adds stores and invites people with a role. One view shows everyone with access and their role in each store. Editing a person, assigning stores and removing or deleting users and stores each have their own panel and confirmation.",
+            text: "An owner sets up the organization, adds stores and invites people with a role. There are three roles: the owner controls access to every organization, store and person; the admin can run almost everything; the editor does the day-to-day work. One view shows everyone with access and their role in each store. Editing a person, assigning stores and removing or deleting users and stores each have their own panel and confirmation.",
             stack: true,
             images: [
               { src: "assets/images/visicart-solution1.jpg?v=2" },
@@ -286,7 +300,7 @@ const PROJECTS = [
         ]
       },
       role: {
-        text: "I led product and design. I defined the workflows, built the design system and designed every screen, working side by side with the two developers and the agency owner. When the team disagreed, research or testing with users settled it.",
+        text: "I led product and design. I defined the workflows, built the design system and designed every screen, working side by side with the two developers and the agency owner. When the team disagreed, research or testing with users settled it. I designed it in parallel with Visicart.",
         scope: [
           { label: "Workflows", text: "The end-to-end flow, from signing in to finding a file, defined with the stakeholders and the developers." },
           { label: "Plucker Tool", text: "One screen to choose the destination, add the URLs and pick what to extract, plus the progress and results views." },
@@ -471,7 +485,7 @@ const PROJECTS = [
         "problem": "VinylMapper is a startup’s social app where record collectors find stores, follow them, review them and share what they find. The team handed it to me as a first build, made quickly before any research: it had no flows, no shared style and little coherence between screens. I ran 10 interviews across five audience groups, built the flows and a new system from that research, and rebuilt the app around it.",
         "role": "UX/UI designer",
         "scope": "Research, flows, navigation, design system and interface · 2025–2026",
-        "team": "Lead designer, with 2 developers",
+        "team": "Lead designer, with 1 developer",
         "status": "A real app, live today. The redesign I led is about to launch.",
         "duration": "2025–2026",
         "result": {
@@ -493,7 +507,7 @@ const PROJECTS = [
         }
       },
       "role": {
-        "text": "The startup handed me an early build of the app. I ran the research, built the flows and the new system, and redesigned the product around what the research showed, from the navigation to the owner tools, working with two developers. When the team disagreed, research or testing with users settled it.",
+        "text": "The startup handed me an early build of the app. I ran the research, built the flows and the new system, and redesigned the product around what the research showed, from the navigation to the owner tools. VinylMapper is its own startup and the app’s owner made the product decisions, so my job was to bring the research to those decisions, working with one developer. It ran alongside Visicart and Page Plucker. When we disagreed, research or testing with users settled it.",
         "scope": [
           {
             "label": "Group research",
@@ -568,7 +582,18 @@ const PROJECTS = [
         "heading": "From verdicts to a ranked set of changes",
         "items": [
           {
-            "caption": "1. Five audience groups, one list of findings",
+            "caption": "1. Before and after",
+            "text": "In the original app the home screen was a feed, the map sat behind the second tab, and City Guides and Vinyl Buzz were inside More. In the sessions, 8 of 10 people could not find the map or the blogs menu. The redesign opens on the map, keeps Create one tap away from every screen and shows the city guide on the map itself.",
+            "stack": true,
+            "images": [
+              {
+                "src": "assets/images/vk-before-after.jpg",
+                "alt": "Before and after. The original app has a feed home, a map behind the Find tab and guides inside the More menu. The redesign opens on the map and shows the city guide on it."
+              }
+            ]
+          },
+          {
+            "caption": "2. Five audience groups, one list of findings",
             "text": "I ran 10 interviews across five audience groups: veteran store owners, newer store owners with a bar, crate diggers and DJs, collectors who travel, and release chasers with a collection on Discogs. Each group walked through the original prototype and gave a verdict. Seven findings came out of it, from having no main job to small details like mixed units. I ranked them from P0 to P2, and every change in the redesign points back to one of them.",
             "images": [
               {
@@ -580,7 +605,7 @@ const PROJECTS = [
             ]
           },
           {
-            "caption": "2. What changed, by priority",
+            "caption": "3. What changed, by priority",
             "text": "P0 puts the map first with Create on every screen, labels every tab, explains Coins, renames “Repress” to Share and adds the ownership and ratings disclosure. P1 adds filters and honest cards to Find, a switcher, insights, a team and events for owners, and reviews that need a real visit. P2 adds wantlist matches, record search and releases from Discogs, one Follow model, group chats of up to 12 and a first run for collectors and owners.",
             "images": [
               {
@@ -613,7 +638,7 @@ const PROJECTS = [
             ]
           },
           {
-            "caption": "3. Contrast check",
+            "caption": "4. Contrast check",
             "text": "I measured more than a dozen text and control pairs on the redesigned screens. All clear the WCAG AA minimum of 4.5:1: secondary text on white measures 5.4:1 to 9.5:1, dark labels on the yellow chips about 7:1, and white on the red Create button 4.7:1, the lowest. Replacing rows of icon-only tabs with labelled ones also removed a barrier for anyone who can’t decode icons.",
             "images": []
           }

@@ -120,6 +120,12 @@
         ? '<div class="cs-stat"><strong>' + p.stat.value + "</strong><span>" + p.stat.label + "</span></div>"
         : "") +
       (p.image ? figure(p.image.src, p.image.caption) : "") +
+      (r.text
+        ? '<div class="cs-subsection">' +
+          '<h3 class="cs-subhead">My role</h3>' +
+          '<div class="cs-copy"><p>' + r.text + "</p></div>" +
+          "</div>"
+        : "") +
       (r.scope
         ? '<div class="cs-subsection">' +
           '<h3 class="cs-subhead">What I designed</h3>' +
@@ -138,17 +144,22 @@
     var d = cs.decisions;
     // The option that was chosen in each decision (its image is the one shown).
     var chosen = d.items.map(function (it) { return it[it.chosen]; });
+    var withImage = d.items.map(function (it) { return { o: it[it.chosen], title: it.title }; })
+      .filter(function (x) { return x.o && x.o.image; });
     return (
       sectionHead("02", "Key decisions", d.heading) +
       '<div class="cs-body">' +
       '<ul class="cs-decisions">' +
       d.items.map(function (it) {
-        return "<li><strong>" + it.title + ".</strong> " + it.why + "</li>";
+        var alt = it.a && it.chosen !== "a"
+          ? ' <span class="cs-decisions__alt"><em>Not chosen:</em> ' + it.a.label + ". " + (it.a.note || "") + "</span>"
+          : "";
+        return "<li><strong>" + it.title + ".</strong> " + it.why + alt + "</li>";
       }).join("") +
       "</ul>" +
-      '<div class="cs-used" style="--n:' + Math.min(chosen.length, 3) + '">' +
-      chosen.map(function (o, i) {
-        return figure(o.image, d.items[i].title, "", "cs-used__item" + (o.fit === "contain" ? " is-contain" : ""));
+      '<div class="cs-used" style="--n:' + Math.min(withImage.length, 3) + '">' +
+      withImage.map(function (x) {
+        return figure(x.o.image, x.title, "", "cs-used__item" + (x.o.fit === "contain" ? " is-contain" : ""));
       }).join("") +
       "</div>" +
       "</div>"
