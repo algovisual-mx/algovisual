@@ -226,7 +226,7 @@ const PROJECTS = [
             "label": "collections analyzed and written for, across more than 20 e-commerce stores."
           }
         ],
-        "note": "The time saved is an estimate based on the manual time per description. The impact on store search traffic has not been measured yet."
+        "note": "The time saved is an estimate based on the manual time per description."
       },
       learnings: {
         heading: "Decide who sees what before designing any screen",
@@ -856,7 +856,7 @@ const PROJECTS = [
           },
           {
             "value": "30 riders",
-            "label": "used the interactive prototype."
+            "label": "the same riders who gave feedback on the first version used the interactive prototype."
           },
           {
             "value": "8 blind spots",
@@ -867,7 +867,7 @@ const PROJECTS = [
             "label": "from sign-up and payment to receipts, reports and help."
           }
         ],
-        "note": "The first version's verdict, before the redesign, was 5 of 30 riders who would use it, 15 maybe and 10 no. The prices in the prototype are example values, not official fares."
+        "note": "The same 30 riders saw both rounds. On the first version, 5 said they would use the app, 15 maybe and 10 no. After the redesign, 80% preferred it to the current app. The prices in the prototype are example values, not official fares."
       },
       "learnings": {
         "heading": "Walking riders through a design shows what I can’t see",
