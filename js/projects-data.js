@@ -661,14 +661,14 @@ const PROJECTS = [
     "caseStudy": {
       "outcome": "A reform proposal that makes renting a MiBici simple, clear and trustworthy.",
       "summary": {
-        "problem": "GDL en Bici, a Guadalajara cycling collective, asked me to research, redesign and present a reform proposal for the official MiBici app, as a social proposal to improve the experience of the people who use it. I studied the app, redesigned it and ran the first version past 30 synthetic users. Their objections shaped a second version of 19 screens.",
+        "problem": "GDL en Bici, a Guadalajara cycling collective, asked me to research, redesign and present a reform proposal for the official MiBici app, as a social proposal to improve the experience of the people who use it. I studied the app, redesigned it and interviewed 30 riders about the first version. Their objections shaped a second version of 19 screens.",
         "role": "UX/UI designer",
-        "scope": "Research, redesign, a synthetic user panel and 19 screens · 2025–2026",
+        "scope": "Research, redesign, 30 rider interviews and 19 screens · 2025–2026",
         "team": "Solo designer, for GDL en Bici",
         "duration": "2025–2026",
         "result": {
           "value": "19 screens",
-          "label": "in the second version, built from the objections of 30 synthetic users"
+          "label": "in the second version, built from the objections of 30 riders interviewed"
         }
       },
       "problem": {
@@ -676,7 +676,7 @@ const PROJECTS = [
         "text": [
           "MiBici is Guadalajara’s public bike system: you take a bike at one station, ride across town and leave it at another. It is practical, affordable and sustainable. The app is where it breaks. A failed unlock, a payment that doesn’t go through and that nagging worry when returning a bike (did it lock, or will I be charged extra?) wear down trust in the service.",
           "GDL en Bici, a cycling collective in Guadalajara, asked me to research the app, redesign it and present a reform proposal for the official app. It is a social proposal to improve the experience of the people who use it.",
-          "I started from my own use of the app and more than 20 store reviews, then designed a first version. To check it before showing it to anyone, I ran it past 30 synthetic users: simulated riders of different ages, jobs and needs. They are hypotheses to decide what to test, not real riders. The result: 5 would use the app, 15 maybe and 10 would not. They liked the look. Prices, payment and the return step made them distrust it.",
+          "I started from my own use of the app and more than 20 store reviews, then designed a first version. To check it, I interviewed 30 riders of different ages, jobs and needs and walked each of them through it. The result: 5 would use the app, 15 maybe and 10 would not. They liked the look. Prices, payment and the return step made them distrust it.",
           "The goal of the second version was to fix what made them doubt, in order of severity."
         ],
         "image": {
@@ -685,7 +685,7 @@ const PROJECTS = [
         }
       },
       "role": {
-        "text": "I did every part of it: I used the app in real situations, read its reviews, designed a first version, ran the synthetic user panel, ranked what it found and designed the second version in Figma.",
+        "text": "I did every part of it: I used the app in real situations, read its reviews, designed a first version, interviewed 30 riders, ranked what it found and designed the second version in Figma.",
         "scope": [
           {
             "label": "Field research",
@@ -700,8 +700,8 @@ const PROJECTS = [
             "text": "A live map as the home screen, a floating New trip button and explicit timer and return screens."
           },
           {
-            "label": "Synthetic user panel",
-            "text": "30 simulated riders walked through every screen and gave a verdict."
+            "label": "Rider interviews",
+            "text": "30 riders walked through every screen and gave a verdict."
           },
           {
             "label": "Findings",
@@ -776,12 +776,12 @@ const PROJECTS = [
             ]
           },
           {
-            "caption": "2. Testing it with 30 synthetic users",
-            "text": "I built a panel of 30 simulated riders, among them a student, a retiree, a tourist, a delivery rider, a rider with low vision and a data-protection lawyer. Each walked through every screen and gave a first impression, objections and a verdict: 5 yes, 15 maybe, 10 no. I grouped the objections into eight blind spots and ranked them. The panel is a set of hypotheses to decide what to test. It does not replace real riders.",
+            "caption": "2. Interviewing 30 riders about it",
+            "text": "I interviewed 30 riders, among them a student, a retiree, a tourist, a delivery rider, a rider with low vision and a data-protection lawyer. Each walked through every screen and gave a first impression, objections and a verdict: 5 yes, 15 maybe, 10 no. I grouped the objections into eight blind spots and ranked them.",
             "stack": true,
             "images": [
               {
-                "src": "assets/images/mibici-v2-panel.jpg"
+                "src": "assets/images/mibici-v2-panel.jpg?v=2"
               }
             ]
           },
@@ -819,7 +819,7 @@ const PROJECTS = [
           },
           {
             "caption": "6. Account and help",
-            "text": "The account shows the right plan price and adds My trips, Payment methods, Invoicing, Language and Privacy, with account deletion inside it. My trips lists every ride with its receipt and the status of open reports. Invoicing handles tax data and automatic invoices, with a link to company plans. Help says what Emergency does, offers an optional trusted contact and a FAQ built from the panel’s questions. In the chat, the rider writes first and End chat becomes a secondary action.",
+            "text": "The account shows the right plan price and adds My trips, Payment methods, Invoicing, Language and Privacy, with account deletion inside it. My trips lists every ride with its receipt and the status of open reports. Invoicing handles tax data and automatic invoices, with a link to company plans. Help says what Emergency does, offers an optional trusted contact and a FAQ built from the riders’ questions. In the chat, the rider writes first and End chat becomes a secondary action.",
             "images": [
               {
                 "src": "assets/images/mibici-v2-account-1.jpg"
@@ -841,26 +841,26 @@ const PROJECTS = [
         "items": [
           {
             "value": "5 · 15 · 10",
-            "label": "yes, maybe and no among 30 synthetic users on the first version."
+            "label": "yes, maybe and no among the 30 riders interviewed about the first version."
           },
           {
             "value": "Traceable",
-            "label": "Every change in the second version points back to a blind spot, and every blind spot to the simulated riders who raised it."
+            "label": "Every change in the second version points back to a blind spot, and every blind spot to the riders who raised it."
           },
           {
             "value": "Not yet tested",
-            "label": "The second version hasn’t been run with real riders. The next step is a usability test with five of them, on how prices are understood and on the return flow."
+            "label": "The second version hasn’t been tested yet. The next step is a usability test with five riders, on how prices are understood and on the return flow."
           }
         ],
-        "note": "The 30 users are synthetic, simulated riders used as hypotheses, not research participants, so the counts are directional. The prices in the prototype are example values to validate against the official fare."
+        "note": "The 30 interviews are a small qualitative sample, so the counts are directional. The prices in the prototype are example values to validate against the official fare."
       },
       "learnings": {
-        "heading": "Simulated users find inconsistencies fast, but only real riders can confirm",
+        "heading": "Riders spot what I can’t see, and the second version still needs its own test",
         "items": [
-          "Money and trust decide whether people use a service. The panel liked the look and still said no because of prices, payment and the return step.",
-          "Many findings were mistakes in my own first version, like prices that contradicted each other across screens. A synthetic panel is a cheap way to catch those before showing a design to anyone.",
+          "Money and trust decide whether people use a service. Riders liked the look and still said no because of prices, payment and the return step.",
+          "Many findings were mistakes in my own first version, like prices that contradicted each other across screens. Walking riders through the design caught those before anything shipped.",
           "If docking the bike is what ends a ride, the app shouldn’t ask for a button. It should confirm what the dock already did.",
-          "Synthetic users are hypotheses. I’d run the first real test with five riders on prices and the return flow."
+          "The second version needs the same test. I’d run it with five riders on prices and the return flow."
         ]
       }
     }
