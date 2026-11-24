@@ -262,7 +262,9 @@
     if (!r.hero) {
       return (
         sectionHead("04", "Results", r.heading) +
-        '<div class="cs-body">' + metricCards(r.items) +
+        '<div class="cs-body">' +
+        (r.goal ? '<p class="cs-goal"><strong>Success meant</strong> ' + esc(r.goal) + "</p>" : "") +
+        metricCards(r.items) +
         (r.note ? '<p class="cs-meta">' + r.note + "</p>" : "") + "</div>"
       );
     }

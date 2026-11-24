@@ -40,8 +40,8 @@ const PROJECTS = [
         problem: "Visicart writes SEO titles and meta descriptions for Shopify collections with one click. It began as an internal tool at Captivate, a search marketing agency, and is now being built as a commercial product for e-commerce teams and Shopify-focused agencies. The hard part was deciding who gets access to what.",
         role: "Product & design lead",
         scope: "The whole product, end to end \u00b7 8 months \u00b7 with the agency owner and two developers",
-        team: "Agency owner + 2 developers",
-        status: "A working product, not a prototype, used by an SEO team at Captivate. It is being prepared for launch.",
+        team: "Lead designer, with 2 developers and the agency owner",
+        status: "A working product, not a prototype, used by an SEO team at Captivate. Its launch as a product is next.",
         duration: "8 months",
         result: {
           value: "1 click",
@@ -58,7 +58,7 @@ const PROJECTS = [
         ]
       },
       role: {
-        text: "I led product and design. I designed the whole product end to end, every screen, flow and state in this case, while the two developers built it and the agency owner was the stakeholder.",
+        text: "I led product and design. I designed the whole product end to end, every screen, flow and state in this case, while the two developers built it and the agency owner was the stakeholder. When the team disagreed, research or testing with users settled it.",
         scope: [
           { label: "Sign-up and login", text: "Email and code sign-up, login with a password or a code, and Google sign-in." },
           { label: "Organization setup", text: "A guided start: name the organization, connect a Shopify store and invite the team." },
@@ -206,26 +206,27 @@ const PROJECTS = [
         ]
       },
       results: {
-        "heading": "Compared with writing by hand, one click",
+        "heading": "Descriptions in seconds, and stores that are easy to switch",
+        "goal": "a person could switch between stores easily and write a description in seconds.",
         "items": [
           {
-            "value": "3–5 min → 1 click",
-            "label": "to write an SEO title and meta description for a collection, instead of writing each one by hand."
+            "value": "1 click",
+          "label": "to write an SEO title and meta description for a collection, instead of 3 to 5 minutes writing each one by hand."
+          },
+          {
+            "value": "80%",
+            "label": "of the generated descriptions are approved without editing."
+          },
+          {
+            "value": "9 of 10",
+            "label": "people switched between stores without trouble when testing the prototype."
           },
           {
             "value": "1,500+",
-            "label": "collections analyzed and written for."
-          },
-          {
-            "value": "20+",
-            "label": "e-commerce stores covered."
-          },
-          {
-            "value": "A working product",
-            "label": "in use by an SEO team at Captivate, not a prototype. Its launch is in progress."
+            "label": "collections analyzed and written for, across more than 20 e-commerce stores."
           }
         ],
-        "note": "No comparable tool existed, so the baseline is doing the work by hand. The time saved is an estimate based on the manual time per description. The usability tests ran on a prototype, before the product was built, and shaped the choices and changes in this case."
+        "note": "The time saved is an estimate based on the manual time per description. The impact on store search traffic has not been measured yet."
       },
       learnings: {
         heading: "Decide who sees what before designing any screen",
@@ -260,8 +261,8 @@ const PROJECTS = [
         problem: "Page Plucker extracts the pages of a website into cloud documents, text files, PDFs and image folders. It began as an internal tool at Captivate, a search marketing agency, and is now being built as a commercial product for SEO, content-generation and content-analysis teams and agencies that work with large, complex sites. The real design challenge was not the extraction, it was how to organize and show everything that comes out.",
         role: "Product & design lead",
         scope: "Workflows, design system and the full product · 6 months · with the agency owner and two developers",
-        team: "Agency owner + 2 developers",
-        status: "A working product used by an SEO team at Captivate. It is not on sale yet; the commercial launch is in progress.",
+        team: "Lead designer, with 2 developers and the agency owner",
+        status: "A working product used every day by an SEO team at Captivate. Its commercial launch is in progress.",
         duration: "6 months",
         result: {
           value: "6 months",
@@ -278,7 +279,7 @@ const PROJECTS = [
         ]
       },
       role: {
-        text: "I led product and design. I defined the workflows, built the design system and designed every screen, working side by side with the two developers and the agency owner.",
+        text: "I led product and design. I defined the workflows, built the design system and designed every screen, working side by side with the two developers and the agency owner. When the team disagreed, research or testing with users settled it.",
         scope: [
           { label: "Workflows", text: "The end-to-end flow, from signing in to finding a file, defined with the stakeholders and the developers." },
           { label: "Plucker Tool", text: "One screen to choose the destination, add the URLs and pick what to extract, plus the progress and results views." },
@@ -400,26 +401,27 @@ const PROJECTS = [
         ]
       },
       results: {
-        "heading": "From 12 minutes to one click per link",
+        "heading": "From 12 minutes to one click, in daily use by an SEO team",
+        "goal": "replacing the manual copy and paste with one click that anyone on the team could use.",
         "items": [
           {
-            "value": "12 min → ~90 s",
-            "label": "to extract the elements of one link: by hand, and with a single click in Page Plucker."
+            "value": "12 → 1.5 min",
+            "label": "per link: 12 minutes extracting the elements by hand, about 90 seconds with one click in Page Plucker."
+          },
+          {
+            "value": "~17 h / day",
+            "label": "of manual work saved across the team, estimated from 100 links a day at about 10.5 minutes saved each."
+          },
+          {
+            "value": "10 of 10",
+            "label": "people who tested it knew how to use it."
           },
           {
             "value": "1,200+",
             "label": "documents extracted per day, from more than 100 links."
-          },
-          {
-            "value": "In daily use",
-            "label": "by an SEO team at Captivate, as a working product."
-          },
-          {
-            "value": "Launch in progress",
-            "label": "It is not on sale yet. The commercial release is the next step."
           }
         ],
-        "note": "No comparable tool existed, so the baseline is the manual process: open a page, copy the text, paste it into a document and download each image. The extraction times are per link."
+        "note": "No comparable tool existed, so the baseline is the manual process. The manual time is a team average that was not timed, and the hours saved are calculated from it."
       },
       learnings: {
         heading: "Design what comes out before designing how it goes in",
@@ -459,8 +461,8 @@ const PROJECTS = [
         "problem": "VinylMapper is a startup’s social app where record collectors find stores, follow them, review them and share what they find. The team handed it to me already “designed”, but it was incomplete and poorly built: no flows, no style and no coherence between screens, an improvised design with no research behind it. I ran 10 interviews across five audience groups, built the flows and a new system from that research, and rebuilt the app around it.",
         "role": "UX/UI designer",
         "scope": "Research, flows, navigation, design system and interface · 2025–2026",
-        "team": "Startup client",
-        "status": "A real, working app. The redesign is about to launch.",
+        "team": "Lead designer, with 2 developers",
+        "status": "A real app, live today. The redesign I led is about to launch.",
         "duration": "2025–2026",
         "result": {
           "value": "10 interviews",
@@ -481,7 +483,7 @@ const PROJECTS = [
         }
       },
       "role": {
-        "text": "The startup handed me an app that was already “designed” but incomplete. I ran the research, built the flows and the new system, and redesigned the product around what the research showed, from the navigation to the owner tools.",
+        "text": "The startup handed me an app that was already “designed” but incomplete. I ran the research, built the flows and the new system, and redesigned the product around what the research showed, from the navigation to the owner tools, working with two developers. When the team disagreed, research or testing with users settled it.",
         "scope": [
           {
             "label": "Group research",
@@ -608,31 +610,34 @@ const PROJECTS = [
         ]
       },
       "results": {
-        "heading": "From a handoff with no research to a redesign the research supports",
+        "heading": "From 8 of 10 people lost to 10 of 10 finding their way",
+        "goal": "people could find stores and interact with them.",
         "items": [
           {
-            "value": "10 interviews",
-            "label": "across five audience groups, on the original app."
+            "value": "8 of 10",
+            "label": "people could not find the map or the blogs menu in the original app."
           },
           {
-            "value": "1 of 5",
-            "label": "groups said they would use the original app as it was. The other four said Maybe or No."
+            "value": "10 of 10",
+            "label": "found their way in the redesigned prototype, after the changes these sessions called for."
+          },
+          {
+            "value": "10 interviews",
+            "label": "two people from each of five audience groups, on a prototype."
           },
           {
             "value": "~40 screens",
-            "label": "of changes in the redesign, each traced to a ranked finding and to the group that raised it."
-          },
-          {
-            "value": "About to launch",
-            "label": "The app is real and working. The redesigned version is about to be released."
+            "label": "of changes, each traced to a ranked finding and to the group that raised it."
           }
         ],
-        "note": "The baseline is the app as it was handed over: no flows, no style and no research. The 10 interviews are a small qualitative sample across the five groups, so the findings are directional."
+        "note": "The baseline is the app as it was handed over, a quick first build with a structure that did not work. The sessions are a small qualitative sample, so the findings are directional."
       },
       "learnings": {
         "heading": "Pick a front door, then earn the rest",
         "items": [
-          "An app that tries to be a map, a network, a collection viewer and a magazine ends up convincing no one. Choosing the map as the front door made every other decision easier.",
+          "An app that tries to be a map, a network, a collection viewer and a magazine ends up convincing no one. Finding stores had to be the one main thing, and everything else secondary. Choosing the map as the front door made every other decision easier.",
+          "We assumed the More menu and the blogs did not matter. In the sessions they turned out to hold information people needed, so they stayed and got clearer labels.",
+          "People look for specific records as well as for stores, so search had to find the records a store has.",
           "The cheapest high-value fix was already in the data. Genres, formats and buy-sell-trade were collected and never used.",
           "Owners judge a platform on control and proof. Replies, numbers and a clear answer to who owns the app mattered more to them than any visual change.",
           "In a niche, vocabulary is part of the interface. A word like “repress” already means something to collectors."
@@ -668,8 +673,8 @@ const PROJECTS = [
         "problem": "GDL en Bici, a Guadalajara cycling collective, asked me to research, redesign and present a reform proposal for the official MiBici app, as a social proposal to improve the experience of the people who use it. I studied the app, redesigned it and interviewed 30 riders about the first version. Their objections shaped a second version of 19 screens.",
         "role": "UX/UI designer",
         "scope": "Research, redesign, 30 rider interviews and 19 screens · 2025–2026",
-        "team": "Solo designer, for GDL en Bici",
-        "status": "A proposal tested with riders on a prototype. It was not built.",
+        "team": "Lead designer, for GDL en Bici",
+        "status": "Tested with 30 riders on a prototype and presented, but not adopted in the official app.",
         "duration": "2025–2026",
         "result": {
           "value": "19 screens",
@@ -690,7 +695,7 @@ const PROJECTS = [
         }
       },
       "role": {
-        "text": "I did every part of it: I used the app in real situations, read its reviews, designed a first version, interviewed 30 riders, ranked what it found and designed the second version in Figma.",
+        "text": "I did every part of it: I used the app in real situations, read its reviews, designed a first version, interviewed 30 riders, ranked what it found and designed the second version in Figma. I led the design, and evidence from riders, not opinion, decided what changed.",
         "scope": [
           {
             "label": "Field research",
@@ -842,26 +847,27 @@ const PROJECTS = [
         ]
       },
       "results": {
-        "heading": "From a first version people doubted to a proposal built on their objections",
+        "heading": "80% of riders preferred the redesign to the current app",
+        "goal": "testing with riders and getting better feedback than the current app.",
         "items": [
           {
-            "value": "5 of 30",
-            "label": "interviewed riders would use the first version. 15 said Maybe and 10 said No."
+            "value": "80%",
+            "label": "of riders liked the redesign more than the current app and found it more usable, with more useful, friendlier information."
+          },
+          {
+            "value": "30 riders",
+            "label": "used the interactive prototype."
           },
           {
             "value": "8 blind spots",
-            "label": "ranked by severity, and every change in the redesign points back to one of them."
+            "label": "ranked by severity, with every change in the redesign traced to one of them."
           },
           {
             "value": "19 screens",
-            "label": "in the redesign, tested with riders on an interactive prototype."
-          },
-          {
-            "value": "A proposal",
-            "label": "made for the GDL en Bici collective. It was designed and tested, but not built."
+            "label": "from sign-up and payment to receipts, reports and help."
           }
         ],
-        "note": "The 30 interviews are a small qualitative sample, so the counts are directional. The prices in the prototype are example values, not official fares."
+        "note": "The first version's verdict, before the redesign, was 5 of 30 riders who would use it, 15 maybe and 10 no. The prices in the prototype are example values, not official fares."
       },
       "learnings": {
         "heading": "Walking riders through a design shows what I can’t see",
