@@ -88,10 +88,8 @@
       sectionEl.className = "work-section";
       sectionEl.id = section.id;
 
-      var head = document.createElement("div");
-      head.className = "section-head reveal";
-      head.innerHTML = '<div><h2 class="section-title">' + section.title + "</h2></div>";
-      sectionEl.appendChild(head);
+      // The section keeps its id (for #product links) but has no visible heading.
+      sectionEl.setAttribute("aria-label", section.title);
 
       if (WORK_LAYOUT === "cards") {
         sectionEl.appendChild(renderCards(items));
