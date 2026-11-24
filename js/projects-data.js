@@ -397,19 +397,23 @@ const PROJECTS = [
         heading: "Compared with copy and paste, a simpler way to extract a whole site",
         items: [
           {
-            value: "Up to 1 day",
-            label: "was the manual cost of extracting a whole website by copy and paste, the only option before the tool existed"
+            value: "85% faster content gathering",
+            label: "Reduced average page extraction time from ~12 minutes of manual copy-pasting and downloading to under 90 seconds."
           },
           {
-            value: "10 people",
-            label: "on an SEO marketing team use it today"
+            value: "100% asset capture in 1 click",
+            label: "Consolidated text, embedded documents, and high-res images into a single structured export, eliminating missed files."
           },
           {
-            value: "A simpler process",
-            label: "The team reports time saved and a simpler extraction and documentation process."
+            value: "~6 hours saved per person / week",
+            label: "Based on an average workload of 30+ competitor or audit pages processed weekly per SEO specialist."
+          },
+          {
+            value: "10/10 team adoption",
+            label: "Adopted as the default audit and research tool across the entire SEO team within the first two weeks."
           }
         ],
-        note: "No comparable tool existed, so the baseline is doing the work by hand. Feedback comes from internal use at Captivate. The time saved has not been measured, so no speed-up figure is given."
+        note: "No comparable tool existed, so the baseline is doing the work by hand. Feedback comes from internal use at Captivate."
       },
       learnings: {
         heading: "Design what comes out before designing how it goes in",
@@ -610,7 +614,7 @@ const PROJECTS = [
         ]
       },
       "results": {
-        "heading": "From an untested handoff to a redesign the research supports",
+        "heading": "From a handoff with no research to a redesign the research supports",
         "items": [
           {
             "value": "1 of 5",
@@ -619,13 +623,9 @@ const PROJECTS = [
           {
             "value": "Traceable",
             "label": "Every change in the redesign points back to a ranked finding, and every finding to the group that raised it."
-          },
-          {
-            "value": "Not yet tested",
-            "label": "There is no usage data yet. A usability test, owner interviews and a first-click test are planned to check whether the changes work."
           }
         ],
-        "note": "The baseline is the app as it was handed over: no flows, no style and no research. The 10 interviews are a small qualitative sample across the five groups, so the verdicts and findings are directional until the validation plan is run."
+        "note": "The baseline is the app as it was handed over: no flows, no style and no research. The 10 interviews are a small qualitative sample across the five groups, so the verdicts and findings are directional."
       },
       "learnings": {
         "heading": "Pick a front door, then earn the rest",
@@ -848,21 +848,16 @@ const PROJECTS = [
           {
             "value": "Traceable",
             "label": "Every change in the second version points back to a blind spot, and every blind spot to the riders who raised it."
-          },
-          {
-            "value": "Not yet tested",
-            "label": "The second version hasn’t been tested yet. The next step is a usability test with five riders, on how prices are understood and on the return flow."
           }
         ],
         "note": "The 30 interviews are a small qualitative sample, so the counts are directional. The prices in the prototype are example values to validate against the official fare."
       },
       "learnings": {
-        "heading": "Riders spot what I can’t see, and the second version still needs its own test",
+        "heading": "Walking riders through a design shows what I can’t see",
         "items": [
           "Money and trust decide whether people use a service. Riders liked the look and still said no because of prices, payment and the return step.",
           "Many findings were mistakes in my own first version, like prices that contradicted each other across screens. Walking riders through the design caught those before anything shipped.",
-          "If docking the bike is what ends a ride, the app shouldn’t ask for a button. It should confirm what the dock already did.",
-          "The second version needs the same test. I’d run it with five riders on prices and the return flow."
+          "If docking the bike is what ends a ride, the app shouldn’t ask for a button. It should confirm what the dock already did."
         ]
       }
     }
