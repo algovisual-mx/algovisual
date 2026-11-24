@@ -177,9 +177,19 @@
   100% { box-shadow: 0 0 0 0 rgba(110, 224, 92, 0); }
 }
 
+/* Reduced motion: no sliding or bouncing, just a soft fade so the badge still
+   arrives instead of being there from the start. */
+@keyframes badge-fade { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) {
-  .hero-badge, .hero-badge__avatar, .hero-badge__dot { animation: none; }
+  .hero-badge { animation: badge-fade 0.8s ease 0.5s both; }
+  .hero-badge__avatar, .hero-badge__dot { animation: none; }
 }
+
+/* Safety net (js/main.js): if the browser never started the entrance, show the
+   badge as it is rather than leaving it invisible. */
+.hero-badge.is-static,
+.hero-badge.is-static .hero-badge__avatar,
+.hero-badge.is-static .hero-badge__dot { animation: none; }
 
 @media (max-width: 480px) {
   .hero-badge { gap: 14px; padding-left: 12px; }
