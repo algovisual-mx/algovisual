@@ -425,6 +425,10 @@
   height: 100%;
   object-fit: cover;
   pointer-events: none;
+  /* The exported previews carry a small watermark in the bottom-right corner.
+     Zooming in from the top-left pushes it outside the clipped frame. */
+  transform: scale(1.12);
+  transform-origin: 0 0;
 }
 
 /* White text panel in both themes, so its text is fixed dark. */
