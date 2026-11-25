@@ -212,7 +212,8 @@ const PROJECTS = [
                 { action: "Approve or reject texts", allow: [true, true, false] },
                 { action: "Publish texts", allow: [true, true, false] }
               ],
-              note: "Editors send what they generate for approval; an owner or admin approves or rejects it and publishes it."
+              note: "Editors send what they generate for approval; an owner or admin approves or rejects it and publishes it.",
+              edge: "<strong>Edge case, the owner leaving:</strong> an organization exists as long as it has an owner, so it can\u2019t be left without one. To leave, the owner cancels the account, which deletes it."
             },
             stack: true,
             images: [

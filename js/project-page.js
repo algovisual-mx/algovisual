@@ -188,6 +188,7 @@
       }).join("") +
       "</tbody></table>" +
       (t.note ? '<p class="cs-matrix__note">' + t.note + "</p>" : "") +
+      (t.edge ? '<p class="cs-matrix__note">' + t.edge + "</p>" : "") +
       "</div>"
     );
   }

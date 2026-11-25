@@ -790,6 +790,7 @@
 .cs-matrix__sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .cs-matrix td { position: relative; }
 .cs-matrix__note { margin-top: 12px; max-width: 70ch; font-size: .95rem; color: var(--fg-muted); }
+.cs-matrix__note strong { color: var(--fg); font-weight: 600; }
 @media (max-width: 520px) {
   .cs-matrix table { font-size: .85rem; }
   .cs-matrix th, .cs-matrix td { padding: 10px 6px; }
