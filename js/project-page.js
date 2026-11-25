@@ -126,6 +126,12 @@
           '<div class="cs-copy"><p>' + r.text + "</p></div>" +
           "</div>"
         : "") +
+      (r.limits
+        ? '<div class="cs-subsection">' +
+          '<h3 class="cs-subhead">Scope and limits</h3>' +
+          '<div class="cs-copy">' + r.limits.map(function (c) { return "<p>" + c.text + "</p>"; }).join("") + "</div>" +
+          "</div>"
+        : "") +
       (r.scope
         ? '<div class="cs-subsection">' +
           '<h3 class="cs-subhead">What I designed</h3>' +
@@ -166,6 +172,26 @@
     );
   }
 
+  /* A yes/no matrix (e.g. actions by role). */
+  function accessTable(t) {
+    return (
+      '<div class="cs-matrix"><table><caption>' + t.caption + "</caption>" +
+      '<thead><tr><th scope="col">Action</th>' +
+      t.columns.map(function (c) { return '<th scope="col">' + c + "</th>"; }).join("") +
+      "</tr></thead><tbody>" +
+      t.rows.map(function (r) {
+        return '<tr><th scope="row">' + r.action + "</th>" +
+          r.allow.map(function (ok) {
+            return '<td class="' + (ok ? "is-yes" : "is-no") + '"><span aria-hidden="true">' + (ok ? "\u2713" : "\u2013") +
+              '</span><span class="cs-matrix__sr">' + (ok ? "Yes" : "No") + "</span></td>";
+          }).join("") + "</tr>";
+      }).join("") +
+      "</tbody></table>" +
+      (t.note ? '<p class="cs-matrix__note">' + t.note + "</p>" : "") +
+      "</div>"
+    );
+  }
+
   function buildSolution(cs) {
     var s = cs.solution;
     return (
@@ -186,6 +212,7 @@
           '<div class="cs-solution">' +
           '<h3 class="cs-solution__title">' + it.caption + "</h3>" +
           (it.text ? '<div class="cs-copy cs-solution__text"><p>' + it.text + "</p></div>" : "") +
+          (it.table ? accessTable(it.table) : "") +
           (carousel
             ? '<div class="cs-carousel" data-carousel role="group" aria-roledescription="carousel" aria-label="Screens">' +
               '<div class="cs-carousel__track" tabindex="0">' + it.images.map(shot).join("") + "</div>" +

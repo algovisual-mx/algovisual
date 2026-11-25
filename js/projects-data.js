@@ -89,7 +89,7 @@ const PROJECTS = [
         items: [
           {
             title: "Organizations contain stores, stores contain people",
-            why: "After reviewing how similar tools organize teams, three levels let one owner run several stores and organizations without mixing them up. The cost was one more setup step for new owners.",
+            why: "After reviewing how Slack and Asana organize teams, three levels let one owner run several stores and organizations without mixing them up. The cost was one more setup step for new owners.",
             chosen: "b",
             a: {
               label: "Each store on its own",
@@ -202,6 +202,18 @@ const PROJECTS = [
           {
             caption: "6. Teams, roles and access",
             text: "An owner sets up the organization, adds stores and invites people with a role. There are three roles: the owner controls access to every organization, store and person; the admin can run almost everything; the editor does the day-to-day work. One view shows everyone with access and their role in each store. Editing a person, assigning stores and removing or deleting users and stores each have their own panel and confirmation.",
+            table: {
+              caption: "Who can do what",
+              columns: ["Owner", "Admin", "Editor"],
+              rows: [
+                { action: "Add organizations and connect stores", allow: [true, false, false] },
+                { action: "Manage users and their access", allow: [true, true, false] },
+                { action: "Generate collection texts", allow: [true, true, true] },
+                { action: "Approve or reject texts", allow: [true, true, false] },
+                { action: "Publish texts", allow: [true, true, false] }
+              ],
+              note: "Editors send what they generate for approval; an owner or admin approves or rejects it and publishes it."
+            },
             stack: true,
             images: [
               { src: "assets/images/visicart-solution1.jpg?v=2" },
@@ -278,7 +290,7 @@ const PROJECTS = [
       outcome: "Hundreds of pages, extracted and organized without copy and paste.",
       summary: {
         decision: "Design what comes out before how it goes in: project, folder and page everywhere, so hundreds of documents stay findable.",
-        outcome: "Used every day by an SEO team, with 1,200+ documents extracted a day. A link that took about 12 minutes by hand (an estimate, never timed) now takes one click, about 90 seconds.",
+        outcome: "10 of 10 people who tested it knew how to use it. In a stopwatch test on 3 links, a page took about an hour by hand and about 90 seconds in Page Plucker. An SEO team now extracts 1,200+ documents a day with it.",
         problem: "Page Plucker extracts the pages of a website into cloud documents, text files, PDFs and image folders. It began as an internal tool at Captivate, a search marketing agency, and is now being built as a commercial product for SEO, content-generation and content-analysis teams and agencies that work with large, complex sites. The real design challenge was not the extraction, it was how to organize and show everything that comes out.",
         role: "Product & design lead",
         scope: "Workflows, design system and the full product · 6 months · with the agency owner and two developers",
@@ -294,7 +306,7 @@ const PROJECTS = [
         heading: "One page produces a pile of files. Hundreds of pages bury you.",
         text: [
           "Page Plucker began as an internal tool at Captivate, a search marketing agency, and is being built as a commercial product for SEO and content teams and agencies that work with large, complex sites. The team was one designer, two developers and the agency owner.",
-          "Before this tool there was no tool. To get a page into a document, someone opened it, copied the text, pasted it into a doc and then downloaded each image, one at a time. Doing that for a whole website could take up to a day.",
+          "Before this tool there was no tool. To get a page into a document, someone opened it, copied the text, pasted it into a doc and then downloaded each image, one at a time. Timed on 3 links, that took about an hour per page.",
           "Extracting a page is easy to describe. What comes out is the hard part: for every page there is a Google Doc, a Word file, a text file, several PDFs and often dozens of images. Multiply that by hundreds of pages and several projects, and the output becomes the product.",
           "The challenge was deciding how all of it is stored, named and shown, so anyone can find a file in seconds and a team can work in the same space without stepping on each other."
         ]
@@ -422,7 +434,7 @@ const PROJECTS = [
         ]
       },
       results: {
-        "heading": "From 12 minutes to one click, in daily use by an SEO team",
+        "heading": "From about an hour per page to about 90 seconds, in daily use by an SEO team",
         "goal": "replacing the manual copy and paste with one click that anyone on the team could use.",
         "items": [
           {
@@ -430,19 +442,19 @@ const PROJECTS = [
             "label": "of the 10 people who tested it knew how to use it."
           },
           {
-            "value": "12 → 1.5 min",
-            "label": "per link: 12 minutes extracting the elements by hand, about 90 seconds with one click in Page Plucker."
+            "value": "60 → 1.5 min",
+            "label": "average per page in a stopwatch test on 3 links: about an hour by hand, about 90 seconds with one click in Page Plucker."
           },
           {
             "value": "1,200+",
             "label": "documents extracted per day, from more than 100 links."
           },
           {
-            "value": "~17 h / day",
-            "label": "of manual work saved across the team, estimated from 100 links a day at about 10.5 minutes saved each."
+            "value": "10 people",
+            "label": "on the SEO team use it every day."
           }
         ],
-        "note": "No comparable tool existed, so the baseline is the manual process. The manual time is a team average that was not timed, and the hours saved are calculated from it."
+        "note": "No comparable tool existed, so the baseline is the manual process. The timed test covered 3 links, so read the difference as directional."
       },
       learnings: {
         heading: "Design what comes out before designing how it goes in",
@@ -507,7 +519,7 @@ const PROJECTS = [
         }
       },
       "role": {
-        "text": "The startup handed me an early build of the app. I ran the research, built the flows and the new system, and redesigned the product around what the research showed, from the navigation to the owner tools. VinylMapper is its own startup and the app’s owner made the product decisions, so my job was to bring the research to those decisions, working with one developer. It ran alongside Visicart and Page Plucker.",
+        "text": "The startup handed me an early build of the app. I ran the research, built the flows and the new system, and redesigned the product around what the research showed, from the navigation to the owner tools. VinylMapper is its own startup and the app’s owner made the product decisions, so my job was to bring the research to those decisions, working with one developer.",
         "scope": [
           {
             "label": "Group research",
@@ -736,6 +748,12 @@ const PROJECTS = [
       },
       "role": {
         "text": "I did every part of it: I used the app in real situations, read its reviews, designed a first version, interviewed 30 riders, ranked what it found and designed the second version in Figma. I was the only designer, and evidence from riders, not opinion, decided what changed.",
+        "limits": [
+          {
+            "label": "Scope",
+            "text": "A social proposal designed from the rider side, without operator data. It was validated by interviewing 30 riders over a prototype. Task success was not measured, and technical feasibility would be the next question for the operator."
+          }
+        ],
         "scope": [
           {
             "label": "Field research",
