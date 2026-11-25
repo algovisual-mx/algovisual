@@ -8,8 +8,8 @@
   overflow: hidden;
   /* Compact: the nav floats over the top edge and the hero ends early, so the
      start of the work section shows above the fold. */
-  padding-top: calc(var(--nav-h, 80px) + 40px);
-  padding-bottom: clamp(16px, 2.4vw, 32px);
+  padding-top: calc(var(--nav-h, 80px) + clamp(48px, 6vw, 80px));
+  padding-bottom: clamp(32px, 4.4vw, 64px);
 }
 
 .intro .container {
