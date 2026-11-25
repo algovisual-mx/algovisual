@@ -40,11 +40,11 @@ const PROJECTS = [
       outcome: "One click for a single person was easy. Then we scaled it.",
       summary: {
         decision: "Three roles, not two: an owner who controls access, an admin who can run almost everything and an editor who does the day-to-day work, inside organizations that contain stores.",
-        outcome: "A working product in use by an SEO team: 80% of generated descriptions are approved without editing, and 9 of 10 testers switched stores without trouble.",
+        outcome: "9 of 10 testers switched stores without trouble. The product is in use by an SEO team, and 80% of its generated descriptions are approved without editing.",
         problem: "Visicart writes SEO titles and meta descriptions for Shopify collections with one click. It began as an internal tool at Captivate, a search marketing agency, and is now being built as a commercial product for e-commerce teams and Shopify-focused agencies. The hard part was deciding who gets access to what.",
         role: "Product & design lead",
         scope: "The whole product, end to end \u00b7 8 months \u00b7 with the agency owner and two developers",
-        team: "Lead designer, with 2 developers and the agency owner",
+        team: "Product & design lead, with 2 developers and the agency owner",
         status: "A working product, not a prototype, used by an SEO team at Captivate. Its launch as a product is next.",
         duration: "8 months",
         result: {
@@ -62,7 +62,7 @@ const PROJECTS = [
         ]
       },
       role: {
-        text: "I led product and design. I designed the whole product end to end, every screen, flow and state in this case, while the two developers built it and the agency owner was the stakeholder. When the team disagreed, research or testing with users settled it. I designed it in parallel with Page Plucker.",
+        text: "I led product and design. I designed the whole product end to end, every screen, flow and state in this case, while the two developers built it and the agency owner was the stakeholder. Where the team weighed two roles against three, the research with the SEO team settled it. I designed it in parallel with Page Plucker.",
         scope: [
           { label: "Team research", text: "Talked with the SEO team about how they work before drawing the first screen." },
                   { label: "Sign-up and login", text: "Email and code sign-up, login with a password or a code, and Google sign-in." },
@@ -196,7 +196,7 @@ const PROJECTS = [
             text: "Inside each collection, the person adds keywords from Semrush or writes their own, sets the tone and length, and generates a title and meta description. A character counter and a Google search preview show how the result will look. Then they reject, approve or publish it, and a message confirms what happened.",
             stack: true,
             images: [
-              { src: "assets/images/visicart-flow-generate-3.jpg" }
+              { src: "assets/images/visicart-flow-generate-3.jpg?v=2" }
             ]
           },
           {
@@ -229,7 +229,7 @@ const PROJECTS = [
         "items": [
           {
             "value": "9 of 10",
-            "label": "of 10 e-commerce team members switched between stores without trouble when testing the prototype (task: switch to another store)."
+            "label": "e-commerce team members switched between stores without trouble when testing the prototype (task: switch to another store)."
           },
           {
             "value": "80%",
@@ -268,7 +268,7 @@ const PROJECTS = [
     tools: [
       "Figma"
     ],
-    card: { role: "Product & design lead", type: "Content-extraction tool for SEO teams", result: "Replacing manual scraping with a workflow a SEO team actually uses" },
+    card: { role: "Product & design lead", type: "Content-extraction tool for SEO teams", result: "Replacing manual scraping with a workflow an SEO team actually uses" },
     excerpt: "A content-extraction tool that spares SEO teams the copy and paste of pulling a whole site into documents.",
     showcase: "assets/images/pageplucker_case_cover.png",
     previewVideo: "assets/videos/Thumb_pageplucker.mp4", // looping muted preview shown in the home card instead of the image
@@ -278,11 +278,11 @@ const PROJECTS = [
       outcome: "Hundreds of pages, extracted and organized without copy and paste.",
       summary: {
         decision: "Design what comes out before how it goes in: project, folder and page everywhere, so hundreds of documents stay findable.",
-        outcome: "About 12 minutes per link down to one click (about 90 seconds), with 1,200+ documents extracted a day by an SEO team.",
+        outcome: "Used every day by an SEO team, with 1,200+ documents extracted a day. A link that took about 12 minutes by hand (an estimate, never timed) now takes one click, about 90 seconds.",
         problem: "Page Plucker extracts the pages of a website into cloud documents, text files, PDFs and image folders. It began as an internal tool at Captivate, a search marketing agency, and is now being built as a commercial product for SEO, content-generation and content-analysis teams and agencies that work with large, complex sites. The real design challenge was not the extraction, it was how to organize and show everything that comes out.",
         role: "Product & design lead",
         scope: "Workflows, design system and the full product · 6 months · with the agency owner and two developers",
-        team: "Lead designer, with 2 developers and the agency owner",
+        team: "Product & design lead, with 2 developers and the agency owner",
         status: "A working product used every day by an SEO team at Captivate. Its commercial launch is in progress.",
         duration: "6 months",
         result: {
@@ -300,7 +300,7 @@ const PROJECTS = [
         ]
       },
       role: {
-        text: "I led product and design. I defined the workflows, built the design system and designed every screen, working side by side with the two developers and the agency owner. When the team disagreed, research or testing with users settled it. I designed it in parallel with Visicart.",
+        text: "I led product and design. I defined the workflows, built the design system and designed every screen, working side by side with the two developers and the agency owner. I designed it in parallel with Visicart.",
         scope: [
           { label: "Workflows", text: "The end-to-end flow, from signing in to finding a file, defined with the stakeholders and the developers." },
           { label: "Plucker Tool", text: "One screen to choose the destination, add the URLs and pick what to extract, plus the progress and results views." },
@@ -463,12 +463,12 @@ const PROJECTS = [
     "section": "product",
     "year": "2025–2026",
     "client": "Startup client",
-    "role": "Lead designer",
+    "role": "Product designer",
     "tools": [
       "Figma"
     ],
     "card": {
-      "role": "Lead designer",
+      "role": "Product designer",
       "type": "Social app for record collectors",
       "result": "Turning research insights into frictionless discovery for record collectors"
     },
@@ -483,9 +483,9 @@ const PROJECTS = [
         "decision": "Make the map the front door and keep Create one tap away: finding stores is the one main thing, everything else is secondary.",
         "outcome": "8 of 10 interviewees could not find the map or the blogs menu in the original app. All 10 did in the redesigned prototype (directional). The redesign launches next.",
         "problem": "VinylMapper is a startup’s social app where record collectors find stores, follow them, review them and share what they find. The team handed it to me as a first build, made quickly before any research: it had no flows, no shared style and little coherence between screens. I ran 10 interviews across five audience groups, built the flows and a new system from that research, and rebuilt the app around it.",
-        "role": "UX/UI designer",
+        "role": "Product designer",
         "scope": "Research, flows, navigation, design system and interface · 2025–2026",
-        "team": "Lead designer, with 1 developer",
+        "team": "Product designer, with 1 developer",
         "status": "A real app, live today. The redesign I led is about to launch.",
         "duration": "2025–2026",
         "result": {
@@ -507,7 +507,7 @@ const PROJECTS = [
         }
       },
       "role": {
-        "text": "The startup handed me an early build of the app. I ran the research, built the flows and the new system, and redesigned the product around what the research showed, from the navigation to the owner tools. VinylMapper is its own startup and the app’s owner made the product decisions, so my job was to bring the research to those decisions, working with one developer. It ran alongside Visicart and Page Plucker. When we disagreed, research or testing with users settled it.",
+        "text": "The startup handed me an early build of the app. I ran the research, built the flows and the new system, and redesigned the product around what the research showed, from the navigation to the owner tools. VinylMapper is its own startup and the app’s owner made the product decisions, so my job was to bring the research to those decisions, working with one developer. It ran alongside Visicart and Page Plucker.",
         "scope": [
           {
             "label": "Group research",
@@ -607,6 +607,8 @@ const PROJECTS = [
           {
             "caption": "3. What changed, by priority",
             "text": "P0 puts the map first with Create on every screen, labels every tab, explains Coins, renames “Repress” to Share and adds the ownership and ratings disclosure. P1 adds filters and honest cards to Find, a switcher, insights, a team and events for owners, and reviews that need a real visit. P2 adds wantlist matches, record search and releases from Discogs, one Follow model, group chats of up to 12 and a first run for collectors and owners.",
+            "visible": 1,
+            "moreLabel": "P1 and P2 changes",
             "images": [
               {
                 "src": "assets/images/vk-s-nav.jpg"
@@ -688,13 +690,13 @@ const PROJECTS = [
     "section": "product",
     "year": "2025–2026",
     "client": "GDL en Bici · social proposal",
-    "role": "Lead designer",
+    "role": "Sole designer",
     "tools": [
       "Figma"
     ],
     "coverAlt": "Preview of the redesigned MiBici app screens",
     "card": {
-      "role": "Lead designer",
+      "role": "Sole designer",
       "type": "Reform proposal for the MiBici app",
       "result": "Redesigning a station to station bike share app around real user needs"
     },
@@ -709,9 +711,9 @@ const PROJECTS = [
         "decision": "Show prices and payment before the first ride, let the dock confirm the return, and explain every uncertain moment while riding.",
         "outcome": "30 riders tested the prototype and 80% preferred it to the current app. It was presented but not adopted in the official app.",
         "problem": "GDL en Bici, a Guadalajara cycling collective, asked me to research, redesign and present a reform proposal for the official MiBici app, as a social proposal to improve the experience of the people who use it. I studied the app, redesigned it and interviewed 30 riders about the first version. Their objections shaped a second version of 19 screens.",
-        "role": "UX/UI designer",
+        "role": "Sole designer",
         "scope": "Research, redesign, 30 rider interviews and 19 screens · 2025–2026",
-        "team": "Lead designer, for GDL en Bici",
+        "team": "Sole designer, for GDL en Bici",
         "status": "Tested with 30 riders on a prototype and presented, but not adopted in the official app.",
         "duration": "2025–2026",
         "result": {
@@ -733,7 +735,7 @@ const PROJECTS = [
         }
       },
       "role": {
-        "text": "I did every part of it: I used the app in real situations, read its reviews, designed a first version, interviewed 30 riders, ranked what it found and designed the second version in Figma. I led the design, and evidence from riders, not opinion, decided what changed.",
+        "text": "I did every part of it: I used the app in real situations, read its reviews, designed a first version, interviewed 30 riders, ranked what it found and designed the second version in Figma. I was the only designer, and evidence from riders, not opinion, decided what changed.",
         "scope": [
           {
             "label": "Field research",

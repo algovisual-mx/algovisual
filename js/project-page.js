@@ -195,7 +195,15 @@
               '<button type="button" class="cs-carousel__btn" data-dir="-1" aria-label="Previous screen">' + CHEV_L + "</button>" +
               '<button type="button" class="cs-carousel__btn" data-dir="1" aria-label="Next screen">' + CHEV_R + "</button>" +
               "</div></div></div>"
-            : (n ? '<div class="cs-solution__images' + layout + '">' + it.images.map(shot).join("") + "</div>" : "")) +
+            : (n
+              ? '<div class="cs-solution__images' + layout + '">' +
+                (it.visible && n > it.visible
+                  ? it.images.slice(0, it.visible).map(shot).join("") +
+                    '<details class="cs-more"><summary>Show ' + (it.moreLabel || "more screens") + " (" + (n - it.visible) + " screens)</summary>" +
+                    '<div class="cs-more__body">' + it.images.slice(it.visible).map(function (im, k) { return shot(im, k + it.visible); }).join("") + "</div></details>"
+                  : it.images.map(shot).join("")) +
+                "</div>"
+              : "")) +
           "</div>"
         );
       }).join("") +

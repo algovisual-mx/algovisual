@@ -759,3 +759,20 @@
   .lb, .lb__img { transition: none; }
   .lb__img { transform: none; }
 }
+
+/* Folded extra screens (e.g. the P1 and P2 changes after the P0 screen) */
+.cs-more { margin-top: clamp(14px, 2.4vw, 28px); }
+.cs-more > summary {
+  display: inline-flex; align-items: center; gap: 10px; cursor: pointer; list-style: none;
+  padding: 12px 18px; border: 1px solid var(--border-strong); border-radius: var(--radius-pill);
+  font-size: .95rem; font-weight: 500; color: var(--fg); background: var(--bg-elev);
+  transition: border-color var(--dur-fast), background var(--dur-fast);
+}
+.cs-more > summary::-webkit-details-marker { display: none; }
+.cs-more > summary::before { content: "+"; font-weight: 600; font-size: 1.1rem; line-height: 1; }
+.cs-more[open] > summary::before { content: "\2212"; }
+.cs-more > summary:hover { border-color: var(--fg-muted); }
+.cs-more > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.cs-more__body { display: grid; gap: clamp(14px, 2.4vw, 28px); margin-top: clamp(14px, 2.4vw, 28px); }
+.cs-more__body .cs-figure__media { aspect-ratio: auto; }
+.cs-more__body .cs-figure__media img { height: auto; }
